@@ -20,6 +20,16 @@ export interface TourEvent {
    * The tournament is invite-only: this link is sent directly to approved
    * teams and is never rendered on the public site. */
   zortsUrl?: string;
+  /** Native athlete (Combine & Camp) registration for this stop.
+   * Omit until the stop takes athlete registrations. `open: false` shows a
+   * "registration opens soon" page at /events/[slug]/register. */
+  athleteReg?: {
+    open: boolean;
+    /** Price in cents, charged via Stripe Checkout */
+    priceCents: number;
+    /** Optional cap on paid registrations; checkout closes when reached */
+    capacity?: number;
+  };
   /** Full event details — omit until announced; the event page and the
    * Next Stop card show them when present */
   details?: {
@@ -40,6 +50,9 @@ export const EVENTS: TourEvent[] = [
     date: "DEC 2026",
     tag: "Registration Open",
     live: true,
+    // TODO: confirm real athlete price before launch (placeholder $125).
+    // Checkout stays disabled until Stripe env vars are set in Vercel.
+    athleteReg: { open: true, priceCents: 12500 },
     details: {
       dates: "Dec 11–13, 2026",
       divisions: "Girls 12U+",

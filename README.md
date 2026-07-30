@@ -44,6 +44,34 @@ of `app/globals.css` (`--navy`, `--red`, `--chalk`, …). Fonts are loaded via
 `next/font` in `app/layout.tsx`. The logo is `public/logo.png` (also used as
 favicon / OG image).
 
+## Athlete registration
+
+Native athlete (Combine & Camp) registration lives at
+`/events/[slug]/register`: a 3-step form (athlete → guardian + waiver →
+review) that hands off to **Stripe Checkout**; a Stripe webhook
+(`/api/stripe/webhook`) then writes the paid registration to **Airtable**.
+Stripe is the system of record for payments; Airtable is the ops view.
+
+Per-stop config is the `athleteReg` block in `data/events.ts`
+(`open`, `priceCents`, optional `capacity`). Pages for stops without an open
+`athleteReg` show "registration opens soon". Registration pages are
+`noindex` and not in the sitemap.
+
+### Launch checklist (currently deployed dark — no public links)
+
+1. Confirm the real athlete price in `data/events.ts` (placeholder $125) and
+   replace the waiver placeholder in `lib/registration.ts` (`WAIVER_SUMMARY`).
+2. Create the Airtable base + `Registrations` table (schema in
+   `lib/airtable.ts` / webhook field names) and a personal access token.
+3. In Stripe: create a webhook endpoint for
+   `https://www.collegeflagshowcase.com/api/stripe/webhook`
+   (event: `checkout.session.completed`).
+4. Set the env vars from `.env.example` in Vercel and redeploy.
+5. Test end-to-end with Stripe test keys (card `4242 4242 4242 4242`),
+   confirm the record lands in Airtable, then swap to live keys.
+6. Point `ATHLETE_REG_URL` in `data/links.ts` at
+   `/events/mckinney-tx/register` — that turns the hero/event CTAs on.
+
 ## Deploy to Vercel
 
 1. Push this repo to GitHub.

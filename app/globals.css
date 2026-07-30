@@ -170,6 +170,36 @@ nav{background:var(--navy);color:var(--chalk);position:sticky;top:0;z-index:50;b
 .tour-tag.live{background:var(--red);border-color:var(--red);color:var(--white)}
 @media(max-width:640px){.tour-row{grid-template-columns:44px 1fr auto}.tour-tag{display:none}}
 
+/* ============ ATHLETE REGISTRATION ============ */
+.reg-title{font-size:clamp(38px,6vw,64px);font-weight:800}
+.reg-card{background:var(--white);border:3px solid var(--navy);box-shadow:8px 8px 0 var(--navy);padding:clamp(24px,4vw,40px);max-width:720px}
+.reg-step-kicker{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:20px}
+.reg-fields{border:0;display:grid;gap:18px}
+.reg-legend{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.reg-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.reg-grid-3{grid-template-columns:1fr 1fr 1fr}
+.reg-fields label{display:flex;flex-direction:column;gap:6px;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--steel)}
+.reg-fields input[type=text],.reg-fields input[type=email],.reg-fields input[type=tel],.reg-fields input[type=url],.reg-fields input[type=date],.reg-fields select,.reg-fields textarea{font-family:var(--body);font-size:16px;font-weight:500;color:var(--navy);background:var(--chalk);border:2px solid var(--navy);padding:11px 13px;letter-spacing:0;text-transform:none}
+.reg-fields textarea{resize:vertical}
+.reg-sublabel{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--steel)}
+.reg-checks{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.reg-check{flex-direction:row!important;align-items:center;gap:8px!important;font-family:var(--body)!important;font-size:15px!important;font-weight:600!important;letter-spacing:0!important;text-transform:none!important;color:var(--navy)!important;border:2px solid var(--line);padding:8px 12px;cursor:pointer}
+.reg-check input{accent-color:var(--red);width:16px;height:16px}
+.reg-positions .reg-check{background:var(--white)}
+.reg-waiver{border-top:1px solid var(--line);padding-top:18px;display:grid;gap:12px}
+.reg-waiver p{font-size:14.5px;color:var(--steel)}
+.reg-err{color:var(--red);font-family:var(--mono);font-size:10px;letter-spacing:.08em;margin-left:8px}
+.reg-err-block{font-size:13px;border:2px solid var(--red);padding:10px 14px}
+.reg-notice{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--navy);background:var(--gold);padding:10px 14px;margin-bottom:16px}
+.reg-actions{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.reg-fineprint{font-size:14px;color:var(--steel)}
+.reg-fineprint a{font-weight:600}
+.reg-review{box-shadow:8px 8px 0 var(--red)}
+.reg-next{list-style:none;display:grid;gap:10px;margin-bottom:18px;font-weight:600;font-size:15.5px}
+.reg-next li{padding-left:20px;position:relative}
+.reg-next li::before{content:"✓";position:absolute;left:0;color:var(--red);font-family:var(--mono);font-weight:700}
+@media(max-width:640px){.reg-grid,.reg-grid-3{grid-template-columns:1fr}}
+
 /* ============ INTEREST / FOOTER ============ */
 .interest{background:var(--red);color:var(--white);text-align:center}
 .interest h2{font-size:clamp(36px,6vw,64px)}
