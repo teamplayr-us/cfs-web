@@ -31,7 +31,7 @@ component code:
 
 | File | What it controls |
 | --- | --- |
-| `data/tourStops.ts` | The tour stop list (`TOUR_STOPS`) and the hero "Next Stop" card (`NEXT_STOP`). Each stop has an optional `zortsUrl` for team (Showcase Tournament) registration — set it when the Zorts event for that stop goes live. |
+| `data/events.ts` | The tour events (`EVENTS`): the tour stop list, the hero "Next Stop" card (via `NEXT_STOP_SLUG`), and one page per stop at `/events/[slug]`. Each event has an optional `zortsUrl` for team (Showcase Tournament) registration — set it when the Zorts event for that stop goes live — and an optional `details` block (dates, divisions, entry fee, deadline) shown once announced. Adding an event to the array automatically creates its page and sitemap entry. |
 | `data/links.ts` | `ATHLETE_REG_URL` (individual Combine & Camp registration — currently a `#` placeholder, TODO), `TEAM_REG_URL` (fallback team registration link), contact email/phone, and the interest mailto link. |
 | `data/colleges.ts` | Committed college board. Set a slot to `{ filled: true, name: "..." }` to fill it. |
 | `data/sponsors.ts` | Sponsor board slots, same pattern. |

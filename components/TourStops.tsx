@@ -1,4 +1,4 @@
-import { TOUR_STOPS } from "@/data/tourStops";
+import { EVENTS } from "@/data/events";
 
 export default function TourStops() {
   return (
@@ -17,20 +17,20 @@ export default function TourStops() {
           </div>
 
           <div className="tour-list">
-            {TOUR_STOPS.map((stop) => (
+            {EVENTS.map((event) => (
               <a
                 className="tour-row"
-                href={stop.zortsUrl ?? "#interest"}
-                key={stop.number}
+                href={`/events/${event.slug}`}
+                key={event.slug}
               >
-                <span className="tour-num">{stop.number}</span>
+                <span className="tour-num">{event.number}</span>
                 <span className="tour-city">
-                  {stop.city}
-                  <small>{stop.venue}</small>
+                  {event.city}
+                  <small>{event.venue}</small>
                 </span>
-                <span className="tour-date">{stop.date}</span>
-                <span className={stop.live ? "tour-tag live" : "tour-tag"}>
-                  {stop.tag}
+                <span className="tour-date">{event.date}</span>
+                <span className={event.live ? "tour-tag live" : "tour-tag"}>
+                  {event.tag}
                 </span>
               </a>
             ))}

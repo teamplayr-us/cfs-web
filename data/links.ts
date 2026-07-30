@@ -8,7 +8,7 @@ export const ATHLETE_REG_URL = "#";
 
 // TODO: replace with a real fallback team registration URL. Per-stop team
 // registration should use the `zortsUrl` field on each tour stop in
-// data/tourStops.ts; this constant is only the fallback when a stop has no
+// data/events.ts; this constant is only the fallback when a stop has no
 // Zorts event URL yet.
 export const TEAM_REG_URL = "#";
 

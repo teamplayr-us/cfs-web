@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer>
       <div className="wrap foot-inner">
-        <a className="logo" href="#top">
+        <a className="logo" href="/">
           College Flag <span style={{ color: "var(--red)" }}>Showcase</span>{" "}
           Series
         </a>

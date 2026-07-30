@@ -1,6 +1,6 @@
 import NextStopCard from "./NextStopCard";
 import { ATHLETE_REG_URL, TEAM_REG_URL } from "@/data/links";
-import { NEXT_STOP } from "@/data/tourStops";
+import { NEXT_STOP } from "@/data/events";
 
 export default function Hero() {
   const teamRegUrl = NEXT_STOP.zortsUrl ?? TEAM_REG_URL;

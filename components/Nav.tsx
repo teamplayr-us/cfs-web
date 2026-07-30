@@ -6,7 +6,7 @@ export default function Nav() {
       <div className="wrap nav-inner">
         <a
           className="logo logo-img"
-          href="#top"
+          href="/"
           aria-label="Collegiate Flag Showcase Series — home"
         >
           <Image
@@ -19,19 +19,19 @@ export default function Nav() {
         </a>
         <ul className="nav-links">
           <li>
-            <a href="#offering">The Event</a>
+            <a href="/#offering">The Event</a>
           </li>
           <li>
-            <a href="#tour">Tour Stops</a>
+            <a href="/#tour">Tour Stops</a>
           </li>
           <li>
-            <a href="#colleges">Colleges</a>
+            <a href="/#colleges">Colleges</a>
           </li>
           <li>
-            <a href="#sponsors">Sponsors</a>
+            <a href="/#sponsors">Sponsors</a>
           </li>
         </ul>
-        <a className="nav-cta" href="#interest">
+        <a className="nav-cta" href="/#interest">
           Register
         </a>
       </div>
