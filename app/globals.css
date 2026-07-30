@@ -67,6 +67,18 @@ nav{background:var(--navy);color:var(--chalk);position:sticky;top:0;z-index:50;b
 .nav-cta{font-family:var(--display);font-weight:700;font-size:16px;text-transform:uppercase;letter-spacing:.05em;background:var(--red);color:var(--white);text-decoration:none;padding:10px 20px}
 @media(max-width:820px){.nav-links{display:none}}
 
+/* tour stops dropdown — CSS-only, opens on hover and keyboard focus */
+.nav-drop{position:relative}
+.nav-drop>a span[aria-hidden]{color:var(--red);font-size:10px}
+.nav-drop-menu{display:none;position:absolute;top:calc(100% + 15px);left:50%;transform:translateX(-50%);min-width:250px;background:var(--navy);border:1px solid var(--line-dark);border-top:3px solid var(--red);list-style:none;padding:6px 0;box-shadow:0 12px 24px rgba(0,0,0,.45)}
+.nav-drop-menu::before{content:"";position:absolute;top:-19px;left:0;right:0;height:19px}
+.nav-drop:hover .nav-drop-menu,.nav-drop:focus-within .nav-drop-menu{display:block}
+.nav-drop-menu a{display:flex;align-items:baseline;gap:12px;padding:9px 16px;white-space:nowrap}
+.nav-drop-menu a:hover{background:var(--line-dark)}
+.nav-drop-num{color:var(--red)}
+.nav-drop-city{flex:1}
+.nav-drop-date{color:#8A848C;letter-spacing:.08em}
+
 /* ============ HERO ============ */
 .hero{background:var(--navy);color:var(--chalk);position:relative;overflow:hidden}
 .hero::before{content:"";position:absolute;inset:0;background:
