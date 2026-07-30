@@ -28,7 +28,7 @@ export default function Hero() {
               Register as an Athlete
             </a>
             <a className="btn btn-ghost-light" href={teamInviteMailto(NEXT_STOP)}>
-              Request an Invite
+              Request a Team Invite
             </a>
           </div>
         </div>

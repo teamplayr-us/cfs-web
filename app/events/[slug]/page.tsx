@@ -58,7 +58,7 @@ export default function EventPage({ params }: Props) {
                 Register as an Athlete
               </a>
               <a className="btn btn-ghost-light" href={teamInviteMailto(event)}>
-                Request an Invite
+                Request a Team Invite
               </a>
             </div>
           </div>
