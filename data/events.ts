@@ -16,7 +16,9 @@ export interface TourEvent {
   tag: string;
   /** Renders the tag in the live (red) style when true */
   live?: boolean;
-  /** Zorts event URL for team (Showcase Tournament) registration, per stop */
+  /** PRIVATE Zorts registration URL for this stop's Showcase Tournament.
+   * The tournament is invite-only: this link is sent directly to approved
+   * teams and is never rendered on the public site. */
   zortsUrl?: string;
   /** Full event details — omit until announced; the event page and the
    * Next Stop card show them when present */

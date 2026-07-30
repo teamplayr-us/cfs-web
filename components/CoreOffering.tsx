@@ -104,7 +104,7 @@ export default function CoreOffering() {
                   </li>
                 </ul>
                 <p className="offer-meta">
-                  Registration: <b>Team</b> — Guest player placement available
+                  Registration: <b>Team</b> — Invite Only
                 </p>
               </div>
             </article>

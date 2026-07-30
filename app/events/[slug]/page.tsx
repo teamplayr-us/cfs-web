@@ -6,7 +6,7 @@ import TourStops from "@/components/TourStops";
 import InterestCTA from "@/components/InterestCTA";
 import Footer from "@/components/Footer";
 import { EVENTS, getEvent, stopLabel } from "@/data/events";
-import { ATHLETE_REG_URL, TEAM_REG_URL } from "@/data/links";
+import { ATHLETE_REG_URL, teamInviteMailto } from "@/data/links";
 
 interface Props {
   params: { slug: string };
@@ -34,8 +34,6 @@ export default function EventPage({ params }: Props) {
   const event = getEvent(params.slug);
   if (!event) notFound();
 
-  const teamRegUrl = event.zortsUrl ?? TEAM_REG_URL;
-
   return (
     <>
       <Nav />
@@ -59,8 +57,8 @@ export default function EventPage({ params }: Props) {
               <a className="btn btn-red" href={ATHLETE_REG_URL}>
                 Register as an Athlete
               </a>
-              <a className="btn btn-ghost-light" href={teamRegUrl}>
-                Register Your Team
+              <a className="btn btn-ghost-light" href={teamInviteMailto(event)}>
+                Request an Invite
               </a>
             </div>
           </div>

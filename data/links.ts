@@ -6,14 +6,21 @@
 // (Combine & Camp registration platform).
 export const ATHLETE_REG_URL = "#";
 
-// TODO: replace with a real fallback team registration URL. Per-stop team
-// registration should use the `zortsUrl` field on each tour stop in
-// data/events.ts; this constant is only the fallback when a stop has no
-// Zorts event URL yet.
-export const TEAM_REG_URL = "#";
-
 export const CONTACT_EMAIL = "info@5v5sports.com";
 export const CONTACT_PHONE = "888.350.2215";
 
 export const INTEREST_MAILTO =
   "mailto:info@5v5sports.com?subject=College%20Flag%20Showcase%20Series%20—%20Interest";
+
+// The Showcase Tournament is invite-only: teams request an invite, the
+// organizer reviews and sends approved teams the private Zorts link (the
+// `zortsUrl` field in data/events.ts — never rendered publicly).
+export function teamInviteMailto(stop?: {
+  number: string;
+  city: string;
+}): string {
+  const subject = stop
+    ? `Team Invite Request — ${stop.city} (Stop ${stop.number})`
+    : "College Flag Showcase Series — Team Invite Request";
+  return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}`;
+}
