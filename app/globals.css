@@ -1,0 +1,168 @@
+/* ============================================================
+   BRAND TOKENS — swap these four values to match exact 5v5
+   Sports hex codes when confirmed.
+   ============================================================ */
+:root{
+  --navy:#0A0A0B;        /* brand black — ink / dark surfaces */
+  --red:#FF2D8E;         /* brand pink — action + accent */
+  --chalk:#F7F5F6;       /* field white background */
+  --white:#FFFFFF;
+  --steel:#5C5A5E;       /* secondary text */
+  --line:#E6E2E5;        /* hairlines on light */
+  --line-dark:#242127;   /* hairlines on black */
+  --gold:#FF8DC1;        /* light pink — verified marks on dark */
+
+  /* font stacks come from next/font (see app/layout.tsx) */
+  --display:var(--font-display),sans-serif;
+  --body:var(--font-body),sans-serif;
+  --mono:var(--font-mono),monospace;
+
+  --max:1180px;
+  --pad:clamp(20px,5vw,56px);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+body{font-family:var(--body);background:var(--chalk);color:var(--navy);line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+
+.wrap{max-width:var(--max);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+
+/* ---------- chalk yard-line section dividers ---------- */
+.yard{position:relative;border:0;border-top:3px solid var(--navy);margin:0}
+.yard::before{content:attr(data-yd);position:absolute;left:var(--pad);top:-13px;background:var(--chalk);padding:0 12px 0 0;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.18em;color:var(--red)}
+.yard::after{content:"";position:absolute;right:var(--pad);top:-8px;width:120px;height:13px;background:repeating-linear-gradient(90deg,var(--navy) 0 3px,transparent 3px 15px)}
+
+/* ---------- eyebrow + headings ---------- */
+.eyebrow{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red)}
+h1,h2,h3{font-family:var(--display);text-transform:uppercase;line-height:.95;letter-spacing:.01em}
+h2{font-size:clamp(34px,5vw,56px);font-weight:800}
+.section{padding:clamp(56px,8vw,96px) 0}
+.section-head{max-width:640px;margin-bottom:clamp(28px,4vw,48px)}
+.section-head p{margin-top:14px;color:var(--steel);font-size:17px}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-block;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:18px;text-decoration:none;padding:14px 28px;border:3px solid var(--navy);transition:transform .12s ease,background .12s ease,color .12s ease}
+.btn:hover{transform:translate(-2px,-2px)}
+.btn-red{background:var(--red);border-color:var(--red);color:var(--white)}
+.btn-red:hover{background:#E0187A;border-color:#E0187A}
+.btn-ghost{background:transparent;color:var(--navy)}
+.btn-ghost:hover{background:var(--navy);color:var(--chalk)}
+.btn-ghost-light{background:transparent;color:var(--chalk);border-color:var(--chalk)}
+.btn-ghost-light:hover{background:var(--chalk);color:var(--navy)}
+
+/* ============ NAV ============ */
+nav{background:var(--navy);color:var(--chalk);position:sticky;top:0;z-index:50;border-bottom:3px solid var(--red)}
+.logo-img{display:flex;align-items:center}
+.logo-img img{width:76px;height:76px;object-fit:contain;margin:-8px 0}
+@media(max-width:640px){.logo-img img{width:60px;height:60px;margin:-6px 0}}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:12px;padding-bottom:12px}
+.logo{font-family:var(--display);font-weight:800;font-size:22px;text-transform:uppercase;letter-spacing:.03em;text-decoration:none;line-height:1}
+.logo span{color:var(--red)}
+.nav-links{display:flex;gap:26px;list-style:none;align-items:center}
+.nav-links a{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;opacity:.85}
+.nav-links a:hover{opacity:1;color:var(--gold)}
+.nav-cta{font-family:var(--display);font-weight:700;font-size:16px;text-transform:uppercase;letter-spacing:.05em;background:var(--red);color:var(--white);text-decoration:none;padding:10px 20px}
+@media(max-width:820px){.nav-links{display:none}}
+
+/* ============ HERO ============ */
+.hero{background:var(--navy);color:var(--chalk);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:
+  repeating-linear-gradient(0deg,transparent 0 119px,var(--line-dark) 119px 121px);
+  opacity:.5;pointer-events:none}
+.hero::after{content:"";position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--line-dark);opacity:.5;pointer-events:none}
+.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,72px);align-items:center;padding-top:clamp(56px,8vw,104px);padding-bottom:clamp(56px,8vw,104px)}
+.hero-badge{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);padding:7px 14px;margin-bottom:22px}
+.hero h1{font-size:clamp(52px,8.5vw,104px);font-weight:800}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero-tag{margin-top:20px;font-size:clamp(16px,2vw,19px);max-width:520px;color:#C9C4C9}
+.hero-tag strong{color:var(--chalk)}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+
+/* next stop combine-card */
+.stop-card{background:var(--chalk);color:var(--navy);border:3px solid var(--navy);box-shadow:8px 8px 0 var(--red)}
+.stop-card-top{display:flex;justify-content:space-between;align-items:center;background:var(--red);color:var(--white);padding:10px 18px;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+.stop-card-body{padding:22px 22px 24px}
+.stop-city{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(30px,3.4vw,40px);line-height:.95}
+.stop-venue{margin-top:6px;color:var(--steel);font-size:15px;font-weight:500}
+.stop-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:18px}
+.stop-cell{background:var(--white);padding:12px 14px}
+.stop-cell dt{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--steel)}
+.stop-cell dd{font-weight:700;font-size:15px;margin-top:3px}
+.stop-card .btn{width:100%;text-align:center;margin-top:18px;font-size:16px;padding:12px}
+@media(max-width:880px){.hero-inner{grid-template-columns:1fr}}
+
+/* ============ CORE OFFERING ============ */
+.offer-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,32px)}
+.offer{background:var(--white);border:3px solid var(--navy);display:flex;flex-direction:column}
+.offer-head{border-bottom:3px solid var(--navy);padding:20px 26px;display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.offer-head h3{font-size:clamp(24px,2.8vw,32px);font-weight:800}
+.offer-num{font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:.14em;color:var(--red)}
+.offer-body{padding:24px 26px 28px;flex:1;display:flex;flex-direction:column}
+.offer-lede{font-size:16px;color:var(--steel);margin-bottom:20px}
+.offer ul{list-style:none;display:grid;gap:12px;margin-bottom:24px}
+.offer li{display:flex;gap:12px;align-items:flex-start;font-weight:600;font-size:15.5px}
+.tick{flex:none;width:22px;height:22px;margin-top:1px;background:var(--navy);color:var(--gold);font-family:var(--mono);font-size:13px;font-weight:700;display:grid;place-items:center}
+.offer-combine .tick{background:var(--red);color:var(--white)}
+.offer-meta{margin-top:auto;border-top:1px solid var(--line);padding-top:16px;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--steel)}
+.offer-meta b{color:var(--navy)}
+@media(max-width:820px){.offer-grid{grid-template-columns:1fr}}
+
+/* metric strip inside combine card */
+.metric-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:24px;margin-top:2px}
+.metric{background:var(--chalk);padding:10px 8px;text-align:center}
+.metric .m-label{font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--steel)}
+.metric .m-val{font-family:var(--mono);font-weight:700;font-size:16px;margin-top:2px}
+.metric .m-val sup{color:var(--gold);font-size:10px}
+@media(max-width:400px){.metric-strip{grid-template-columns:repeat(2,1fr)}}
+
+/* ============ COMMITTED COLLEGES ============ */
+.colleges{background:var(--navy);color:var(--chalk)}
+.colleges .section-head p{color:#C9C4C9}
+.college-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,2vw,20px)}
+.college-slot{aspect-ratio:16/9;border:2px dashed var(--line-dark);display:grid;place-items:center;text-align:center;padding:12px;transition:border-color .15s ease}
+.college-slot:hover{border-color:var(--gold)}
+.college-slot span{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8A848C}
+.college-slot.filled{border:2px solid var(--chalk);background:var(--chalk);color:var(--navy)}
+.college-slot.filled span{color:var(--navy);font-family:var(--display);font-size:17px;letter-spacing:.03em}
+.colleges-note{margin-top:28px;display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between;border-top:1px solid var(--line-dark);padding-top:26px}
+.colleges-note p{font-size:15px;color:#C9C4C9;max-width:560px}
+@media(max-width:820px){.college-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ============ SPONSORS ============ */
+.sponsor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,2vw,20px);margin-bottom:36px}
+.sponsor-slot{aspect-ratio:21/9;border:2px dashed var(--line);background:var(--white);display:grid;place-items:center;padding:12px}
+.sponsor-slot span{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#A39EA2}
+.sponsor-cta{background:var(--white);border:3px solid var(--navy);box-shadow:8px 8px 0 var(--navy);padding:clamp(24px,4vw,40px);display:grid;grid-template-columns:1.3fr .7fr;gap:24px;align-items:center}
+.sponsor-cta h3{font-size:clamp(24px,3vw,34px);font-weight:800}
+.sponsor-cta p{margin-top:10px;color:var(--steel);font-size:16px}
+.sponsor-cta .btn{justify-self:start}
+@media(min-width:821px){.sponsor-cta .btn{justify-self:end}}
+@media(max-width:820px){.sponsor-grid{grid-template-columns:repeat(2,1fr)}.sponsor-cta{grid-template-columns:1fr}}
+
+
+/* ============ TOUR STOPS ============ */
+.tour-list{border-top:3px solid var(--navy)}
+.tour-row{display:grid;grid-template-columns:70px 1fr auto auto;gap:16px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line);text-decoration:none;transition:background .12s ease}
+.tour-row:hover{background:var(--white)}
+.tour-num{font-family:var(--mono);font-size:13px;font-weight:700;color:var(--red);letter-spacing:.1em}
+.tour-city{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(20px,2.6vw,28px);line-height:1}
+.tour-city small{display:block;font-family:var(--body);font-weight:600;font-size:12.5px;text-transform:none;color:var(--steel);letter-spacing:0;margin-top:4px}
+.tour-date{font-family:var(--mono);font-weight:700;font-size:14px;letter-spacing:.06em;text-align:right}
+.tour-tag{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:5px 10px;border:1px solid var(--line);color:var(--steel)}
+.tour-tag.live{background:var(--red);border-color:var(--red);color:var(--white)}
+@media(max-width:640px){.tour-row{grid-template-columns:44px 1fr auto}.tour-tag{display:none}}
+
+/* ============ INTEREST / FOOTER ============ */
+.interest{background:var(--red);color:var(--white);text-align:center}
+.interest h2{font-size:clamp(36px,6vw,64px)}
+.interest p{margin:16px auto 30px;max-width:560px;font-size:17px}
+.interest .btn{border-color:var(--white);color:var(--white);background:transparent}
+.interest .btn:hover{background:var(--white);color:var(--red)}
+footer{background:var(--navy);color:#9B959D;padding:36px 0;font-size:13.5px}
+.foot-inner{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
+.foot-inner .logo{font-size:18px;color:var(--chalk)}
+footer a{text-decoration:none}
+footer a:hover{color:var(--chalk)}
