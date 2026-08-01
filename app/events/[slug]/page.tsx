@@ -50,6 +50,10 @@ export default function EventPage({ params }: Props) {
     event.athleteReg?.combineStartTime && event.athleteReg?.combineEndTime
       ? `${event.athleteReg.combineStartTime} – ${event.athleteReg.combineEndTime}`
       : "TBD";
+  const tournamentWhen =
+    event.details?.tournamentDates ?? event.details?.dates ?? event.date;
+  // "Dec 11, 2026" -> "Dec 11" for the compact CTA kickers
+  const short = (d: string) => d.replace(/,? \d{4}$/, "");
 
   return (
     <>
@@ -70,15 +74,17 @@ export default function EventPage({ params }: Props) {
             </h1>
             <p className="hero-tag">
               <strong>
-                Individual skill display and live tournament competition in one
-                weekend
+                Verified combine testing and live tournament competition
+                {mapUrl ? ` at ${event.venue}` : ` in ${event.city}`},{" "}
+                {event.details?.dates ?? event.date}
               </strong>{" "}
-              — evaluated in person by college flag football coaches, with
-              verified testing to back it up.
+              — evaluated in person by college flag football coaches.
             </p>
             <div className="hero-ctas">
               <div className="cta-stack">
-                <span className="cta-kicker">Showcase Combine &amp; Camp</span>
+                <span className="cta-kicker">
+                  Showcase Combine &amp; Camp — {short(combineWhen)}
+                </span>
                 {regOpen ? (
                   <a className="btn btn-red" href={registerUrl}>
                     Register as an Athlete
@@ -90,7 +96,9 @@ export default function EventPage({ params }: Props) {
                 )}
               </div>
               <div className="cta-stack">
-                <span className="cta-kicker">Showcase Tournament</span>
+                <span className="cta-kicker">
+                  Showcase Tournament — {short(tournamentWhen)}
+                </span>
                 <a className="btn btn-ghost-light" href={inviteUrl}>
                   Request a Team Invite
                 </a>
@@ -153,9 +161,6 @@ export default function EventPage({ params }: Props) {
                   </div>
                 </dl>
               )}
-              <a className="btn btn-red" href="#weekend">
-                How It Works
-              </a>
             </div>
           </aside>
         </div>
