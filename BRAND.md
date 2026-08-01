@@ -8,9 +8,9 @@ document, deck, graphic, or email read as the same brand as the website.
 - **Name:** College Flag Showcase Series (logo mark reads "Collegiate Flag
   Showcase Series"). Never abbreviate to "CFS" in public-facing material.
 - **Tagline / hero:** "Ball Out. Get Seen. Get Recruited."
-- **Positioning line:** Girls Flag Football Recruiting Tour — a verified
-  combine plus a college showcase tournament in one weekend, evaluated in
-  person by college flag football coaches.
+- **Positioning line:** Girls National Recruiting Tour — a verified combine
+  plus a college showcase tournament in one weekend, evaluated in person by
+  college flag football coaches.
 - **Attribution:** "A 5v5 Sports Production" (footer credit).
 - **Logo:** circular badge, pink on black, sits on dark backgrounds. Square
   PNG (192×192). Don't recolor it or place it on busy imagery.
