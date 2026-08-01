@@ -42,7 +42,7 @@ export default function Nav() {
             <a href="/#colleges">Colleges</a>
           </li>
           <li>
-            <a href="/#sponsors">Sponsors</a>
+            <a href="/sponsors">Sponsors</a>
           </li>
         </ul>
         <a className="nav-cta" href={`/events/${NEXT_STOP.slug}`}>

@@ -10,6 +10,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1,
     },
+    {
+      url: `${BASE}/sponsors`,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    },
     ...EVENTS.map((event) => ({
       url: `${BASE}/events/${event.slug}`,
       changeFrequency: "weekly" as const,

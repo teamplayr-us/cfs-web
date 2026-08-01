@@ -33,7 +33,7 @@ export default function Sponsors() {
                 every event.
               </p>
             </div>
-            <a className="btn btn-red" href="#interest">
+            <a className="btn btn-red" href="/sponsors">
               Become a Sponsor
             </a>
           </div>
