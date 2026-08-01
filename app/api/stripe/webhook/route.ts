@@ -1,7 +1,11 @@
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
 import { getEvent, stopLabel } from "@/data/events";
-import { createRegistration, registrationExists } from "@/lib/airtable";
+import {
+  buildRegistrationFields,
+  createRegistration,
+  registrationExists,
+} from "@/lib/airtable";
 
 export const runtime = "nodejs";
 
@@ -44,30 +48,16 @@ export async function POST(req: Request) {
   // A failed write returns 500 so Stripe retries — a registration must never
   // be paid in Stripe but missing from Airtable.
   try {
-    await createRegistration({
-      Athlete: `${m.athleteFirst ?? ""} ${m.athleteLast ?? ""}`.trim(),
-      "Athlete First": m.athleteFirst,
-      "Athlete Last": m.athleteLast,
-      DOB: m.dob,
-      "Grad Year": m.gradYear ? Number(m.gradYear) : undefined,
-      Positions: m.positions,
-      "FFF Profile": m.fffUrl || undefined,
-      "Medical Notes": m.medical || undefined,
-      "Guardian First": m.guardianFirst,
-      "Guardian Last": m.guardianLast,
-      "Guardian Email": m.guardianEmail,
-      "Guardian Phone": m.guardianPhone,
-      "Emergency First": m.emergencyFirst,
-      "Emergency Last": m.emergencyLast,
-      "Emergency Phone": m.emergencyPhone,
-      "Waiver Signature": m.waiverSignature,
-      "Waiver Signed At": m.waiverSignedAt,
-      "Event Slug": m.eventSlug,
-      Stop: tourEvent ? `${stopLabel(tourEvent)} — ${tourEvent.city}` : m.eventSlug,
-      "Amount Paid": (session.amount_total ?? 0) / 100,
-      "Stripe Session": session.id,
-      Status: "Paid",
-    });
+    await createRegistration(
+      buildRegistrationFields(
+        m,
+        (session.amount_total ?? 0) / 100,
+        session.id,
+        tourEvent
+          ? `${stopLabel(tourEvent)} — ${tourEvent.city}`
+          : (m.eventSlug ?? ""),
+      ),
+    );
   } catch (err) {
     console.error("Airtable write failed for session", session.id, err);
     return NextResponse.json({ error: "Storage failed" }, { status: 500 });
