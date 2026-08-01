@@ -69,7 +69,7 @@ Light pink (#FF8DC1) never appears on light backgrounds.
 ## Voice
 
 - Short, punchy, imperative. Headlines are commands or claims:
-  "Show Your Game." "One Weekend. Two Ways to Prove It." "Put Your Brand
+  "Show Your Game." "One Weekend. Two Ways to Get Seen." "Put Your Brand
   on the Field."
 - Em dashes join a bold claim to its explanation: "**Individual skill
   display and live tournament competition in one weekend** — evaluated in

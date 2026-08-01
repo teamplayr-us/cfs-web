@@ -9,7 +9,7 @@ export default function CoreOffering() {
             <h2>
               One Weekend.
               <br />
-              Two Ways to Prove It.
+              Two Ways to Get Seen.
             </h2>
             <p>
               Every stop on the series pairs individual testing with team
