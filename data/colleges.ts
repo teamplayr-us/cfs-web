@@ -15,15 +15,17 @@ export interface CollegeSlot {
 const PLACEHOLDER: CollegeSlot = { filled: false };
 
 export const COLLEGE_SLOTS: CollegeSlot[] = [
+  // Use the -mono knockout versions (generated from the full-color files,
+  // which stay alongside them in /public/colleges/ for future light-bg use).
   {
     filled: true,
     name: "East Texas Baptist University",
-    logo: "/colleges/etbu.png",
+    logo: "/colleges/etbu-mono.png",
   },
   {
     filled: true,
     name: "Illinois Wesleyan University",
-    logo: "/colleges/illinois-wesleyan.png",
+    logo: "/colleges/illinois-wesleyan-mono.png",
   },
   PLACEHOLDER,
   PLACEHOLDER,
