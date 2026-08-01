@@ -94,9 +94,8 @@ export default function CoreOffering() {
                     against top competition in front of college coaches
                   </li>
                   <li>
-                    <span className="tick">▶</span>Multiple divisions so every
-                    team plays at its level — from first-time tournament squads
-                    to nationally competitive programs
+                    <span className="tick">▶</span>Curated, invite-only field —
+                    so you&apos;re competing at the highest levels
                   </li>
                   <li>
                     <span className="tick">▶</span>Combine athletes can be
