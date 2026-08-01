@@ -7,7 +7,7 @@ export default function Hero() {
     <header className="hero" id="top">
       <div className="wrap hero-inner">
         <div>
-          <span className="hero-badge">Girls National Recruiting Tour</span>
+          <span className="hero-badge">Girls Flag Football Recruiting Tour</span>
           <h1>
             Ball Out.
             <br />
