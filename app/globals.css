@@ -142,6 +142,14 @@ nav{background:var(--navy);color:var(--chalk);position:sticky;top:0;z-index:50;b
 .metric .m-val sup{color:var(--gold);font-size:10px}
 @media(max-width:400px){.metric-strip{grid-template-columns:repeat(2,1fr)}}
 
+/* ============ WHY WE'RE DIFFERENT ============ */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,32px)}
+.why{background:var(--white);border:3px solid var(--navy);padding:26px 26px 30px}
+.why-num{font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:.14em;color:var(--red)}
+.why h3{font-size:clamp(22px,2.4vw,28px);font-weight:800;margin:10px 0 12px}
+.why p{color:var(--steel);font-size:15.5px}
+@media(max-width:820px){.why-grid{grid-template-columns:1fr}}
+
 /* ============ COMMITTED COLLEGES ============ */
 .colleges{background:var(--navy);color:var(--chalk)}
 .colleges .section-head p{color:#C9C4C9}

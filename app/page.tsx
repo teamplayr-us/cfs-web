@@ -1,6 +1,7 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import CoreOffering from "@/components/CoreOffering";
+import WhyDifferent from "@/components/WhyDifferent";
 import TourStops from "@/components/TourStops";
 import CommittedColleges from "@/components/CommittedColleges";
 import Sponsors from "@/components/Sponsors";
@@ -13,6 +14,7 @@ export default function Home() {
       <Nav />
       <Hero />
       <CoreOffering />
+      <WhyDifferent />
       <TourStops />
       <CommittedColleges />
       <Sponsors />
