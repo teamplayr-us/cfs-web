@@ -54,12 +54,21 @@ export default function EventPage({ params }: Props) {
               verified testing to back it up.
             </p>
             <div className="hero-ctas">
-              <a className="btn btn-red" href={ATHLETE_REG_URL}>
-                Register as an Athlete
-              </a>
-              <a className="btn btn-ghost-light" href={teamInviteMailto(event)}>
-                Request a Team Invite
-              </a>
+              <div className="cta-stack">
+                <span className="cta-kicker">Showcase Combine &amp; Camp</span>
+                <a className="btn btn-red" href={ATHLETE_REG_URL}>
+                  Register as an Athlete
+                </a>
+              </div>
+              <div className="cta-stack">
+                <span className="cta-kicker">Showcase Tournament</span>
+                <a
+                  className="btn btn-ghost-light"
+                  href={teamInviteMailto(event)}
+                >
+                  Request a Team Invite
+                </a>
+              </div>
             </div>
           </div>
 

@@ -31,7 +31,7 @@ export default function Hero() {
               </a>
             </div>
             <div className="cta-stack">
-              <span className="cta-kicker">Showcase Tournament · Invite Only</span>
+              <span className="cta-kicker">Showcase Tournament</span>
               <a
                 className="btn btn-ghost-light"
                 href={teamInviteMailto(NEXT_STOP)}
