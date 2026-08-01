@@ -5,14 +5,14 @@
 // Native athlete registration for the next stop (see /events/[slug]/register).
 export const ATHLETE_REG_URL = "/events/mckinney-tx/register";
 
-export const CONTACT_EMAIL = "info@5v5sports.com";
+export const CONTACT_EMAIL = "info@collegeflagshowcase.com";
 export const CONTACT_PHONE = "888.350.2215";
 
 export const INTEREST_MAILTO =
-  "mailto:info@5v5sports.com?subject=College%20Flag%20Showcase%20Series%20—%20Interest";
+  "mailto:info@collegeflagshowcase.com?subject=College%20Flag%20Showcase%20Series%20—%20Interest";
 
 export const SPONSOR_MAILTO =
-  "mailto:info@5v5sports.com?subject=College%20Flag%20Showcase%20Series%20—%20Sponsorship";
+  "mailto:info@collegeflagshowcase.com?subject=College%20Flag%20Showcase%20Series%20—%20Sponsorship";
 
 // The Showcase Tournament is invite-only: teams request an invite, the
 // organizer reviews and sends approved teams the private Zorts link (the

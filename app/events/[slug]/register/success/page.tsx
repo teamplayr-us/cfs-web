@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { EVENTS, getEvent, stopLabel } from "@/data/events";
+import { CONTACT_EMAIL } from "@/data/links";
 
 interface Props {
   params: { slug: string };
@@ -60,7 +61,7 @@ export default function RegisterSuccessPage({ params }: Props) {
             </ul>
             <p className="reg-fineprint">
               Questions in the meantime? Email{" "}
-              <a href="mailto:info@5v5sports.com">info@5v5sports.com</a>.
+              <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
             </p>
           </div>
         </div>
