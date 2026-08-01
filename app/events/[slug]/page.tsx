@@ -7,6 +7,7 @@ import InterestCTA from "@/components/InterestCTA";
 import Footer from "@/components/Footer";
 import { EVENTS, getEvent, stopLabel } from "@/data/events";
 import { ATHLETE_REG_URL, teamInviteMailto } from "@/data/links";
+import { formatPrice } from "@/lib/format";
 
 interface Props {
   params: { slug: string };
@@ -90,6 +91,20 @@ export default function EventPage({ params }: Props) {
                     <dt>Divisions</dt>
                     <dd>{event.details.divisions}</dd>
                   </div>
+                  {event.athleteReg && (
+                    <>
+                      <div className="stop-cell">
+                        <dt>Athlete Entry</dt>
+                        <dd>{formatPrice(event.athleteReg.priceCents)}</dd>
+                      </div>
+                      <div className="stop-cell">
+                        <dt>Combine Day</dt>
+                        <dd>
+                          {event.athleteReg.combineDate ?? event.details.dates}
+                        </dd>
+                      </div>
+                    </>
+                  )}
                   <div className="stop-cell">
                     <dt>Team Entry</dt>
                     <dd>{event.details.teamEntry}</dd>

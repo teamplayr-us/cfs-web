@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { formatPrice } from "@/lib/format";
 import {
   EMPTY_REGISTRATION,
   FieldErrors,
@@ -23,12 +24,6 @@ interface Props {
 }
 
 const STEP_TITLES = ["About the Athlete", "Parent / Guardian", "Review & Pay"];
-
-function formatPrice(cents: number): string {
-  return `$${(cents / 100).toLocaleString("en-US", {
-    minimumFractionDigits: cents % 100 === 0 ? 0 : 2,
-  })}`;
-}
 
 export default function RegistrationForm(props: Props) {
   const storageKey = `cfs-reg-${props.eventSlug}`;

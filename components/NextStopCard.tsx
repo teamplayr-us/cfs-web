@@ -1,4 +1,5 @@
 import { NEXT_STOP, stopLabel } from "@/data/events";
+import { formatPrice } from "@/lib/format";
 
 export default function NextStopCard() {
   return (
@@ -21,14 +22,29 @@ export default function NextStopCard() {
               <dt>Divisions</dt>
               <dd>{NEXT_STOP.details.divisions}</dd>
             </div>
-            <div className="stop-cell">
-              <dt>Team Entry</dt>
-              <dd>{NEXT_STOP.details.teamEntry}</dd>
-            </div>
-            <div className="stop-cell">
-              <dt>Reg. Deadline</dt>
-              <dd>{NEXT_STOP.details.regDeadline}</dd>
-            </div>
+            {NEXT_STOP.athleteReg ? (
+              <>
+                <div className="stop-cell">
+                  <dt>Athlete Entry</dt>
+                  <dd>{formatPrice(NEXT_STOP.athleteReg.priceCents)}</dd>
+                </div>
+                <div className="stop-cell">
+                  <dt>Team Entry</dt>
+                  <dd>{NEXT_STOP.details.teamEntry}</dd>
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="stop-cell">
+                  <dt>Team Entry</dt>
+                  <dd>{NEXT_STOP.details.teamEntry}</dd>
+                </div>
+                <div className="stop-cell">
+                  <dt>Reg. Deadline</dt>
+                  <dd>{NEXT_STOP.details.regDeadline}</dd>
+                </div>
+              </>
+            )}
           </dl>
         )}
         <a className="btn btn-red" href={`/events/${NEXT_STOP.slug}`}>
