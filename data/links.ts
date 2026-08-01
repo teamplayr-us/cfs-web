@@ -2,9 +2,8 @@
 // These are placeholders for v1 — swap them for real URLs (or Airtable-driven
 // values) without touching any component code.
 
-// TODO: replace with the real individual athlete registration URL
-// (Combine & Camp registration platform).
-export const ATHLETE_REG_URL = "#";
+// Native athlete registration for the next stop (see /events/[slug]/register).
+export const ATHLETE_REG_URL = "/events/mckinney-tx/register";
 
 export const CONTACT_EMAIL = "info@5v5sports.com";
 export const CONTACT_PHONE = "888.350.2215";
