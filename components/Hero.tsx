@@ -17,11 +17,12 @@ export default function Hero() {
           </h1>
           <p className="hero-tag">
             <strong>
-              Individual skill display and live tournament competition in one
-              weekend
+              College coaches are recruiting girls flag football players —
+              this tour puts you in front of them.
             </strong>{" "}
-            — evaluated in person by college flag football coaches at premier
-            venues across the country, with verified testing to back it up.
+            Run a skills combine, compete with your travel team in a
+            tournament, and leave with verified results and film coaches can
+            trust.
           </p>
           <div className="hero-ctas">
             <div className="cta-stack">
