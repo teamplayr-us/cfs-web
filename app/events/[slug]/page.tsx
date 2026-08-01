@@ -50,10 +50,6 @@ export default function EventPage({ params }: Props) {
     event.athleteReg?.combineStartTime && event.athleteReg?.combineEndTime
       ? `${event.athleteReg.combineStartTime} – ${event.athleteReg.combineEndTime}`
       : "TBD";
-  const tournamentWhen =
-    event.details?.tournamentDates ?? event.details?.dates ?? event.date;
-  // "Dec 11, 2026" -> "Dec 11" for the compact CTA kickers
-  const short = (d: string) => d.replace(/,? \d{4}$/, "");
 
   return (
     <>
@@ -82,9 +78,7 @@ export default function EventPage({ params }: Props) {
             </p>
             <div className="hero-ctas">
               <div className="cta-stack">
-                <span className="cta-kicker">
-                  Showcase Combine &amp; Camp — {short(combineWhen)}
-                </span>
+                <span className="cta-kicker">Showcase Combine &amp; Camp</span>
                 {regOpen ? (
                   <a className="btn btn-red" href={registerUrl}>
                     Register as an Athlete
@@ -96,9 +90,7 @@ export default function EventPage({ params }: Props) {
                 )}
               </div>
               <div className="cta-stack">
-                <span className="cta-kicker">
-                  Showcase Tournament — {short(tournamentWhen)}
-                </span>
+                <span className="cta-kicker">Showcase Tournament</span>
                 <a className="btn btn-ghost-light" href={inviteUrl}>
                   Request a Team Invite
                 </a>
