@@ -96,8 +96,9 @@ nav{background:var(--navy);color:var(--chalk);position:sticky;top:0;z-index:50;b
 .cta-stack .btn{justify-self:start}
 .cta-kicker{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
 
-/* event page title — same style as the home h1, sized for long city names */
-.hero h1.event-title{font-size:clamp(44px,7vw,88px)}
+/* event page title — same style as the home h1, sized for its longer
+   three-line descriptive text */
+.hero h1.event-title{font-size:clamp(36px,4.6vw,60px)}
 
 /* event page weekend schedule cards */
 .schedule-grid{margin-top:0;margin-bottom:20px}

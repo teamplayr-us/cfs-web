@@ -61,7 +61,13 @@ export default function EventPage({ params }: Props) {
             <span className="hero-badge">
               {stopLabel(event)} — 2026–27 Season
             </span>
-            <h1 className="event-title">{event.city}</h1>
+            <h1 className="event-title">
+              Flag Football
+              <br />
+              College Showcase
+              <br />
+              <em>in {event.city}</em>
+            </h1>
             <p className="hero-tag">
               <strong>
                 Individual skill display and live tournament competition in one
@@ -147,15 +153,9 @@ export default function EventPage({ params }: Props) {
                   </div>
                 </dl>
               )}
-              {regOpen ? (
-                <a className="btn btn-red" href={registerUrl}>
-                  Register as an Athlete
-                </a>
-              ) : (
-                <a className="btn btn-red" href="/#interest">
-                  Get on the List
-                </a>
-              )}
+              <a className="btn btn-red" href="#weekend">
+                How It Works
+              </a>
             </div>
           </aside>
         </div>
