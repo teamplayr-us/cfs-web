@@ -141,7 +141,7 @@ export function getEvent(slug: string): TourEvent | undefined {
   return EVENTS.find((e) => e.slug === slug);
 }
 
-/** Display label like "Stop 01" */
+/** Display label like "Event 01" */
 export function stopLabel(event: TourEvent): string {
-  return `Stop ${event.number}`;
+  return `Event ${event.number}`;
 }

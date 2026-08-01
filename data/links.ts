@@ -25,7 +25,7 @@ export function teamInviteMailto(stop?: {
   city: string;
 }): string {
   const subject = stop
-    ? `Team Invite Request — ${stop.city} (Stop ${stop.number})`
+    ? `Team Invite Request — ${stop.city} (Event ${stop.number})`
     : "College Flag Showcase Series — Team Invite Request";
   return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}`;
 }

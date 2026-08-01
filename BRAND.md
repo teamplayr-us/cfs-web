@@ -74,8 +74,9 @@ Light pink (#FF8DC1) never appears on light backgrounds.
 - Em dashes join a bold claim to its explanation: "**Individual skill
   display and live tournament competition in one weekend** — evaluated in
   person by college flag football coaches…"
-- Key vocabulary: **verified** (the brand's core promise), **stops** (tour
-  language: "Tour Stops," "Stop 01," "Next Stop"), **Showcase Combine &
+- Key vocabulary: **verified** (the brand's core promise), **events** (tour
+  language: "Events," "Event 01," "Next Event" — plain, never "stops" in
+  customer-facing copy), **Showcase Combine &
   Camp** (individual flow, open registration), **Showcase Tournament**
   (team flow, INVITE-ONLY — teams "request an invite," never "sign up"),
   **Girls 12U+**, **2026–27 Season**.
@@ -87,6 +88,6 @@ Light pink (#FF8DC1) never appears on light backgrounds.
 
 - Site: https://www.collegeflagshowcase.com
 - Email: info@collegeflagshowcase.com · Phone: 888.350.2215
-- First stop: McKinney, TX — Craig Ranch Sports Complex, Dec 11–13, 2026
-  (registration deadline Nov 29, 2026). Seven stops, 2026–27 season.
+- First event: McKinney, TX — Craig Ranch Sports Complex, Dec 11–13, 2026
+  (registration deadline Nov 29, 2026). Seven events, 2026–27 season.
 - © 2026 · A 5v5 Sports Production

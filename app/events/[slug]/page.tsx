@@ -102,7 +102,7 @@ export default function EventPage({ params }: Props) {
 
           <aside className="stop-card" aria-label="Event details">
             <div className="stop-card-top">
-              <span>Tour Stop</span>
+              <span>Tour Event</span>
               <span>{stopLabel(event)}</span>
             </div>
             <div className="stop-card-body">

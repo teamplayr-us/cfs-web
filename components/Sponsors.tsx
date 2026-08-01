@@ -11,7 +11,7 @@ export default function Sponsors() {
             <h2>Sponsors</h2>
             <p>
               Brands backing the fastest-growing girls sport in America —
-              on-site at every stop, in front of athletes, families, and college
+              on-site at every event, in front of athletes, families, and college
               programs nationwide.
             </p>
           </div>
@@ -28,7 +28,7 @@ export default function Sponsors() {
             <div>
               <h3>Put Your Brand on the Field</h3>
               <p>
-                Season-long and single-stop packages available — venue signage,
+                Season-long and single-event packages available — venue signage,
                 athlete touchpoints, digital placement, and activation space at
                 every event.
               </p>

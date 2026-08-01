@@ -18,7 +18,7 @@ export default function TourStops({ excludeSlug }: Props) {
         <div className="wrap">
           <div className="section-head">
             <span className="eyebrow">2026–27 Season</span>
-            <h2>{excludeSlug ? "More Tour Stops" : "Tour Stops"}</h2>
+            <h2>{excludeSlug ? "More Events" : "Events"}</h2>
             {!excludeSlug && (
               <p>
                 One series, coast to coast — timed around high school seasons

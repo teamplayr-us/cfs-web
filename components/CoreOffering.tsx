@@ -12,7 +12,7 @@ export default function CoreOffering() {
               Two Ways to Get Seen.
             </h2>
             <p>
-              Every stop on the series pairs individual testing with team
+              Every event on the tour pairs individual testing with team
               competition — so coaches see your measurables and how you play the
               game.
             </p>

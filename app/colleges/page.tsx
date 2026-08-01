@@ -36,7 +36,7 @@ export default function CollegesPage() {
                 Free registration for college flag football programs
               </strong>{" "}
               — expected participant counts, verified combine data, and
-              sideline credentials at every stop.
+              sideline credentials at every event.
             </p>
             <div className="hero-ctas">
               <a className="btn btn-red" href={COACH_MAILTO}>
@@ -62,7 +62,7 @@ export default function CollegesPage() {
               Athlete.
             </h2>
             <p>
-              Every stop pairs verified testing with live competition — you
+              Every event pairs verified testing with live competition — you
               evaluate the numbers, the skill work, and the game, all in one
               weekend.
             </p>
@@ -117,7 +117,7 @@ export default function CollegesPage() {
               <p>
                 Registration includes expected participant counts, combine data
                 access, and sideline credentials — tell us your program and
-                which stops you want to work.
+                which events you want to work.
               </p>
             </div>
             <a className="btn btn-red" href={COACH_MAILTO}>

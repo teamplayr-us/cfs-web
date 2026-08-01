@@ -35,7 +35,7 @@ export default function SponsorsPage() {
               <strong>
                 Brands backing the fastest-growing girls sport in America
               </strong>{" "}
-              — on-site at every stop, in front of athletes, families, and
+              — on-site at every event, in front of athletes, families, and
               college programs nationwide.
             </p>
             <div className="hero-ctas">
@@ -62,7 +62,7 @@ export default function SponsorsPage() {
               Right Crowd.
             </h2>
             <p>
-              Every stop puts your brand in the middle of a full recruiting
+              Every event puts your brand in the middle of a full recruiting
               weekend — athletes competing, families in the stands, and college
               coaches on the sideline.
             </p>
@@ -82,7 +82,7 @@ export default function SponsorsPage() {
               <span className="why-num">02</span>
               <h3>The Footprint</h3>
               <p>
-                {EVENTS.length} stops, coast to coast, across the 2026–27
+                {EVENTS.length} events, coast to coast, across the 2026–27
                 season — one series carrying your brand from market to market.
               </p>
             </div>
@@ -107,7 +107,7 @@ export default function SponsorsPage() {
             <h2>
               Season-Long or
               <br />
-              Single Stop.
+              Single Event.
             </h2>
             <p>
               Two ways in — own the whole tour, or activate in the market that
@@ -123,34 +123,34 @@ export default function SponsorsPage() {
               </div>
               <div className="offer-body">
                 <p className="offer-lede">
-                  Every stop, all season — your brand travels with the series,
-                  from the first whistle in McKinney to the last stop of the
+                  Every event, all season — your brand travels with the series,
+                  from the first whistle in McKinney to the last event of the
                   tour.
                 </p>
                 <a className="btn btn-red schedule-cta" href={SPONSOR_MAILTO}>
                   Become a Sponsor
                 </a>
                 <p className="offer-meta">
-                  Coverage: <b>All {EVENTS.length} stops</b> — 2026–27 season
+                  Coverage: <b>All {EVENTS.length} events</b> — 2026–27 season
                 </p>
               </div>
             </article>
 
             <article className="offer">
               <div className="offer-head">
-                <h3>Single Stop</h3>
+                <h3>Single Event</h3>
                 <span className="offer-num">02</span>
               </div>
               <div className="offer-body">
                 <p className="offer-lede">
-                  Pick your market — full event-weekend activation at the stop
+                  Pick your market — full event-weekend activation in the market
                   that fits your brand and your region.
                 </p>
                 <a className="btn btn-ghost schedule-cta" href={SPONSOR_MAILTO}>
                   Start the Conversation
                 </a>
                 <p className="offer-meta">
-                  Coverage: <b>One stop</b> — your market
+                  Coverage: <b>One event</b> — your market
                 </p>
               </div>
             </article>

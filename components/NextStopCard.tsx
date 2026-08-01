@@ -5,7 +5,7 @@ export default function NextStopCard() {
   return (
     <aside className="stop-card" aria-label="Next tour stop">
       <div className="stop-card-top">
-        <span>Next Stop</span>
+        <span>Next Event</span>
         <span>{stopLabel(NEXT_STOP)}</span>
       </div>
       <div className="stop-card-body">

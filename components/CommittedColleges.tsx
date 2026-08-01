@@ -13,7 +13,7 @@ interface Props {
 export default function CommittedColleges({
   slots,
   title = "Committed Colleges",
-  lede = "Programs confirmed to attend and evaluate. This board updates as college coaches register for each stop.",
+  lede = "Programs confirmed to attend and evaluate. This board updates as college coaches register for each event.",
   ctaHref = "/colleges",
 }: Props) {
   return (

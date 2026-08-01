@@ -28,7 +28,7 @@ export default function MobileMenu({ stops }: { stops: StopLink[] }) {
             The Event
           </a>
           <a href="/#tour" onClick={close}>
-            Tour Stops
+            Events
           </a>
           {stops.map((stop) => (
             <a

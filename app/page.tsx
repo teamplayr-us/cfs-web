@@ -20,7 +20,7 @@ export default function Home() {
       <CommittedColleges
         slots={allParticipatingColleges()}
         title="Participating Colleges"
-        lede="Programs confirmed to attend and evaluate on the tour. This board updates as college coaches register for each stop."
+        lede="Programs confirmed to attend and evaluate on the tour. This board updates as college coaches register for each event."
       />
       <Sponsors />
       <InterestCTA />

@@ -25,9 +25,9 @@ export default function Nav() {
           </li>
           <li className="nav-drop">
             <a href="/#tour">
-              Tour Stops <span aria-hidden="true">▾</span>
+              Events <span aria-hidden="true">▾</span>
             </a>
-            <ul className="nav-drop-menu" aria-label="Tour stop pages">
+            <ul className="nav-drop-menu" aria-label="Event pages">
               {EVENTS.map((event) => (
                 <li key={event.slug}>
                   <a href={`/events/${event.slug}`}>
