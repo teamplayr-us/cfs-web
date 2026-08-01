@@ -20,9 +20,9 @@ export default function Hero() {
               College coaches are recruiting girls flag football players —
               this tour puts you in front of them.
             </strong>{" "}
-            Run a skills combine, compete with your travel team in a
-            tournament, and leave with verified results and film coaches can
-            trust.
+            Show off your skills in a combine, compete with your travel team
+            in a tournament, and leave with verified results and film coaches
+            can trust.
           </p>
           <div className="hero-ctas">
             <div className="cta-stack">
