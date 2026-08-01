@@ -49,7 +49,11 @@ export default function RegisterPage({ params }: Props) {
               city={event.city}
               stopLabel={stopLabel(event)}
               venue={event.venue}
-              dates={event.details?.dates ?? event.date}
+              dates={
+                event.athleteReg.combineDate ??
+                event.details?.dates ??
+                event.date
+              }
               priceCents={event.athleteReg.priceCents}
             />
           ) : (

@@ -27,6 +27,10 @@ export interface TourEvent {
     open: boolean;
     /** Price in cents, charged via Stripe Checkout */
     priceCents: number;
+    /** The day(s) the Combine & Camp actually runs — often a subset of the
+     * full stop dates (e.g. combine Dec 11 within a Dec 11–13 stop). Shown
+     * in the registration flow instead of the full stop dates. */
+    combineDate?: string;
     /** Optional cap on paid registrations; checkout closes when reached */
     capacity?: number;
   };
@@ -52,7 +56,7 @@ export const EVENTS: TourEvent[] = [
     live: true,
     // TODO: confirm real athlete price before launch (placeholder $125).
     // Checkout stays disabled until Stripe env vars are set in Vercel.
-    athleteReg: { open: true, priceCents: 12500 },
+    athleteReg: { open: true, priceCents: 12500, combineDate: "Dec 11, 2026" },
     details: {
       dates: "Dec 11–13, 2026",
       divisions: "Girls 12U+",

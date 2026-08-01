@@ -37,7 +37,11 @@ export default function RegisterSuccessPage({ params }: Props) {
             <h1 className="reg-title">You&apos;re In.</h1>
             <p>
               Registration confirmed for the Showcase Combine &amp; Camp at{" "}
-              {event.venue}, {event.details?.dates ?? event.date}.
+              {event.venue},{" "}
+              {event.athleteReg?.combineDate ??
+                event.details?.dates ??
+                event.date}
+              .
             </p>
           </div>
           <div className="reg-card">

@@ -327,7 +327,7 @@ export default function RegistrationForm(props: Props) {
               </p>
               <dl className="stop-grid">
                 <div className="stop-cell">
-                  <dt>Dates</dt>
+                  <dt>Date</dt>
                   <dd>{props.dates}</dd>
                 </div>
                 <div className="stop-cell">
