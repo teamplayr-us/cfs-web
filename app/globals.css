@@ -99,6 +99,11 @@ nav{background:var(--navy);color:var(--chalk);position:sticky;top:0;z-index:50;b
 /* event page title — same style as the home h1, sized for long city names */
 .hero h1.event-title{font-size:clamp(44px,7vw,88px)}
 
+/* event page weekend schedule cards */
+.schedule-grid{margin-top:0;margin-bottom:20px}
+.schedule-cta{align-self:flex-start;margin-bottom:24px}
+.stop-venue a{text-decoration:underline;text-underline-offset:3px}
+
 /* next stop combine-card */
 .stop-card{background:var(--chalk);color:var(--navy);border:3px solid var(--navy);box-shadow:8px 8px 0 var(--red)}
 .stop-card-top{display:flex;justify-content:space-between;align-items:center;background:var(--red);color:var(--white);padding:10px 18px;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}

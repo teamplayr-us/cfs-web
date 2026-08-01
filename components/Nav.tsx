@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { EVENTS } from "@/data/events";
+import { EVENTS, NEXT_STOP } from "@/data/events";
 
 export default function Nav() {
   return (
@@ -45,7 +45,7 @@ export default function Nav() {
             <a href="/#sponsors">Sponsors</a>
           </li>
         </ul>
-        <a className="nav-cta" href="/#interest">
+        <a className="nav-cta" href={`/events/${NEXT_STOP.slug}`}>
           Register
         </a>
       </div>

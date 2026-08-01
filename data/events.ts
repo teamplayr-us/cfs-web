@@ -41,8 +41,12 @@ export interface TourEvent {
   /** Full event details — omit until announced; the event page and the
    * Next Stop card show them when present */
   details?: {
-    /** e.g. "Dec 11–13, 2026" */
+    /** Full stop dates, e.g. "Dec 11–13, 2026" */
     dates: string;
+    /** The days the tournament runs, when it differs from the full stop
+     * dates (e.g. tournament Dec 12–13 within a Dec 11–13 stop). Falls
+     * back to `dates` on the event page schedule. */
+    tournamentDates?: string;
     divisions: string;
     teamEntry: string;
     regDeadline: string;
@@ -69,6 +73,8 @@ export const EVENTS: TourEvent[] = [
     },
     details: {
       dates: "Dec 11–13, 2026",
+      // TODO: set tournamentDates once confirmed (e.g. "Dec 12–13, 2026");
+      // the schedule shows the full stop dates until then.
       divisions: "Girls 12U+",
       teamEntry: "$550",
       regDeadline: "Nov 29, 2026",
