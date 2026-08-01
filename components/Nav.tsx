@@ -1,4 +1,5 @@
 import Image from "next/image";
+import MobileMenu from "./MobileMenu";
 import { EVENTS, NEXT_STOP } from "@/data/events";
 
 export default function Nav() {
@@ -45,9 +46,18 @@ export default function Nav() {
             <a href="/sponsors">Sponsors</a>
           </li>
         </ul>
-        <a className="nav-cta" href={`/events/${NEXT_STOP.slug}`}>
-          Register
-        </a>
+        <div className="nav-right">
+          <MobileMenu
+            stops={EVENTS.map(({ slug, number, city }) => ({
+              slug,
+              number,
+              city,
+            }))}
+          />
+          <a className="nav-cta" href={`/events/${NEXT_STOP.slug}`}>
+            Register
+          </a>
+        </div>
       </div>
     </nav>
   );

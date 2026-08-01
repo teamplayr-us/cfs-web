@@ -66,6 +66,18 @@ nav{background:var(--navy);color:var(--chalk);position:sticky;top:0;z-index:50;b
 .nav-links a:hover{opacity:1;color:var(--gold)}
 .nav-cta{font-family:var(--display);font-weight:700;font-size:16px;text-transform:uppercase;letter-spacing:.05em;background:var(--red);color:var(--white);text-decoration:none;padding:10px 20px}
 @media(max-width:820px){.nav-links{display:none}}
+.nav-right{display:flex;align-items:center;gap:10px}
+
+/* mobile menu — MENU/CLOSE toggle + full-width panel under the nav */
+.mnav{display:none}
+@media(max-width:820px){.mnav{display:block}}
+.mnav-toggle{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:transparent;border:1px solid var(--line-dark);color:var(--chalk);padding:11px 14px;cursor:pointer}
+.mnav-toggle[aria-expanded="true"]{border-color:var(--gold);color:var(--gold)}
+.mnav-panel{position:absolute;top:100%;left:0;right:0;background:var(--navy);border-bottom:3px solid var(--red);display:grid;padding-bottom:14px;box-shadow:0 16px 28px rgba(0,0,0,.5)}
+.mnav-panel a{font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:14px var(--pad);border-top:1px solid var(--line-dark)}
+.mnav-panel a:hover{color:var(--gold)}
+.mnav-panel a.mnav-sub{font-size:11px;padding:10px var(--pad) 10px calc(var(--pad) + 20px);color:#C9C4C9;border-top:0}
+.mnav-num{color:var(--red)}
 
 /* tour stops dropdown — CSS-only, opens on hover and keyboard focus */
 .nav-drop{position:relative}
