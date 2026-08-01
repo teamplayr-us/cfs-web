@@ -24,12 +24,21 @@ export default function Hero() {
             venues across the country, with verified testing to back it up.
           </p>
           <div className="hero-ctas">
-            <a className="btn btn-red" href={ATHLETE_REG_URL}>
-              Register as an Athlete
-            </a>
-            <a className="btn btn-ghost-light" href={teamInviteMailto(NEXT_STOP)}>
-              Request a Team Invite
-            </a>
+            <div className="cta-stack">
+              <span className="cta-kicker">Showcase Combine &amp; Camp</span>
+              <a className="btn btn-red" href={ATHLETE_REG_URL}>
+                Register as an Athlete
+              </a>
+            </div>
+            <div className="cta-stack">
+              <span className="cta-kicker">Showcase Tournament · Invite Only</span>
+              <a
+                className="btn btn-ghost-light"
+                href={teamInviteMailto(NEXT_STOP)}
+              >
+                Request a Team Invite
+              </a>
+            </div>
           </div>
         </div>
 

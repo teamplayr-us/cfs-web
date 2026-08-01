@@ -91,7 +91,10 @@ nav{background:var(--navy);color:var(--chalk);position:sticky;top:0;z-index:50;b
 .hero h1 em{font-style:normal;color:var(--red)}
 .hero-tag{margin-top:20px;font-size:clamp(16px,2vw,19px);max-width:520px;color:#C9C4C9}
 .hero-tag strong{color:var(--chalk)}
-.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px;align-items:end}
+.cta-stack{display:grid;gap:8px}
+.cta-stack .btn{justify-self:start}
+.cta-kicker{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
 
 /* event page title — same style as the home h1, sized for long city names */
 .hero h1.event-title{font-size:clamp(44px,7vw,88px)}
