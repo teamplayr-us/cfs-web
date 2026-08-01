@@ -3,7 +3,6 @@ import Hero from "@/components/Hero";
 import CoreOffering from "@/components/CoreOffering";
 import WhyDifferent from "@/components/WhyDifferent";
 import TourStops from "@/components/TourStops";
-import CommittedColleges from "@/components/CommittedColleges";
 import Sponsors from "@/components/Sponsors";
 import InterestCTA from "@/components/InterestCTA";
 import Footer from "@/components/Footer";
@@ -16,7 +15,6 @@ export default function Home() {
       <CoreOffering />
       <WhyDifferent />
       <TourStops />
-      <CommittedColleges />
       <Sponsors />
       <InterestCTA />
       <Footer />

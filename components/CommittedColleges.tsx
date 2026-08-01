@@ -1,6 +1,6 @@
-import { COLLEGE_SLOTS } from "@/data/colleges";
+import { CollegeSlot } from "@/data/colleges";
 
-export default function CommittedColleges() {
+export default function CommittedColleges({ slots }: { slots: CollegeSlot[] }) {
   return (
     <section className="colleges section" id="colleges">
       <div className="wrap">
@@ -16,7 +16,7 @@ export default function CommittedColleges() {
         </div>
 
         <div className="college-grid" aria-label="Committed college programs">
-          {COLLEGE_SLOTS.map((slot, i) => (
+          {slots.map((slot, i) => (
             <div
               className={
                 slot.filled

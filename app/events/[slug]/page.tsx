@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Nav from "@/components/Nav";
+import CommittedColleges from "@/components/CommittedColleges";
 import TourStops from "@/components/TourStops";
 import InterestCTA from "@/components/InterestCTA";
 import Footer from "@/components/Footer";
 import { EVENTS, getEvent, stopLabel, TourEvent } from "@/data/events";
 import { teamInviteMailto } from "@/data/links";
+import { collegesForEvent } from "@/data/colleges";
 import { formatPrice } from "@/lib/format";
 
 interface Props {
@@ -258,6 +260,7 @@ export default function EventPage({ params }: Props) {
         </div>
       </section>
 
+      <CommittedColleges slots={collegesForEvent(event.slug)} />
       <TourStops excludeSlug={event.slug} />
       <InterestCTA />
       <Footer />
