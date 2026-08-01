@@ -1,5 +1,5 @@
 import NextStopCard from "./NextStopCard";
-import { ATHLETE_REG_URL, teamInviteMailto } from "@/data/links";
+import { ATHLETE_REG_URL } from "@/data/links";
 import { NEXT_STOP } from "@/data/events";
 
 export default function Hero() {
@@ -35,7 +35,7 @@ export default function Hero() {
               <span className="cta-kicker">Showcase Tournament</span>
               <a
                 className="btn btn-ghost-light"
-                href={teamInviteMailto(NEXT_STOP)}
+                href={`/events/${NEXT_STOP.slug}/invite`}
               >
                 Request a Team Invite
               </a>

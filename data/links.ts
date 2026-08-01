@@ -17,15 +17,6 @@ export const SPONSOR_MAILTO =
 export const COACH_MAILTO =
   "mailto:info@collegeflagshowcase.com?subject=College%20Flag%20Showcase%20Series%20—%20Coach%20Registration";
 
-// The Showcase Tournament is invite-only: teams request an invite, the
-// organizer reviews and sends approved teams the private Zorts link (the
-// `zortsUrl` field in data/events.ts — never rendered publicly).
-export function teamInviteMailto(stop?: {
-  number: string;
-  city: string;
-}): string {
-  const subject = stop
-    ? `Team Invite Request — ${stop.city} (Event ${stop.number})`
-    : "College Flag Showcase Series — Team Invite Request";
-  return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}`;
-}
+// The Showcase Tournament is invite-only: teams request an invite via the
+// form at /events/[slug]/invite (writes to the Team Invite Requests table
+// in Airtable); approved teams get the private Zorts link by email.

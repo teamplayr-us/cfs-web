@@ -1,0 +1,64 @@
+import { NextResponse } from "next/server";
+import { getEvent, stopLabel } from "@/data/events";
+import { createTeamInvite, TEAM_FIELD } from "@/lib/airtable";
+import { TeamInviteData, validateTeamInvite } from "@/lib/teamInvite";
+
+export const runtime = "nodejs";
+
+export async function POST(req: Request) {
+  let data: TeamInviteData;
+  try {
+    data = (await req.json()).data;
+  } catch {
+    return NextResponse.json({ error: "Invalid request." }, { status: 400 });
+  }
+  if (!data) {
+    return NextResponse.json({ error: "Missing form data." }, { status: 400 });
+  }
+
+  // Honeypot: silently accept but drop bot submissions.
+  if (data.website?.trim()) {
+    return NextResponse.json({ ok: true });
+  }
+
+  const errors = validateTeamInvite(data);
+  if (Object.keys(errors).length > 0) {
+    return NextResponse.json(
+      { error: "Some fields need attention.", fields: errors },
+      { status: 400 },
+    );
+  }
+
+  const clip = (s: string, n = 500) => s.trim().slice(0, n);
+  const eventLabels = data.events
+    .map((slug) => {
+      const event = getEvent(slug);
+      return event ? `${stopLabel(event)} — ${event.city}` : slug;
+    })
+    .join(", ");
+
+  try {
+    await createTeamInvite({
+      [TEAM_FIELD.team]: clip(data.teamName, 120),
+      [TEAM_FIELD.coachFirst]: clip(data.coachFirst, 80),
+      [TEAM_FIELD.coachLast]: clip(data.coachLast, 80),
+      [TEAM_FIELD.email]: clip(data.email, 120),
+      [TEAM_FIELD.phone]: clip(data.phone, 40),
+      [TEAM_FIELD.location]: clip(data.location, 120),
+      [TEAM_FIELD.ageGroups]: clip(data.ageGroups, 120),
+      [TEAM_FIELD.about]: clip(data.about, 1000) || undefined,
+      [TEAM_FIELD.link]: clip(data.link, 300) || undefined,
+      [TEAM_FIELD.events]: eventLabels,
+      [TEAM_FIELD.status]: "New",
+      [TEAM_FIELD.submittedAt]: new Date().toISOString(),
+    });
+  } catch (err) {
+    console.error("Team invite write failed", err);
+    return NextResponse.json(
+      { error: "Couldn't save your request. Please try again." },
+      { status: 500 },
+    );
+  }
+
+  return NextResponse.json({ ok: true });
+}

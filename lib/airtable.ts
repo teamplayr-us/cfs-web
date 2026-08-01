@@ -126,23 +126,54 @@ export async function registrationExists(sessionId: string): Promise<boolean> {
   return page !== null && page.records.length > 0;
 }
 
+async function createRecord(
+  table: string,
+  fields: Record<string, unknown>,
+): Promise<void> {
+  const cfg = config();
+  if (!cfg) throw new Error("Airtable is not configured");
+  const res = await fetch(`${API}/${cfg.baseId}/${encodeURIComponent(table)}`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${cfg.key}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ records: [{ fields }], typecast: true }),
+  });
+  if (!res.ok) {
+    throw new Error(`Airtable create failed: ${res.status} ${await res.text()}`);
+  }
+}
+
 export async function createRegistration(
   fields: Record<string, unknown>,
 ): Promise<void> {
   const cfg = config();
   if (!cfg) throw new Error("Airtable is not configured");
-  const res = await fetch(
-    `${API}/${cfg.baseId}/${encodeURIComponent(cfg.table)}`,
-    {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${cfg.key}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ records: [{ fields }], typecast: true }),
-    },
-  );
-  if (!res.ok) {
-    throw new Error(`Airtable create failed: ${res.status} ${await res.text()}`);
-  }
+  await createRecord(cfg.table, fields);
+}
+
+// "Team Invite Requests" table (same base). Field IDs so Airtable UI renames
+// can't break the write.
+const TEAM_TABLE = process.env.AIRTABLE_TEAM_TABLE ?? "tblqtHoZgqgkNTgle";
+
+export const TEAM_FIELD = {
+  team: "fldkc8soCTt9yvlJ1",
+  coachFirst: "fldisZpLGuhz3aOW8",
+  coachLast: "fldYf1h7UxsZE8GjK",
+  email: "fldq8dm7oYah3x1H3",
+  phone: "flduHKXhxTYJ3UMce",
+  location: "flda6WOEaSX5roC83",
+  ageGroups: "fldXBI0MCZ58ziqQ4",
+  about: "fldCvythSLp4w8bo6",
+  link: "fldXywG8M4mlQdsl7",
+  events: "fldyZEXwiExXWMCrM",
+  status: "fldgc3YtsQgwt8Pc3",
+  submittedAt: "fldKtW5o0BNkvgCku",
+} as const;
+
+export async function createTeamInvite(
+  fields: Record<string, unknown>,
+): Promise<void> {
+  await createRecord(TEAM_TABLE, fields);
 }

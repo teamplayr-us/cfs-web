@@ -6,7 +6,6 @@ import TourStops from "@/components/TourStops";
 import InterestCTA from "@/components/InterestCTA";
 import Footer from "@/components/Footer";
 import { EVENTS, getEvent, stopLabel, TourEvent } from "@/data/events";
-import { teamInviteMailto } from "@/data/links";
 import { collegesForEvent } from "@/data/colleges";
 import { formatPrice } from "@/lib/format";
 
@@ -44,7 +43,7 @@ export default function EventPage({ params }: Props) {
 
   const regOpen = Boolean(event.athleteReg?.open);
   const registerUrl = `/events/${event.slug}/register`;
-  const inviteUrl = teamInviteMailto(event);
+  const inviteUrl = `/events/${event.slug}/invite`;
   const mapUrl = venueMapUrl(event);
   const combineWhen =
     event.athleteReg?.combineDate ?? event.details?.dates ?? event.date;
