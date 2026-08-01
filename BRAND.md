@@ -7,7 +7,7 @@ document, deck, graphic, or email read as the same brand as the website.
 
 - **Name:** College Flag Showcase Series (logo mark reads "Collegiate Flag
   Showcase Series"). Never abbreviate to "CFS" in public-facing material.
-- **Tagline / hero:** "Show Your Game. Get Seen. Get Recruited."
+- **Tagline / hero:** "Ball Out. Get Seen. Get Recruited."
 - **Positioning line:** Girls National Recruiting Tour — a verified combine
   plus a college showcase tournament in one weekend, evaluated in person by
   college flag football coaches.
@@ -69,7 +69,7 @@ Light pink (#FF8DC1) never appears on light backgrounds.
 ## Voice
 
 - Short, punchy, imperative. Headlines are commands or claims:
-  "Show Your Game." "One Weekend. Two Ways to Get Seen." "Put Your Brand
+  "Ball Out." "One Weekend. Two Ways to Get Seen." "Put Your Brand
   on the Field."
 - Em dashes join a bold claim to its explanation: "**Individual skill
   display and live tournament competition in one weekend** — evaluated in

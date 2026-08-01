@@ -9,7 +9,7 @@ export default function Hero() {
         <div>
           <span className="hero-badge">Girls National Recruiting Tour</span>
           <h1>
-            Show Your Game.
+            Ball Out.
             <br />
             Get Seen.
             <br />
