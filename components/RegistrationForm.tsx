@@ -17,6 +17,8 @@ interface Props {
   stopLabel: string;
   venue: string;
   dates: string;
+  /** Combine start–end time range, or "TBD" */
+  time: string;
   priceCents: number;
 }
 
@@ -331,12 +333,12 @@ export default function RegistrationForm(props: Props) {
                   <dd>{props.dates}</dd>
                 </div>
                 <div className="stop-cell">
-                  <dt>Venue</dt>
-                  <dd>{props.venue}</dd>
+                  <dt>Time</dt>
+                  <dd>{props.time}</dd>
                 </div>
                 <div className="stop-cell">
-                  <dt>Grad Year</dt>
-                  <dd>{data.gradYear}</dd>
+                  <dt>Venue</dt>
+                  <dd>{props.venue}</dd>
                 </div>
                 <div className="stop-cell">
                   <dt>Total</dt>

@@ -54,6 +54,12 @@ export default function RegisterPage({ params }: Props) {
                 event.details?.dates ??
                 event.date
               }
+              time={
+                event.athleteReg.combineStartTime &&
+                event.athleteReg.combineEndTime
+                  ? `${event.athleteReg.combineStartTime} – ${event.athleteReg.combineEndTime}`
+                  : "TBD"
+              }
               priceCents={event.athleteReg.priceCents}
             />
           ) : (

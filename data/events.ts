@@ -31,6 +31,10 @@ export interface TourEvent {
      * full stop dates (e.g. combine Dec 11 within a Dec 11–13 stop). Shown
      * in the registration flow instead of the full stop dates. */
     combineDate?: string;
+    /** Combine start/end times, e.g. "9:00 AM". Registration shows
+     * "TBD" until both are set. */
+    combineStartTime?: string;
+    combineEndTime?: string;
     /** Optional cap on paid registrations; checkout closes when reached */
     capacity?: number;
   };
@@ -56,7 +60,13 @@ export const EVENTS: TourEvent[] = [
     live: true,
     // TODO: confirm real athlete price before launch (placeholder $125).
     // Checkout stays disabled until Stripe env vars are set in Vercel.
-    athleteReg: { open: true, priceCents: 12500, combineDate: "Dec 11, 2026" },
+    athleteReg: {
+      open: true,
+      priceCents: 12500,
+      combineDate: "Dec 11, 2026",
+      // TODO: set combineStartTime / combineEndTime when the Dec 11
+      // schedule is confirmed (shows "TBD" until then).
+    },
     details: {
       dates: "Dec 11–13, 2026",
       divisions: "Girls 12U+",
