@@ -1,6 +1,17 @@
 import { CollegeSlot } from "@/data/colleges";
 
-export default function CommittedColleges({ slots }: { slots: CollegeSlot[] }) {
+interface Props {
+  slots: CollegeSlot[];
+  /** "Committed Colleges" (event pages) or "Participating Colleges" (home) */
+  title?: string;
+  lede?: string;
+}
+
+export default function CommittedColleges({
+  slots,
+  title = "Committed Colleges",
+  lede = "Programs confirmed to attend and evaluate. This board updates as college coaches register for each stop.",
+}: Props) {
   return (
     <section className="colleges section" id="colleges">
       <div className="wrap">
@@ -8,11 +19,8 @@ export default function CommittedColleges({ slots }: { slots: CollegeSlot[] }) {
           <span className="eyebrow" style={{ color: "var(--gold)" }}>
             On the Sideline
           </span>
-          <h2>Committed Colleges</h2>
-          <p>
-            Programs confirmed to attend and evaluate. This board updates as
-            college coaches register for each stop.
-          </p>
+          <h2>{title}</h2>
+          <p>{lede}</p>
         </div>
 
         <div className="college-grid" aria-label="Committed college programs">

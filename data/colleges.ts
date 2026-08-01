@@ -40,3 +40,22 @@ export function collegesForEvent(slug: string): CollegeSlot[] {
     ...Array(Math.max(0, BOARD_SIZE - committed.length)).fill(PLACEHOLDER),
   ];
 }
+
+/** Homepage board: every program participating anywhere on the tour,
+ * de-duplicated, padded with placeholders. */
+export function allParticipatingColleges(): CollegeSlot[] {
+  const seen = new Set<string>();
+  const committed: CollegeSlot[] = [];
+  for (const slots of Object.values(COLLEGES_BY_EVENT)) {
+    for (const slot of slots) {
+      if (slot.filled && slot.name && !seen.has(slot.name)) {
+        seen.add(slot.name);
+        committed.push(slot);
+      }
+    }
+  }
+  return [
+    ...committed,
+    ...Array(Math.max(0, BOARD_SIZE - committed.length)).fill(PLACEHOLDER),
+  ];
+}

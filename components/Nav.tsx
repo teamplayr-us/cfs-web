@@ -39,7 +39,7 @@ export default function Nav() {
             </ul>
           </li>
           <li>
-            <a href={`/events/${NEXT_STOP.slug}#colleges`}>Colleges</a>
+            <a href="/#colleges">Colleges</a>
           </li>
           <li>
             <a href="/#sponsors">Sponsors</a>
