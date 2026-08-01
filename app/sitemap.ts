@@ -15,6 +15,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.6,
     },
+    {
+      url: `${BASE}/colleges`,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    },
     ...EVENTS.map((event) => ({
       url: `${BASE}/events/${event.slug}`,
       changeFrequency: "weekly" as const,

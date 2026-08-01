@@ -5,12 +5,16 @@ interface Props {
   /** "Committed Colleges" (event pages) or "Participating Colleges" (home) */
   title?: string;
   lede?: string;
+  /** Where "Register as a Coach" points; the /colleges page overrides this
+   * with the coach mailto */
+  ctaHref?: string;
 }
 
 export default function CommittedColleges({
   slots,
   title = "Committed Colleges",
   lede = "Programs confirmed to attend and evaluate. This board updates as college coaches register for each stop.",
+  ctaHref = "/colleges",
 }: Props) {
   return (
     <section className="colleges section" id="colleges">
@@ -62,7 +66,7 @@ export default function CommittedColleges({
             college coaches — get expected participant counts, combine data
             access, and sideline credentials.
           </p>
-          <a className="btn btn-ghost-light" href="#interest">
+          <a className="btn btn-ghost-light" href={ctaHref}>
             Register as a Coach
           </a>
         </div>

@@ -14,6 +14,9 @@ export const INTEREST_MAILTO =
 export const SPONSOR_MAILTO =
   "mailto:info@collegeflagshowcase.com?subject=College%20Flag%20Showcase%20Series%20—%20Sponsorship";
 
+export const COACH_MAILTO =
+  "mailto:info@collegeflagshowcase.com?subject=College%20Flag%20Showcase%20Series%20—%20Coach%20Registration";
+
 // The Showcase Tournament is invite-only: teams request an invite, the
 // organizer reviews and sends approved teams the private Zorts link (the
 // `zortsUrl` field in data/events.ts — never rendered publicly).
