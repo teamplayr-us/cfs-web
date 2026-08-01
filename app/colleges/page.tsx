@@ -8,7 +8,7 @@ import { COACH_MAILTO } from "@/data/links";
 export const metadata: Metadata = {
   title: "College Coaches | College Flag Showcase Series",
   description:
-    "Free registration for college flag football programs — expected participant counts, verified combine data access, and sideline credentials at every stop of the girls flag football recruiting tour.",
+    "Free registration for college flag football programs — expected participant counts, verified combine data access, and sideline credentials at every event of the girls flag football recruiting tour.",
   openGraph: {
     title: "College Coaches | College Flag Showcase Series",
     description:
@@ -62,9 +62,9 @@ export default function CollegesPage() {
               Athlete.
             </h2>
             <p>
-              Every event pairs verified testing with live competition — you
-              evaluate the numbers, the skill work, and the game, all in one
-              weekend.
+              Every event combines verified testing, individual skill work, and
+              live competition — you evaluate the numbers, the technique, and
+              the game, all in one weekend.
             </p>
           </div>
 
