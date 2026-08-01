@@ -18,11 +18,25 @@ export default function CommittedColleges() {
         <div className="college-grid" aria-label="Committed college programs">
           {COLLEGE_SLOTS.map((slot, i) => (
             <div
-              className={slot.filled ? "college-slot filled" : "college-slot"}
+              className={
+                slot.filled
+                  ? slot.logo
+                    ? "college-slot filled has-logo"
+                    : "college-slot filled"
+                  : "college-slot"
+              }
               key={i}
             >
               {slot.filled ? (
-                <span>{slot.name}</span>
+                slot.logo ? (
+                  <>
+                    {/* plain img: logo dimensions vary per school */}
+                    <img src={slot.logo} alt={`${slot.name} logo`} />
+                    <span className="college-name">{slot.name}</span>
+                  </>
+                ) : (
+                  <span>{slot.name}</span>
+                )
               ) : (
                 <span>
                   College logo
