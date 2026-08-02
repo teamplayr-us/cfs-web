@@ -64,6 +64,10 @@ for the roster; use Airtable views to filter by Event Slug.
    registration link (the `zortsUrl` per event in `data/events.ts`) to
    invited teams → set Status **Invited** or **Declined**. The site never
    shows Zorts links publicly.
+4. **When a team accepts** (registers via Zorts): add the program to
+   `ORGS_BY_EVENT` in `data/organizations.ts` under the event's slug
+   (name required; logo optional in `public/programs/`) and push — the
+   event page's "Competing Programs" board updates on deploy.
 
 **Habit:** check the table for Status = New a few times a week (or add an
 Airtable notification automation on record creation).
@@ -133,6 +137,7 @@ too — make sure they ignore events that aren't theirs.
 | Event dates, venues, prices, tags, combine day/times, Zorts links, tournament dates | `data/events.ts` (adding an event auto-creates its page, nav entries, sitemap, forms) |
 | Which event the homepage features | `NEXT_STOP_SLUG` in `data/events.ts` |
 | Committed colleges per event | `data/colleges.ts` (+ logo in `public/colleges/`) |
+| Competing programs per event (accepted tournament teams) | `data/organizations.ts` (+ logo in `public/programs/`) |
 | Sponsors board | `data/sponsors.ts` |
 | Contact email/phone, registration links | `data/links.ts` |
 | Athlete price | `athleteReg.priceCents` in `data/events.ts` — **still the $125 placeholder; confirm before launch** |

@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Nav from "@/components/Nav";
 import CommittedColleges from "@/components/CommittedColleges";
+import CompetingPrograms from "@/components/CompetingPrograms";
 import TourStops from "@/components/TourStops";
 import InterestCTA from "@/components/InterestCTA";
 import Footer from "@/components/Footer";
 import { EVENTS, getEvent, stopLabel, TourEvent } from "@/data/events";
 import { collegesForEvent } from "@/data/colleges";
+import { orgsForEvent } from "@/data/organizations";
 import { formatPrice } from "@/lib/format";
 
 interface Props {
@@ -265,6 +267,10 @@ export default function EventPage({ params }: Props) {
         </div>
       </section>
 
+      <CompetingPrograms
+        slots={orgsForEvent(event.slug)}
+        inviteHref={inviteUrl}
+      />
       <CommittedColleges slots={collegesForEvent(event.slug)} />
       <TourStops excludeSlug={event.slug} />
       <InterestCTA />
