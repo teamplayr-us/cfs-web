@@ -38,6 +38,15 @@ export interface TourEvent {
     /** Optional cap on paid registrations; checkout closes when reached */
     capacity?: number;
   };
+  /** Proof line for an established event this one runs alongside.
+   * NOTE: CFS and anchor events (e.g. the International Superflag
+   * Invitational) are separate events — both 5v5 Sports productions.
+   * Copy must credit the shared operator, never claim CFS ownership. */
+  anchorEvent?: {
+    name: string;
+    /** e.g. "80 teams in 2025" */
+    stat: string;
+  };
   /** Full event details — omit until announced; the event page and the
    * Next Stop card show them when present */
   details?: {
@@ -70,6 +79,10 @@ export const EVENTS: TourEvent[] = [
       combineDate: "Dec 11, 2026",
       // TODO: set combineStartTime / combineEndTime when the Dec 11
       // schedule is confirmed (shows "TBD" until then).
+    },
+    anchorEvent: {
+      name: "International Superflag Invitational",
+      stat: "80 teams in 2025",
     },
     details: {
       dates: "Dec 11–13, 2026",

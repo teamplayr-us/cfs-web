@@ -21,9 +21,9 @@ export default function TourStops({ excludeSlug }: Props) {
             <h2>{excludeSlug ? "More Events" : "Events"}</h2>
             {!excludeSlug && (
               <p>
-                One series, coast to coast — timed around high school seasons
-                so athletes arrive with fresh film and college coaches are free
-                to evaluate.
+                One series, coast to coast — scheduled around school seasons,
+                so your recruiting season never conflicts with your school
+                season.
               </p>
             )}
           </div>

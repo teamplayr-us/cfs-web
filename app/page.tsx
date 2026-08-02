@@ -1,5 +1,6 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
+import PathwayProof from "@/components/PathwayProof";
 import CoreOffering from "@/components/CoreOffering";
 import WhyDifferent from "@/components/WhyDifferent";
 import TourStops from "@/components/TourStops";
@@ -14,6 +15,7 @@ export default function Home() {
     <>
       <Nav />
       <Hero />
+      <PathwayProof />
       <CoreOffering />
       <WhyDifferent />
       <TourStops />

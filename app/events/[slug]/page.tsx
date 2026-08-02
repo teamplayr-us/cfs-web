@@ -77,6 +77,12 @@ export default function EventPage({ params }: Props) {
               </strong>{" "}
               — evaluated in person by college flag football coaches.
             </p>
+            {event.anchorEvent && (
+              <p className="anchor-proof">
+                Runs alongside the {event.anchorEvent.name} — also a 5v5
+                Sports production, {event.anchorEvent.stat}
+              </p>
+            )}
             <div className="hero-ctas">
               <div className="cta-stack">
                 <span className="cta-kicker">Showcase Combine &amp; Camp</span>

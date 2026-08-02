@@ -1,0 +1,44 @@
+// "The Path Is Real" proof facts — the college-pathway milestones shown on
+// the homepage. Every fact was independently verified before publishing
+// (2026-08); update or add facts here as the sport's timeline advances.
+
+export interface PathwayFact {
+  /** Big display stat, e.g. "LA28" */
+  stat: string;
+  /** Two short mono label lines */
+  label: string;
+  detail: string;
+}
+
+export const PATHWAY_FACTS: PathwayFact[] = [
+  // Source: olympics.com — flag football added to the LA 2028 Olympic
+  // program (men's + women's); nfl.com/partners/flag-football
+  {
+    stat: "LA28",
+    label: "Olympic sport",
+    detail: "Flag football debuts at the 2028 Los Angeles Games",
+  },
+  // Source: ncaa.org media release, Jan 16 2026 — "NCAA adds flag football
+  // to Emerging Sports for Women program"
+  {
+    stat: "NCAA",
+    label: "Emerging sport",
+    detail: "Added to the Emerging Sports for Women program in 2026",
+  },
+  // Source: huskers.com, Jan 16 2026 — Nebraska first Power Four school to
+  // add varsity women's flag football; debut spring 2028, scholarships
+  // scaling to 25
+  {
+    stat: "P4",
+    label: "Scholarships live",
+    detail: "Nebraska is the first Power Four school with varsity flag — debuting 2028",
+  },
+  // Source: NCAA sports sponsorship data via ncaa.org /
+  // collegiateflagfootball.com — 40+ varsity programs in 2025–26, ~60
+  // anticipated spring 2026
+  {
+    stat: "60+",
+    label: "College programs",
+    detail: "Varsity programs anticipated by spring 2026 — and climbing",
+  },
+];
