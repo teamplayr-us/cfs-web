@@ -21,9 +21,27 @@ const PLACEHOLDER: OrgSlot = { filled: false };
 export const ORG_BOARD_SIZE = 8;
 
 export const ORGS_BY_EVENT: Record<string, OrgSlot[]> = {
-  // "mckinney-tx": [
-  //   { filled: true, name: "Example Elite 7v7", logo: "/programs/example-elite.png" },
-  // ],
+  "mckinney-tx": [
+    {
+      filled: true,
+      name: "Conquer Chargers",
+      logo: "/programs/conquer-chargers.png",
+    },
+    {
+      filled: true,
+      name: "Texas Fury",
+      logo: "/programs/fury.png",
+    },
+    { filled: true, name: "NorCal Elite" },
+    { filled: true, name: "Monterrey Football League" },
+    { filled: true, name: "Monterrey Azteca" },
+    {
+      filled: true,
+      name: "Mexico Prime",
+      logo: "/programs/mexico-prime.png",
+    },
+    { filled: true, name: "Panama Wardogs" },
+  ],
 };
 
 /** Board for an event: its confirmed programs padded with placeholders. */
