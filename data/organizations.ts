@@ -55,6 +55,12 @@ export const ORGS_BY_EVENT: Record<string, OrgSlot[]> = {
       logo: "/programs/panama-wardogs.png",
       location: "Panama",
     },
+    {
+      filled: true,
+      name: "Kansas City Heat",
+      logo: "/programs/kansas-city-heat.png",
+      location: "Kansas City",
+    },
   ],
 };
 
