@@ -37,14 +37,11 @@ export const ORGS_BY_EVENT: Record<string, OrgSlot[]> = {
       name: "NorCal Elite",
       logo: "/programs/norcal-elite.png",
     },
-    { filled: true, name: "Monterrey Football League" },
-    { filled: true, name: "Monterrey Azteca" },
     {
       filled: true,
       name: "Mexico Prime",
       logo: "/programs/mexico-prime.png",
     },
-    { filled: true, name: "Panama Wardogs" },
   ],
 };
 
