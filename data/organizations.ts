@@ -14,6 +14,9 @@ export interface OrgSlot {
   name?: string;
   /** Path under /public, e.g. "/programs/example-elite.png" */
   logo?: string;
+  /** Home region/country caption, e.g. "Texas", "Panama" — kept at
+   * region level, shown under the name on logo slots */
+  location?: string;
 }
 
 const PLACEHOLDER: OrgSlot = { filled: false };
@@ -26,21 +29,31 @@ export const ORGS_BY_EVENT: Record<string, OrgSlot[]> = {
       filled: true,
       name: "Conquer Chargers",
       logo: "/programs/conquer-chargers.png",
+      location: "Southern California",
     },
     {
       filled: true,
       name: "Texas Fury",
       logo: "/programs/fury.png",
+      location: "Texas",
     },
     {
       filled: true,
       name: "NorCal Elite",
       logo: "/programs/norcal-elite.png",
+      location: "Northern California",
     },
     {
       filled: true,
       name: "Mexico Prime",
       logo: "/programs/mexico-prime.png",
+      location: "Mexico",
+    },
+    {
+      filled: true,
+      name: "Panama Wardogs",
+      logo: "/programs/panama-wardogs.png",
+      location: "Panama",
     },
   ],
 };

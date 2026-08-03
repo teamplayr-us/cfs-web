@@ -27,7 +27,9 @@ export default function CompetingPrograms({ slots, inviteHref }: Props) {
               className={
                 slot.filled
                   ? slot.logo
-                    ? "college-slot filled has-logo"
+                    ? slot.location
+                      ? "college-slot filled has-logo has-loc"
+                      : "college-slot filled has-logo"
                     : "college-slot filled"
                   : "college-slot"
               }
@@ -39,6 +41,9 @@ export default function CompetingPrograms({ slots, inviteHref }: Props) {
                     {/* plain img: logo dimensions vary per program */}
                     <img src={slot.logo} alt={`${slot.name} logo`} />
                     <span className="college-name">{slot.name}</span>
+                    {slot.location && (
+                      <span className="college-loc">{slot.location}</span>
+                    )}
                   </>
                 ) : (
                   <span>{slot.name}</span>
