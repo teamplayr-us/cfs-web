@@ -82,8 +82,7 @@ export default function SponsorsPage() {
             <div className="reach-cell">
               <span className="reach-num">10K+</span>
               <span className="reach-label">
-                Community members via Flag Football Finder — the official
-                digital platform
+                Digital community via Flag Football Finder
               </span>
             </div>
             <div className="reach-cell">
