@@ -69,7 +69,7 @@ export default function SponsorsPage() {
 
           <div className="reach-grid" aria-label="Series reach">
             <div className="reach-cell">
-              <span className="reach-num">7</span>
+              <span className="reach-num">{EVENTS.length}</span>
               <span className="reach-label">Events, coast to coast</span>
             </div>
             <div className="reach-cell">

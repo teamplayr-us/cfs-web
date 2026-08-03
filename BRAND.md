@@ -89,5 +89,5 @@ Light pink (#FF8DC1) never appears on light backgrounds.
 - Site: https://www.collegeflagshowcase.com
 - Email: info@collegeflagshowcase.com · Phone: 888.350.2215
 - First event: McKinney, TX — Craig Ranch Sports Complex, Dec 11–13, 2026
-  (registration deadline Nov 29, 2026). Seven events, 2026–27 season.
+  (registration deadline Nov 29, 2026). Nine events, 2026–27 season.
 - © 2026 · A 5v5 Sports Production
