@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { EVENTS } from "@/data/events";
-import { SPONSOR_MAILTO } from "@/data/links";
 import { SPONSOR_SLOTS } from "@/data/sponsors";
 
 export const metadata: Metadata = {
@@ -39,7 +38,7 @@ export default function SponsorsPage() {
               college programs nationwide.
             </p>
             <div className="hero-ctas">
-              <a className="btn btn-red" href={SPONSOR_MAILTO}>
+              <a className="btn btn-red" href="/sponsors/interest">
                 Become a Sponsor
               </a>
               <a className="btn btn-ghost-light" href="/#tour">
@@ -163,7 +162,10 @@ export default function SponsorsPage() {
                   events — premier signage placement, first-choice activation
                   space, and featured presence in film and digital.
                 </p>
-                <a className="btn btn-red schedule-cta" href={SPONSOR_MAILTO}>
+                <a
+                  className="btn btn-red schedule-cta"
+                  href="/sponsors/interest?package=presenting"
+                >
                   Become a Sponsor
                 </a>
                 <p className="offer-meta">
@@ -183,7 +185,10 @@ export default function SponsorsPage() {
                   from the first whistle in McKinney to the last event of the
                   tour.
                 </p>
-                <a className="btn btn-ghost schedule-cta" href={SPONSOR_MAILTO}>
+                <a
+                  className="btn btn-ghost schedule-cta"
+                  href="/sponsors/interest?package=season"
+                >
                   Become a Sponsor
                 </a>
                 <p className="offer-meta">
@@ -202,7 +207,10 @@ export default function SponsorsPage() {
                   Pick your market — full event-weekend activation in the market
                   that fits your brand and your region.
                 </p>
-                <a className="btn btn-ghost schedule-cta" href={SPONSOR_MAILTO}>
+                <a
+                  className="btn btn-ghost schedule-cta"
+                  href="/sponsors/interest?package=single"
+                >
                   Start the Conversation
                 </a>
                 <p className="offer-meta">
@@ -240,7 +248,7 @@ export default function SponsorsPage() {
                 we&apos;ll put a package together.
               </p>
             </div>
-            <a className="btn btn-red" href={SPONSOR_MAILTO}>
+            <a className="btn btn-red" href="/sponsors/interest">
               Become a Sponsor
             </a>
           </div>

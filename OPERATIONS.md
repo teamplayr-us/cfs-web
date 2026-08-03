@@ -19,8 +19,11 @@ Visitor
   │     form → /api/team-invite → Airtable "Team Invite Requests"
   │     → YOU review → email private Zorts link → update Status
   │
+  ├─ Sponsor interest       /sponsors/interest
+  │     form → /api/sponsor-interest → Airtable "Sponsor Interest"
+  │     → YOU review → reply with package + next steps → update Status
+  │
   ├─ Coach registration     /colleges → email to info@collegeflagshowcase.com
-  ├─ Sponsor inquiry        /sponsors → email to info@collegeflagshowcase.com
   └─ Interest list          homepage #interest → email to info@…
 ```
 
@@ -69,7 +72,20 @@ for the roster; use Airtable views to filter by Event Slug.
    (name required; logo optional in `public/programs/`) and push — the
    event page's "Competing Programs" board updates on deploy.
 
-**Habit:** check the table for Status = New a few times a week (or add an
+### 2c. Sponsor interest (automated intake, manual close)
+
+1. Sponsor fills the form at `/sponsors/interest` (company, contact,
+   package interest, markets, message). Every sponsor CTA on `/sponsors`
+   links here; tier-card buttons pre-select the package
+   (`?package=presenting|season|single`). Spam is filtered by a honeypot.
+2. `/api/sponsor-interest` validates and writes to **Sponsor Interest**
+   with Status **New**.
+3. **Manual (you):** reply from info@ with the one-pager
+   (`collateral/cfs-sponsorship-one-pager.pdf`) and pricing → move Status
+   through **Contacted → Won / Passed**. When a deal closes, add the logo
+   to `data/sponsors.ts`.
+
+**Habit:** check both tables for Status = New a few times a week (or add an
 Airtable notification automation on record creation).
 
 ## 3. Airtable base (College Flag Showcase · app0mk0cTZLDeVahe)
@@ -78,6 +94,7 @@ Airtable notification automation on record creation).
 | --- | --- | --- | --- |
 | Athlete Registrations | `tblmp5EHSrHHaxjpD` | Stripe webhook | Paid combine/camp registrations |
 | Team Invite Requests | `tblqtHoZgqgkNTgle` | Invite form API | Tournament invite pipeline |
+| Sponsor Interest | `tblW8wpENPt3yQDB0` | Sponsor form API | Sponsorship sales pipeline |
 
 Rules:
 - The site writes by **field ID**, so you can rename fields freely — with
