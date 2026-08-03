@@ -68,6 +68,32 @@ export default function SponsorsPage() {
             </p>
           </div>
 
+          <div className="reach-grid" aria-label="Series reach">
+            <div className="reach-cell">
+              <span className="reach-num">7</span>
+              <span className="reach-label">Events, coast to coast</span>
+            </div>
+            <div className="reach-cell">
+              <span className="reach-num">5,000+</span>
+              <span className="reach-label">
+                In-person families &amp; flag football program leaders
+              </span>
+            </div>
+            <div className="reach-cell">
+              <span className="reach-num">10K+</span>
+              <span className="reach-label">
+                Community members via Flag Football Finder — the official
+                digital platform
+              </span>
+            </div>
+            <div className="reach-cell">
+              <span className="reach-num">Live</span>
+              <span className="reach-label">
+                College coaches on the sideline
+              </span>
+            </div>
+          </div>
+
           <div className="why-grid">
             <div className="why">
               <span className="why-num">01</span>
