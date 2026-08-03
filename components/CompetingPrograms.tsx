@@ -44,11 +44,7 @@ export default function CompetingPrograms({ slots, inviteHref }: Props) {
                   <span>{slot.name}</span>
                 )
               ) : (
-                <span>
-                  Team logo
-                  <br />
-                  announcing soon
-                </span>
+                <span>Announcing soon</span>
               )}
             </div>
           ))}
