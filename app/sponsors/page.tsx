@@ -74,9 +74,9 @@ export default function SponsorsPage() {
               <span className="reach-label">Events, coast to coast</span>
             </div>
             <div className="reach-cell">
-              <span className="reach-num">5,000+</span>
+              <span className="reach-num">800+</span>
               <span className="reach-label">
-                In-person families &amp; flag football program leaders
+                Flag football athletes &amp; families per event
               </span>
             </div>
             <div className="reach-cell">
