@@ -8,7 +8,7 @@ import { SPONSOR_SLOTS } from "@/data/sponsors";
 export const metadata: Metadata = {
   title: "Sponsor the Tour | College Flag Showcase Series",
   description:
-    "Put your brand on the field at every stop of the College Flag Showcase Series — venue signage, athlete touchpoints, digital placement, and activation space in front of athletes, families, and college programs nationwide.",
+    "Put your brand on the field at every stop of the College Flag Showcase Series — venue signage, athlete touchpoints, targeted digital promotions, and activation space in front of athletes, families, and college programs nationwide.",
   openGraph: {
     title: "Sponsor the Tour | College Flag Showcase Series",
     description:
@@ -90,8 +90,9 @@ export default function SponsorsPage() {
               <span className="why-num">03</span>
               <h3>The Activation</h3>
               <p>
-                Venue signage, athlete touchpoints, digital placement, and
-                activation space at every event.
+                Venue signage, athlete touchpoints, targeted digital
+                promotions, and activation space — plus presence in event film
+                and recap content.
               </p>
             </div>
           </div>
@@ -105,21 +106,51 @@ export default function SponsorsPage() {
           <div className="section-head">
             <span className="eyebrow">Packages</span>
             <h2>
-              Season-Long or
+              Three Ways
               <br />
-              Single Event.
+              to Take the Field.
             </h2>
             <p>
-              Two ways in — own the whole tour, or activate in the market that
-              fits your brand.
+              Every package includes the full event-weekend activation — the
+              tiers set how far your brand travels.
             </p>
           </div>
 
-          <div className="offer-grid">
+          <ul className="pkg-includes" aria-label="Every package includes">
+            <li>Venue signage all event weekend</li>
+            <li>Athlete touchpoints on site</li>
+            <li>Digital + web sponsor board placement</li>
+            <li>Activation space at the venue</li>
+            <li>Presence in event film &amp; recap content</li>
+            <li>Direct access to athletes, families &amp; college programs</li>
+            <li>Targeted digital promotions</li>
+          </ul>
+
+          <div className="offer-grid three">
             <article className="offer offer-combine">
               <div className="offer-head">
-                <h3>Season Partner</h3>
+                <h3>Presenting Sponsor</h3>
                 <span className="offer-num">01</span>
+              </div>
+              <div className="offer-body">
+                <p className="offer-lede">
+                  &quot;Presented by&quot; naming across all {EVENTS.length}{" "}
+                  events — premier signage placement, first-choice activation
+                  space, and featured presence in film and digital.
+                </p>
+                <a className="btn btn-red schedule-cta" href={SPONSOR_MAILTO}>
+                  Become a Sponsor
+                </a>
+                <p className="offer-meta">
+                  Coverage: <b>All {EVENTS.length} events</b> — 1 available
+                </p>
+              </div>
+            </article>
+
+            <article className="offer">
+              <div className="offer-head">
+                <h3>Season Partner</h3>
+                <span className="offer-num">02</span>
               </div>
               <div className="offer-body">
                 <p className="offer-lede">
@@ -127,7 +158,7 @@ export default function SponsorsPage() {
                   from the first whistle in McKinney to the last event of the
                   tour.
                 </p>
-                <a className="btn btn-red schedule-cta" href={SPONSOR_MAILTO}>
+                <a className="btn btn-ghost schedule-cta" href={SPONSOR_MAILTO}>
                   Become a Sponsor
                 </a>
                 <p className="offer-meta">
@@ -139,7 +170,7 @@ export default function SponsorsPage() {
             <article className="offer">
               <div className="offer-head">
                 <h3>Single Event</h3>
-                <span className="offer-num">02</span>
+                <span className="offer-num">03</span>
               </div>
               <div className="offer-body">
                 <p className="offer-lede">
