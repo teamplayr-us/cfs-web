@@ -17,11 +17,11 @@ export const metadata: Metadata = {
   },
 };
 
-// TODO: confirm titles for each team member and Amanda's last name.
+// TODO: confirm titles for each team member.
 const TEAM = [
   { name: "Allen Hamilton" },
   { name: "Monty Holloway" },
-  { name: "Amanda" },
+  { name: "Amanda Newman" },
 ];
 
 export default function AboutPage() {
