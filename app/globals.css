@@ -147,6 +147,8 @@ nav{background:var(--navy);color:var(--chalk);position:sticky;top:0;z-index:50;b
 /* ============ CORE OFFERING ============ */
 .offer-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,32px)}
 .offer-grid.three{grid-template-columns:1fr 1fr 1fr}
+.about-phone{margin-top:18px;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--steel)}
+.about-phone a{color:var(--navy)}
 .reach-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:0 0 44px}
 .reach-cell{border:2px solid var(--navy);background:var(--white);padding:18px 16px}
 .reach-num{display:block;font-family:var(--display);font-weight:800;font-size:34px;color:var(--navy);line-height:1}
