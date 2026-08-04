@@ -90,15 +90,13 @@ export default function AboutPage() {
             <span className="eyebrow">Who&apos;s Behind It</span>
             <h2>The Team.</h2>
             <p>
-              The series was founded by <b>Allen Hamilton</b>,{" "}
-              <b>Monty Holloway</b>, and <b>Amanda Newman</b> — each bringing
-              a unique skill set and experience to the mission: youth sports
-              technology, a lifetime of playing and coaching, and{" "}
-              <b>5v5 Sports</b>&apos; track record operating the
-              International Superflag Invitational, which drew 80 teams from
-              across three countries in 2025. The tour&apos;s first stop
-              layers on top of Superflag in McKinney, with Flag Football
-              Finder as the tour&apos;s official athlete platform.
+              The series was founded by a passionate team of youth sports
+              innovators with decades of combined experience running events,
+              building technology, and coaching athletes — including
+              operating the International Superflag Invitational, which drew
+              80 teams from across three countries in 2025. The tour&apos;s
+              first stop layers on top of Superflag in McKinney, with Flag
+              Football Finder as the tour&apos;s official athlete platform.
             </p>
           </div>
 
