@@ -6,7 +6,7 @@
 export const ATHLETE_REG_URL = "/events/mckinney-tx/register";
 
 export const CONTACT_EMAIL = "info@collegeflagshowcase.com";
-export const CONTACT_PHONE = "888.350.2215";
+export const CONTACT_PHONE = "888.555.0199";
 
 export const INTEREST_MAILTO =
   "mailto:info@collegeflagshowcase.com?subject=College%20Flag%20Showcase%20Series%20—%20Interest";

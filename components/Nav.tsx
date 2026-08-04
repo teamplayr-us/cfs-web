@@ -21,7 +21,7 @@ export default function Nav() {
         </a>
         <ul className="nav-links">
           <li>
-            <a href="/#offering">The Event</a>
+            <a href="/about">About</a>
           </li>
           <li className="nav-drop">
             <a href="/#tour">
@@ -44,9 +44,6 @@ export default function Nav() {
           </li>
           <li>
             <a href="/sponsors">Sponsors</a>
-          </li>
-          <li>
-            <a href="/about">About</a>
           </li>
         </ul>
         <div className="nav-right">

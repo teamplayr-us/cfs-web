@@ -24,8 +24,8 @@ export default function MobileMenu({ stops }: { stops: StopLink[] }) {
       </button>
       {open && (
         <div className="mnav-panel">
-          <a href="/#offering" onClick={close}>
-            The Event
+          <a href="/about" onClick={close}>
+            About
           </a>
           <a href="/#tour" onClick={close}>
             Events
@@ -45,9 +45,6 @@ export default function MobileMenu({ stops }: { stops: StopLink[] }) {
           </a>
           <a href="/sponsors" onClick={close}>
             Sponsors
-          </a>
-          <a href="/about" onClick={close}>
-            About
           </a>
         </div>
       )}
