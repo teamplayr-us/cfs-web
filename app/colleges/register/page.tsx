@@ -5,9 +5,9 @@ import CoachRegistrationForm from "@/components/CoachRegistrationForm";
 import { EVENTS, stopLabel } from "@/data/events";
 
 export const metadata: Metadata = {
-  title: "Coach Registration | College Flag Showcase Series",
+  title: "Coach Credentials | College Flag Showcase Series",
   description:
-    "Free registration for college flag football coaches — expected participant counts, combine data access, and sideline credentials at every event.",
+    "Free sideline credentials for college flag football coaches — expected participant counts and combine data access at every event.",
   robots: { index: false },
 };
 
@@ -19,9 +19,9 @@ export default function CoachRegisterPage() {
         <div className="wrap">
           <div className="section-head">
             <span className="eyebrow">College Coaches</span>
-            <h1 className="reg-title">Register as a Coach</h1>
+            <h1 className="reg-title">Get Sideline Credentials</h1>
             <p>
-              Registration is free for college programs. Pick your events and
+              Credentials are free for college programs. Pick your events and
               we&apos;ll confirm credentials, participant counts, and combine
               data access by email.
             </p>

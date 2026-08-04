@@ -227,7 +227,7 @@ export default function CoachRegistrationForm({ events }: Props) {
           onClick={submit}
           disabled={submitting}
         >
-          {submitting ? "One moment…" : "Register — It's Free"}
+          {submitting ? "One moment…" : "Get Credentials — It's Free"}
         </button>
       </fieldset>
     </div>

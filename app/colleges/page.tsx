@@ -7,7 +7,7 @@ import { allParticipatingColleges } from "@/data/colleges";
 export const metadata: Metadata = {
   title: "College Coaches | College Flag Showcase Series",
   description:
-    "Free registration for college flag football programs — expected participant counts, verified combine data access, and sideline credentials at every event of the girls flag football recruiting tour.",
+    "Free sideline credentials for college flag football programs — expected participant counts and verified combine data access at every event of the girls flag football recruiting tour.",
   openGraph: {
     title: "College Coaches | College Flag Showcase Series",
     description:
@@ -33,14 +33,14 @@ export default function CollegesPage() {
             </h1>
             <p className="hero-tag">
               <strong>
-                Free registration for college flag football programs
+                Free sideline credentials for college flag football programs
               </strong>{" "}
-              — expected participant counts, verified combine data, and
-              sideline credentials at every event.
+              — evaluate in person, with expected participant counts and
+              verified combine data at every event.
             </p>
             <div className="hero-ctas">
               <a className="btn btn-red" href="/colleges/register">
-                Register as a Coach
+                Get Sideline Credentials
               </a>
               <a className="btn btn-ghost-light" href="/#tour">
                 See the Tour
@@ -115,13 +115,13 @@ export default function CollegesPage() {
             <div>
               <h3>Get Credentialed</h3>
               <p>
-                Registration includes expected participant counts, combine data
-                access, and sideline credentials — tell us your program and
-                which events you want to work.
+                Credentials include expected participant counts, combine data
+                access, and full sideline access — tell us your program and
+                which events you plan to attend.
               </p>
             </div>
             <a className="btn btn-red" href="/colleges/register">
-              Register as a Coach
+              Get Sideline Credentials
             </a>
           </div>
         </div>
