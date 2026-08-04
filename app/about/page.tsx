@@ -92,11 +92,7 @@ export default function AboutPage() {
             <p>
               The series was founded by a passionate team of youth sports
               innovators with decades of combined experience running events,
-              building technology, and coaching athletes — including
-              operating the International Superflag Invitational, which drew
-              80 teams from across three countries in 2025. The tour&apos;s
-              first stop layers on top of Superflag in McKinney, with Flag
-              Football Finder as the tour&apos;s official athlete platform.
+              building technology, and coaching athletes.
             </p>
           </div>
 
