@@ -12,11 +12,11 @@ document, deck, graphic, or email read as the same brand as the website.
   plus a college showcase tournament in one weekend, evaluated in person by
   college flag football coaches.
 - **Attribution:** the series is independent — never call it "a 5v5 Sports
-  production." Founded by Allen Hamilton (founder of a youth sports
-  technology platform; lifelong athlete and coach) in partnership with
-  Monty Holloway and Amanda Newman, founders of 5v5 Sports. 5v5 Sports
-  operates the International Superflag Invitational, which the first stop
-  layers on top of — credit 5v5 Sports only in that role.
+  production." Co-founded by Allen Hamilton (founder of a youth sports
+  technology platform; lifelong athlete and coach), Monty Holloway, and
+  Amanda Newman (both founders of 5v5 Sports). 5v5 Sports operates the
+  International Superflag Invitational, which the first stop layers on
+  top of — credit 5v5 Sports only in that role.
 - **Logo:** circular badge, pink on black, sits on dark backgrounds. Square
   PNG (192×192). Don't recolor it or place it on busy imagery.
 

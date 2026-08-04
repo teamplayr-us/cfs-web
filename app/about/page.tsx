@@ -20,15 +20,15 @@ export const metadata: Metadata = {
 const TEAM = [
   {
     name: "Allen Hamilton",
-    role: "Founder of a youth sports technology platform. Lifelong athlete and coach.",
+    role: "Co-Founder. Founder of a youth sports technology platform; lifelong athlete and coach.",
   },
   {
     name: "Monty Holloway",
-    role: "Founder, 5v5 Sports — operator of the International Superflag Invitational.",
+    role: "Co-Founder. Founder of 5v5 Sports, operator of the International Superflag Invitational.",
   },
   {
     name: "Amanda Newman",
-    role: "Founder, 5v5 Sports — operator of the International Superflag Invitational.",
+    role: "Co-Founder. Founder of 5v5 Sports, operator of the International Superflag Invitational.",
   },
 ];
 
@@ -90,14 +90,15 @@ export default function AboutPage() {
             <span className="eyebrow">Who&apos;s Behind It</span>
             <h2>The Team.</h2>
             <p>
-              The series was founded by <b>Allen Hamilton</b> — founder of a
-              youth sports technology platform and a lifelong athlete and
-              coach — in partnership with the founders of <b>5v5 Sports</b>,
-              the operator behind the International Superflag Invitational,
-              which drew 80 teams from across three countries in 2025. The
-              tour&apos;s first stop layers on top of Superflag in McKinney,
-              with Flag Football Finder as the tour&apos;s official athlete
-              platform.
+              The series was founded by <b>Allen Hamilton</b>,{" "}
+              <b>Monty Holloway</b>, and <b>Amanda Newman</b>. Allen is the
+              founder of a youth sports technology platform and a lifelong
+              athlete and coach; Monty and Amanda are the founders of{" "}
+              <b>5v5 Sports</b>, the operator behind the International
+              Superflag Invitational, which drew 80 teams from across three
+              countries in 2025. The tour&apos;s first stop layers on top of
+              Superflag in McKinney, with Flag Football Finder as the
+              tour&apos;s official athlete platform.
             </p>
           </div>
 
