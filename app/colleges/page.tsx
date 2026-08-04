@@ -7,7 +7,7 @@ import { allParticipatingColleges } from "@/data/colleges";
 export const metadata: Metadata = {
   title: "College Coaches | College Flag Showcase Series",
   description:
-    "Free sideline credentials for college flag football programs — expected participant counts and verified combine data access at every event of the girls flag football recruiting tour.",
+    "Free recruiter credentials for college flag football programs — expected participant counts and verified combine data access at every event of the girls flag football recruiting tour.",
   openGraph: {
     title: "College Coaches | College Flag Showcase Series",
     description:
@@ -33,14 +33,14 @@ export default function CollegesPage() {
             </h1>
             <p className="hero-tag">
               <strong>
-                Free sideline credentials for college flag football programs
+                Free recruiter credentials for college flag football programs
               </strong>{" "}
               — evaluate in person, with expected participant counts and
               verified combine data at every event.
             </p>
             <div className="hero-ctas">
               <a className="btn btn-red" href="/colleges/register">
-                Get Sideline Credentials
+                Get Recruiter Credentials
               </a>
               <a className="btn btn-ghost-light" href="/#tour">
                 See the Tour
@@ -81,7 +81,7 @@ export default function CollegesPage() {
               <span className="why-num">02</span>
               <h3>In-Person Evaluation</h3>
               <p>
-                Sideline credentials put you on the field for positional
+                Recruiter credentials put you on the field for positional
                 drills, 1v1s, and bracketed 5v5 games against curated
                 competition.
               </p>
@@ -121,7 +121,7 @@ export default function CollegesPage() {
               </p>
             </div>
             <a className="btn btn-red" href="/colleges/register">
-              Get Sideline Credentials
+              Get Recruiter Credentials
             </a>
           </div>
         </div>

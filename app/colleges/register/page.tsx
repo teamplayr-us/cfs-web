@@ -7,7 +7,7 @@ import { EVENTS, stopLabel } from "@/data/events";
 export const metadata: Metadata = {
   title: "Coach Credentials | College Flag Showcase Series",
   description:
-    "Free sideline credentials for college flag football coaches — expected participant counts and combine data access at every event.",
+    "Free recruiter credentials for college flag football coaches — expected participant counts and combine data access at every event.",
   robots: { index: false },
 };
 
@@ -19,7 +19,7 @@ export default function CoachRegisterPage() {
         <div className="wrap">
           <div className="section-head">
             <span className="eyebrow">College Coaches</span>
-            <h1 className="reg-title">Get Sideline Credentials</h1>
+            <h1 className="reg-title">Get Recruiter Credentials</h1>
             <p>
               Credentials are free for college programs. Pick your events and
               we&apos;ll confirm credentials, participant counts, and combine

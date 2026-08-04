@@ -78,7 +78,7 @@ export default function CoachRegistrationForm({ events }: Props) {
             Before each event you pick, you&apos;ll get expected participant
             counts and combine data access details.
           </li>
-          <li>Sideline credentials are waiting at check-in.</li>
+          <li>Recruiter credentials are waiting at check-in.</li>
         </ul>
         <p className="reg-fineprint">
           Questions in the meantime? Email{" "}

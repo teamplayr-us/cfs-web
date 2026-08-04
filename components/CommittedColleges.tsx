@@ -62,12 +62,12 @@ export default function CommittedColleges({
 
         <div className="colleges-note">
           <p>
-            Coaching a college flag football program? Sideline credentials are
+            Coaching a college flag football program? Recruiter credentials are
             free for college coaches — with expected participant counts and
             combine data access included.
           </p>
           <a className="btn btn-ghost-light" href={ctaHref}>
-            Get Sideline Credentials
+            Get Recruiter Credentials
           </a>
         </div>
       </div>
