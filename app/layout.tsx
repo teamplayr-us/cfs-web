@@ -20,9 +20,10 @@ const mono = JetBrains_Mono({
   variable: "--font-mono",
 });
 
-const TITLE = "College Flag Showcase Series | Girls Flag Football Recruiting Tour";
+// Kept under SEO truncation limits: title ≤60 chars, description ≤155.
+const TITLE = "College Flag Showcase | Girls Flag Football Recruiting Tour";
 const DESCRIPTION =
-  "The College Flag Showcase Series pairs a verified combine with a college showcase tournament — girls flag football athletes tested, seen, and recruited at premier venues nationwide.";
+  "A verified combine and college showcase tournament for girls flag football — get tested, get seen, and get recruited at premier venues nationwide.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://collegeflagshowcase.com"),
