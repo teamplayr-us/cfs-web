@@ -2,10 +2,12 @@
 // Used by the client form and the API route so they can't drift.
 
 export const LEVEL_OPTIONS = [
-  "NCAA Varsity",
-  "NAIA Varsity",
-  "Club / Emerging",
-  "Launching a program",
+  "NCAA DI",
+  "NCAA DII",
+  "NCAA DIII",
+  "NAIA",
+  "NJCAA",
+  "Club",
 ] as const;
 
 export type LevelOption = (typeof LEVEL_OPTIONS)[number];
