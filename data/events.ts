@@ -39,9 +39,11 @@ export interface TourEvent {
     capacity?: number;
   };
   /** Proof line for an established event this one runs alongside.
-   * NOTE: anchor events (e.g. the International Superflag Invitational)
-   * are separate, independently operated events. Copy must never claim
-   * CFS ownership of — or a shared operator with — an anchor event. */
+   * NOTE: anchor events are separate events CFS layers on top of. The
+   * International Superflag Invitational is operated by 5v5 Sports
+   * (founded by CFS team members Monty Holloway and Amanda Newman), but
+   * the series itself is independent — copy may credit 5v5 Sports as the
+   * anchor event's operator, never as the producer of CFS. */
   anchorEvent?: {
     name: string;
     /** e.g. "80 teams in 2025" */

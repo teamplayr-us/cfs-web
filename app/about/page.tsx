@@ -17,11 +17,19 @@ export const metadata: Metadata = {
   },
 };
 
-// TODO: confirm titles for each team member.
 const TEAM = [
-  { name: "Allen Hamilton" },
-  { name: "Monty Holloway" },
-  { name: "Amanda Newman" },
+  {
+    name: "Allen Hamilton",
+    role: "Founder of a youth sports technology platform. Lifelong athlete and coach.",
+  },
+  {
+    name: "Monty Holloway",
+    role: "Founder, 5v5 Sports — operator of the International Superflag Invitational.",
+  },
+  {
+    name: "Amanda Newman",
+    role: "Founder, 5v5 Sports — operator of the International Superflag Invitational.",
+  },
 ];
 
 export default function AboutPage() {
@@ -84,8 +92,12 @@ export default function AboutPage() {
             <p>
               The series was founded by <b>Allen Hamilton</b> — founder of a
               youth sports technology platform and a lifelong athlete and
-              coach — with Flag Football Finder as the tour&apos;s official
-              athlete platform.
+              coach — in partnership with the founders of <b>5v5 Sports</b>,
+              the operator behind the International Superflag Invitational,
+              which drew 80 teams from across three countries in 2025. The
+              tour&apos;s first stop layers on top of Superflag in McKinney,
+              with Flag Football Finder as the tour&apos;s official athlete
+              platform.
             </p>
           </div>
 
@@ -94,6 +106,7 @@ export default function AboutPage() {
               <div className="why" key={member.name}>
                 <span className="why-num">{String(i + 1).padStart(2, "0")}</span>
                 <h3>{member.name}</h3>
+                <p>{member.role}</p>
               </div>
             ))}
           </div>
