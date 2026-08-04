@@ -7,6 +7,8 @@ import {
   EMPTY_COACH_REGISTRATION,
   LEVEL_OPTIONS,
   LevelOption,
+  ROLE_OPTIONS,
+  RoleOption,
   validateCoachRegistration,
 } from "@/lib/coachRegistration";
 
@@ -124,12 +126,19 @@ export default function CoachRegistrationForm({ events }: Props) {
           </label>
           <label>
             Role{err("role")}
-            <input
-              type="text"
-              placeholder="Head Coach, Assistant, Recruiting…"
+            <select
               value={data.role}
-              onChange={(e) => set("role", e.target.value)}
-            />
+              onChange={(e) => set("role", e.target.value as RoleOption | "")}
+            >
+              <option value="" disabled>
+                Choose one…
+              </option>
+              {ROLE_OPTIONS.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
           </label>
           <label>
             Program level{err("level")}

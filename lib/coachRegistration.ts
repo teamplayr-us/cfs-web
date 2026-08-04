@@ -12,11 +12,21 @@ export const LEVEL_OPTIONS = [
 
 export type LevelOption = (typeof LEVEL_OPTIONS)[number];
 
+export const ROLE_OPTIONS = [
+  "Head Coach",
+  "Assistant Coach",
+  "Recruiting Coordinator",
+  "Athletic Director",
+  "Other",
+] as const;
+
+export type RoleOption = (typeof ROLE_OPTIONS)[number];
+
 export interface CoachRegistrationData {
   program: string;
   coachFirst: string;
   coachLast: string;
-  role: string;
+  role: RoleOption | "";
   email: string;
   phone: string;
   level: LevelOption | "";
@@ -59,7 +69,8 @@ export function validateCoachRegistration(
   errors.program = required(data.program);
   errors.coachFirst = required(data.coachFirst, 80);
   errors.coachLast = required(data.coachLast, 80);
-  errors.role = required(data.role, 80);
+  if (!data.role) errors.role = "Pick one";
+  else if (!ROLE_OPTIONS.includes(data.role)) errors.role = "Pick one";
   if (!data.email.trim()) errors.email = "Required";
   else if (!EMAIL_RE.test(data.email.trim()))
     errors.email = "Enter a valid email";
