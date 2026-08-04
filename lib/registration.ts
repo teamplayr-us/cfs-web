@@ -56,7 +56,7 @@ export const EMPTY_REGISTRATION: RegistrationData = {
 
 export const GRAD_YEARS = Array.from({ length: 10 }, (_, i) => 2026 + i);
 
-// TODO: replace with the real 5v5 Sports liability waiver text before launch.
+// TODO: replace with the real liability waiver text before launch.
 export const WAIVER_SUMMARY =
   "I certify that I am the athlete's parent or legal guardian, I authorize " +
   "the athlete's participation in this College Flag Showcase Series event, " +

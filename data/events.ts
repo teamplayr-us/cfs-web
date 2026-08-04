@@ -39,9 +39,9 @@ export interface TourEvent {
     capacity?: number;
   };
   /** Proof line for an established event this one runs alongside.
-   * NOTE: CFS and anchor events (e.g. the International Superflag
-   * Invitational) are separate events — both 5v5 Sports productions.
-   * Copy must credit the shared operator, never claim CFS ownership. */
+   * NOTE: anchor events (e.g. the International Superflag Invitational)
+   * are separate, independently operated events. Copy must never claim
+   * CFS ownership of — or a shared operator with — an anchor event. */
   anchorEvent?: {
     name: string;
     /** e.g. "80 teams in 2025" */

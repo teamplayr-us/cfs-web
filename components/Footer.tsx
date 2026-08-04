@@ -12,7 +12,7 @@ export default function Footer() {
           Questions? {CONTACT_PHONE} &nbsp;|&nbsp;{" "}
           <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
         </div>
-        <div>© 2026 · A 5v5 Sports Production</div>
+        <div>© 2026 College Flag Showcase Series</div>
       </div>
     </footer>
   );

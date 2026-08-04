@@ -7,7 +7,7 @@ import { CONTACT_EMAIL, CONTACT_PHONE } from "@/data/links";
 export const metadata: Metadata = {
   title: "About | College Flag Showcase Series",
   description:
-    "Why the College Flag Showcase Series exists, the team behind it, and how every event is run — a 5v5 Sports production.",
+    "Why the College Flag Showcase Series exists, the team behind it, and how every event is run.",
   openGraph: {
     title: "About | College Flag Showcase Series",
     description:
@@ -82,11 +82,10 @@ export default function AboutPage() {
             <span className="eyebrow">Who&apos;s Behind It</span>
             <h2>The Team.</h2>
             <p>
-              The series is a{" "}
-              <b>5v5 Sports</b> production — the operator behind the
-              International Superflag Invitational, which drew 80 teams from
-              across three countries in 2025 — with Flag Football Finder as
-              the tour&apos;s official athlete platform.
+              The series was founded by <b>Allen Hamilton</b> — founder of a
+              youth sports technology platform and a lifelong athlete and
+              coach — with Flag Football Finder as the tour&apos;s official
+              athlete platform.
             </p>
           </div>
 

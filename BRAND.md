@@ -11,7 +11,9 @@ document, deck, graphic, or email read as the same brand as the website.
 - **Positioning line:** Girls National Recruiting Tour — a verified combine
   plus a college showcase tournament in one weekend, evaluated in person by
   college flag football coaches.
-- **Attribution:** "A 5v5 Sports Production" (footer credit).
+- **Attribution:** none — the series is independent. Founded by Allen
+  Hamilton (founder of a youth sports technology platform; lifelong athlete
+  and coach). NOT a 5v5 Sports production — never credit 5v5 Sports.
 - **Logo:** circular badge, pink on black, sits on dark backgrounds. Square
   PNG (192×192). Don't recolor it or place it on busy imagery.
 
@@ -90,4 +92,4 @@ Light pink (#FF8DC1) never appears on light backgrounds.
 - Email: info@collegeflagshowcase.com · Phone: 888.555.0199 (placeholder)
 - First event: McKinney, TX — Craig Ranch Sports Complex, Dec 11–13, 2026
   (registration deadline Nov 29, 2026). Nine events, 2026–27 season.
-- © 2026 · A 5v5 Sports Production
+- © 2026 College Flag Showcase Series
