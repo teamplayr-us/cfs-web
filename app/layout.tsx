@@ -38,13 +38,13 @@ export const metadata: Metadata = {
     url: "/",
     siteName: "College Flag Showcase Series",
     type: "website",
-    images: [{ url: "/logo.png", width: 192, height: 192 }],
+    images: [{ url: "/og.png", width: 1200, height: 630 }],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
-    images: ["/logo.png"],
+    images: ["/og.png"],
   },
 };
 

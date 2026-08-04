@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     description:
       "Evaluate verified, tournament-tested girls flag football athletes in person. Free for college coaches.",
     url: "/colleges",
+    images: [{ url: "/og.png", width: 1200, height: 630 }],
   },
 };
 

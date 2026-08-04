@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description:
       "Season-long and single-stop sponsorship packages for the girls flag football recruiting tour.",
     url: "/sponsors",
+    images: [{ url: "/og.png", width: 1200, height: 630 }],
   },
 };
 

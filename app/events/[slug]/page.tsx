@@ -28,8 +28,13 @@ export function generateMetadata({ params }: Props): Metadata {
   return {
     title,
     description,
-    openGraph: { title, description, url: `/events/${event.slug}` },
-    twitter: { title, description },
+    openGraph: {
+      title,
+      description,
+      url: `/events/${event.slug}`,
+      images: [{ url: "/og.png", width: 1200, height: 630 }],
+    },
+    twitter: { title, description, images: ["/og.png"] },
   };
 }
 
