@@ -201,3 +201,27 @@ export async function createSponsorInterest(
 ): Promise<void> {
   await createRecord(SPONSOR_TABLE, fields);
 }
+
+// "Coach Registrations" table (same base). Field IDs so Airtable UI renames
+// can't break the write.
+const COACH_TABLE = process.env.AIRTABLE_COACH_TABLE ?? "tblCZuBfVMjkEo5c5";
+
+export const COACH_FIELD = {
+  program: "fld6cOxBJa4pxIYwt",
+  coachFirst: "fldNjZFox9FVxi5cZ",
+  coachLast: "fldoe7n1csAhlHNo6",
+  role: "fldQZh36x6uGV7mle",
+  email: "fld4L5p35saiU7wPw",
+  phone: "fldGOlggqIr2gl4kH",
+  level: "fldXCkBRKRimSP4ai",
+  events: "fldsQJxM4a1XoPhTE",
+  notes: "fldxwfgJHVwZ9lZMw",
+  status: "fldEKThYRZujXW7Ow",
+  submittedAt: "fldV38CVATieckdgn",
+} as const;
+
+export async function createCoachRegistration(
+  fields: Record<string, unknown>,
+): Promise<void> {
+  await createRecord(COACH_TABLE, fields);
+}

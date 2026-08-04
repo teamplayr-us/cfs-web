@@ -23,7 +23,9 @@ Visitor
   │     form → /api/sponsor-interest → Airtable "Sponsor Interest"
   │     → YOU review → reply with package + next steps → update Status
   │
-  ├─ Coach registration     /colleges → email to info@collegeflagshowcase.com
+  ├─ Coach registration     /colleges/register
+  │     form → /api/coach-register → Airtable "Coach Registrations"
+  │     → YOU confirm credentials by email → update Status
   └─ Interest list          homepage #interest → email to info@…
 ```
 
@@ -85,8 +87,24 @@ for the roster; use Airtable views to filter by Event Slug.
    through **Contacted → Won / Passed**. When a deal closes, add the logo
    to `data/sponsors.ts`.
 
-**Habit:** check both tables for Status = New a few times a week (or add an
-Airtable notification automation on record creation).
+### 2d. Coach registration (automated intake, manual credentialing)
+
+1. Coach fills the form at `/colleges/register` (program, name, role,
+   level, school email, events they plan to attend, recruiting notes).
+   Free — no payment. Spam is filtered by a honeypot.
+2. `/api/coach-register` validates and writes to **Coach Registrations**
+   with Status **New**.
+3. **Manual (you):** verify the program is real (school site/roster) →
+   reply from info@ confirming credentials → set Status **Credentialed**
+   (or **Declined**). Before each event, send credentialed coaches the
+   expected participant counts and combine-data access details.
+4. When a program confirms attendance for an event, add it to
+   `COLLEGES_BY_EVENT` in `data/colleges.ts` (logo in
+   `public/colleges/`, -mono variant for the dark board) so it shows on
+   the Committed Colleges board.
+
+**Habit:** check all intake tables for Status = New a few times a week (or
+add an Airtable notification automation on record creation).
 
 ## 3. Airtable base (College Flag Showcase · app0mk0cTZLDeVahe)
 
@@ -95,6 +113,7 @@ Airtable notification automation on record creation).
 | Athlete Registrations | `tblmp5EHSrHHaxjpD` | Stripe webhook | Paid combine/camp registrations |
 | Team Invite Requests | `tblqtHoZgqgkNTgle` | Invite form API | Tournament invite pipeline |
 | Sponsor Interest | `tblW8wpENPt3yQDB0` | Sponsor form API | Sponsorship sales pipeline |
+| Coach Registrations | `tblCZuBfVMjkEo5c5` | Coach form API | College coach credentialing |
 
 Rules:
 - The site writes by **field ID**, so you can rename fields freely — with

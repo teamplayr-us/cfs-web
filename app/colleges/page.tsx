@@ -3,7 +3,6 @@ import Nav from "@/components/Nav";
 import CommittedColleges from "@/components/CommittedColleges";
 import Footer from "@/components/Footer";
 import { allParticipatingColleges } from "@/data/colleges";
-import { COACH_MAILTO } from "@/data/links";
 
 export const metadata: Metadata = {
   title: "College Coaches | College Flag Showcase Series",
@@ -40,7 +39,7 @@ export default function CollegesPage() {
               sideline credentials at every event.
             </p>
             <div className="hero-ctas">
-              <a className="btn btn-red" href={COACH_MAILTO}>
+              <a className="btn btn-red" href="/colleges/register">
                 Register as a Coach
               </a>
               <a className="btn btn-ghost-light" href="/#tour">
@@ -121,7 +120,7 @@ export default function CollegesPage() {
                 which events you want to work.
               </p>
             </div>
-            <a className="btn btn-red" href={COACH_MAILTO}>
+            <a className="btn btn-red" href="/colleges/register">
               Register as a Coach
             </a>
           </div>
@@ -132,7 +131,7 @@ export default function CollegesPage() {
         slots={allParticipatingColleges()}
         title="Participating Colleges"
         lede="Programs already confirmed on the tour. This board updates as college coaches register — add yours."
-        ctaHref={COACH_MAILTO}
+        ctaHref="/colleges/register"
       />
 
       <Footer />
