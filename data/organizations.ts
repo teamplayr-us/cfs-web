@@ -65,7 +65,7 @@ export const ORGS_BY_EVENT: Record<string, OrgSlot[]> = {
       filled: true,
       name: "FamLife Flex",
       logo: "/programs/famlife-flex.png",
-      location: "McKinney, TX",
+      location: "Texas",
     },
   ],
 };
