@@ -50,6 +50,7 @@ export async function POST(req: Request) {
       [COACH_FIELD.phone]: clip(data.phone, 40) || undefined,
       [COACH_FIELD.level]: data.level,
       [COACH_FIELD.events]: eventLabels,
+      [COACH_FIELD.collegeRowTent]: data.collegeRowTent === true,
       [COACH_FIELD.notes]: clip(data.notes, 1000) || undefined,
       [COACH_FIELD.status]: "New",
       [COACH_FIELD.submittedAt]: new Date().toISOString(),

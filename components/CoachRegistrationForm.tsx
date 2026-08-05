@@ -79,6 +79,12 @@ export default function CoachRegistrationForm({ events }: Props) {
             counts and combine data access details.
           </li>
           <li>Recruiter credentials are waiting at check-in.</li>
+          {data.collegeRowTent && (
+            <li>
+              Your College Row tent space is noted — we&apos;ll send setup
+              details before each event.
+            </li>
+          )}
         </ul>
         <p className="reg-fineprint">
           Questions in the meantime? Email{" "}
@@ -199,6 +205,21 @@ export default function CoachRegistrationForm({ events }: Props) {
             ))}
           </div>
         </div>
+        <label className="reg-check reg-tent">
+          <input
+            type="checkbox"
+            checked={data.collegeRowTent}
+            onChange={(e) => set("collegeRowTent", e.target.checked)}
+          />
+          <span>
+            <b>
+              Reserve a tent space in College Row — free for registered
+              programs.
+            </b>{" "}
+            Set up your program&apos;s tent in the Fan Zone and meet athletes
+            and families between sessions all weekend.
+          </span>
+        </label>
         <label>
           Positions or class years you&apos;re recruiting (optional)
           {err("notes")}

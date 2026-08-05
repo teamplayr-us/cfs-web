@@ -32,6 +32,8 @@ export interface CoachRegistrationData {
   level: LevelOption | "";
   /** Event slugs the coach plans to attend */
   events: string[];
+  /** Free tent space in College Row (Fan Zone) */
+  collegeRowTent: boolean;
   notes: string;
   /** Honeypot — humans never fill this; bots do */
   website: string;
@@ -46,6 +48,7 @@ export const EMPTY_COACH_REGISTRATION: CoachRegistrationData = {
   phone: "",
   level: "",
   events: [],
+  collegeRowTent: false,
   notes: "",
   website: "",
 };

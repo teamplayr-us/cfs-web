@@ -215,6 +215,7 @@ export const COACH_FIELD = {
   phone: "fldGOlggqIr2gl4kH",
   level: "fldXCkBRKRimSP4ai",
   events: "fldsQJxM4a1XoPhTE",
+  collegeRowTent: "fldiWWTASldaYWD5w",
   notes: "fldxwfgJHVwZ9lZMw",
   status: "fldEKThYRZujXW7Ow",
   submittedAt: "fldV38CVATieckdgn",
