@@ -6,11 +6,11 @@ import { CONTACT_EMAIL } from "@/data/links";
 export const metadata: Metadata = {
   title: "Athlete Media Package | College Flag Showcase Series",
   description:
-    "Professional combine film, tournament game film, and recruiting-ready highlights from every event — purchase, log in, and watch in the athlete portal.",
+    "Every game filmed by high-quality AI cameras in the full-field view college coaches want — plus combine film and recruiting-ready highlights.",
   openGraph: {
     title: "Athlete Media Package | College Flag Showcase Series",
     description:
-      "Professional combine film, game film, and recruiting-ready highlights from every event of the tour.",
+      "Every game filmed by high-quality AI cameras in the full-field view college coaches want.",
     url: "/media",
     images: [{ url: "/og.png", width: 1200, height: 630 }],
   },
@@ -38,11 +38,12 @@ export default function MediaPage() {
             </h1>
             <p className="hero-tag">
               <strong>
-                College coaches recruit on film — so we capture every rep.
+                Every game filmed. High-quality AI cameras. The exact
+                full-field view college coaches want.
               </strong>{" "}
-              Professional crews shoot your combine testing, skill work, and
-              tournament games, then cut them into recruiting-ready film you
-              own.
+              All of your tournament games are captured automatically — every
+              route, every read, every snap — and cut into recruiting-ready
+              film you own.
             </p>
             <div className="hero-ctas">
               <a className="btn btn-red" href={NOTIFY_HREF}>
@@ -76,19 +77,20 @@ export default function MediaPage() {
           <div className="why-grid">
             <div className="why">
               <span className="why-num">01</span>
+              <h3>Every Game Filmed</h3>
+              <p>
+                High-quality AI cameras capture all of your tournament games
+                in the exact full-field view college coaches want — every
+                route and every read, not just the ball.
+              </p>
+            </div>
+            <div className="why">
+              <span className="why-num">02</span>
               <h3>Combine Film</h3>
               <p>
                 Your verified testing runs on camera — the same speed,
                 agility, and explosiveness numbers coaches see, with the
                 footage behind them.
-              </p>
-            </div>
-            <div className="why">
-              <span className="why-num">02</span>
-              <h3>Game Film</h3>
-              <p>
-                Professionally shot tournament games from the Showcase — the
-                film coaches actually evaluate, against curated competition.
               </p>
             </div>
             <div className="why">
