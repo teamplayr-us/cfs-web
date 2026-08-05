@@ -4,20 +4,20 @@ import Footer from "@/components/Footer";
 import { CONTACT_EMAIL } from "@/data/links";
 
 export const metadata: Metadata = {
-  title: "Athlete Media Package | College Flag Showcase Series",
+  title: "Athlete Film Package | College Flag Showcase Series",
   description:
     "Every game filmed by high-quality AI cameras in the full-field view college coaches want — plus combine film and recruiting-ready highlights.",
   openGraph: {
-    title: "Athlete Media Package | College Flag Showcase Series",
+    title: "Athlete Film Package | College Flag Showcase Series",
     description:
       "Every game filmed by high-quality AI cameras in the full-field view college coaches want.",
-    url: "/media",
+    url: "/film",
     images: [{ url: "/og.png", width: 1200, height: 630 }],
   },
 };
 
 const NOTIFY_HREF = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-  "Athlete Media Package — Notify Me at Launch",
+  "Athlete Film Package — Notify Me at Launch",
 )}`;
 
 // TODO: replace this landing page's notify CTA with the real portal
@@ -30,7 +30,7 @@ export default function MediaPage() {
       <header className="hero" id="top">
         <div className="wrap hero-inner">
           <div>
-            <span className="hero-badge">Athlete Media Package</span>
+            <span className="hero-badge">Athlete Film Package</span>
             <h1 className="event-title">
               Your Film.
               <br />
@@ -69,7 +69,7 @@ export default function MediaPage() {
               Captured.
             </h2>
             <p>
-              Verified numbers open the door — film closes it. The media
+              Verified numbers open the door — film closes it. The film
               package pairs your combine data with the footage to back it up.
             </p>
           </div>
@@ -117,7 +117,7 @@ export default function MediaPage() {
               Watch.
             </h2>
             <p>
-              The media portal is in development. Buy your package, log in to
+              The film portal is in development. Buy your package, log in to
               stream and download your film, and share it straight to the
               coaches recruiting you — all in one place, launching ahead of
               the first stop in McKinney.

@@ -26,7 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
-      url: `${BASE}/media`,
+      url: `${BASE}/film`,
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },

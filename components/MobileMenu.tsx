@@ -57,8 +57,8 @@ export default function MobileMenu({ stops }: { stops: StopLink[] }) {
               ))}
             </>
           )}
-          <a href="/media" onClick={close}>
-            Media
+          <a href="/film" onClick={close}>
+            Film
           </a>
           <a href="/colleges" onClick={close}>
             Colleges

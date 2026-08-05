@@ -40,7 +40,7 @@ export default function Nav() {
             </ul>
           </li>
           <li>
-            <a href="/media">Media</a>
+            <a href="/film">Film</a>
           </li>
           <li>
             <a href="/colleges">Colleges</a>
