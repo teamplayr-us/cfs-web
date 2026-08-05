@@ -61,6 +61,12 @@ export const ORGS_BY_EVENT: Record<string, OrgSlot[]> = {
       logo: "/programs/kansas-city-heat.png",
       location: "Kansas City",
     },
+    {
+      filled: true,
+      name: "FamLife Flex",
+      logo: "/programs/famlife-flex.png",
+      location: "McKinney, TX",
+    },
   ],
 };
 
