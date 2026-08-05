@@ -29,6 +29,11 @@ export const COLLEGES_BY_EVENT: Record<string, CollegeSlot[]> = {
       name: "Illinois Wesleyan University",
       logo: "/colleges/illinois-wesleyan-mono.png",
     },
+    {
+      filled: true,
+      name: "Our Lady of the Lake University",
+      logo: "/colleges/ollu-mono.png",
+    },
   ],
 };
 
