@@ -34,6 +34,9 @@ export const metadata: Metadata = {
     icon: "/logo.png",
     apple: "/logo.png",
   },
+  verification: {
+    google: "3F9FMqcfUW-_997NluSEBwdB9nMGwc07_LzNNmu5FhM",
+  },
   openGraph: {
     title: TITLE,
     description: DESCRIPTION,
