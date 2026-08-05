@@ -34,6 +34,11 @@ export const COLLEGES_BY_EVENT: Record<string, CollegeSlot[]> = {
       name: "Our Lady of the Lake University",
       logo: "/colleges/ollu-mono.png",
     },
+    {
+      filled: true,
+      name: "Dallas College Richland",
+      logo: "/colleges/richland-mono.png",
+    },
   ],
 };
 
