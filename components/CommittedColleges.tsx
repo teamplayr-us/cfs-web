@@ -50,11 +50,7 @@ export default function CommittedColleges({
                   <span>{slot.name}</span>
                 )
               ) : (
-                <span>
-                  College logo
-                  <br />
-                  announcing soon
-                </span>
+                <span>Announcing soon</span>
               )}
             </div>
           ))}
