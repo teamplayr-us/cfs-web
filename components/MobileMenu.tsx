@@ -40,6 +40,9 @@ export default function MobileMenu({ stops }: { stops: StopLink[] }) {
               <span className="mnav-num">{stop.number}</span> {stop.city}
             </a>
           ))}
+          <a href="/media" onClick={close}>
+            Media
+          </a>
           <a href="/colleges" onClick={close}>
             Colleges
           </a>
