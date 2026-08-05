@@ -10,7 +10,11 @@ interface StopLink {
 
 export default function MobileMenu({ stops }: { stops: StopLink[] }) {
   const [open, setOpen] = useState(false);
-  const close = () => setOpen(false);
+  const [eventsOpen, setEventsOpen] = useState(false);
+  const close = () => {
+    setOpen(false);
+    setEventsOpen(false);
+  };
 
   return (
     <div className="mnav">
@@ -27,19 +31,32 @@ export default function MobileMenu({ stops }: { stops: StopLink[] }) {
           <a href="/about" onClick={close}>
             About
           </a>
-          <a href="/#tour" onClick={close}>
-            Events
-          </a>
-          {stops.map((stop) => (
-            <a
-              key={stop.slug}
-              className="mnav-sub"
-              href={`/events/${stop.slug}`}
-              onClick={close}
-            >
-              <span className="mnav-num">{stop.number}</span> {stop.city}
-            </a>
-          ))}
+          <button
+            type="button"
+            className="mnav-group"
+            aria-expanded={eventsOpen}
+            onClick={() => setEventsOpen(!eventsOpen)}
+          >
+            Events{" "}
+            <span aria-hidden="true">{eventsOpen ? "▴" : "▾"}</span>
+          </button>
+          {eventsOpen && (
+            <>
+              <a className="mnav-sub" href="/#tour" onClick={close}>
+                Full Tour Schedule
+              </a>
+              {stops.map((stop) => (
+                <a
+                  key={stop.slug}
+                  className="mnav-sub"
+                  href={`/events/${stop.slug}`}
+                  onClick={close}
+                >
+                  <span className="mnav-num">{stop.number}</span> {stop.city}
+                </a>
+              ))}
+            </>
+          )}
           <a href="/media" onClick={close}>
             Media
           </a>

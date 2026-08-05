@@ -77,6 +77,8 @@ nav{background:var(--navy);color:var(--chalk);position:sticky;top:0;z-index:50;b
 .mnav-panel a{font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:14px var(--pad);border-top:1px solid var(--line-dark)}
 .mnav-panel a:hover{color:var(--gold)}
 .mnav-panel a.mnav-sub{font-size:11px;padding:10px var(--pad) 10px calc(var(--pad) + 20px);color:#C9C4C9;border-top:0}
+.mnav-group{font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:transparent;border:0;border-top:1px solid var(--line-dark);color:var(--chalk);padding:14px var(--pad);text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.mnav-group:hover,.mnav-group[aria-expanded="true"]{color:var(--gold)}
 .mnav-num{color:var(--red)}
 
 /* tour stops dropdown — CSS-only, opens on hover and keyboard focus */
