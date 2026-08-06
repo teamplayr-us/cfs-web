@@ -39,6 +39,11 @@ export const COLLEGES_BY_EVENT: Record<string, CollegeSlot[]> = {
       name: "Dallas College Richland",
       logo: "/colleges/richland-mono.png",
     },
+    {
+      filled: true,
+      name: "Missouri Valley College",
+      logo: "/colleges/missouri-valley-mono.png",
+    },
   ],
 };
 
