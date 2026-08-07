@@ -112,8 +112,16 @@ export const EVENTS: TourEvent[] = [
     tag: "Announcing",
   },
   {
-    slug: "southern-california",
+    slug: "seattle-wa",
     number: "04",
+    city: "Seattle, WA",
+    venue: "Venue announcing soon",
+    date: "APR 2027",
+    tag: "Announcing",
+  },
+  {
+    slug: "southern-california",
+    number: "05",
     city: "Southern California",
     venue: "Venue announcing soon",
     date: "MAY 2027",
@@ -121,7 +129,7 @@ export const EVENTS: TourEvent[] = [
   },
   {
     slug: "ohio",
-    number: "05",
+    number: "06",
     city: "Ohio",
     venue: "Venue announcing soon",
     date: "JUN 2027",
@@ -129,7 +137,7 @@ export const EVENTS: TourEvent[] = [
   },
   {
     slug: "boston-ma",
-    number: "06",
+    number: "07",
     city: "Boston, MA",
     venue: "Venue announcing soon",
     date: "JUL 2027",
@@ -137,7 +145,7 @@ export const EVENTS: TourEvent[] = [
   },
   {
     slug: "tampa-fl",
-    number: "07",
+    number: "08",
     city: "Tampa, FL",
     venue: "Venue announcing soon",
     date: "SEP 2027",
@@ -145,7 +153,7 @@ export const EVENTS: TourEvent[] = [
   },
   {
     slug: "nashville-tn",
-    number: "08",
+    number: "09",
     city: "Nashville, TN",
     venue: "Venue announcing soon",
     date: "OCT 2027",
@@ -153,7 +161,7 @@ export const EVENTS: TourEvent[] = [
   },
   {
     slug: "atlanta-ga",
-    number: "09",
+    number: "10",
     city: "Atlanta, GA",
     venue: "Venue announcing soon",
     date: "DEC 2027",

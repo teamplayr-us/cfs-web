@@ -94,5 +94,5 @@ Light pink (#FF8DC1) never appears on light backgrounds.
 - Site: https://www.collegeflagshowcase.com
 - Email: info@collegeflagshowcase.com · Phone: 888.555.0199 (placeholder)
 - First event: Dallas, TX — Craig Ranch Sports Complex (McKinney), Dec 11–13, 2026
-  (registration deadline Nov 29, 2026). Nine events, 2026–27 season.
+  (registration deadline Nov 29, 2026). Ten events, 2026–27 season.
 - © 2026 College Flag Showcase Series
