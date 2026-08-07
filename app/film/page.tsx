@@ -120,7 +120,7 @@ export default function MediaPage() {
               The film portal is in development. Buy your package, log in to
               stream and download your film, and share it straight to the
               coaches recruiting you — all in one place, launching ahead of
-              the first stop in McKinney.
+              the first stop in Dallas.
             </p>
           </div>
 

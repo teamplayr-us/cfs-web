@@ -68,7 +68,7 @@ export const EVENTS: TourEvent[] = [
   {
     slug: "mckinney-tx",
     number: "01",
-    city: "McKinney, TX",
+    city: "Dallas, TX",
     venue: "Craig Ranch Sports Complex",
     date: "DEC 2026",
     tag: "Registration Open",

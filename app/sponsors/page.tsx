@@ -183,7 +183,7 @@ export default function SponsorsPage() {
               <div className="offer-body">
                 <p className="offer-lede">
                   Every event, all season — your brand travels with the series,
-                  from the first whistle in McKinney to the last event of the
+                  from the first whistle in Dallas to the last event of the
                   tour.
                 </p>
                 <a

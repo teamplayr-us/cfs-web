@@ -16,7 +16,7 @@ interface EventOption {
 }
 
 interface Props {
-  /** All selectable events (label like "Event 01 — McKinney, TX") */
+  /** All selectable events (label like "Event 01 — Dallas, TX") */
   events: EventOption[];
   /** Pre-selected package (from the tier card the visitor clicked) */
   defaultPackage?: PackageOption;

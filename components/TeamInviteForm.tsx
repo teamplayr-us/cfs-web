@@ -14,7 +14,7 @@ interface EventOption {
 }
 
 interface Props {
-  /** All selectable events (label like "Event 01 — McKinney, TX") */
+  /** All selectable events (label like "Event 01 — Dallas, TX") */
   events: EventOption[];
   /** Slug of the page's event, pre-checked */
   defaultEventSlug: string;
@@ -144,7 +144,7 @@ export default function TeamInviteForm({ events, defaultEventSlug }: Props) {
             Team location (city, state){err("location")}
             <input
               type="text"
-              placeholder="McKinney, TX"
+              placeholder="Dallas, TX"
               value={data.location}
               onChange={(e) => set("location", e.target.value)}
             />
