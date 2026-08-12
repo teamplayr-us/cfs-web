@@ -6,6 +6,13 @@ import {
   createRegistration,
   registrationExists,
 } from "@/lib/airtable";
+import {
+  detailRows,
+  emailLayout,
+  escapeHtml,
+  NOTIFY_EMAIL,
+  sendEmail,
+} from "@/lib/email";
 
 export const runtime = "nodejs";
 
@@ -61,6 +68,48 @@ export async function POST(req: Request) {
   } catch (err) {
     console.error("Airtable write failed for session", session.id, err);
     return NextResponse.json({ error: "Storage failed" }, { status: 500 });
+  }
+
+  // Best-effort emails after the registration is stored. sendEmail never
+  // throws, so the webhook always returns 200 once the write succeeded.
+  const eventLabel = tourEvent
+    ? `${stopLabel(tourEvent)} — ${tourEvent.city}`
+    : (m.eventSlug ?? "");
+  const athleteName = `${m.athleteFirst ?? ""} ${m.athleteLast ?? ""}`.trim();
+  const amount = ((session.amount_total ?? 0) / 100).toFixed(2);
+  const combineDate =
+    tourEvent?.athleteReg?.combineDate ?? tourEvent?.details?.dates;
+
+  await sendEmail({
+    to: NOTIFY_EMAIL,
+    subject: `New athlete registration — ${athleteName} (${eventLabel})`,
+    html: emailLayout(
+      "New Athlete Registration",
+      detailRows([
+        ["Athlete", athleteName],
+        ["Event", eventLabel],
+        ["Grad year", m.gradYear],
+        ["Positions", m.positions],
+        ["Guardian", `${m.guardianFirst ?? ""} ${m.guardianLast ?? ""}`.trim()],
+        ["Guardian email", m.guardianEmail],
+        ["Guardian phone", m.guardianPhone],
+        ["Paid", `$${amount}`],
+      ]),
+    ),
+    replyTo: m.guardianEmail,
+  });
+  if (m.guardianEmail) {
+    await sendEmail({
+      to: m.guardianEmail,
+      subject: `Registration confirmed — ${eventLabel}`,
+      html: emailLayout(
+        "Registration Confirmed",
+        `<p>Hi ${escapeHtml(m.guardianFirst ?? "there")},</p>
+         <p><b>${escapeHtml(athleteName)}</b> is registered for the Showcase Combine &amp; Camp at <b>${escapeHtml(eventLabel)}</b>${combineDate ? ` (${escapeHtml(combineDate)})` : ""}. Payment of $${amount} is confirmed &mdash; your Stripe receipt arrives separately.</p>
+         <p>What&rsquo;s next: we&rsquo;ll email the full event-weekend schedule and check-in details before the event.</p>
+         <p>Questions in the meantime? Just reply to this email.</p>`,
+      ),
+    });
   }
 
   return NextResponse.json({ received: true });

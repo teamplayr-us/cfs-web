@@ -5,6 +5,13 @@ import {
   CoachRegistrationData,
   validateCoachRegistration,
 } from "@/lib/coachRegistration";
+import {
+  detailRows,
+  emailLayout,
+  escapeHtml,
+  NOTIFY_EMAIL,
+  sendEmail,
+} from "@/lib/email";
 
 export const runtime = "nodejs";
 
@@ -62,6 +69,43 @@ export async function POST(req: Request) {
       { status: 500 },
     );
   }
+
+  // Best-effort emails after the write succeeds — never fail the response.
+  await sendEmail({
+    to: NOTIFY_EMAIL,
+    subject: `New coach registration — ${data.program.trim()}`,
+    html: emailLayout(
+      "New Coach Registration",
+      detailRows([
+        ["Program", data.program],
+        ["Coach", `${data.coachFirst} ${data.coachLast}`],
+        ["Role", data.role],
+        ["Level", data.level],
+        ["Email", data.email],
+        ["Phone", data.phone],
+        ["Events", eventLabels],
+        ["College Row tent", data.collegeRowTent ? "Yes — free tent space requested" : undefined],
+        ["Recruiting notes", data.notes],
+      ]),
+    ),
+    replyTo: data.email.trim(),
+  });
+  await sendEmail({
+    to: data.email.trim(),
+    subject: "Recruiter credentials — registration received",
+    html: emailLayout(
+      "Registration Received",
+      `<p>Hi ${escapeHtml(data.coachFirst.trim())},</p>
+       <p>We&rsquo;ve got your recruiter registration for <b>${escapeHtml(data.program.trim())}</b>. Here&rsquo;s what happens next:</p>
+       <ul style="padding-left:20px;">
+         <li>We&rsquo;ll confirm your credentials by email.</li>
+         <li>Before each event you picked (${escapeHtml(eventLabels)}), you&rsquo;ll get expected participant counts and combine data access details.</li>
+         <li>Your credentials will be waiting at check-in.</li>
+         ${data.collegeRowTent ? "<li>Your College Row tent space is noted &mdash; we&rsquo;ll send setup details before each event.</li>" : ""}
+       </ul>
+       <p>Questions in the meantime? Just reply to this email.</p>`,
+    ),
+  });
 
   return NextResponse.json({ ok: true });
 }
