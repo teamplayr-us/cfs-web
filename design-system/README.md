@@ -11,6 +11,7 @@ file is one preview card, marked with a first-line
 | `foundations/type.html` | Type — display/eyebrow/body/mono scale |
 | `foundations/motifs.html` | Brand — yard lines, offset shadows, ✓ marks, numbered lists |
 | `foundations/voice.html` | Brand — voice + vocabulary rules |
+| `foundations/logos.html` | Brand — primary badge (embedded file) + third-party logo treatment |
 | `components/buttons.html` | Components — primary / ghost / ghost-on-dark |
 | `components/cards.html` | Components — numbered cards + board slots |
 | `components/forms.html` | Forms — inputs, labels, checks, errors |
