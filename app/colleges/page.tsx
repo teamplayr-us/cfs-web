@@ -7,7 +7,7 @@ import { allParticipatingColleges } from "@/data/colleges";
 export const metadata: Metadata = {
   title: "College Coaches | College Flag Showcase Series",
   description:
-    "Free recruiter credentials for college flag football programs — expected participant counts and verified combine data access at every event of the girls flag football recruiting tour.",
+    "Free recruiter credentials for college flag football programs — verified combine data, participant counts, and live elite travel-team competition at every event.",
   openGraph: {
     title: "College Coaches | College Flag Showcase Series",
     description:
@@ -35,8 +35,9 @@ export default function CollegesPage() {
               <strong>
                 Free recruiter credentials for college flag football programs
               </strong>{" "}
-              — evaluate in person, with expected participant counts and
-              verified combine data at every event.
+              — verified combine data, expected participant counts, and
+              athletes evaluated in live elite competition as top travel
+              programs meet in the Showcase Tournament.
             </p>
             <div className="hero-ctas">
               <a className="btn btn-red" href="/colleges/register">

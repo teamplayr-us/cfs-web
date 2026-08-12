@@ -5,6 +5,13 @@ import {
   SponsorInterestData,
   validateSponsorInterest,
 } from "@/lib/sponsorInterest";
+import {
+  detailRows,
+  emailLayout,
+  escapeHtml,
+  NOTIFY_EMAIL,
+  sendEmail,
+} from "@/lib/email";
 
 export const runtime = "nodejs";
 
@@ -61,6 +68,37 @@ export async function POST(req: Request) {
       { status: 500 },
     );
   }
+
+  // Best-effort emails after the write succeeds — never fail the response.
+  await sendEmail({
+    to: NOTIFY_EMAIL,
+    subject: `New sponsorship inquiry — ${data.company.trim()}`,
+    html: emailLayout(
+      "New Sponsorship Inquiry",
+      detailRows([
+        ["Company", data.company],
+        ["Contact", `${data.contactFirst} ${data.contactLast}`],
+        ["Email", data.email],
+        ["Phone", data.phone],
+        ["Website", data.siteUrl],
+        ["Package", data.pkg],
+        ["Markets", marketLabels],
+        ["Message", data.message],
+      ]),
+    ),
+    replyTo: data.email.trim(),
+  });
+  await sendEmail({
+    to: data.email.trim(),
+    subject: "Sponsorship inquiry received — College Flag Showcase Series",
+    html: emailLayout(
+      "Inquiry Received",
+      `<p>Hi ${escapeHtml(data.contactFirst.trim())},</p>
+       <p>Thanks for your interest in putting <b>${escapeHtml(data.company.trim())}</b> on the field with the College Flag Showcase Series.</p>
+       <p>We&rsquo;ll review your inquiry and come back to you with a package built around your brand and the markets you care about.</p>
+       <p>Questions in the meantime? Just reply to this email.</p>`,
+    ),
+  });
 
   return NextResponse.json({ ok: true });
 }

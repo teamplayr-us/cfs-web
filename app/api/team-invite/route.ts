@@ -2,6 +2,13 @@ import { NextResponse } from "next/server";
 import { getEvent, stopLabel } from "@/data/events";
 import { createTeamInvite, TEAM_FIELD } from "@/lib/airtable";
 import { TeamInviteData, validateTeamInvite } from "@/lib/teamInvite";
+import {
+  detailRows,
+  emailLayout,
+  escapeHtml,
+  NOTIFY_EMAIL,
+  sendEmail,
+} from "@/lib/email";
 
 export const runtime = "nodejs";
 
@@ -59,6 +66,38 @@ export async function POST(req: Request) {
       { status: 500 },
     );
   }
+
+  // Best-effort emails after the write succeeds — never fail the response.
+  await sendEmail({
+    to: NOTIFY_EMAIL,
+    subject: `New team invite request — ${data.teamName.trim()}`,
+    html: emailLayout(
+      "New Team Invite Request",
+      detailRows([
+        ["Team", data.teamName],
+        ["Coach", `${data.coachFirst} ${data.coachLast}`],
+        ["Email", data.email],
+        ["Phone", data.phone],
+        ["Location", data.location],
+        ["Age groups", data.ageGroups],
+        ["Events", eventLabels],
+        ["About", data.about],
+        ["Link", data.link],
+      ]),
+    ),
+    replyTo: data.email.trim(),
+  });
+  await sendEmail({
+    to: data.email.trim(),
+    subject: "Showcase Tournament — invite request received",
+    html: emailLayout(
+      "Invite Request Received",
+      `<p>Hi ${escapeHtml(data.coachFirst.trim())},</p>
+       <p>We&rsquo;ve got your Showcase Tournament invite request for <b>${escapeHtml(data.teamName.trim())}</b> (${escapeHtml(eventLabels)}).</p>
+       <p>The tournament field is invite-only and curated &mdash; we review every program and we&rsquo;ll get back to you either way. If your team is selected, your invite and registration link come straight to this inbox.</p>
+       <p>Questions in the meantime? Just reply to this email.</p>`,
+    ),
+  });
 
   return NextResponse.json({ ok: true });
 }
