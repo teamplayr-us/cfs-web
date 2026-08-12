@@ -1,0 +1,16 @@
+/* College Flag Showcase Series — shared tokens for design-system cards.
+   Mirrors app/globals.css :root. Inlined into each card via <style>. */
+:root{
+  --navy:#0A0A0B;
+  --red:#FF2D8E;
+  --red-hover:#E0187A;
+  --chalk:#F7F5F6;
+  --white:#FFFFFF;
+  --steel:#5C5A5E;
+  --line:#E6E2E5;
+  --line-dark:#242127;
+  --gold:#FF8DC1;
+  --display:"Big Shoulders Display",sans-serif;
+  --body:"Archivo",sans-serif;
+  --mono:"JetBrains Mono",monospace;
+}
