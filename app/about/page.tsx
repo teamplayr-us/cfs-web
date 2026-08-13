@@ -20,15 +20,15 @@ export const metadata: Metadata = {
 const TEAM = [
   {
     name: "Allen Hamilton",
-    role: "Co-Founder. Founder of a youth sports technology platform; lifelong athlete and coach.",
+    bio: "A lifelong athlete and coach with 15+ years building enterprise technology. A father of two daughters — dedicated to building the path in sport he wants for them, and for girls everywhere.",
   },
   {
     name: "Monty Holloway",
-    role: "Co-Founder. Founder of 5v5 Sports, operator of the International Superflag Invitational.",
+    bio: "Founder of U90C, the operator behind some of the country's premier youth soccer tournaments, and co-founder of 5v5 Sports, operator of the International Superflag Invitational. He brings decades of large-event operations experience to girls flag football.",
   },
   {
     name: "Amanda Newman",
-    role: "Co-Founder. Founder of 5v5 Sports, operator of the International Superflag Invitational.",
+    bio: "Co-founder of 5v5 Sports, operator of the International Superflag Invitational, with more than 15 years delivering elite youth sports experiences to families around the world — the standard every Showcase weekend is built to.",
   },
 ];
 
@@ -90,18 +90,20 @@ export default function AboutPage() {
             <span className="eyebrow">Who&apos;s Behind It</span>
             <h2>The Team.</h2>
             <p>
-              The series was founded by a passionate team of youth sports
-              innovators with decades of combined experience running events,
-              building technology, and coaching athletes.
+              Running a world-class series takes reps. Between them, the
+              founders have spent decades operating premier youth
+              tournaments, delivering elite event weekends to families, and
+              building sports technology — and they&apos;ve coached the
+              athletes at the center of it all.
             </p>
           </div>
 
           <div className="why-grid">
-            {TEAM.map((member, i) => (
+            {TEAM.map((member) => (
               <div className="why" key={member.name}>
-                <span className="why-num">{String(i + 1).padStart(2, "0")}</span>
+                <span className="why-num">Co-Founder</span>
                 <h3>{member.name}</h3>
-                <p>{member.role}</p>
+                <p>{member.bio}</p>
               </div>
             ))}
           </div>
