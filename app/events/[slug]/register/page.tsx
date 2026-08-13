@@ -16,9 +16,17 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: Props): Metadata {
   const event = getEvent(params.slug);
   if (!event) return {};
+  const title = `Athlete Registration — ${event.city} | College Flag Showcase Series`;
+  const description = `Register an athlete for the Showcase Combine & Camp at ${event.city} (${stopLabel(event)}).`;
   return {
-    title: `Athlete Registration — ${event.city} | College Flag Showcase Series`,
-    description: `Register an athlete for the Showcase Combine & Camp at ${event.city} (${stopLabel(event)}).`,
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url: `/events/${event.slug}/register`,
+      images: [{ url: "/og.png", width: 1200, height: 630 }],
+    },
     robots: { index: false },
   };
 }

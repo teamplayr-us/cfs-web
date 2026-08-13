@@ -22,7 +22,7 @@ const mono = JetBrains_Mono({
 });
 
 // Kept under SEO truncation limits: title ≤60 chars, description ≤155.
-const TITLE = "College Flag Showcase | Girls Flag Football Recruiting Tour";
+const TITLE = "College Flag Showcase | Girls National Recruiting Tour";
 const DESCRIPTION =
   "A verified combine and college showcase tournament for girls flag football — get tested, get seen, and get recruited at premier venues nationwide.";
 

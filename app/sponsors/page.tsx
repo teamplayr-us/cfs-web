@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Sponsor the Tour | College Flag Showcase Series",
     description:
-      "Season-long and single-stop sponsorship packages for the girls flag football recruiting tour.",
+      "Season-long and single-event sponsorship packages for the Girls National Recruiting Tour.",
     url: "/sponsors",
     images: [{ url: "/og.png", width: 1200, height: 630 }],
   },

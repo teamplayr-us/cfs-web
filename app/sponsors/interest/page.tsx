@@ -9,6 +9,12 @@ export const metadata: Metadata = {
   title: "Become a Sponsor | College Flag Showcase Series",
   description:
     "Tell us about your brand and the markets you care about — we'll put a sponsorship package together for the College Flag Showcase Series.",
+  openGraph: {
+    title: "Become a Sponsor | College Flag Showcase Series",
+    description: "Tell us about your brand and the markets you care about — we'll put a sponsorship package together for the College Flag Showcase Series.",
+    url: "/sponsors/interest",
+    images: [{ url: "/og.png", width: 1200, height: 630 }],
+  },
   robots: { index: false },
 };
 
