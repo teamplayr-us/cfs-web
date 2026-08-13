@@ -44,6 +44,16 @@ export const COLLEGES_BY_EVENT: Record<string, CollegeSlot[]> = {
       name: "Missouri Valley College",
       logo: "/colleges/missouri-valley-mono.png",
     },
+    {
+      filled: true,
+      name: "Texas Wesleyan University",
+      logo: "/colleges/texas-wesleyan-mono.png",
+    },
+    {
+      filled: true,
+      name: "Cairn University",
+      logo: "/colleges/cairn-mono.png",
+    },
   ],
 };
 
