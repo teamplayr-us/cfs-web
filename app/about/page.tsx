@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const TEAM = [
   {
     name: "Allen Hamilton",
-    bio: "A lifelong athlete and coach with 15+ years building enterprise technology. A father of two daughters — dedicated to building the path in sport he wants for them, and for girls everywhere.",
+    bio: "A lifelong athlete and coach with 15+ years building enterprise technology. A father of two daughters — dedicated to building a path in sport for them, and for girls everywhere.",
   },
   {
     name: "Monty Holloway",
