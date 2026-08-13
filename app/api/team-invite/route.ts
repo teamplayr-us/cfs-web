@@ -6,6 +6,7 @@ import {
   detailRows,
   emailLayout,
   escapeHtml,
+  NOTIFY_CC,
   NOTIFY_EMAIL,
   sendEmail,
 } from "@/lib/email";
@@ -70,6 +71,7 @@ export async function POST(req: Request) {
   // Best-effort emails after the write succeeds — never fail the response.
   await sendEmail({
     to: NOTIFY_EMAIL,
+    cc: NOTIFY_CC,
     subject: `New team invite request — ${data.teamName.trim()}`,
     html: emailLayout(
       "New Team Invite Request",

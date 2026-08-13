@@ -9,6 +9,7 @@ import {
   detailRows,
   emailLayout,
   escapeHtml,
+  NOTIFY_CC,
   NOTIFY_EMAIL,
   sendEmail,
 } from "@/lib/email";
@@ -72,6 +73,7 @@ export async function POST(req: Request) {
   // Best-effort emails after the write succeeds — never fail the response.
   await sendEmail({
     to: NOTIFY_EMAIL,
+    cc: NOTIFY_CC,
     subject: `New sponsorship inquiry — ${data.company.trim()}`,
     html: emailLayout(
       "New Sponsorship Inquiry",

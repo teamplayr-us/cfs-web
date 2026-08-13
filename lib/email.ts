@@ -7,14 +7,17 @@ import { CONTACT_EMAIL } from "@/data/links";
 const FROM_EMAIL = process.env.EMAIL_FROM ?? "no-reply@collegeflagshowcase.com";
 const FROM_NAME = "College Flag Showcase Series";
 
-/** Internal notifications go to the shared inbox. */
+/** Internal notifications go to the shared inbox... */
 export const NOTIFY_EMAIL = CONTACT_EMAIL;
+/** ...with the wider founding team cc'd. */
+export const NOTIFY_CC = ["monty.holloway@5v5sports.com"];
 
 interface SendArgs {
   to: string;
   subject: string;
   html: string;
   replyTo?: string;
+  cc?: string[];
 }
 
 /** Sends one email; resolves (never rejects) regardless of outcome. */
@@ -23,6 +26,7 @@ export async function sendEmail({
   subject,
   html,
   replyTo,
+  cc,
 }: SendArgs): Promise<void> {
   const token = process.env.MAILERSEND_API_TOKEN;
   if (!token) return; // email not configured yet — forms still work
@@ -37,6 +41,9 @@ export async function sendEmail({
       body: JSON.stringify({
         from: { email: FROM_EMAIL, name: FROM_NAME },
         to: [{ email: to }],
+        ...(cc && cc.length > 0
+          ? { cc: cc.map((email) => ({ email })) }
+          : {}),
         subject,
         html,
         reply_to: { email: replyTo ?? CONTACT_EMAIL },

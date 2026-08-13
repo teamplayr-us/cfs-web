@@ -10,6 +10,7 @@ import {
   detailRows,
   emailLayout,
   escapeHtml,
+  NOTIFY_CC,
   NOTIFY_EMAIL,
   sendEmail,
 } from "@/lib/email";
@@ -82,6 +83,7 @@ export async function POST(req: Request) {
 
   await sendEmail({
     to: NOTIFY_EMAIL,
+    cc: NOTIFY_CC,
     subject: `New athlete registration — ${athleteName} (${eventLabel})`,
     html: emailLayout(
       "New Athlete Registration",
