@@ -103,7 +103,8 @@ export async function POST(req: Request) {
        <p>We&rsquo;ve got your recruiter registration for <b>${escapeHtml(data.program.trim())}</b>. Here&rsquo;s what happens next:</p>
        <ul style="padding-left:20px;">
          <li>We&rsquo;ll confirm your credentials by email.</li>
-         <li>Before each event you picked (${escapeHtml(eventLabels)}), you&rsquo;ll get expected participant counts and combine data access details.</li>
+         <li>Before each event you picked (${escapeHtml(eventLabels)}), you&rsquo;ll get expected participant counts and your athlete recruiting package.</li>
+         <li>We&rsquo;ll confirm the detailed weekend agenda and game schedules closer to the event.</li>
          <li>Your credentials will be waiting at check-in.</li>
          ${data.collegeRowTent ? "<li>Your College Row tent space is noted &mdash; we&rsquo;ll send setup details before each event.</li>" : ""}
        </ul>

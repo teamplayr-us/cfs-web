@@ -116,8 +116,8 @@ export default function CollegesPage() {
             <div>
               <h3>Get Credentialed</h3>
               <p>
-                Credentials include expected participant counts, combine data
-                access, and full sideline access — tell us your program and
+                Credentials include expected participant counts, the athlete
+                recruiting package, and full sideline access — tell us your program and
                 which events you plan to attend.
               </p>
             </div>

@@ -76,7 +76,11 @@ export default function CoachRegistrationForm({ events }: Props) {
           <li>We&apos;ll confirm your credentials by email.</li>
           <li>
             Before each event you pick, you&apos;ll get expected participant
-            counts and combine data access details.
+            counts and your athlete recruiting package.
+          </li>
+          <li>
+            We&apos;ll confirm the detailed weekend agenda and game schedules
+            closer to the event.
           </li>
           <li>Recruiter credentials are waiting at check-in.</li>
           {data.collegeRowTent && (

@@ -60,7 +60,7 @@ export default function CommittedColleges({
           <p>
             Coaching a college flag football program? Recruiter credentials are
             free for college coaches — with expected participant counts and
-            combine data access included.
+            the athlete recruiting package included.
           </p>
           <a className="btn btn-ghost-light" href={ctaHref}>
             Get Recruiter Credentials

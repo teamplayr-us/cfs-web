@@ -7,11 +7,11 @@ import { EVENTS, stopLabel } from "@/data/events";
 export const metadata: Metadata = {
   title: "Coach Credentials | College Flag Showcase Series",
   description:
-    "Free recruiter credentials for college flag football coaches — expected participant counts and combine data access at every event.",
+    "Free recruiter credentials for college flag football coaches — expected participant counts and the athlete recruiting package at every event.",
   openGraph: {
     title: "Coach Credentials | College Flag Showcase Series",
     description:
-      "Free recruiter credentials for college flag football coaches — expected participant counts and combine data access at every event.",
+      "Free recruiter credentials for college flag football coaches — expected participant counts and the athlete recruiting package at every event.",
     url: "/colleges/register",
     images: [{ url: "/og.png", width: 1200, height: 630 }],
   },
