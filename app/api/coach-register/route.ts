@@ -107,7 +107,7 @@ export async function POST(req: Request) {
          <li>Your credentials will be waiting at check-in.</li>
          ${data.collegeRowTent ? "<li>Your College Row tent space is noted &mdash; we&rsquo;ll send setup details before each event.</li>" : ""}
        </ul>
-       <p>Questions in the meantime? Just reply to this email.</p>`,
+       <p>Questions in the meantime? Email us at <a href="mailto:${NOTIFY_EMAIL}">${NOTIFY_EMAIL}</a>.</p>`,
     ),
   });
 

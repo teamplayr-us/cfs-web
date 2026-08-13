@@ -99,7 +99,7 @@ export async function POST(req: Request) {
       `<p>Hi ${escapeHtml(data.coachFirst.trim())},</p>
        <p>We&rsquo;ve got your Showcase Tournament invite request for <b>${escapeHtml(data.teamName.trim())}</b> (${escapeHtml(eventLabels)}).</p>
        <p>The tournament field is invite-only and curated &mdash; we review every program and we&rsquo;ll get back to you either way. If your team is selected, your invite and registration link come straight to this inbox.</p>
-       <p>Questions in the meantime? Just reply to this email.</p>`,
+       <p>Questions in the meantime? Email us at <a href="mailto:${NOTIFY_EMAIL}">${NOTIFY_EMAIL}</a>.</p>`,
     ),
   });
 

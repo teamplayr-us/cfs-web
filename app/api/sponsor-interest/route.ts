@@ -100,7 +100,7 @@ export async function POST(req: Request) {
       `<p>Hi ${escapeHtml(data.contactFirst.trim())},</p>
        <p>Thanks for your interest in putting <b>${escapeHtml(data.company.trim())}</b> on the field with the College Flag Showcase Series.</p>
        <p>We&rsquo;ll review your inquiry and come back to you with a package built around your brand and the markets you care about.</p>
-       <p>Questions in the meantime? Just reply to this email.</p>`,
+       <p>Questions in the meantime? Email us at <a href="mailto:${NOTIFY_EMAIL}">${NOTIFY_EMAIL}</a>.</p>`,
     ),
   });
 

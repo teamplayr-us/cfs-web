@@ -111,7 +111,7 @@ export async function POST(req: Request) {
         `<p>Hi ${escapeHtml(m.guardianFirst ?? "there")},</p>
          <p><b>${escapeHtml(athleteName)}</b> is registered for the Showcase Combine &amp; Camp at <b>${escapeHtml(eventLabel)}</b>${combineDate ? ` (${escapeHtml(combineDate)})` : ""}. Payment of $${amount} is confirmed &mdash; your Stripe receipt arrives separately.</p>
          <p>What&rsquo;s next: we&rsquo;ll email the full event-weekend schedule and check-in details before the event.</p>
-         <p>Questions in the meantime? Just reply to this email.</p>`,
+         <p>Questions in the meantime? Email us at <a href="mailto:${NOTIFY_EMAIL}">${NOTIFY_EMAIL}</a>.</p>`,
       ),
     });
   }
