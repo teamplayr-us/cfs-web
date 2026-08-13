@@ -22,6 +22,10 @@ export async function GET(req: Request) {
       : "MISSING",
     airtableBaseId: process.env.AIRTABLE_BASE_ID ?? "MISSING",
     airtableTable: process.env.AIRTABLE_TABLE ?? "MISSING (defaults to 'Registrations')",
+    mailersendToken: process.env.MAILERSEND_API_TOKEN
+      ? `set (${process.env.MAILERSEND_API_TOKEN.length} chars)`
+      : "MISSING — form emails disabled",
+    emailFrom: process.env.EMAIL_FROM ?? "default (no-reply@collegeflagshowcase.com)",
   };
 
   const key = process.env.AIRTABLE_API_KEY;
