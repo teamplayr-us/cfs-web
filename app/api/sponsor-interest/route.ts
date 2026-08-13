@@ -12,6 +12,7 @@ import {
   NOTIFY_CC,
   NOTIFY_EMAIL,
   sendEmail,
+  TRAIL_BCC,
 } from "@/lib/email";
 
 export const runtime = "nodejs";
@@ -92,6 +93,7 @@ export async function POST(req: Request) {
   });
   await sendEmail({
     to: data.email.trim(),
+    bcc: TRAIL_BCC,
     subject: "Sponsorship inquiry received — College Flag Showcase Series",
     html: emailLayout(
       "Inquiry Received",

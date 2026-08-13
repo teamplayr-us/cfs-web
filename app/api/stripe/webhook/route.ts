@@ -13,6 +13,7 @@ import {
   NOTIFY_CC,
   NOTIFY_EMAIL,
   sendEmail,
+  TRAIL_BCC,
 } from "@/lib/email";
 
 export const runtime = "nodejs";
@@ -103,6 +104,7 @@ export async function POST(req: Request) {
   if (m.guardianEmail) {
     await sendEmail({
       to: m.guardianEmail,
+      bcc: TRAIL_BCC,
       subject: `Registration confirmed — ${eventLabel}`,
       html: emailLayout(
         "Registration Confirmed",

@@ -11,6 +11,8 @@ const FROM_NAME = "College Flag Showcase Series";
 export const NOTIFY_EMAIL = CONTACT_EMAIL;
 /** ...with the wider founding team cc'd. */
 export const NOTIFY_CC = ["monty.holloway@5v5sports.com"];
+/** Submitter-facing sends are bcc'd here as a delivery trail. */
+export const TRAIL_BCC = [CONTACT_EMAIL];
 
 interface SendArgs {
   to: string;
@@ -18,6 +20,7 @@ interface SendArgs {
   html: string;
   replyTo?: string;
   cc?: string[];
+  bcc?: string[];
 }
 
 /** Sends one email; resolves (never rejects) regardless of outcome. */
@@ -27,6 +30,7 @@ export async function sendEmail({
   html,
   replyTo,
   cc,
+  bcc,
 }: SendArgs): Promise<void> {
   const token = process.env.MAILERSEND_API_TOKEN;
   if (!token) return; // email not configured yet — forms still work
@@ -43,6 +47,9 @@ export async function sendEmail({
         to: [{ email: to }],
         ...(cc && cc.length > 0
           ? { cc: cc.map((email) => ({ email })) }
+          : {}),
+        ...(bcc && bcc.length > 0
+          ? { bcc: bcc.map((email) => ({ email })) }
           : {}),
         subject,
         html,
