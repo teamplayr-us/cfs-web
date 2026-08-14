@@ -37,6 +37,14 @@
   .tour-line{margin:12px 0 0;font-family:var(--mono);font-size:7px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;color:var(--navy);text-align:center;white-space:nowrap}
   .tour-sub{margin-top:4px;font-family:var(--mono);font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--steel);text-align:center}
 
+  .fmt-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .fmt{border:2px solid var(--navy);background:#fff;padding:14px 16px}
+  .fmt-head{display:flex;align-items:baseline;gap:10px;margin-bottom:2px}
+  .fmt-num{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--red);letter-spacing:.1em}
+  .fmt h3{font-family:var(--display);font-size:19px;text-transform:uppercase;letter-spacing:.02em}
+  .fmt-tag{font-family:var(--mono);font-size:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);margin-bottom:8px}
+  .fmt p{font-size:12px;line-height:1.5}
+  .fmt-note{margin-top:12px;font-size:12.5px;font-weight:600;text-align:center}
   .includes{margin-top:18px}
   .includes ul{list-style:none;columns:2;column-gap:40px}
   .includes li{font-size:13px;font-weight:600;padding:3px 0 3px 30px;position:relative;break-inside:avoid}
@@ -75,41 +83,35 @@
       <img src="../public/logo.png" alt="Collegiate Flag Showcase Series logo" />
       <div>
         <p class="head-kicker">2026–27 Season — Team &amp; Club Information</p>
-        <h1>Compete Where<br /><em>Coaches Watch.</em></h1>
-        <p class="head-sub">College Flag Showcase Series — the Girls National Recruiting Tour.</p>
+        <h1>One Weekend.<br /><em>Two Ways to Get Seen.</em></h1>
+        <p class="head-sub">How a College Flag Showcase Series event works — for club directors, team coaches, and parents.</p>
       </div>
     </div>
   </header>
 
   <div class="body">
     <section>
-      <p class="eyebrow">Why Bring Your Team</p>
-      <div class="reach">
-        <div class="reach-cell"><span class="reach-num">LIVE</span><span class="reach-label">College coaches<br />on the sideline</span></div>
-        <div class="reach-cell"><span class="reach-num">✓</span><span class="reach-label">Verified combine data<br />coaches trust</span></div>
-        <div class="reach-cell"><span class="reach-num">AI</span><span class="reach-label">Every game filmed —<br />full-field view</span></div>
-        <div class="reach-cell"><span class="reach-num">10</span><span class="reach-label">Events,<br />coast to coast</span></div>
+      <p class="eyebrow">How an Event Works</p>
+      <div class="fmt-grid">
+        <div class="fmt">
+          <div class="fmt-head"><span class="fmt-num">01</span><h3>Showcase Combine &amp; Camp</h3></div>
+          <p class="fmt-tag">Individual &middot; open registration &middot; starts the weekend</p>
+          <p>Verified combine testing &mdash; speed, agility, and explosiveness measured by trained staff and on the record &mdash; plus position-specific skill work. Any athlete can register individually; a whole roster can come together. Results go into the athlete recruiting package college coaches receive.</p>
+        </div>
+        <div class="fmt">
+          <div class="fmt-head"><span class="fmt-num">02</span><h3>Showcase Tournament</h3></div>
+          <p class="fmt-tag">Team &middot; invite-only &middot; tournament days</p>
+          <p>Bracketed 5v5 competition against a curated field of travel programs. College coaches evaluate live from the sideline, and every game is filmed by AI cameras in the full-field view coaches use to evaluate &mdash; every route and every read, not just the ball.</p>
+        </div>
       </div>
+      <p class="fmt-note">Together, that&rsquo;s the point of the weekend: coaches leave with verified numbers, in-person evaluation, and film on every athlete.</p>
       <p class="tour-line">01 Dallas TX · 02 Charlotte NC · 03 Phoenix AZ · 04 Seattle WA · 05 So California · 06 Ohio · 07 Boston MA · 08 Tampa FL · 09 Nashville TN · 10 Atlanta GA</p>
-      <p class="tour-sub">Event 01 runs alongside the International Superflag Invitational — 80 teams in 2025</p>
-    </section>
-
-    <section class="includes">
-      <p class="eyebrow">Every Event Weekend</p>
-      <ul>
-        <li>Invite-only, curated tournament field</li>
-        <li>College coaches evaluating in person</li>
-        <li>Every game filmed by AI cameras</li>
-        <li>The full-field view college coaches want</li>
-        <li>Verified combine open to your athletes</li>
-        <li>College programs on site all weekend</li>
-        <li>Built for girls flag athletes &amp; families</li>
-      </ul>
+      <p class="tour-sub">Ten events, 2026–27 season · Event 01 runs alongside the International Superflag Invitational — 80 teams in 2025</p>
     </section>
 
     <section class="pkgs">
-      <p class="eyebrow">Event 01 — Dallas, TX</p>
-      <p class="pkg-note">The Showcase Tournament is invite-only — request an invite and we review every program.</p>
+      <p class="eyebrow">First Event — Dallas, TX</p>
+      <p class="pkg-note">Athletes register for the Combine &amp; Camp on the site; the Tournament is invite-only for teams — here&rsquo;s how that works.</p>
       <div class="pkg-grid">
         <article class="pkg pkg-featured">
           <div class="pkg-head"><h3>The Details</h3><span class="pkg-tag">Dec 11–13, 2026</span></div>
@@ -128,7 +130,7 @@
             <p class="pkg-price">3 STEPS</p>
             <ul>
               <li><b>Request an invite</b> at collegeflagshowcase.com</li>
-              <li><b>We review every program</b> — competition level and fit</li>
+              <li><b>We review every program</b> to keep the field competitive</li>
               <li><b>Selected teams</b> get their invite and registration link by email</li>
             </ul>
           </div>
@@ -149,10 +151,10 @@
 
     <section class="cta">
       <div class="cta-band">
-        <h2>Think Your Program Belongs Here?</h2>
+        <h2>Questions? Ready to Play?</h2>
         <div class="cta-note">
           <a href="https://www.collegeflagshowcase.com">collegeflagshowcase.com</a>
-          <small>Request a Team Invite</small>
+          <small>Request a Team Invite · Athlete Registration Open</small>
         </div>
       </div>
     </section>
