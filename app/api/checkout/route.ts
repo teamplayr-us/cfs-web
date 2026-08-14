@@ -55,6 +55,28 @@ export async function POST(req: Request) {
     }
   }
 
+  // Tournament-team discount: $50 off with the code shared alongside each
+  // Showcase Tournament invite. Validated here only — the code lives in the
+  // TOURNAMENT_DISCOUNT_CODE env var, never in the client bundle.
+  let unitAmount = event.athleteReg.priceCents;
+  let productDescription =
+    "College Flag Showcase Series — Showcase Combine & Camp";
+  const enteredCode = (body.data.discountCode ?? "").trim();
+  if (enteredCode) {
+    const validCode = process.env.TOURNAMENT_DISCOUNT_CODE;
+    if (!validCode || enteredCode.toLowerCase() !== validCode.toLowerCase()) {
+      return NextResponse.json(
+        {
+          error: "That discount code isn't valid.",
+          fields: { discountCode: "Invalid code" },
+        },
+        { status: 400 },
+      );
+    }
+    unitAmount -= 5000;
+    productDescription += " — tournament athlete discount applied";
+  }
+
   const stripe = new Stripe(stripeKey);
   const origin = new URL(req.url).origin;
 
@@ -65,10 +87,10 @@ export async function POST(req: Request) {
         quantity: 1,
         price_data: {
           currency: "usd",
-          unit_amount: event.athleteReg.priceCents,
+          unit_amount: unitAmount,
           product_data: {
             name: `Athlete Registration — ${event.city} (${stopLabel(event)})`,
-            description: "College Flag Showcase Series — Showcase Combine & Camp",
+            description: productDescription,
           },
         },
       },

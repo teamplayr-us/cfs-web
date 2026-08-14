@@ -59,8 +59,9 @@ Per-stop config is the `athleteReg` block in `data/events.ts`
 
 ### Launch checklist (currently deployed dark — no public links)
 
-1. Confirm the real athlete price in `data/events.ts` (placeholder $125) and
-   replace the waiver placeholder in `lib/registration.ts` (`WAIVER_SUMMARY`).
+1. Athlete price is live in `data/events.ts` ($175; tournament-team athletes
+   get $50 off via the `TOURNAMENT_DISCOUNT_CODE` env var). Replace the waiver
+   placeholder in `lib/registration.ts` (`WAIVER_SUMMARY`).
 2. Create the Airtable base + `Registrations` table (schema in
    `lib/airtable.ts` / webhook field names) and a personal access token.
 3. In Stripe: create a webhook endpoint for

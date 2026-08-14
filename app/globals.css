@@ -266,10 +266,24 @@ nav{background:var(--navy);color:var(--chalk);position:sticky;top:0;z-index:50;b
 .reg-fineprint{font-size:14px;color:var(--steel)}
 .reg-fineprint a{font-weight:600}
 .reg-review{box-shadow:8px 8px 0 var(--red)}
+.reg-discount{border-top:1px solid var(--line);padding-top:18px;max-width:420px}
 .reg-next{list-style:none;display:grid;gap:10px;margin-bottom:18px;font-weight:600;font-size:15.5px}
 .reg-next li{padding-left:20px;position:relative}
 .reg-next li::before{content:"✓";position:absolute;left:0;color:var(--red);font-family:var(--mono);font-weight:700}
 @media(max-width:640px){.reg-grid,.reg-grid-3{grid-template-columns:1fr}}
+
+/* ============ FAQ ============ */
+.faq-section{padding-top:clamp(36px,5vw,56px);padding-bottom:clamp(20px,3vw,36px)}
+.faq-section .section-head{margin-bottom:clamp(20px,3vw,32px)}
+.faq-section .wrap{max-width:880px}
+.faq-item{background:var(--white);border:2px solid var(--navy);margin-bottom:12px}
+.faq-item summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 20px;font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(16px,2.2vw,21px);line-height:1.15;letter-spacing:.01em}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";font-family:var(--mono);font-weight:700;font-size:20px;color:var(--red);flex-shrink:0}
+.faq-item[open] summary::after{content:"–"}
+.faq-item[open] summary{border-bottom:1px solid var(--line)}
+.faq-item p{padding:14px 20px 18px;font-size:15.5px;line-height:1.65;color:var(--steel);max-width:720px}
+.faq-item p a{font-weight:600}
 
 /* ============ INTEREST / FOOTER ============ */
 .interest{background:var(--red);color:var(--white);text-align:center}

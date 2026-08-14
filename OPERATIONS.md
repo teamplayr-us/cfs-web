@@ -45,8 +45,8 @@ Visitor
 1. Parent fills the 3-step form (athlete → guardian + waiver → review).
 2. `/api/checkout` re-validates, checks capacity (if set), creates a Stripe
    Checkout session. Registration data rides in the session metadata.
-3. Parent pays on Stripe's hosted page ($125 — placeholder, see §7).
-   Stripe emails the receipt.
+3. Parent pays on Stripe's hosted page ($175; $50 off with the tournament-team
+   discount code — see §7). Stripe emails the receipt.
 4. Stripe fires `checkout.session.completed` → `/api/stripe/webhook`
    verifies the signature and writes the row to **Athlete Registrations**
    with Status **Paid**. Duplicate deliveries are detected by Stripe session
@@ -176,7 +176,7 @@ too — make sure they ignore events that aren't theirs.
 | Competing programs per event (accepted tournament teams) | `data/organizations.ts` (+ logo in `public/programs/`) |
 | Sponsors board | `data/sponsors.ts` |
 | Contact email/phone, registration links | `data/links.ts` |
-| Athlete price | `athleteReg.priceCents` in `data/events.ts` — **still the $125 placeholder; confirm before launch** |
+| Athlete price | `athleteReg.priceCents` in `data/events.ts` — $175 standard; tournament-team athletes enter the code from their coach's invite for $50 off ($125), validated against the `TOURNAMENT_DISCOUNT_CODE` env var |
 | Waiver text | `WAIVER_SUMMARY` in `lib/registration.ts` — **still placeholder; replace with real legal text before live payments** |
 
 ## 8. Environment variables (Vercel → Settings → Environment Variables)
@@ -189,6 +189,7 @@ too — make sure they ignore events that aren't theirs.
 | `AIRTABLE_BASE_ID` | `app0mk0cTZLDeVahe` | The base |
 | `AIRTABLE_TABLE` | `tblmp5EHSrHHaxjpD` | Athlete Registrations table |
 | `AIRTABLE_TEAM_TABLE` | (optional; defaults in code to `tblqtHoZgqgkNTgle`) | Team Invite Requests table |
+| `TOURNAMENT_DISCOUNT_CODE` | the code shared with invited tournament teams (case-insensitive) | $50 off athlete registration; until set, every entered code is rejected |
 
 Changes take effect only after a **Redeploy**.
 

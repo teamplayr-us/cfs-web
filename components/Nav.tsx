@@ -48,6 +48,9 @@ export default function Nav() {
           <li>
             <a href="/sponsors">Sponsors</a>
           </li>
+          <li>
+            <a href="/faq">FAQ</a>
+          </li>
         </ul>
         <div className="nav-right">
           <MobileMenu

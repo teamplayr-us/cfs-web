@@ -33,6 +33,8 @@ export interface RegistrationData {
   waiverAgreed: boolean;
   /** Guardian's typed full legal name, acting as signature */
   waiverSignature: string;
+  /** Optional tournament-team discount code, validated server-side */
+  discountCode: string;
 }
 
 export const EMPTY_REGISTRATION: RegistrationData = {
@@ -52,6 +54,7 @@ export const EMPTY_REGISTRATION: RegistrationData = {
   emergencyPhone: "",
   waiverAgreed: false,
   waiverSignature: "",
+  discountCode: "",
 };
 
 export const GRAD_YEARS = Array.from({ length: 10 }, (_, i) => 2026 + i);
@@ -152,6 +155,7 @@ export function toStripeMetadata(
     emergencyLast: clip(data.emergencyLast),
     emergencyPhone: clip(data.emergencyPhone),
     waiverSignature: clip(data.waiverSignature),
+    discountCode: clip(data.discountCode ?? ""),
     waiverSignedAt: new Date().toISOString(),
   };
 }

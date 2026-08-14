@@ -342,6 +342,21 @@ export default function RegistrationForm(props: Props) {
               </dl>
             </div>
           </div>
+          <label className="reg-discount">
+            Team discount code (optional){err("discountCode")}
+            <input
+              type="text"
+              autoComplete="off"
+              placeholder="From your team's tournament invite"
+              value={data.discountCode}
+              onChange={(e) => set("discountCode", e.target.value)}
+            />
+          </label>
+          <p className="reg-fineprint">
+            Athletes on Showcase Tournament teams get $50 off — your
+            coach&apos;s invite email includes the code. The discount is
+            applied at checkout.
+          </p>
           {submitError && <p className="reg-err reg-err-block">{submitError}</p>}
           <p className="reg-fineprint">
             You&apos;ll be taken to Stripe&apos;s secure checkout to complete

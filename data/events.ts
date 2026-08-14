@@ -73,11 +73,11 @@ export const EVENTS: TourEvent[] = [
     date: "DEC 2026",
     tag: "Registration Open",
     live: true,
-    // TODO: confirm real athlete price before launch (placeholder $125).
-    // Checkout stays disabled until Stripe env vars are set in Vercel.
     athleteReg: {
       open: true,
-      priceCents: 12500,
+      // $175 standard; TOURNAMENT_DISCOUNT_CODE takes $50 off for athletes
+      // on Showcase Tournament teams (validated server-side in /api/checkout)
+      priceCents: 17500,
       combineDate: "Dec 11, 2026",
       // TODO: set combineStartTime / combineEndTime when the Dec 11
       // schedule is confirmed (shows "TBD" until then).
@@ -90,7 +90,7 @@ export const EVENTS: TourEvent[] = [
       dates: "Dec 11–13, 2026",
       // TODO: set tournamentDates once confirmed (e.g. "Dec 12–13, 2026");
       // the schedule shows the full stop dates until then.
-      divisions: "Girls 12U+",
+      divisions: "12U · 14U · HS",
       teamEntry: "$550",
       regDeadline: "Nov 29, 2026",
     },

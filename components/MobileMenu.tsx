@@ -66,6 +66,9 @@ export default function MobileMenu({ stops }: { stops: StopLink[] }) {
           <a href="/sponsors" onClick={close}>
             Sponsors
           </a>
+          <a href="/faq" onClick={close}>
+            FAQ
+          </a>
         </div>
       )}
     </div>
