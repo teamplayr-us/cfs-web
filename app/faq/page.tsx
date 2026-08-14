@@ -24,7 +24,7 @@ interface QA {
 const GENERAL: QA[] = [
   {
     q: "What is the College Flag Showcase Series?",
-    a: "The Girls National Recruiting Series — a verified combine plus a college showcase tournament in one weekend, evaluated in person by college flag football coaches. Ten events across the 2026–27 season, coast to coast.",
+    a: "The College Flag Showcase Series is the Girls National Recruiting Series — a verified combine plus a college showcase tournament in one weekend, evaluated in person by college flag football coaches. The series runs ten events across the 2026–27 season, coast to coast.",
   },
   {
     q: "Is the format 5v5 or 7v7?",
