@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>CFS Team One-Pager</title>
+<style>
+  @font-face{font-family:"Big Shoulders Display";src:url(fonts/big-shoulders.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"Archivo";src:url(fonts/archivo.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"JetBrains Mono";src:url(fonts/jetbrains-mono.woff2) format("woff2");font-weight:100 900}
+  :root{
+    --navy:#110C0F; --red:#FF2D87; --gold:#FFC42D; --chalk:#F5F2F0;
+    --steel:#6E676D; --line:#E4DEE2; --line-dark:#2A2226;
+    --display:"Big Shoulders Display",sans-serif;
+    --body:"Archivo",sans-serif;
+    --mono:"JetBrains Mono",monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:8.5in;height:11in;overflow:hidden}
+  body{font-family:var(--body);background:var(--chalk);color:var(--navy);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{width:8.5in;height:11in;display:flex;flex-direction:column}
+
+  .head{background:var(--navy);color:var(--chalk);padding:28px 56px 22px;position:relative;border-bottom:5px solid var(--red)}
+  .head-inner{display:flex;align-items:center;gap:26px}
+  .head img{width:96px;height:96px}
+  .head-kicker{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.22em;color:var(--red);text-transform:uppercase;margin-bottom:8px}
+  .head h1{font-family:var(--display);font-size:48px;line-height:.92;text-transform:uppercase;letter-spacing:.01em}
+  .head h1 em{font-style:normal;color:var(--red)}
+  .head-sub{margin-top:12px;font-size:14px;color:#C9C4C9}
+
+  .body{padding:22px 56px 0;flex:1;display:flex;flex-direction:column}
+  .eyebrow{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
+
+  .reach{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .reach-cell{border:2px solid var(--navy);background:#fff;padding:12px 14px 10px}
+  .reach-num{display:block;font-family:var(--display);font-size:34px;font-weight:800;line-height:1}
+  .reach-label{display:block;margin-top:6px;font-family:var(--mono);font-size:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);line-height:1.5}
+  .tour-line{margin:12px 0 0;font-family:var(--mono);font-size:7px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;color:var(--navy);text-align:center;white-space:nowrap}
+  .tour-sub{margin-top:4px;font-family:var(--mono);font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--steel);text-align:center}
+
+  .includes{margin-top:18px}
+  .includes ul{list-style:none;columns:2;column-gap:40px}
+  .includes li{font-size:13px;font-weight:600;padding:3px 0 3px 30px;position:relative;break-inside:avoid}
+  .includes li::before{content:"✓";position:absolute;left:0;top:3px;width:19px;height:19px;background:var(--red);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+
+  .pkgs{margin-top:18px}
+  .pkg-note{font-size:12.5px;color:var(--steel);margin:-4px 0 12px}
+  .pkg-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+  .pkg{border:2px solid var(--navy);background:#fff;display:flex;flex-direction:column}
+  .pkg-head{background:var(--navy);color:var(--chalk);padding:10px 12px;display:flex;justify-content:space-between;align-items:center;gap:6px}
+  .pkg-featured .pkg-head{background:var(--red)}
+  .pkg-head h3{font-family:var(--display);font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:.02em;white-space:nowrap}
+  .pkg-tag{font-family:var(--mono);font-size:6.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-align:right;flex-shrink:0}
+  .pkg-body{padding:12px 14px 13px}
+  .pkg-price{font-family:var(--mono);font-size:16px;font-weight:700;letter-spacing:.04em;color:var(--red);padding-bottom:8px;border-bottom:1px solid var(--line);margin-bottom:9px}
+  .pkg-price span{font-size:11px;color:var(--steel)}
+  .pkg ul{list-style:none}
+  .pkg li{font-size:11px;font-weight:500;line-height:1.4;padding:3px 0 3px 13px;position:relative}
+  .pkg li::before{content:"▸";position:absolute;left:0;color:var(--red);font-size:10px}
+  .pkg li b{font-weight:700}
+
+  .cta{margin-top:auto;padding-top:10px}
+  .cta-band{background:var(--navy);color:var(--chalk);padding:16px 26px;display:flex;justify-content:space-between;align-items:center;gap:18px;box-shadow:6px 6px 0 var(--red)}
+  .cta-band h2{font-family:var(--display);font-size:27px;text-transform:uppercase;letter-spacing:.02em}
+  .cta-band .cta-note{text-align:right}
+  .cta-band a{font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--red);text-decoration:none;text-transform:uppercase;display:block}
+  .cta-band small{font-family:var(--mono);font-size:8px;letter-spacing:.1em;color:#8A848C;text-transform:uppercase}
+  .foot{margin-top:14px;background:var(--navy);padding:16px 56px;display:flex;justify-content:space-between;align-items:center}
+  .foot span{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8A848C}
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="head">
+    <div class="head-inner">
+      <img src="../public/logo.png" alt="Collegiate Flag Showcase Series logo" />
+      <div>
+        <p class="head-kicker">2026–27 Season — Team &amp; Club Information</p>
+        <h1>Compete Where<br /><em>Coaches Watch.</em></h1>
+        <p class="head-sub">College Flag Showcase Series — the Girls National Recruiting Tour.</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="body">
+    <section>
+      <p class="eyebrow">Why Bring Your Team</p>
+      <div class="reach">
+        <div class="reach-cell"><span class="reach-num">LIVE</span><span class="reach-label">College coaches<br />on the sideline</span></div>
+        <div class="reach-cell"><span class="reach-num">✓</span><span class="reach-label">Verified combine data<br />coaches trust</span></div>
+        <div class="reach-cell"><span class="reach-num">AI</span><span class="reach-label">Every game filmed —<br />full-field view</span></div>
+        <div class="reach-cell"><span class="reach-num">10</span><span class="reach-label">Events,<br />coast to coast</span></div>
+      </div>
+      <p class="tour-line">01 Dallas TX · 02 Charlotte NC · 03 Phoenix AZ · 04 Seattle WA · 05 So California · 06 Ohio · 07 Boston MA · 08 Tampa FL · 09 Nashville TN · 10 Atlanta GA</p>
+      <p class="tour-sub">Event 01 runs alongside the International Superflag Invitational — 80 teams in 2025</p>
+    </section>
+
+    <section class="includes">
+      <p class="eyebrow">Every Event Weekend</p>
+      <ul>
+        <li>Invite-only, curated tournament field</li>
+        <li>College coaches evaluating in person</li>
+        <li>Every game filmed by AI cameras</li>
+        <li>The full-field view college coaches want</li>
+        <li>Verified combine open to your athletes</li>
+        <li>College programs on site all weekend</li>
+        <li>Built for girls flag athletes &amp; families</li>
+      </ul>
+    </section>
+
+    <section class="pkgs">
+      <p class="eyebrow">Event 01 — Dallas, TX</p>
+      <p class="pkg-note">The Showcase Tournament is invite-only — request an invite and we review every program.</p>
+      <div class="pkg-grid">
+        <article class="pkg pkg-featured">
+          <div class="pkg-head"><h3>The Details</h3><span class="pkg-tag">Dec 11–13, 2026</span></div>
+          <div class="pkg-body">
+            <p class="pkg-price">$550 <span>/ TEAM</span></p>
+            <ul>
+              <li><b>Craig Ranch Sports Complex</b> — Dallas, TX</li>
+              <li><b>Divisions:</b> Girls 12U+</li>
+              <li><b>Registration deadline:</b> Nov 29, 2026</li>
+            </ul>
+          </div>
+        </article>
+        <article class="pkg">
+          <div class="pkg-head"><h3>How It Works</h3><span class="pkg-tag">Invite-Only</span></div>
+          <div class="pkg-body">
+            <p class="pkg-price">3 STEPS</p>
+            <ul>
+              <li><b>Request an invite</b> at collegeflagshowcase.com</li>
+              <li><b>We review every program</b> — competition level and fit</li>
+              <li><b>Selected teams</b> get their invite and registration link by email</li>
+            </ul>
+          </div>
+        </article>
+        <article class="pkg">
+          <div class="pkg-head"><h3>The Path Is Real</h3><span class="pkg-tag">College Flag</span></div>
+          <div class="pkg-body">
+            <p class="pkg-price">LA28 <span>+ NCAA</span></p>
+            <ul>
+              <li><b>Olympic sport</b> — flag debuts at the 2028 LA Games</li>
+              <li><b>NCAA Emerging Sport</b> for Women — scholarships live</li>
+              <li><b>60+ college programs</b> and climbing</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="cta-band">
+        <h2>Think Your Program Belongs Here?</h2>
+        <div class="cta-note">
+          <a href="https://www.collegeflagshowcase.com">collegeflagshowcase.com</a>
+          <small>Request a Team Invite</small>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="foot">
+    <span>info@collegeflagshowcase.com · 888.555.0199 · collegeflagshowcase.com</span>
+    <span>College Flag Showcase Series</span>
+  </footer>
+</div>
+</body>
+</html>
