@@ -44,7 +44,7 @@ export default function CollegesPage() {
                 Get Recruiter Credentials
               </a>
               <a className="btn btn-ghost-light" href="/#tour">
-                See the Tour
+                See the Events
               </a>
             </div>
           </div>
@@ -131,7 +131,7 @@ export default function CollegesPage() {
       <CommittedColleges
         slots={allParticipatingColleges()}
         title="Participating Colleges"
-        lede="Programs already confirmed on the tour. This board updates as college coaches register — add yours."
+        lede="Programs already confirmed in the series. This board updates as college coaches register — add yours."
         ctaHref="/colleges/register"
       />
 

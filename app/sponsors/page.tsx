@@ -5,13 +5,13 @@ import { EVENTS } from "@/data/events";
 import { SPONSOR_SLOTS } from "@/data/sponsors";
 
 export const metadata: Metadata = {
-  title: "Sponsor the Tour | College Flag Showcase Series",
+  title: "Sponsor the Series | College Flag Showcase Series",
   description:
-    "Put your brand on the field at every stop of the College Flag Showcase Series — venue signage, athlete touchpoints, targeted digital promotions, and activation space in front of athletes, families, and college programs nationwide.",
+    "Put your brand on the field at every event of the College Flag Showcase Series — venue signage, athlete touchpoints, targeted digital promotions, and activation space in front of athletes, families, and college programs nationwide.",
   openGraph: {
-    title: "Sponsor the Tour | College Flag Showcase Series",
+    title: "Sponsor the Series | College Flag Showcase Series",
     description:
-      "Season-long and single-event sponsorship packages for the Girls National Recruiting Tour.",
+      "Season-long and single-event sponsorship packages for the Girls National Recruiting Series.",
     url: "/sponsors",
     images: [{ url: "/og.png", width: 1200, height: 630 }],
   },
@@ -43,7 +43,7 @@ export default function SponsorsPage() {
                 Become a Sponsor
               </a>
               <a className="btn btn-ghost-light" href="/#tour">
-                See the Tour
+                See the Events
               </a>
             </div>
           </div>
@@ -184,7 +184,7 @@ export default function SponsorsPage() {
                 <p className="offer-lede">
                   Every event, all season — your brand travels with the series,
                   from the first whistle in Dallas to the last event of the
-                  tour.
+                  season.
                 </p>
                 <a
                   className="btn btn-ghost schedule-cta"

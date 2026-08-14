@@ -3,7 +3,7 @@ import { formatPrice } from "@/lib/format";
 
 export default function NextStopCard() {
   return (
-    <aside className="stop-card" aria-label="Next tour stop">
+    <aside className="stop-card" aria-label="Next event">
       <div className="stop-card-top">
         <span>Next Event</span>
         <span>{stopLabel(NEXT_STOP)}</span>

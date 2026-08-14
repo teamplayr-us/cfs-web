@@ -43,7 +43,7 @@ export default function MobileMenu({ stops }: { stops: StopLink[] }) {
           {eventsOpen && (
             <>
               <a className="mnav-sub" href="/#tour" onClick={close}>
-                Full Tour Schedule
+                Full Event Schedule
               </a>
               {stops.map((stop) => (
                 <a

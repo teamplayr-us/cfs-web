@@ -8,7 +8,7 @@ document, deck, graphic, or email read as the same brand as the website.
 - **Name:** College Flag Showcase Series (logo mark reads "Collegiate Flag
   Showcase Series"). Never abbreviate to "CFS" in public-facing material.
 - **Tagline / hero:** "Ball Out. Get Seen. Get Recruited."
-- **Positioning line:** Girls National Recruiting Tour — a verified combine
+- **Positioning line:** Girls National Recruiting Series — a verified combine
   plus a college showcase tournament in one weekend, evaluated in person by
   college flag football coaches.
 - **Attribution:** the series is independent — never call it "a 5v5 Sports
@@ -61,7 +61,7 @@ Light pink (#FF8DC1) never appears on light backgrounds.
 - **Offset block shadows:** solid, un-blurred `8px 8px 0` in pink (featured
   cards) or black (standard cards).
 - **Chalk yard-line dividers:** thin black rule with a mono label like
-  "THE TOUR — 30 YD" and a dashed ticker — section dividers reference
+  "THE SEASON — 30 YD" and a dashed ticker — section dividers reference
   football field markings. Dark hero sections carry faint horizontal field
   lines.
 - **Numbered lists** use two-digit mono numbers in pink: 01, 02, 03…
@@ -79,8 +79,10 @@ Light pink (#FF8DC1) never appears on light backgrounds.
 - Em dashes join a bold claim to its explanation: "**Individual skill
   display and live tournament competition in one weekend** — evaluated in
   person by college flag football coaches…"
-- Key vocabulary: **verified** (the brand's core promise), **events** (tour
-  language: "Events," "Event 01," "Next Event" — plain, never "stops" in
+- Key vocabulary: **verified** (the brand's core promise), **events** (series
+  language: "Events," "Event 01," "Next Event" — plain, never "stops," and
+  the brand is a **series**, never "a tour" (generic references say "the
+  series") in
   customer-facing copy), **Showcase Combine &
   Camp** (individual flow, open registration), **Showcase Tournament**
   (team flow, INVITE-ONLY — teams "request an invite," never "sign up"),

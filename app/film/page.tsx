@@ -50,7 +50,7 @@ export default function MediaPage() {
                 Get Notified at Launch
               </a>
               <a className="btn btn-ghost-light" href="/#tour">
-                See the Tour
+                See the Events
               </a>
             </div>
           </div>
@@ -120,7 +120,7 @@ export default function MediaPage() {
               The film portal is in development. Buy your package, log in to
               stream and download your film, and share it straight to the
               coaches recruiting you — all in one place, launching ahead of
-              the first stop in Dallas.
+              the first event in Dallas.
             </p>
           </div>
 

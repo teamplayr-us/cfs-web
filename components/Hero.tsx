@@ -7,7 +7,7 @@ export default function Hero() {
     <header className="hero" id="top">
       <div className="wrap hero-inner">
         <div>
-          <span className="hero-badge">Girls National Recruiting Tour</span>
+          <span className="hero-badge">Girls National Recruiting Series</span>
           <h1>
             Ball Out.
             <br />
@@ -18,7 +18,7 @@ export default function Hero() {
           <p className="hero-tag">
             <strong>
               College coaches are recruiting girls flag football players —
-              this tour puts you in front of them.
+              this series puts you in front of them.
             </strong>{" "}
             Show off your skills in a combine, compete with your travel team
             in a tournament, and leave with verified results and film coaches

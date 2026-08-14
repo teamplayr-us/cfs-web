@@ -13,7 +13,7 @@ export default function TourStops({ excludeSlug }: Props) {
 
   return (
     <>
-      <hr className="yard" data-yd="THE TOUR — 40 YD" />
+      <hr className="yard" data-yd="THE SEASON — 40 YD" />
       <section className="section" id="tour">
         <div className="wrap">
           <div className="section-head">
