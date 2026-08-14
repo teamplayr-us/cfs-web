@@ -27,6 +27,10 @@ const GENERAL: QA[] = [
     a: "The Girls National Recruiting Series — a verified combine plus a college showcase tournament in one weekend, evaluated in person by college flag football coaches. Ten events across the 2026–27 season, coast to coast.",
   },
   {
+    q: "Is the format 5v5 or 7v7?",
+    a: "While we understand the college game is 7v7, our competition is 5v5 — that currently aligns with the most common youth travel competition formats and roster structures.",
+  },
+  {
     q: "Where and when is the first event?",
     a: "Dallas — December 11–13, 2026, at Craig Ranch Sports Complex in McKinney. Combine day is Friday, December 11; the tournament runs Saturday–Sunday. Registration closes November 29.",
   },
