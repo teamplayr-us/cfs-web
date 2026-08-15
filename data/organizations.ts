@@ -71,7 +71,7 @@ export const ORGS_BY_EVENT: Record<string, OrgSlot[]> = {
       filled: true,
       name: "One of One Girls Flag Football Club",
       logo: "/programs/one-of-one.png",
-      // TODO: add home region once confirmed
+      location: "Oklahoma City",
     },
   ],
 };
