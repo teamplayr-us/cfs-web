@@ -6,7 +6,13 @@ import CompetingPrograms from "@/components/CompetingPrograms";
 import TourStops from "@/components/TourStops";
 import InterestCTA from "@/components/InterestCTA";
 import Footer from "@/components/Footer";
-import { EVENTS, getEvent, stopLabel, TourEvent } from "@/data/events";
+import {
+  EVENTS,
+  getEvent,
+  stopLabel,
+  TourEvent,
+  TOURNAMENT_DISCOUNT_CENTS,
+} from "@/data/events";
 import { collegesForEvent } from "@/data/colleges";
 import { orgsForEvent } from "@/data/organizations";
 import { formatPrice } from "@/lib/format";
@@ -141,7 +147,14 @@ export default function EventPage({ params }: Props) {
                   {event.athleteReg && (
                     <div className="stop-cell">
                       <dt>Athlete Entry</dt>
-                      <dd>{formatPrice(event.athleteReg.priceCents)}</dd>
+                      {/* tournament-team discount floor — full price without a code */}
+                      <dd>
+                        Starting at{" "}
+                        {formatPrice(
+                          event.athleteReg.priceCents -
+                            TOURNAMENT_DISCOUNT_CENTS,
+                        )}
+                      </dd>
                     </div>
                   )}
                   <div className="stop-cell">
@@ -208,7 +221,10 @@ export default function EventPage({ params }: Props) {
                     <dt>Athlete Entry</dt>
                     <dd>
                       {event.athleteReg
-                        ? formatPrice(event.athleteReg.priceCents)
+                        ? `Starting at ${formatPrice(
+                            event.athleteReg.priceCents -
+                              TOURNAMENT_DISCOUNT_CENTS,
+                          )}`
                         : "Announcing"}
                     </dd>
                   </div>

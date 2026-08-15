@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
-import { getEvent, stopLabel } from "@/data/events";
+import { getEvent, stopLabel, TOURNAMENT_DISCOUNT_CENTS } from "@/data/events";
 import {
   RegistrationData,
   toStripeMetadata,
@@ -73,7 +73,7 @@ export async function POST(req: Request) {
         { status: 400 },
       );
     }
-    unitAmount -= 5000;
+    unitAmount -= TOURNAMENT_DISCOUNT_CENTS;
     productDescription += " — tournament athlete discount applied";
   }
 

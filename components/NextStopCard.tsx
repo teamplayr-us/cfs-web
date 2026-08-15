@@ -1,4 +1,4 @@
-import { NEXT_STOP, stopLabel } from "@/data/events";
+import { NEXT_STOP, stopLabel, TOURNAMENT_DISCOUNT_CENTS } from "@/data/events";
 import { formatPrice } from "@/lib/format";
 
 export default function NextStopCard() {
@@ -26,7 +26,14 @@ export default function NextStopCard() {
               <>
                 <div className="stop-cell">
                   <dt>Athlete Entry</dt>
-                  <dd>{formatPrice(NEXT_STOP.athleteReg.priceCents)}</dd>
+                  {/* tournament-team discount floor — full price applies without a code */}
+                  <dd>
+                    Starting at{" "}
+                    {formatPrice(
+                      NEXT_STOP.athleteReg.priceCents -
+                        TOURNAMENT_DISCOUNT_CENTS,
+                    )}
+                  </dd>
                 </div>
                 <div className="stop-cell">
                   <dt>Team Entry</dt>

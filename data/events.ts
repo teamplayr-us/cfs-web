@@ -169,6 +169,12 @@ export const EVENTS: TourEvent[] = [
   },
 ];
 
+/** Tournament-team athlete discount, in cents — $50 off the Combine & Camp
+ * price with the code from a team's tournament invite (validated against
+ * TOURNAMENT_DISCOUNT_CODE in /api/checkout). Display copy shows the
+ * discounted price as "Starting at …". */
+export const TOURNAMENT_DISCOUNT_CENTS = 5000;
+
 // Which event the hero "Next Stop" card features.
 export const NEXT_STOP_SLUG = "mckinney-tx";
 
