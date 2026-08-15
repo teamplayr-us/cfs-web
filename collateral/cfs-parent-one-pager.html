@@ -19,59 +19,65 @@
   body{font-family:var(--body);background:var(--chalk);color:var(--navy);-webkit-print-color-adjust:exact;print-color-adjust:exact}
   .page{width:8.5in;height:11in;display:flex;flex-direction:column}
 
-  .head{background:var(--navy);color:var(--chalk);padding:24px 56px 20px;position:relative;border-bottom:5px solid var(--red)}
+  .head{background:var(--navy);color:var(--chalk);padding:18px 56px 16px;position:relative;border-bottom:5px solid var(--red)}
   .head-inner{display:flex;align-items:center;gap:26px}
   .head img{width:96px;height:96px}
   .head-kicker{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.22em;color:var(--red);text-transform:uppercase;margin-bottom:8px}
-  .head h1{font-family:var(--display);font-size:48px;line-height:.92;text-transform:uppercase;letter-spacing:.01em}
+  .head h1{font-family:var(--display);font-size:44px;line-height:.92;text-transform:uppercase;letter-spacing:.01em}
   .head h1 em{font-style:normal;color:var(--red)}
-  .head-sub{margin-top:12px;font-size:14px;color:#C9C4C9}
+  .head-sub{margin-top:8px;font-size:14px;color:#C9C4C9}
 
-  .body{padding:20px 56px 0;flex:1;display:flex;flex-direction:column}
-  .eyebrow{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
+  .body{padding:12px 56px 0;flex:1;display:flex;flex-direction:column}
+  .eyebrow{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
 
-  .intro{border:2px solid var(--navy);background:#fff;padding:12px 16px;font-size:12px;line-height:1.5}
+  .intro{border:2px solid var(--navy);background:#fff;padding:9px 14px;font-size:11.5px;line-height:1.45}
   .intro b{font-weight:700}
 
-  .fmt-section{margin-top:14px}
+  .fmt-section{margin-top:10px}
   .fmt-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  .fmt{border:2px solid var(--navy);background:#fff;padding:12px 14px}
+  .fmt{border:2px solid var(--navy);background:#fff;padding:10px 14px}
   .fmt-head{display:flex;align-items:baseline;gap:10px;margin-bottom:2px}
   .fmt-num{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--red);letter-spacing:.1em}
   .fmt h3{font-family:var(--display);font-size:19px;text-transform:uppercase;letter-spacing:.02em}
   .fmt-tag{font-family:var(--mono);font-size:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);margin-bottom:8px}
   .fmt p{font-size:11.5px;line-height:1.45}
-  .tour-line{margin:10px 0 0;font-family:var(--mono);font-size:7px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;color:var(--navy);text-align:center;white-space:nowrap}
+  .tour-line{margin:8px 0 0;font-family:var(--mono);font-size:7px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;color:var(--navy);text-align:center;white-space:nowrap}
   .tour-sub{margin-top:4px;font-family:var(--mono);font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--steel);text-align:center}
 
-  .includes{margin-top:14px}
+  .includes{margin-top:8px}
   .includes ul{list-style:none;columns:2;column-gap:40px}
-  .includes li{font-size:12px;font-weight:600;padding:4px 0 4px 28px;position:relative;break-inside:avoid}
-  .includes li::before{content:"✓";position:absolute;left:0;top:4px;width:18px;height:18px;background:var(--red);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+  .includes li{font-size:11.5px;font-weight:600;padding:3px 0 3px 28px;position:relative;break-inside:avoid}
+  .includes li::before{content:"✓";position:absolute;left:0;top:3px;width:17px;height:17px;background:var(--red);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
 
-  .pkgs{margin-top:14px}
-  .pkg-note{font-size:12.5px;color:var(--steel);margin:-4px 0 12px}
+  .colleges-strip{margin-top:8px;background:var(--navy);padding:9px 18px 10px;text-align:center}
+  .colleges-strip .eyebrow{margin-bottom:5px}
+  .college-names{font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--chalk);line-height:1.7}
+  .college-names span{white-space:nowrap}
+  .college-sub{margin-top:4px;font-family:var(--mono);font-size:8px;letter-spacing:.08em;text-transform:uppercase;color:#8A848C}
+
+  .pkgs{margin-top:8px}
+  .pkg-note{font-size:12px;color:var(--steel);margin:-4px 0 10px}
   .pkg-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
   .pkg{border:2px solid var(--navy);background:#fff;display:flex;flex-direction:column}
   .pkg-head{background:var(--navy);color:var(--chalk);padding:10px 12px;display:flex;justify-content:space-between;align-items:center;gap:6px}
   .pkg-featured .pkg-head{background:var(--red)}
   .pkg-head h3{font-family:var(--display);font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:.02em;white-space:nowrap}
   .pkg-tag{font-family:var(--mono);font-size:6.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-align:right;flex-shrink:0}
-  .pkg-body{padding:12px 14px 13px}
-  .pkg-price{font-family:var(--mono);font-size:16px;font-weight:700;letter-spacing:.04em;color:var(--red);padding-bottom:8px;border-bottom:1px solid var(--line);margin-bottom:9px}
+  .pkg-body{padding:10px 14px 11px}
+  .pkg-price{font-family:var(--mono);font-size:15px;font-weight:700;letter-spacing:.04em;color:var(--red);padding-bottom:6px;border-bottom:1px solid var(--line);margin-bottom:7px}
   .pkg-price span{font-size:11px;color:var(--steel)}
   .pkg ul{list-style:none}
-  .pkg li{font-size:11px;font-weight:500;line-height:1.4;padding:3px 0 3px 13px;position:relative}
+  .pkg li{font-size:10.5px;font-weight:500;line-height:1.35;padding:2.5px 0 2.5px 13px;position:relative}
   .pkg li::before{content:"▸";position:absolute;left:0;color:var(--red);font-size:10px}
   .pkg li b{font-weight:700}
 
-  .cta{margin-top:auto;padding-top:10px}
-  .cta-band{background:var(--navy);color:var(--chalk);padding:16px 26px;display:flex;justify-content:space-between;align-items:center;gap:18px;box-shadow:6px 6px 0 var(--red)}
+  .cta{margin-top:auto;padding-top:8px}
+  .cta-band{background:var(--navy);color:var(--chalk);padding:13px 26px;display:flex;justify-content:space-between;align-items:center;gap:18px;box-shadow:6px 6px 0 var(--red)}
   .cta-band h2{font-family:var(--display);font-size:27px;text-transform:uppercase;letter-spacing:.02em}
   .cta-band .cta-note{text-align:right}
   .cta-band a{font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--red);text-decoration:none;text-transform:uppercase;display:block}
   .cta-band small{font-family:var(--mono);font-size:8px;letter-spacing:.1em;color:#8A848C;text-transform:uppercase}
-  .foot{margin-top:14px;background:var(--navy);padding:16px 56px;display:flex;justify-content:space-between;align-items:center}
+  .foot{margin-top:10px;background:var(--navy);padding:13px 56px;display:flex;justify-content:space-between;align-items:center}
   .foot span{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8A848C}
 </style>
 </head>
@@ -122,6 +128,12 @@
         <li>Athlete film packages available at collegeflagshowcase.com/film</li>
         <li>A weekend around the country&rsquo;s top travel programs</li>
       </ul>
+    </section>
+
+    <section class="colleges-strip">
+      <p class="eyebrow">College Programs Committed &mdash; Dallas</p>
+      <p class="college-names"><span>East Texas Baptist University</span> &middot; <span>Illinois Wesleyan University</span> &middot; <span>Our Lady of the Lake University</span> &middot; <span>Dallas College Richland</span> &middot; <span>Missouri Valley College</span> &middot; <span>Texas Wesleyan University</span> &middot; <span>Cairn University</span></p>
+      <p class="college-sub">The board updates as college coaches register &mdash; collegeflagshowcase.com/colleges</p>
     </section>
 
     <section class="pkgs">
