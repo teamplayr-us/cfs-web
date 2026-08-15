@@ -36,7 +36,7 @@ const GENERAL: QA[] = [
   },
   {
     q: "Is college flag football actually real?",
-    a: "Very. Flag football debuts at the 2028 Olympics in LA, it's an NCAA Emerging Sport for Women with scholarships live today, Nebraska becomes the first Power Four school with varsity flag in 2028, and 60+ college programs are playing with more added every season.",
+    a: "Very. Flag football debuts at the 2028 Olympics in LA, it's an NCAA Emerging Sport for Women with scholarships live today, Nebraska becomes the first Power Four school with varsity flag in 2028, and 90+ college programs are playing with more added every season.",
   },
   {
     q: "Who runs the series?",

@@ -33,12 +33,11 @@ export const PATHWAY_FACTS: PathwayFact[] = [
     label: "Scholarships live",
     detail: "Nebraska is the first Power Four school with varsity flag — debuting 2028",
   },
-  // Source: NCAA sports sponsorship data via ncaa.org /
-  // collegiateflagfootball.com — 40+ varsity programs in 2025–26, ~60
-  // anticipated spring 2026
+  // Source: founder-confirmed count, Aug 2026 — over 90 college flag
+  // football programs playing
   {
-    stat: "60+",
+    stat: "90+",
     label: "College programs",
-    detail: "Varsity programs anticipated by spring 2026 — and climbing",
+    detail: "College flag football programs playing — and climbing",
   },
 ];
