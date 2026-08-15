@@ -67,6 +67,12 @@ export const ORGS_BY_EVENT: Record<string, OrgSlot[]> = {
       logo: "/programs/famlife-flex.png",
       location: "Texas",
     },
+    {
+      filled: true,
+      name: "One of One Girls Flag Football Club",
+      logo: "/programs/one-of-one.png",
+      // TODO: add home region once confirmed
+    },
   ],
 };
 
