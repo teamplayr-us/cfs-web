@@ -85,7 +85,7 @@ export default function CoreOffering() {
               </div>
               <div className="offer-body">
                 <p className="offer-lede">
-                  Bracketed 5v5 team competition — real games, real stakes,
+                  5v5 team competition — real games, real stakes,
                   evaluated live from the sideline.
                 </p>
                 <ul>

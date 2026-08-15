@@ -90,7 +90,7 @@ const TEAMS: QA[] = [
   },
   {
     q: "What does team entry include?",
-    a: "$550 per team covers your spot in the bracketed Showcase Tournament with a three-game minimum — a curated field, college coaches evaluating from the sideline, and every game filmed for college evaluation.",
+    a: "$550 per team covers your spot in the Showcase Tournament with a three-game minimum — a curated field, college coaches evaluating from the sideline, and every game filmed for college evaluation.",
   },
   {
     q: "Is the combine included with team entry?",

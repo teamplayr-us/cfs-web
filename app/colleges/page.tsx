@@ -83,7 +83,7 @@ export default function CollegesPage() {
               <h3>In-Person Evaluation</h3>
               <p>
                 Recruiter credentials put you on the field for positional
-                drills, 1v1s, and bracketed 5v5 games against curated
+                drills, 1v1s, and 5v5 games against curated
                 competition.
               </p>
             </div>
