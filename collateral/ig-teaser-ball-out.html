@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>IG Teaser — Ball Out</title>
+<style>
+  @font-face{font-family:"Big Shoulders Display";src:url(fonts/big-shoulders.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"Archivo";src:url(fonts/archivo.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"JetBrains Mono";src:url(fonts/jetbrains-mono.woff2) format("woff2");font-weight:100 900}
+  :root{
+    --navy:#110C0F; --red:#FF2D87; --chalk:#F5F2F0; --steel:#8A848C;
+    --display:"Big Shoulders Display",sans-serif;
+    --body:"Archivo",sans-serif;
+    --mono:"JetBrains Mono",monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:1080px;overflow:hidden}
+  body{font-family:var(--body);background:var(--navy);color:var(--chalk);-webkit-print-color-adjust:exact;print-color-adjust:exact;position:relative}
+
+  /* faint yard lines */
+  .yards{position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0,transparent 106px,rgba(245,242,240,.05) 106px,rgba(245,242,240,.05) 108px)}
+  .hash{position:absolute;top:0;bottom:0;width:2px;background:rgba(245,242,240,.05)}
+  .hash.l{left:96px}.hash.r{right:96px}
+
+  .frame{position:absolute;inset:36px;border:3px solid rgba(245,242,240,.12);pointer-events:none}
+
+  .inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:84px 90px 72px}
+
+  .logo{width:230px;height:230px}
+  .kicker{margin-top:34px;font-family:var(--mono);font-size:24px;font-weight:700;letter-spacing:.34em;text-transform:uppercase;color:var(--red)}
+
+  .stack{margin-top:44px;font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:.9;letter-spacing:.01em}
+  .stack .l1{display:block;font-size:150px;color:var(--chalk)}
+  .stack .l2{display:block;font-size:150px;color:transparent;-webkit-text-stroke:3px var(--chalk)}
+  .stack .l3{display:block;font-size:150px;color:var(--red)}
+
+  .rule{margin-top:auto;width:120px;height:6px;background:var(--red)}
+  .foot{margin-top:26px;font-family:var(--mono);font-size:22px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--steel)}
+  .foot b{color:var(--chalk);font-weight:700}
+</style>
+</head>
+<body>
+  <div class="yards"></div>
+  <div class="hash l"></div>
+  <div class="hash r"></div>
+  <div class="frame"></div>
+  <div class="inner">
+    <img class="logo" src="../public/logo.png" alt="Collegiate Flag Showcase Series" />
+    <p class="kicker">Girls National Recruiting Series</p>
+    <h1 class="stack">
+      <span class="l1">Ball Out.</span>
+      <span class="l2">Get Seen.</span>
+      <span class="l3">Get Recruited.</span>
+    </h1>
+    <div class="rule"></div>
+    <p class="foot"><b>collegeflagshowcase.com</b></p>
+  </div>
+</body>
+</html>
