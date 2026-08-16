@@ -169,6 +169,14 @@ export const EVENTS: TourEvent[] = [
   },
 ];
 
+/** Public athlete-registration switch. While false, every "Register as an
+ * Athlete" button renders as a disabled "Registration Coming Soon" state so
+ * the site can take traffic without taking registrations. The
+ * /events/[slug]/register pages themselves stay live (they're noindex and
+ * not in the sitemap) so checkout can still be tested by direct URL.
+ * Flip to true to open registration publicly. */
+export const ATHLETE_REG_LIVE = false;
+
 /** Tournament-team athlete discount, in cents — $50 off the Combine & Camp
  * price with the code from a team's tournament invite (validated against
  * TOURNAMENT_DISCOUNT_CODE in /api/checkout). Display copy shows the
@@ -189,4 +197,11 @@ export function getEvent(slug: string): TourEvent | undefined {
 /** Display label like "Event 01" */
 export function stopLabel(event: TourEvent): string {
   return `Event ${event.number}`;
+}
+
+/** Status tag as displayed: an event whose registration is configured open
+ * still shows "Coming Soon" until ATHLETE_REG_LIVE flips on. */
+export function displayTag(event: TourEvent): string {
+  if (event.athleteReg?.open && !ATHLETE_REG_LIVE) return "Coming Soon";
+  return event.tag;
 }

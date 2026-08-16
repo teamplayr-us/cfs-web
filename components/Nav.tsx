@@ -1,6 +1,6 @@
 import Image from "next/image";
 import MobileMenu from "./MobileMenu";
-import { EVENTS, NEXT_STOP } from "@/data/events";
+import { ATHLETE_REG_LIVE, EVENTS, NEXT_STOP } from "@/data/events";
 
 export default function Nav() {
   return (
@@ -61,7 +61,7 @@ export default function Nav() {
             }))}
           />
           <a className="nav-cta" href={`/events/${NEXT_STOP.slug}`}>
-            Register
+            {ATHLETE_REG_LIVE ? "Register" : "Next Event"}
           </a>
         </div>
       </div>

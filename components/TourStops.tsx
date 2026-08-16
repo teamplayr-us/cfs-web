@@ -1,4 +1,4 @@
-import { EVENTS } from "@/data/events";
+import { displayTag, EVENTS } from "@/data/events";
 
 interface Props {
   /** When set (on event pages), hides that stop and renders the compact
@@ -42,7 +42,7 @@ export default function TourStops({ excludeSlug }: Props) {
                 </span>
                 <span className="tour-date">{event.date}</span>
                 <span className={event.live ? "tour-tag live" : "tour-tag"}>
-                  {event.tag}
+                  {displayTag(event)}
                 </span>
               </a>
             ))}

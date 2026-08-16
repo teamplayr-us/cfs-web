@@ -7,6 +7,7 @@ import TourStops from "@/components/TourStops";
 import InterestCTA from "@/components/InterestCTA";
 import Footer from "@/components/Footer";
 import {
+  ATHLETE_REG_LIVE,
   EVENTS,
   getEvent,
   stopLabel,
@@ -99,10 +100,14 @@ export default function EventPage({ params }: Props) {
             <div className="hero-ctas">
               <div className="cta-stack">
                 <span className="cta-kicker">Showcase Combine &amp; Camp</span>
-                {regOpen ? (
+                {regOpen && ATHLETE_REG_LIVE ? (
                   <a className="btn btn-red" href={registerUrl}>
                     Register as an Athlete
                   </a>
+                ) : regOpen ? (
+                  <span className="btn btn-soon">
+                    Registration Coming Soon
+                  </span>
                 ) : (
                   <a className="btn btn-red" href="/#interest">
                     Get Notified
@@ -233,10 +238,14 @@ export default function EventPage({ params }: Props) {
                     <dd>{event.details?.divisions ?? "Announcing"}</dd>
                   </div>
                 </dl>
-                {regOpen ? (
+                {regOpen && ATHLETE_REG_LIVE ? (
                   <a className="btn btn-red schedule-cta" href={registerUrl}>
                     Register as an Athlete
                   </a>
+                ) : regOpen ? (
+                  <span className="btn btn-soon schedule-cta">
+                    Registration Coming Soon
+                  </span>
                 ) : (
                   <a className="btn btn-red schedule-cta" href="/#interest">
                     Get Notified

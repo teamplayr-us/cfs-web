@@ -52,6 +52,9 @@ h2{font-size:clamp(34px,5vw,56px);font-weight:800}
 .btn-ghost:hover{background:var(--navy);color:var(--chalk)}
 .btn-ghost-light{background:transparent;color:var(--chalk);border-color:var(--chalk)}
 .btn-ghost-light:hover{background:var(--chalk);color:var(--navy)}
+/* disabled "coming soon" state for registration CTAs (ATHLETE_REG_LIVE) */
+.btn-soon{background:transparent;color:var(--gold);border-color:var(--gold);cursor:default}
+.btn-soon:hover{transform:none}
 
 /* ============ NAV ============ */
 nav{background:var(--navy);color:var(--chalk);position:sticky;top:0;z-index:50;border-bottom:3px solid var(--red)}

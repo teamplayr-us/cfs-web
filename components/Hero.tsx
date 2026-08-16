@@ -1,6 +1,6 @@
 import NextStopCard from "./NextStopCard";
 import { ATHLETE_REG_URL } from "@/data/links";
-import { NEXT_STOP } from "@/data/events";
+import { ATHLETE_REG_LIVE, NEXT_STOP } from "@/data/events";
 
 export default function Hero() {
   return (
@@ -27,9 +27,13 @@ export default function Hero() {
           <div className="hero-ctas">
             <div className="cta-stack">
               <span className="cta-kicker">Showcase Combine &amp; Camp</span>
-              <a className="btn btn-red" href={ATHLETE_REG_URL}>
-                Register as an Athlete
-              </a>
+              {ATHLETE_REG_LIVE ? (
+                <a className="btn btn-red" href={ATHLETE_REG_URL}>
+                  Register as an Athlete
+                </a>
+              ) : (
+                <span className="btn btn-soon">Registration Coming Soon</span>
+              )}
             </div>
             <div className="cta-stack">
               <span className="cta-kicker">Showcase Tournament</span>
