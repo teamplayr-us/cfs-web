@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>IG Template — College Committed</title>
+<!--
+  TEMPLATE — announcing a committed college program.
+  Render with: node collateral/render-college-announce.mjs "College Name" "colleges/logo-mono.png" "output.png"
+  (or edit the three {{TOKENS}} below by hand and render like any other collateral file)
+
+  {{NAME}}       — the program name, e.g. Texas Wesleyan University
+  {{LOGO}}       — logo path under /public, e.g. ../public/colleges/texas-wesleyan-mono.png
+                   (use the -mono knockout variant — it's built for dark backgrounds)
+  {{EVENT_LINE}} — e.g. Event 01 · Dallas, TX · Dec 11–13, 2026
+  {{CITY}}       — city used in the body line, e.g. Dallas
+-->
+<style>
+  @font-face{font-family:"Big Shoulders Display";src:url(fonts/big-shoulders.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"Archivo";src:url(fonts/archivo.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"JetBrains Mono";src:url(fonts/jetbrains-mono.woff2) format("woff2");font-weight:100 900}
+  :root{
+    --navy:#110C0F; --red:#FF2D87; --chalk:#F5F2F0; --steel:#8A848C;
+    --display:"Big Shoulders Display",sans-serif;
+    --body:"Archivo",sans-serif;
+    --mono:"JetBrains Mono",monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:1350px;overflow:hidden}
+  body{font-family:var(--body);background:var(--navy);color:var(--chalk);-webkit-print-color-adjust:exact;print-color-adjust:exact;position:relative}
+
+  .yards{position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0,transparent 133px,rgba(245,242,240,.05) 133px,rgba(245,242,240,.05) 135px)}
+  .hash{position:absolute;top:0;bottom:0;width:2px;background:rgba(245,242,240,.05)}
+  .hash.l{left:96px}.hash.r{right:96px}
+  .frame{position:absolute;inset:36px;border:3px solid rgba(245,242,240,.12);pointer-events:none}
+
+  .inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:96px 110px 90px}
+
+  .kicker{font-family:var(--mono);font-size:20px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--red);white-space:nowrap}
+
+  .college-logo{margin-top:84px;height:330px;max-width:640px;object-fit:contain}
+  .college-name{margin-top:56px;font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:1;letter-spacing:.01em;font-size:64px;max-width:860px}
+
+  .punch{margin-top:34px;font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:.92;letter-spacing:.01em;font-size:150px;color:var(--red)}
+
+  .sub{margin-top:44px;font-size:33px;line-height:1.45;font-weight:500;color:var(--chalk);max-width:760px}
+
+  .rule{margin-top:auto;width:120px;height:6px;background:var(--red)}
+  .foot{margin-top:26px;font-family:var(--mono);font-size:22px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--steel)}
+  .foot b{color:var(--chalk);font-weight:700}
+</style>
+</head>
+<body>
+  <div class="yards"></div>
+  <div class="hash l"></div>
+  <div class="hash r"></div>
+  <div class="frame"></div>
+  <div class="inner">
+    <p class="kicker">{{EVENT_LINE}}</p>
+    <img class="college-logo" src="{{LOGO}}" alt="{{NAME}}" />
+    <h2 class="college-name">{{NAME}}</h2>
+    <h1 class="punch">Committed.</h1>
+    <p class="sub">Their coaches will be evaluating live in {{CITY}} &mdash; on the sideline for games, at the combine, and in the 1v1s.</p>
+    <div class="rule"></div>
+    <p class="foot"><b>collegeflagshowcase.com</b>/colleges</p>
+  </div>
+</body>
+</html>
