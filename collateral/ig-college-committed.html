@@ -35,11 +35,12 @@
   .hash.l{left:96px}.hash.r{right:96px}
   .frame{position:absolute;inset:36px;border:3px solid rgba(245,242,240,.12);pointer-events:none}
 
-  .inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:96px 110px 90px}
+  .inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:80px 110px 84px}
 
+  .cfs-logo{width:150px;height:150px;margin-bottom:30px}
   .kicker{font-family:var(--mono);font-size:20px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--red);white-space:nowrap}
 
-  .college-logo{margin-top:84px;height:330px;max-width:640px;object-fit:contain}
+  .college-logo{margin-top:56px;height:330px;max-width:640px;object-fit:contain}
   .college-name{margin-top:56px;font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:1;letter-spacing:.01em;font-size:64px;max-width:860px}
   .coach-line{margin-top:22px;font-family:var(--mono);font-size:22px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--steel)}
   .coach-line b{color:var(--red);font-weight:700}
@@ -59,12 +60,13 @@
   <div class="hash r"></div>
   <div class="frame"></div>
   <div class="inner">
+    <img class="cfs-logo" src="../public/logo.png" alt="Collegiate Flag Showcase Series" />
     <p class="kicker">{{EVENT_LINE}}</p>
     <img class="college-logo" src="{{LOGO}}" alt="{{NAME}}" />
     <h2 class="college-name">{{NAME}}</h2>
     <p class="coach-line">{{COACH}} &middot; <b>{{DIVISION}}</b></p>
     <h1 class="punch">Committed.</h1>
-    <p class="sub">Their coaches will be evaluating live in {{CITY}} &mdash; on the sideline for games, at the combine, and in the 1v1s.</p>
+    <p class="sub">Their coaches will be evaluating live in {{CITY}}.</p>
     <div class="rule"></div>
     <p class="foot"><b>collegeflagshowcase.com</b>/colleges</p>
   </div>
