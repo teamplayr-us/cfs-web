@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>IG Post — 2026–27 Schedule</title>
+<style>
+  @font-face{font-family:"Big Shoulders Display";src:url(fonts/big-shoulders.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"Archivo";src:url(fonts/archivo.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"JetBrains Mono";src:url(fonts/jetbrains-mono.woff2) format("woff2");font-weight:100 900}
+  :root{
+    --navy:#110C0F; --red:#FF2D87; --chalk:#F5F2F0; --steel:#8A848C;
+    --display:"Big Shoulders Display",sans-serif;
+    --body:"Archivo",sans-serif;
+    --mono:"JetBrains Mono",monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:1350px;overflow:hidden}
+  body{font-family:var(--body);background:var(--navy);color:var(--chalk);-webkit-print-color-adjust:exact;print-color-adjust:exact;position:relative}
+
+  .yards{position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0,transparent 133px,rgba(245,242,240,.05) 133px,rgba(245,242,240,.05) 135px)}
+  .hash{position:absolute;top:0;bottom:0;width:2px;background:rgba(245,242,240,.05)}
+  .hash.l{left:96px}.hash.r{right:96px}
+  .frame{position:absolute;inset:36px;border:3px solid rgba(245,242,240,.12);pointer-events:none}
+
+  .inner{position:absolute;inset:0;display:flex;flex-direction:column;padding:84px 130px 78px}
+
+  .top{display:flex;align-items:center;gap:30px}
+  .logo{width:150px;height:150px;flex-shrink:0}
+  .kicker{font-family:var(--mono);font-size:19px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--red)}
+  .title{margin-top:8px;font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:.92;letter-spacing:.01em;font-size:76px}
+  .title em{font-style:normal;color:var(--red)}
+
+  .list{margin-top:46px;border-top:3px solid rgba(245,242,240,.25)}
+  .row{display:flex;align-items:center;gap:26px;padding:15px 4px;border-bottom:2px solid rgba(245,242,240,.12)}
+  .row .no{font-family:var(--mono);font-size:20px;font-weight:700;letter-spacing:.1em;color:var(--red);width:52px;flex-shrink:0}
+  .row .city{font-family:var(--display);font-size:40px;font-weight:800;text-transform:uppercase;letter-spacing:.01em;line-height:1}
+  .row .date{margin-left:auto;font-family:var(--mono);font-size:21px;font-weight:700;letter-spacing:.1em;color:var(--steel);white-space:nowrap}
+  .row.first{background:var(--red);margin:0 -22px;padding:15px 26px}
+  .row.first .no{color:var(--navy)}
+  .row.first .city{color:#fff}
+  .row.first .date{color:#fff}
+
+  .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:baseline}
+  .foot .site{font-family:var(--mono);font-size:21px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--chalk)}
+  .foot .note{font-family:var(--mono);font-size:16px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--steel)}
+</style>
+</head>
+<body>
+  <div class="yards"></div>
+  <div class="hash l"></div>
+  <div class="hash r"></div>
+  <div class="frame"></div>
+  <div class="inner">
+    <div class="top">
+      <img class="logo" src="../public/logo.png" alt="Collegiate Flag Showcase Series" />
+      <div>
+        <p class="kicker">2026&ndash;27 Season &middot; Girls Flag Football</p>
+        <h1 class="title">Ten Events.<br /><em>Coast to Coast.</em></h1>
+      </div>
+    </div>
+
+    <div class="list">
+      <div class="row first"><span class="no">01</span><span class="city">Dallas, TX</span><span class="date">DEC 11&ndash;13, 2026</span></div>
+      <div class="row"><span class="no">02</span><span class="city">Charlotte, NC</span><span class="date">JAN 2027</span></div>
+      <div class="row"><span class="no">03</span><span class="city">Phoenix, AZ</span><span class="date">FEB 2027</span></div>
+      <div class="row"><span class="no">04</span><span class="city">Seattle, WA</span><span class="date">APR 2027</span></div>
+      <div class="row"><span class="no">05</span><span class="city">Southern California</span><span class="date">MAY 2027</span></div>
+      <div class="row"><span class="no">06</span><span class="city">Ohio</span><span class="date">JUN 2027</span></div>
+      <div class="row"><span class="no">07</span><span class="city">Boston, MA</span><span class="date">JUL 2027</span></div>
+      <div class="row"><span class="no">08</span><span class="city">Tampa, FL</span><span class="date">SEP 2027</span></div>
+      <div class="row"><span class="no">09</span><span class="city">Nashville, TN</span><span class="date">OCT 2027</span></div>
+      <div class="row"><span class="no">10</span><span class="city">Atlanta, GA</span><span class="date">DEC 2027</span></div>
+    </div>
+
+    <div class="foot">
+      <span class="site">collegeflagshowcase.com</span>
+      <span class="note">Venues &amp; dates announcing</span>
+    </div>
+  </div>
+</body>
+</html>
