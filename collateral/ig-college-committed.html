@@ -13,6 +13,8 @@
                    (use the -mono knockout variant — it's built for dark backgrounds)
   {{EVENT_LINE}} — e.g. Event 01 · Dallas, TX · Dec 11–13, 2026
   {{CITY}}       — city used in the body line, e.g. Dallas
+  {{COACH}}      — coach title + name, e.g. Head Coach Mike Landis
+  {{DIVISION}}   — e.g. NCAA DIII / NCAA DII / NJCAA / NAIA
 -->
 <style>
   @font-face{font-family:"Big Shoulders Display";src:url(fonts/big-shoulders.woff2) format("woff2");font-weight:100 900}
@@ -39,6 +41,8 @@
 
   .college-logo{margin-top:84px;height:330px;max-width:640px;object-fit:contain}
   .college-name{margin-top:56px;font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:1;letter-spacing:.01em;font-size:64px;max-width:860px}
+  .coach-line{margin-top:22px;font-family:var(--mono);font-size:22px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--steel)}
+  .coach-line b{color:var(--red);font-weight:700}
 
   .punch{margin-top:34px;font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:.92;letter-spacing:.01em;font-size:150px;color:var(--red)}
 
@@ -58,6 +62,7 @@
     <p class="kicker">{{EVENT_LINE}}</p>
     <img class="college-logo" src="{{LOGO}}" alt="{{NAME}}" />
     <h2 class="college-name">{{NAME}}</h2>
+    <p class="coach-line">{{COACH}} &middot; <b>{{DIVISION}}</b></p>
     <h1 class="punch">Committed.</h1>
     <p class="sub">Their coaches will be evaluating live in {{CITY}} &mdash; on the sideline for games, at the combine, and in the 1v1s.</p>
     <div class="rule"></div>
