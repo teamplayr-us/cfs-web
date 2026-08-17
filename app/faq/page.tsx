@@ -71,7 +71,7 @@ const FAMILIES: QA[] = [
   },
   {
     q: "What ages can participate?",
-    a: "Showcase divisions are 12U, 14U, and HS, with age groups based on the athlete's age as of August 1. For recruiting purposes, grad year matters most — coaches at the event are recruiting current and upcoming classes.",
+    a: "Showcase divisions are 12U, 14U, 16U, and 18U, with age groups based on the athlete's age as of August 1. For recruiting purposes, grad year matters most — coaches at the event are recruiting current and upcoming classes.",
   },
   {
     q: "Will college coaches actually see her?",
@@ -98,7 +98,7 @@ const TEAMS: QA[] = [
   },
   {
     q: "What divisions can we enter?",
-    a: "Showcase divisions are 12U, 14U, and HS. Age groups are based on the athlete's age as of August 1.",
+    a: "Showcase divisions are 12U, 14U, 16U, and 18U. Age groups are based on the athlete's age as of August 1.",
   },
   {
     q: "When will we get the schedule?",

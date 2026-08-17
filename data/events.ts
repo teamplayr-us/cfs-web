@@ -90,7 +90,7 @@ export const EVENTS: TourEvent[] = [
       dates: "Dec 11–13, 2026",
       // TODO: set tournamentDates once confirmed (e.g. "Dec 12–13, 2026");
       // the schedule shows the full stop dates until then.
-      divisions: "12U · 14U · HS",
+      divisions: "12U · 14U · 16U · 18U",
       teamEntry: "$550",
       regDeadline: "Nov 29, 2026",
     },

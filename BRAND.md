@@ -86,7 +86,7 @@ Light pink (#FF8DC1) never appears on light backgrounds.
   customer-facing copy), **Showcase Combine &
   Camp** (individual flow, open registration), **Showcase Tournament**
   (team flow, INVITE-ONLY — teams "request an invite," never "sign up"),
-  **Girls 12U · 14U · HS** (showcase divisions), **2026–27 Season**.
+  **Girls 12U · 14U · 16U · 18U** (showcase divisions), **2026–27 Season**.
 - Athlete-first, confident, zero hype-fluff. No exclamation marks. Speak to
   athletes directly ("your measurables," "bring your game") and to parents
   plainly.

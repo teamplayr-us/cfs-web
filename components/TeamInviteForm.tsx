@@ -153,7 +153,7 @@ export default function TeamInviteForm({ events, defaultEventSlug }: Props) {
             Age groups you&apos;d bring{err("ageGroups")}
             <input
               type="text"
-              placeholder="12U, 14U, HS"
+              placeholder="12U, 14U, 16U, 18U"
               value={data.ageGroups}
               onChange={(e) => set("ageGroups", e.target.value)}
             />
