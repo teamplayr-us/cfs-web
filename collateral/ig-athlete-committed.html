@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>IG Template — Athlete Registered</title>
+<!--
+  TEMPLATE — announcing an athlete registered for the Showcase Combine & Camp.
+  Render with:
+    node collateral/render-athlete-announce.mjs "Name" photo.jpg "QB" 2029 "Club Name" "Dallas, TX"
+  (photo lives in collateral/athletes/)
+
+  {{NAME}}       — athlete name, e.g. Maya Rodriguez
+  {{PHOTO}}      — photo path, e.g. athletes/maya-rodriguez.jpg (action shot)
+  {{POSITION}}   — e.g. QB / WR / DB (multiple: "QB · ATH")
+  {{CLASS}}      — grad year, e.g. 2029
+  {{CLUB}}       — club/travel team, e.g. Texas Fury
+  {{HOMETOWN}}   — e.g. Dallas, TX
+  {{EVENT_LINE}} — e.g. Showcase Combine & Camp · Dallas, TX · Dec 11–13, 2026
+-->
+<style>
+  @font-face{font-family:"Big Shoulders Display";src:url(fonts/big-shoulders.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"Archivo";src:url(fonts/archivo.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"JetBrains Mono";src:url(fonts/jetbrains-mono.woff2) format("woff2");font-weight:100 900}
+  :root{
+    --navy:#110C0F; --red:#FF2D87; --chalk:#F5F2F0; --steel:#8A848C;
+    --display:"Big Shoulders Display",sans-serif;
+    --body:"Archivo",sans-serif;
+    --mono:"JetBrains Mono",monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:1350px;overflow:hidden}
+  body{font-family:var(--body);background:var(--navy);color:var(--chalk);-webkit-print-color-adjust:exact;print-color-adjust:exact;position:relative}
+
+  .photo{position:absolute;top:0;left:0;right:0;height:790px}
+  .photo img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+  .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(17,12,15,.08) 0%,rgba(17,12,15,0) 30%,rgba(17,12,15,.25) 62%,var(--navy) 97%)}
+
+  .cfs-logo{position:absolute;top:58px;left:58px;width:140px;height:140px;z-index:3}
+
+  .stamp{position:absolute;top:568px;left:0;right:0;z-index:3;text-align:center;font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:150px;line-height:.9;letter-spacing:.01em;color:var(--red);text-shadow:0 4px 28px rgba(17,12,15,.55)}
+
+  .frame{position:absolute;inset:36px;border:3px solid rgba(245,242,240,.16);pointer-events:none;z-index:4}
+
+  .inner{position:absolute;top:740px;bottom:0;left:0;right:0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:36px 110px 84px;z-index:2}
+
+  .kicker{font-family:var(--mono);font-size:20px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);white-space:nowrap}
+
+  .name{margin-top:26px;font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:.94;letter-spacing:.01em;font-size:110px;color:var(--chalk);max-width:880px}
+
+  .detail-1{margin-top:26px;font-family:var(--mono);font-size:27px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--chalk)}
+  .detail-1 b{color:var(--red);font-weight:700}
+  .detail-2{margin-top:14px;font-family:var(--mono);font-size:22px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--steel)}
+
+  .rule{margin-top:auto;width:120px;height:6px;background:var(--red)}
+  .foot{margin-top:24px;font-family:var(--mono);font-size:22px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--steel)}
+  .foot b{color:var(--chalk);font-weight:700}
+</style>
+</head>
+<body>
+  <div class="photo"><img src="{{PHOTO}}" alt="{{NAME}}" /></div>
+  <img class="cfs-logo" src="../public/logo.png" alt="Collegiate Flag Showcase Series" />
+  <p class="stamp">She&rsquo;s In.</p>
+  <div class="frame"></div>
+  <div class="inner">
+    <p class="kicker">{{EVENT_LINE}}</p>
+    <h1 class="name">{{NAME}}</h1>
+    <p class="detail-1">{{POSITION}} &middot; <b>Class of {{CLASS}}</b></p>
+    <p class="detail-2">{{CLUB}} &middot; {{HOMETOWN}}</p>
+    <div class="rule"></div>
+    <p class="foot"><b>collegeflagshowcase.com</b></p>
+  </div>
+</body>
+</html>
