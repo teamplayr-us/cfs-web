@@ -116,10 +116,12 @@ closer to the event." Dallas registration deadline: **Nov 29, 2026**.
 ### College coaches
 - **Credentials are free** for college programs at every event.
 - Credentials include: sideline access all weekend, expected participant
-  counts before each event, and the **athlete recruiting package**
-  (verified combine results — speed, agility, explosiveness measured by
-  trained staff and on the record — plus each athlete's contact information
-  and academic/athletic profile).
+  counts before each event, and the **athlete recruiting package**.
+  **[INTERNAL]** The package's exact contents are deliberately NOT
+  committed publicly yet (founder decision, Aug 2026). Approved answer:
+  "Recruiting information on the athletes at each event — we confirm full
+  package details with credentialed coaches ahead of each event." Never
+  itemize contents; if a coach pushes for specifics, escalate.
 - Free **College Row** tent space in the Fan Zone — opt in via checkbox at
   coach registration (site: /colleges/register).
 - Compliance (approved answer, use verbatim): "Coaches are responsible for
@@ -155,8 +157,9 @@ closer to the event." Dallas registration deadline: **Nov 29, 2026**.
 
 ## 7. Recruiting package & data
 
-- What coaches receive about an athlete: verified combine results + contact
-  info + academic/athletic profile ("the athlete recruiting package").
+- Coaches receive "the athlete recruiting package" — recruiting information
+  on the athletes at each event. **[INTERNAL]** Exact contents are not yet
+  publicly committed; never itemize them (see §4 College coaches).
 - What "verified" means: measured by trained staff and on the record — not
   self-reported.
 - If a family asks to opt out of data sharing, or anything
@@ -233,8 +236,8 @@ routing) — do not improvise — for:
   own. The team tournament is separate and invite-only."
 - **Will coaches actually see her?** "Yes — coaches are credentialed
   on-site all weekend, watching skill work and 1v1s at the Combine & Camp
-  and on the sideline for games. Her verified results go into the
-  recruiting package those coaches receive."
+  and on the sideline for games. She's included in the athlete recruiting
+  package those coaches receive."
 - **5v5 or 7v7?** "While we understand the college game is 7v7, our
   competition is 5v5 — that currently aligns with the most common youth
   travel competition formats and roster structures."

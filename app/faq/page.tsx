@@ -75,7 +75,7 @@ const FAMILIES: QA[] = [
   },
   {
     q: "Will college coaches actually see her?",
-    a: "Yes — coaches are credentialed on-site all weekend, watching her compete in skill work and 1v1s at the Combine & Camp and on the sideline for games. Her verified results go into the recruiting package those coaches receive.",
+    a: "Yes — coaches are credentialed on-site all weekend, watching her compete in skill work and 1v1s at the Combine & Camp and on the sideline for games. She's included in the athlete recruiting package those coaches receive.",
   },
   {
     q: "Does she get her film?",
@@ -117,7 +117,7 @@ const COACHES: QA[] = [
   },
   {
     q: "What's in the athlete recruiting package?",
-    a: "Verified combine results — speed, agility, and explosiveness measured by trained staff and on the record — plus each athlete's contact information and academic/athletic profile.",
+    a: "Recruiting information on the athletes at each event. We confirm full package details with credentialed coaches ahead of each event.",
   },
   {
     q: "Can I talk to athletes and families at the event?",
