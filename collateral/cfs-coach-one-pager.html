@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>CFS College Coach One-Pager</title>
+<style>
+  @font-face{font-family:"Big Shoulders Display";src:url(fonts/big-shoulders.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"Archivo";src:url(fonts/archivo.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"JetBrains Mono";src:url(fonts/jetbrains-mono.woff2) format("woff2");font-weight:100 900}
+  :root{
+    --navy:#110C0F; --red:#FF2D87; --gold:#FFC42D; --chalk:#F5F2F0;
+    --steel:#6E676D; --line:#E4DEE2; --line-dark:#2A2226;
+    --display:"Big Shoulders Display",sans-serif;
+    --body:"Archivo",sans-serif;
+    --mono:"JetBrains Mono",monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:8.5in;height:11in;overflow:hidden}
+  body{font-family:var(--body);background:var(--chalk);color:var(--navy);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{width:8.5in;height:11in;display:flex;flex-direction:column}
+
+  .head{background:var(--navy);color:var(--chalk);padding:24px 56px 20px;position:relative;border-bottom:5px solid var(--red)}
+  .head-inner{display:flex;align-items:center;gap:26px}
+  .head img{width:96px;height:96px}
+  .head-kicker{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.22em;color:var(--red);text-transform:uppercase;margin-bottom:8px}
+  .head h1{font-family:var(--display);font-size:48px;line-height:.92;text-transform:uppercase;letter-spacing:.01em}
+  .head h1 em{font-style:normal;color:var(--red)}
+  .head-sub{margin-top:12px;font-size:14px;color:#C9C4C9}
+
+  .body{padding:22px 56px 0;flex:1;display:flex;flex-direction:column}
+  .eyebrow{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
+
+  .fmt-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .fmt{border:2px solid var(--navy);background:#fff;padding:12px 14px}
+  .fmt-head{display:flex;align-items:baseline;gap:10px;margin-bottom:2px}
+  .fmt-num{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--red);letter-spacing:.1em}
+  .fmt h3{font-family:var(--display);font-size:19px;text-transform:uppercase;letter-spacing:.02em}
+  .fmt-tag{font-family:var(--mono);font-size:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);margin-bottom:8px}
+  .fmt p{font-size:11.5px;line-height:1.45}
+  .tour-line{margin:10px 0 0;font-family:var(--mono);font-size:7px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;color:var(--navy);text-align:center;white-space:nowrap}
+  .tour-sub{margin-top:4px;font-family:var(--mono);font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--steel);text-align:center}
+
+  .includes{margin-top:16px}
+  .includes ul{list-style:none;columns:2;column-gap:40px}
+  .includes li{font-size:12px;font-weight:600;padding:4px 0 4px 28px;position:relative;break-inside:avoid}
+  .includes li::before{content:"✓";position:absolute;left:0;top:4px;width:18px;height:18px;background:var(--red);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+
+  .pkgs{margin-top:16px}
+  .pkg-note{font-size:12.5px;color:var(--steel);margin:-4px 0 12px}
+  .pkg-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+  .pkg{border:2px solid var(--navy);background:#fff;display:flex;flex-direction:column}
+  .pkg-head{background:var(--navy);color:var(--chalk);padding:10px 12px;display:flex;justify-content:space-between;align-items:center;gap:6px}
+  .pkg-featured .pkg-head{background:var(--red)}
+  .pkg-head h3{font-family:var(--display);font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:.02em;white-space:nowrap}
+  .pkg-tag{font-family:var(--mono);font-size:6.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-align:right;flex-shrink:0}
+  .pkg-body{padding:12px 14px 13px}
+  .pkg-price{font-family:var(--mono);font-size:16px;font-weight:700;letter-spacing:.04em;color:var(--red);padding-bottom:8px;border-bottom:1px solid var(--line);margin-bottom:9px}
+  .pkg-price span{font-size:11px;color:var(--steel)}
+  .pkg ul{list-style:none}
+  .pkg li{font-size:11px;font-weight:500;line-height:1.4;padding:3px 0 3px 13px;position:relative}
+  .pkg li::before{content:"▸";position:absolute;left:0;color:var(--red);font-size:10px}
+  .pkg li b{font-weight:700}
+
+  .fineprint{margin-top:12px;font-size:10px;color:var(--steel);text-align:center}
+
+  .cta{margin-top:auto;padding-top:10px}
+  .cta-band{background:var(--navy);color:var(--chalk);padding:16px 26px;display:flex;justify-content:space-between;align-items:center;gap:18px;box-shadow:6px 6px 0 var(--red)}
+  .cta-band h2{font-family:var(--display);font-size:27px;text-transform:uppercase;letter-spacing:.02em}
+  .cta-band .cta-note{text-align:right}
+  .cta-band a{font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--red);text-decoration:none;text-transform:uppercase;display:block}
+  .cta-band small{font-family:var(--mono);font-size:8px;letter-spacing:.1em;color:#8A848C;text-transform:uppercase}
+  .foot{margin-top:14px;background:var(--navy);padding:16px 56px;display:flex;justify-content:space-between;align-items:center}
+  .foot span{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8A848C}
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="head">
+    <div class="head-inner">
+      <img src="../public/logo.png" alt="Collegiate Flag Showcase Series logo" />
+      <div>
+        <p class="head-kicker">2026&ndash;27 Season &mdash; College Coach Information</p>
+        <h1>Your Next Class<br /><em>Is Here.</em></h1>
+        <p class="head-sub">How a College Flag Showcase Series event works &mdash; for college flag football coaches and recruiting staff.</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="body">
+    <section>
+      <p class="eyebrow">How an Event Works</p>
+      <div class="fmt-grid">
+        <div class="fmt">
+          <div class="fmt-head"><span class="fmt-num">01</span><h3>Showcase Combine &amp; Camp</h3></div>
+          <p class="fmt-tag">Friday &middot; individual</p>
+          <p>Athletes compete individually &mdash; position-specific skill work and 1v1s run live in front of credentialed coaches, plus combine testing measured by trained staff and on the record.</p>
+        </div>
+        <div class="fmt">
+          <div class="fmt-head"><span class="fmt-num">02</span><h3>Travel Team Showcase Tournament</h3></div>
+          <p class="fmt-tag">Sat&ndash;Sun &middot; invited teams only</p>
+          <p>5v5 competition between top travel programs from across the country and internationally. Evaluate live from the sideline; every game filmed in the full-field view you evaluate with.</p>
+        </div>
+      </div>
+      <p class="tour-line">01 Dallas TX · 02 Charlotte NC · 03 Phoenix AZ · 04 Seattle WA · 05 So California · 06 Ohio · 07 Boston MA · 08 Tampa FL · 09 Nashville TN · 10 Atlanta GA</p>
+      <p class="tour-sub">Ten events, 2026&ndash;27 season · Event 01 runs alongside the International Superflag Invitational &mdash; 80 teams in 2025</p>
+    </section>
+
+    <section class="includes">
+      <p class="eyebrow">What Your Credentials Include &mdash; Free for College Programs</p>
+      <ul>
+        <li>Sideline access all weekend</li>
+        <li>Expected participant counts before each event you attend</li>
+        <li>The athlete recruiting package on participating athletes</li>
+        <li>A free College Row tent space in the Fan Zone &mdash; check the box when you register</li>
+        <li>Divisions: Girls 12U &middot; 14U &middot; 16U &middot; 18U</li>
+      </ul>
+    </section>
+
+    <section class="pkgs">
+      <p class="eyebrow">First Event &mdash; Dallas, TX</p>
+      <p class="pkg-note">Credentials are free &mdash; register once and you&rsquo;re set for the events you select.</p>
+      <div class="pkg-grid">
+        <article class="pkg pkg-featured">
+          <div class="pkg-head"><h3>The Details</h3><span class="pkg-tag">Event 01</span></div>
+          <div class="pkg-body">
+            <p class="pkg-price">FREE <span>/ CREDENTIALS</span></p>
+            <ul>
+              <li><b>Craig Ranch Sports Complex</b> &mdash; McKinney, TX</li>
+              <li><b>Dec 11&ndash;13, 2026</b></li>
+              <li><b>Free for college programs</b> at every event in the series</li>
+            </ul>
+          </div>
+        </article>
+        <article class="pkg">
+          <div class="pkg-head"><h3>How It Works</h3><span class="pkg-tag">Register Now</span></div>
+          <div class="pkg-body">
+            <p class="pkg-price">3 STEPS</p>
+            <ul>
+              <li><b>Register</b> at collegeflagshowcase.com/colleges</li>
+              <li><b>Confirmation</b> and event details by email</li>
+              <li><b>Credentials</b> waiting at check-in</li>
+            </ul>
+          </div>
+        </article>
+        <article class="pkg">
+          <div class="pkg-head"><h3>The Schedule</h3><span class="pkg-tag">Event Weekend</span></div>
+          <div class="pkg-body">
+            <p class="pkg-price">DEC 11&ndash;13</p>
+            <ul>
+              <li><b>Fri Dec 11</b> &mdash; Individual Showcase Combine &amp; Camp</li>
+              <li><b>Sat&ndash;Sun Dec 12&ndash;13</b> &mdash; Travel Team Showcase Tournament</li>
+              <li><b>Detailed agenda</b> and game schedules confirmed closer to the event</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+      <p class="fineprint">Coaches are responsible for ensuring compliance with their respective governing bodies&rsquo; recruiting rules.</p>
+    </section>
+
+    <section class="cta">
+      <div class="cta-band">
+        <h2>Get On the Sideline.</h2>
+        <div class="cta-note">
+          <a href="https://www.collegeflagshowcase.com/colleges">collegeflagshowcase.com/colleges</a>
+          <small>Free Recruiter Credentials</small>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="foot">
+    <span>info@collegeflagshowcase.com · 888.555.0199 · collegeflagshowcase.com</span>
+    <span>College Flag Showcase Series</span>
+  </footer>
+</div>
+</body>
+</html>
