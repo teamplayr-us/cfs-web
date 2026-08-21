@@ -57,7 +57,7 @@ export const COLLEGES_BY_EVENT: Record<string, CollegeSlot[]> = {
     {
       filled: true,
       name: "Olivet Nazarene University",
-      // TODO: add athletic logo (mono knockout) when provided
+      logo: "/colleges/olivet-nazarene-mono.png",
     },
   ],
 };
