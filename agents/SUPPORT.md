@@ -167,10 +167,10 @@ closer to the event." Dallas registration deadline: **Nov 29, 2026**.
 
 ## 8. Committed colleges & competing programs (Dallas)
 
-Colleges committed to attend and evaluate (public, as of Aug 15, 2026):
+Colleges committed to attend and evaluate (public, as of Aug 21, 2026):
 East Texas Baptist University, Illinois Wesleyan University, Our Lady of
 the Lake University, Dallas College Richland, Missouri Valley College,
-Texas Wesleyan University, Cairn University. The board at
+Texas Wesleyan University, Cairn University, Olivet Nazarene University. The board at
 collegeflagshowcase.com/colleges updates as coaches register.
 
 Competing programs (public board, as of Aug 15, 2026): Conquer Chargers
