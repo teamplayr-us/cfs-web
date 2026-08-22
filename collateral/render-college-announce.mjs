@@ -65,8 +65,14 @@ const out = join(
   outFile || `ig-committed-${logoFile.replace(/(-mono)?\.(png|jpg|jpeg)$/i, "")}.png`,
 );
 
+// Browser: CHROMIUM_PATH, else the sandbox's preinstalled headless shell,
+// else Playwright's own resolution.
+const { globSync } = await import("node:fs");
+const chromePath =
+  process.env.CHROMIUM_PATH ??
+  globSync("/opt/pw-browsers/*/chrome-linux/headless_shell")[0];
 const browser = await chromium.launch(
-  process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {},
+  chromePath ? { executablePath: chromePath } : {},
 );
 const page = await browser.newPage({ viewport: { width: 1080, height: 1350 } });
 await page.goto(`file://${tmp}`, { waitUntil: "networkidle" });

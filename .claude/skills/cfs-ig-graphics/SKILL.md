@@ -74,6 +74,7 @@ All templates share the same skeleton — reuse it for new graphics:
 | `ig-teaser-ball-out.html` / `-4x5.html` | Brand teaser — "Ball Out. Get Seen. Get Recruited." |
 | `ig-carousel-what-is.html` | 4-slide explainer carousel (cover + combine + skills showcase + tournament) |
 | `ig-schedule-2026-27.html` | Season schedule list post |
+| `ig-athlete-committed.html` | Athlete "She's In." announcement — covered by the separate `cfs-athlete-announcements` skill; use that skill for athlete posts |
 
 ## Workflow 1 — Committed-college announcement
 
