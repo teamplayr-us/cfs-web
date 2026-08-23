@@ -22,9 +22,9 @@ PNG**, iterate on their feedback, then commit both the HTML and PNG to
 
 - It's a **series**, never "a tour". Positioning line: "Girls National
   Recruiting Series". Never abbreviate the brand to "CFS" in anything public —
-  always "College Flag Showcase Series" in written copy. (The logo artwork
-  itself reads "Collegiate Flag Showcase Series" — that's the mark, not the
-  written name; don't "correct" either one to match the other.)
+  always "College Flag Showcase Series" in written copy. (The logo mark
+  matches since the Aug 2026 update — if a surface still shows the old
+  "Collegiate" mark, it needs the new `public/logo.png`.)
 - Name the sport — **girls flag football** — on brand-level graphics
   (teasers, explainers): the logo alone doesn't say it, and the founder has
   flagged its absence before. Templates the founder has already approved

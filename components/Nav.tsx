@@ -9,11 +9,11 @@ export default function Nav() {
         <a
           className="logo logo-img"
           href="/"
-          aria-label="Collegiate Flag Showcase Series — home"
+          aria-label="College Flag Showcase Series — home"
         >
           <Image
             src="/logo.png"
-            alt="Collegiate Flag Showcase Series logo"
+            alt="College Flag Showcase Series logo"
             width={76}
             height={76}
             priority

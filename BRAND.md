@@ -5,8 +5,9 @@ document, deck, graphic, or email read as the same brand as the website.
 
 ## Identity
 
-- **Name:** College Flag Showcase Series (logo mark reads "Collegiate Flag
-  Showcase Series"). Never abbreviate to "CFS" in public-facing material.
+- **Name:** College Flag Showcase Series — the logo mark matches (updated
+  Aug 2026; the original mark read "Collegiate"). Never abbreviate to
+  "CFS" in public-facing material.
 - **Tagline / hero:** "Ball Out. Get Seen. Get Recruited."
 - **Positioning line:** Girls National Recruiting Series — a verified combine
   plus a college showcase tournament in one weekend, evaluated in person by
