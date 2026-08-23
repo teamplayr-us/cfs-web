@@ -19,7 +19,8 @@ document, deck, graphic, or email read as the same brand as the website.
   International Superflag Invitational, which the first stop layers on
   top of — credit 5v5 Sports only in that role.
 - **Logo:** circular badge, pink on black, sits on dark backgrounds. Square
-  PNG (192×192). Don't recolor it or place it on busy imagery.
+  transparent PNG (1200×1200, `public/logo.png`). Don't recolor it or place
+  it on busy imagery.
 
 ## Color
 
