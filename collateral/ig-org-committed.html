@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>IG Template — Team Accepted</title>
+<!--
+  TEMPLATE — announcing a travel program accepted into the Showcase Tournament.
+  Render with:
+    node collateral/render-org-announce.mjs "Program Name" logo.png "City/Region" "12U &middot; 14U"
+
+  {{NAME}}      — program name, e.g. One of One Girls Flag Football Club
+  {{LOGO}}      — logo path, e.g. ../public/programs/one-of-one.png
+  {{LOCATION}}  — home city/region as shown on the site board, e.g. Oklahoma City
+  {{DIVISIONS}} — age groups they're competing in, e.g. 12U &middot; 14U
+  {{EVENT_LINE}}— e.g. Event 01 · Dallas, TX · Dec 11–13, 2026
+  {{CITY}}      — city for the body line, e.g. Dallas
+-->
+<style>
+  @font-face{font-family:"Big Shoulders Display";src:url(fonts/big-shoulders.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"Archivo";src:url(fonts/archivo.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"JetBrains Mono";src:url(fonts/jetbrains-mono.woff2) format("woff2");font-weight:100 900}
+  :root{
+    --navy:#110C0F; --red:#FF2D87; --chalk:#F5F2F0; --steel:#8A848C;
+    --display:"Big Shoulders Display",sans-serif;
+    --body:"Archivo",sans-serif;
+    --mono:"JetBrains Mono",monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:1350px;overflow:hidden}
+  body{font-family:var(--body);background:var(--navy);color:var(--chalk);-webkit-print-color-adjust:exact;print-color-adjust:exact;position:relative}
+
+  .yards{position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0,transparent 133px,rgba(245,242,240,.05) 133px,rgba(245,242,240,.05) 135px)}
+  .hash{position:absolute;top:0;bottom:0;width:2px;background:rgba(245,242,240,.05)}
+  .hash.l{left:96px}.hash.r{right:96px}
+  .frame{position:absolute;inset:36px;border:3px solid rgba(245,242,240,.16);pointer-events:none}
+
+  .inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:80px 110px 84px}
+
+  .cfs-logo{width:150px;height:150px;margin-bottom:30px}
+  .kicker{font-family:var(--mono);font-size:20px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--red);white-space:nowrap}
+
+  .org-logo{margin-top:44px;height:330px;max-width:640px;object-fit:contain}
+  .org-name{margin-top:44px;font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:1;letter-spacing:.01em;font-size:58px;max-width:880px}
+  .detail-line{margin-top:22px;font-family:var(--mono);font-size:22px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--steel)}
+  .detail-line b{color:var(--red);font-weight:700}
+
+  .punch{margin-top:30px;flex-shrink:0;font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:.92;letter-spacing:.01em;font-size:150px;color:var(--red)}
+
+  .sub{margin-top:34px;font-size:33px;line-height:1.45;font-weight:500;color:var(--chalk);max-width:760px}
+
+  .rule{margin-top:auto;width:120px;height:6px;background:var(--red);flex-shrink:0}
+  .foot{margin-top:22px;flex-shrink:0;font-family:var(--mono);font-size:22px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--steel)}
+  .foot b{color:var(--chalk);font-weight:700}
+</style>
+</head>
+<body>
+  <div class="yards"></div>
+  <div class="hash l"></div>
+  <div class="hash r"></div>
+  <div class="frame"></div>
+  <div class="inner">
+    <img class="cfs-logo" src="../public/logo.png" alt="Collegiate Flag Showcase Series" />
+    <p class="kicker">{{EVENT_LINE}}</p>
+    <img class="org-logo" src="{{LOGO}}" alt="{{NAME}}" />
+    <h2 class="org-name">{{NAME}}</h2>
+    <p class="detail-line">{{LOCATION}} &middot; <b>{{DIVISIONS}}</b></p>
+    <h1 class="punch">They&rsquo;re In.</h1>
+    <p class="sub">They&rsquo;ll be competing in front of college coaches in {{CITY}}.</p>
+    <div class="rule"></div>
+    <p class="foot"><b>collegeflagshowcase.com</b></p>
+  </div>
+</body>
+</html>
