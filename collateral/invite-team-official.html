@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Template — Official Team Invitation</title>
+<!--
+  TEMPLATE — official Showcase Tournament invitation graphic, one per team,
+  attached to the coach's invite email (alongside the private registration
+  link, which lives in the email body — never on this graphic).
+
+  Render with:
+    node collateral/render-team-invite.mjs "Program Name" public/programs/logo.png
+
+  {{NAME}}       — the invited program/team name
+  {{LOGO}}       — logo path relative to collateral/, e.g.
+                   ../public/programs/one-of-one.png (accepted teams) or a
+                   file staged in collateral/invites/ (new invitees)
+  {{EVENT_LINE}} — e.g. Event 01 · Dallas, TX · Dec 11–13, 2026
+  {{VENUE_LINE}} — e.g. Craig Ranch Sports Complex · McKinney, TX
+-->
+<style>
+  @font-face{font-family:"Big Shoulders Display";src:url(fonts/big-shoulders.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"Archivo";src:url(fonts/archivo.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"JetBrains Mono";src:url(fonts/jetbrains-mono.woff2) format("woff2");font-weight:100 900}
+  :root{
+    --navy:#110C0F; --red:#FF2D87; --chalk:#F5F2F0; --steel:#8A848C;
+    --display:"Big Shoulders Display",sans-serif;
+    --body:"Archivo",sans-serif;
+    --mono:"JetBrains Mono",monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:1350px;overflow:hidden}
+  body{font-family:var(--body);background:var(--navy);color:var(--chalk);-webkit-print-color-adjust:exact;print-color-adjust:exact;position:relative}
+
+  .yards{position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0,transparent 133px,rgba(245,242,240,.05) 133px,rgba(245,242,240,.05) 135px)}
+  .frame{position:absolute;inset:36px;border:3px solid rgba(245,242,240,.18);pointer-events:none}
+  .frame2{position:absolute;inset:52px;border:1px solid rgba(255,45,135,.45);pointer-events:none}
+
+  .inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:88px 120px 92px}
+
+  .cfs-logo{width:140px;height:140px;margin-bottom:28px}
+  .kicker{font-family:var(--mono);font-size:20px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--red);white-space:nowrap}
+
+  .org-logo{margin-top:52px;height:300px;max-width:640px;object-fit:contain;flex-shrink:0}
+  .org-name{margin-top:44px;font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:1;letter-spacing:.01em;font-size:58px;max-width:880px}
+
+  .invited-line{margin-top:30px;font-size:30px;font-weight:500;color:var(--steel)}
+  .tourney{margin-top:14px;font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:.95;letter-spacing:.01em;font-size:78px;color:var(--red)}
+
+  .event-line{margin-top:36px;font-family:var(--mono);font-size:23px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--chalk)}
+  .venue-line{margin-top:12px;font-family:var(--mono);font-size:19px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--steel)}
+
+  .sub{margin-top:auto;padding-top:30px;font-size:27px;line-height:1.5;font-weight:500;color:var(--chalk);max-width:800px;flex-shrink:0}
+  .sub b{color:var(--red);font-weight:700}
+
+  .rule{margin-top:28px;width:120px;height:6px;background:var(--red);flex-shrink:0}
+  .foot{margin-top:22px;flex-shrink:0;font-family:var(--mono);font-size:21px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--steel)}
+  .foot b{color:var(--chalk);font-weight:700}
+</style>
+</head>
+<body>
+  <div class="yards"></div>
+  <div class="frame"></div>
+  <div class="frame2"></div>
+  <div class="inner">
+    <img class="cfs-logo" src="../public/logo.png" alt="College Flag Showcase Series" />
+    <p class="kicker">Official Invitation &middot; 2026&ndash;27 Season</p>
+    <img class="org-logo" src="{{LOGO}}" alt="{{NAME}}" />
+    <h1 class="org-name">{{NAME}}</h1>
+    <p class="invited-line">is invited to compete in the</p>
+    <h2 class="tourney">Travel Team<br />Showcase Tournament</h2>
+    <p class="event-line">{{EVENT_LINE}}</p>
+    <p class="venue-line">{{VENUE_LINE}}</p>
+    <p class="sub">The field is <b>invite-only</b> &mdash; curated from top travel programs and evaluated live by college coaches. Accept using the private registration link in this email.</p>
+    <div class="rule"></div>
+    <p class="foot"><b>collegeflagshowcase.com</b></p>
+  </div>
+</body>
+</html>
