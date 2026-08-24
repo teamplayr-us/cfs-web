@@ -42,11 +42,12 @@
   .cfs-logo{width:140px;height:140px;margin-bottom:28px}
   .kicker{font-family:var(--mono);font-size:20px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--red);white-space:nowrap}
 
-  .org-logo{margin-top:52px;height:300px;max-width:640px;object-fit:contain;flex-shrink:0}
+  .invite-title{margin-top:26px;font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:.95;letter-spacing:.01em;font-size:104px;color:var(--red)}
+  .org-logo{margin-top:40px;height:280px;max-width:640px;object-fit:contain;flex-shrink:0}
   .org-name{margin-top:44px;font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:1;letter-spacing:.01em;font-size:58px;max-width:880px}
 
-  .invited-line{margin-top:30px;font-size:30px;font-weight:500;color:var(--steel)}
-  .tourney{margin-top:14px;font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:.95;letter-spacing:.01em;font-size:78px;color:var(--red)}
+  .invited-line{margin-top:28px;font-size:29px;font-weight:500;color:var(--steel)}
+  .tourney{margin-top:12px;font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:.98;letter-spacing:.02em;font-size:46px;color:var(--chalk)}
 
   .event-line{margin-top:36px;font-family:var(--mono);font-size:23px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--chalk)}
   .venue-line{margin-top:12px;font-family:var(--mono);font-size:19px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--steel)}
@@ -65,11 +66,12 @@
   <div class="frame2"></div>
   <div class="inner">
     <img class="cfs-logo" src="../public/logo.png" alt="College Flag Showcase Series" />
-    <p class="kicker">Official Invitation &middot; 2026&ndash;27 Season</p>
+    <p class="kicker">Girls Flag Football &middot; 2026&ndash;27 Season</p>
+    <h1 class="invite-title">Official<br />Invitation.</h1>
     <img class="org-logo" src="{{LOGO}}" alt="{{NAME}}" />
-    <h1 class="org-name">{{NAME}}</h1>
+    <h2 class="org-name">{{NAME}}</h2>
     <p class="invited-line">is invited to compete in the</p>
-    <h2 class="tourney">Travel Team<br />Showcase Tournament</h2>
+    <h3 class="tourney">Travel Team Showcase Tournament</h3>
     <p class="event-line">{{EVENT_LINE}}</p>
     <p class="venue-line">{{VENUE_LINE}}</p>
     <p class="sub">The field is <b>invite-only</b> &mdash; curated from top travel programs and evaluated live by college coaches.</p>
