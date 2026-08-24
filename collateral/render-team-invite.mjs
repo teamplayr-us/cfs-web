@@ -10,7 +10,7 @@
 //      for teams already on the site board, or collateral/invites/foo.png
 //      for a new invitee (stage their logo there first; transparent PNG)
 //   3. (optional) Event line — defaults to "Event 01 · Dallas, TX · Dec 11–13, 2026"
-//   4. (optional) Venue line — defaults to "Craig Ranch Sports Complex · McKinney, TX"
+//   4. (optional) Venue line — defaults to "Craig Ranch Sports Complex"
 //   5. (optional) Output filename — defaults to invite-<logo-name>.png
 //
 // The private registration link goes in the EMAIL BODY, never on the graphic.
@@ -57,7 +57,7 @@ const html = readFileSync(join(here, "invite-team-official.html"), "utf8")
   )
   .replaceAll(
     "{{VENUE_LINE}}",
-    venueLine || "Craig Ranch Sports Complex &middot; McKinney, TX",
+    venueLine || "Craig Ranch Sports Complex",
   );
 
 const tmp = join(here, ".invite-team-official.tmp.html");
