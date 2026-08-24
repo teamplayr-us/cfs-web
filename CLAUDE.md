@@ -10,6 +10,8 @@ copy or creating any document.
 - `BRAND.md` — identity, colors, type, motifs, voice, vocabulary rules
 - `SOCIAL.md` — social content brief
 - `agents/SUPPORT.md` — every approved fact and answer, policies, TBDs
+- `agents/EXPERIENCE-STANDARDS.md` — the founder's eight experience
+  principles; every customer-journey decision must pass them
 - `data/*.ts` — the only source for event facts (dates, prices, cities,
   divisions, colleges, programs)
 
