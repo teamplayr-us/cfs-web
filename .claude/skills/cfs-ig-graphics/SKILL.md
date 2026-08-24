@@ -76,6 +76,7 @@ All templates share the same skeleton — reuse it for new graphics:
 | `ig-schedule-2026-27.html` | Season schedule list post |
 | `ig-athlete-committed.html` | Athlete "She's In." announcement — covered by the separate `cfs-athlete-announcements` skill; use that skill for athlete posts |
 | `ig-org-committed.html` | Team/org "They're In." announcement — covered by the separate `cfs-org-announcements` skill; use that skill for team posts |
+| `invite-team-official.html` | Official per-team tournament invitation card — covered by `cfs-org-announcements` |
 
 ## Workflow 1 — Committed-college announcement
 

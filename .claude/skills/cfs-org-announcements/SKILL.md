@@ -1,17 +1,50 @@
 ---
 name: cfs-org-announcements
 description: >-
-  Create the College Flag Showcase Series "They're In." announcement graphic
-  for a travel program/club/team accepted into the Showcase Tournament —
-  their logo plus home location and the age groups (divisions) they're
-  competing in. Use this whenever the user wants to announce, welcome, or
-  spotlight a team, club, program, or organization ("announce [team]",
-  "[club] accepted", "add [program]'s announcement", "org announcement").
-  For college-coach announcements use cfs-ig-graphics; for individual
-  athletes use cfs-athlete-announcements.
+  Create College Flag Showcase Series team/org graphics: the official
+  per-team tournament INVITATION card (attached to invite emails, shareable
+  on Instagram) and the "They're In." ACCEPTANCE announcement (logo, home
+  location, divisions competing). Use this whenever the user wants to
+  invite, announce, welcome, or spotlight a team, club, program, or
+  organization ("send [team] an invite", "invitation for [team] 14U",
+  "announce [team]", "[club] accepted", "org announcement"). For
+  college-coach announcements use cfs-ig-graphics; for individual athletes
+  use cfs-athlete-announcements.
 ---
 
-# Org "They're In." Announcements
+# Team Invitations & Org Announcements
+
+Two graphics cover the team lifecycle, in order:
+
+1. **Official Invitation** (`collateral/invite-team-official.html`) — sent
+   WITH the invite email, one per TEAM (org + division).
+2. **"They're In." acceptance announcement**
+   (`collateral/ig-org-committed.html`) — posted after the team accepts
+   and is on the site board.
+
+## Workflow A — Official team invitation
+
+- Invites are **team-specific**: name is org + division, e.g. "One of One
+  Girls FFC 14U" (abbreviate long org names FFC-style so the name fits one
+  line — check the render). One invitation per team; an org with 12U and
+  14U teams gets two cards.
+- The card is share-ready by design — invited teams are encouraged to post
+  it to Instagram. Nothing private goes on it: the private registration
+  link lives ONLY in the email body, never on the graphic.
+- Logo: `public/programs/` if the org is already on the board; otherwise
+  stage the provided logo in `collateral/invites/` (transparent PNG).
+- Render from the repo root — name each output explicitly so multiple
+  teams from one org don't overwrite:
+  ```bash
+  node collateral/render-team-invite.mjs \
+    "Org Name 14U" public/programs/logo.png "" "" invite-org-14u.png
+  ```
+  Optional args 3–4 override the event line and venue (defaults are Dallas
+  Event 01 / Craig Ranch Sports Complex — venue name only, no city).
+- Verify the PNG (name on one line, logo legible), send as a downloadable
+  attachment, commit.
+
+## Workflow B — "They're In." acceptance announcement
 
 One graphic per accepted travel program: their logo on the navy brand
 system with the program name, **home location · divisions competing**, a
