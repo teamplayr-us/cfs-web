@@ -4,7 +4,8 @@
 //   node collateral/render-team-invite.mjs "Program Name" public/programs/logo.png
 //
 // Args:
-//   1. Invited program/team name as it should appear on the invitation
+//   1. Invited TEAM name — org + division (invites are team-specific,
+//      one per team), e.g. "One of One Girls Flag Football Club 14U"
 //   2. Logo path relative to the REPO ROOT — e.g. public/programs/foo.png
 //      for teams already on the site board, or collateral/invites/foo.png
 //      for a new invitee (stage their logo there first; transparent PNG)
