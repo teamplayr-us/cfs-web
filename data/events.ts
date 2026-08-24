@@ -46,7 +46,7 @@ export interface TourEvent {
    * anchor event's operator, never as the producer of CFS. */
   anchorEvent?: {
     name: string;
-    /** e.g. "80 teams in 2025" */
+    /** e.g. "60+ elite teams in 2025" */
     stat: string;
   };
   /** Full event details — omit until announced; the event page and the
@@ -84,7 +84,7 @@ export const EVENTS: TourEvent[] = [
     },
     anchorEvent: {
       name: "International Superflag Invitational",
-      stat: "80 teams in 2025",
+      stat: "60+ elite teams in 2025",
     },
     details: {
       dates: "Dec 11–13, 2026",

@@ -40,7 +40,7 @@ const GENERAL: QA[] = [
   },
   {
     q: "Who runs the series?",
-    a: "The series was founded by a team with decades of experience operating premier youth tournaments, delivering elite event weekends, and building sports technology. The first event runs alongside the International Superflag Invitational, which drew 80 teams from three countries in 2025.",
+    a: "The series was founded by a team with decades of experience operating premier youth tournaments, delivering elite event weekends, and building sports technology. The first event runs alongside the International Superflag Invitational, which drew over 60 elite teams from across the world in 2025.",
   },
   {
     q: "Can parents and fans attend?",

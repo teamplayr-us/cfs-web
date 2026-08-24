@@ -45,7 +45,7 @@ page, and OPERATIONS.md when facts change.
   series is INDEPENDENT — never describe it as "a 5v5 Sports production."
   5v5 Sports may be credited only as operator of the Superflag anchor event.
 - Event 01 runs alongside the **International Superflag Invitational**
-  (80 teams from three countries in 2025).
+  (over 60 elite teams from across the world in 2025).
 - Why college flag is real: flag football debuts at the **2028 Olympics**
   (LA); it's an **NCAA Emerging Sport for Women** with scholarships live
   today; **Nebraska** becomes the first Power Four school with varsity flag
