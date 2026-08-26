@@ -92,7 +92,7 @@ export const EVENTS: TourEvent[] = [
       // the schedule shows the full stop dates until then.
       divisions: "12U · 14U · 16U · 18U",
       teamEntry: "$550",
-      regDeadline: "Nov 29, 2026",
+      regDeadline: "Nov 22, 2026",
     },
   },
   {

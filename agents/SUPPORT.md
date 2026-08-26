@@ -10,7 +10,7 @@ say "let me check with the team and get back to you," and escalate (§10).
 Sections marked **[INTERNAL]** are context for the agent and must never be
 quoted to a customer.
 
-Last updated: Aug 15, 2026 — keep in sync with `data/events.ts`, the /faq
+Last updated: Aug 26, 2026 — keep in sync with `data/events.ts`, the /faq
 page, and OPERATIONS.md when facts change.
 
 ---
@@ -70,7 +70,7 @@ page, and OPERATIONS.md when facts change.
 Dallas weekend rhythm: **Fri Dec 11 — Individual Showcase Combine & Camp;
 Sat–Sun Dec 12–13 — Travel Team Showcase Tournament.** Combine start/end
 times: **TBD** — "detailed weekend agendas and game schedules are confirmed
-closer to the event." Dallas registration deadline: **Nov 29, 2026**.
+closer to the event." Dallas registration deadline: **Nov 22, 2026**.
 
 ## 3. Divisions & eligibility
 
