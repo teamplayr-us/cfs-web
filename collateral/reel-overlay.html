@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Reel Overlay — Branded Frame</title>
+<!--
+  TEMPLATE — transparent 1080x1920 overlay for Instagram Reels.
+  Drop any reel footage underneath (Instagram editor, CapCut, Canva):
+  add this PNG as a top layer, full-bleed, and the video shows through.
+
+  Render with:
+    node collateral/render-reel-overlay.mjs                       -> default branding
+    node collateral/render-reel-overlay.mjs "Dallas. December."   -> custom strap headline
+    node collateral/render-reel-overlay.mjs - - clean.png         -> frame + logo only, no strap
+
+  {{HEADLINE}} — strap headline (display type), default "College Flag Showcase Series"
+  {{SUB}}      — strap footer line (mono), default "collegeflagshowcase.com"
+
+  Layout respects Reels UI safe zones: top ~220px, bottom ~420px
+  (caption/audio), right ~140px (like/share rail) are kept clear of
+  essential branding.
+-->
+<style>
+  @font-face{font-family:"Big Shoulders Display";src:url(fonts/big-shoulders.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"Archivo";src:url(fonts/archivo.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"JetBrains Mono";src:url(fonts/jetbrains-mono.woff2) format("woff2");font-weight:100 900}
+  :root{
+    --navy:#110C0F; --red:#FF2D87; --chalk:#F5F2F0; --steel:#8A848C;
+    --display:"Big Shoulders Display",sans-serif;
+    --body:"Archivo",sans-serif;
+    --mono:"JetBrains Mono",monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:1920px;overflow:hidden;background:transparent}
+  body{font-family:var(--body);color:var(--chalk);position:relative;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+
+  /* preview mode only — simulates footage under the overlay for review */
+  body.preview{background:linear-gradient(160deg,#3A3138 0%,#191418 55%,#0B080A 100%)}
+
+  .frame{position:absolute;inset:28px;border:6px solid var(--red);pointer-events:none}
+
+  .chip{position:absolute;top:72px;left:72px;width:148px;height:148px;background:var(--navy);box-shadow:8px 8px 0 var(--red);display:flex;align-items:center;justify-content:center}
+  .chip img{width:118px;height:118px}
+
+  .strap{position:absolute;left:72px;bottom:448px;max-width:800px;background:var(--navy);box-shadow:10px 10px 0 var(--red);padding:30px 38px 28px}
+  .strap-kicker{font-family:var(--mono);font-size:19px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red);white-space:nowrap}
+  .strap h1{margin-top:14px;font-family:var(--display);font-weight:800;font-size:60px;line-height:.95;text-transform:uppercase;letter-spacing:.01em;color:var(--chalk)}
+  .strap-foot{margin-top:16px;font-family:var(--mono);font-size:20px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--steel)}
+</style>
+</head>
+<body>
+  <div class="frame"></div>
+  <div class="chip"><img src="../public/logo.png" alt="College Flag Showcase Series" /></div>
+  <div class="strap">
+    <p class="strap-kicker">Girls Flag Football &middot; 2026&ndash;27 Season</p>
+    <h1>{{HEADLINE}}</h1>
+    <p class="strap-foot">{{SUB}}</p>
+  </div>
+</body>
+</html>

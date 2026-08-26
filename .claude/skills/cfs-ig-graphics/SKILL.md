@@ -77,6 +77,7 @@ All templates share the same skeleton — reuse it for new graphics:
 | `ig-athlete-committed.html` | Athlete "She's In." announcement — covered by the separate `cfs-athlete-announcements` skill; use that skill for athlete posts |
 | `ig-org-committed.html` | Team/org "They're In." announcement — covered by the separate `cfs-org-announcements` skill; use that skill for team posts |
 | `invite-team-official.html` | Official per-team tournament invitation card — covered by `cfs-org-announcements` |
+| `reel-overlay.html` | **Transparent 1080×1920 Reels overlay** — branded frame + logo chip + optional lower-third strap; layers on top of any reel footage (see Workflow 3) |
 
 ## Workflow 1 — Committed-college announcement
 
@@ -113,6 +114,25 @@ All templates share the same skeleton — reuse it for new graphics:
 4. Multi-slide carousels: stack `.slide` divs in one HTML file and screenshot
    each with `clip: {x: 0, y: i * 1350, width: 1080, height: 1350}` and a
    viewport tall enough to hold all slides.
+
+## Workflow 3 — Reel overlay (video branding)
+
+The series doesn't render video; reels stay branded by layering the
+transparent overlay PNG on top of the footage (Instagram editor, CapCut, or
+Canva — add as a full-bleed top layer).
+
+```bash
+node collateral/render-reel-overlay.mjs                       # default strap (series wordmark)
+node collateral/render-reel-overlay.mjs "Dallas. December."   # custom strap headline
+node collateral/render-reel-overlay.mjs - - reel-clean.png    # frame + logo chip only, no strap
+```
+
+- Output is **transparent** (`omitBackground`); `--preview` also writes a
+  `*-preview.png` with a simulated dark background — review only, never post.
+- Layout already respects Reels UI safe zones (top ~220px, bottom ~420px
+  caption area, right ~140px icon rail) — keep any new elements out of them.
+- Custom strap headlines are copy: run them past the user before treating
+  them as final.
 
 ## Rendering
 
