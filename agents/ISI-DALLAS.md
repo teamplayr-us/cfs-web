@@ -16,7 +16,7 @@ Last updated: Aug 26, 2026.
   tournament operated by 5v5 Sports that drew over 60 elite teams from
   across the world in 2025.
 - **Invited teams register for the ISI.** Team entry, payment, rosters, and
-  age verification all run through the Invitational's process (Zorts
+  age verification all run through the ISI's process (Zorts
   Sports), not through collegeflagshowcase.com. Our site is where teams
   *request an invite*; accepted teams get ISI registration instructions.
 - The College Flag Showcase Series layers the college showcase on top:
@@ -27,6 +27,8 @@ Last updated: Aug 26, 2026.
   "a 5v5 Sports production." 5v5 Sports is credited only as the ISI's
   operator; "in partnership with the International Superflag Invitational"
   is the approved phrase.
+- **Shorthand:** full name on first mention, then **"the ISI"** — never
+  "the Invitational" (founder rule, Aug 2026).
 
 ## Vetted facts from the packet (safe to state)
 
@@ -75,7 +77,7 @@ arrangement and never part of the team housing service.
    founder's sign-off.
 6. **Invitation graphic naming.** Our official invitation card says teams
    are invited to "the College Flag Showcase"; teams then register for the
-   ISI. Founder to decide whether the card should name the Invitational
+   ISI. Founder to decide whether the card should name the ISI
    (open item — do not change the template until decided).
 
 ## Open items

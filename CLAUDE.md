@@ -22,7 +22,9 @@ copy or creating any document.
 - Vet copy with the founder before publishing anything public-facing.
 - It's a **series**, never "a tour"; events, never "stops"; never
   abbreviate to "CFS" publicly; teams "request an invite", never
-  "sign up"; don't call the tournament "bracketed".
+  "sign up"; don't call the tournament "bracketed"; the International
+  Superflag Invitational abbreviates to "the ISI", never "the
+  Invitational".
 - No exclamation marks, no hype-fluff. Athlete-first voice.
 - The series is independent — never "a 5v5 Sports production".
 - The athlete recruiting package's contents are deliberately not

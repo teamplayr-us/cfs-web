@@ -46,7 +46,7 @@ page, and OPERATIONS.md when facts change.
   5v5 Sports may be credited only as operator of the Superflag anchor event.
 - Event 01 is held **in partnership with the International Superflag
   Invitational** (over 60 elite teams from across the world in 2025).
-  Invited teams complete tournament registration through the Invitational —
+  Invited teams complete tournament registration through the ISI —
   see `agents/ISI-DALLAS.md` for the full vetted partnership facts (housing,
   rules, schedule guidance, division distinctions).
 - Why college flag is real: flag football debuts at the **2028 Olympics**
@@ -115,7 +115,7 @@ closer to the event." Dallas registration deadline: **Nov 22, 2026**.
   never shared publicly — if a team lost theirs, escalate.
 - **Dallas registration runs through the International Superflag
   Invitational** (partnership event): entry fee, roster, and age
-  verification are completed through the Invitational via Zorts Sports.
+  verification are completed through the ISI via Zorts Sports.
   Related vetted facts (full detail in `agents/ISI-DALLAS.md`):
   - Rules: NFL Flag Hybrid (official document distributed by the ISI).
     Sanctioning: iFlag. Age cutoff Aug 1, 2026, verified via Zorts.
@@ -128,10 +128,10 @@ closer to the event." Dallas registration deadline: **Nov 22, 2026**.
     Dallas McKinney, Hilton Dallas Plano Granite Park, Marriott Dallas
     Allen Hotel. The housing link goes to accepted teams — support never
     hands it out; escalate lost-link requests.
-  - The Invitational also fields divisions beyond the showcase (including
+  - The ISI also fields divisions beyond the showcase (including
     boys and younger girls divisions). The **showcase** — combine and
     college evaluation — covers **girls 12U, 14U, 16U, 18U**; if a team
-    asks about other divisions, point them to the Invitational and
+    asks about other divisions, point them to the ISI and
     escalate.
 - The Combine & Camp is NOT included in team entry — each athlete registers
   individually (that's where the $50 tournament-athlete discount applies).
@@ -242,8 +242,11 @@ routing) — do not improvise — for:
 
 - Plain, warm, athlete-first, confident. No hype, no exclamation marks.
 - Always: "the series", "events", "Event 01", "request an invite" (teams),
-  "College Flag Showcase Series" written out (never "CFS").
-- Never: "tour", "stops", "sign up" (for tournament teams), "bracketed".
+  "College Flag Showcase Series" written out (never "CFS"). The
+  International Superflag Invitational is "the ISI" on second mention —
+  full name first.
+- Never: "tour", "stops", "sign up" (for tournament teams), "bracketed",
+  "the Invitational" (the approved short form is "the ISI").
 - Speak to parents plainly and athletes directly; when in doubt, mirror the
   approved FAQ answers at /faq — that copy is founder-approved verbatim.
 

@@ -46,6 +46,9 @@ export interface TourEvent {
    * anchor event's operator, never as the producer of CFS. */
   anchorEvent?: {
     name: string;
+    /** Approved short form for second mentions — e.g. "the ISI" for the
+     * International Superflag Invitational. Never "the Invitational". */
+    abbr: string;
     /** e.g. "60+ elite teams in 2025" */
     stat: string;
   };
@@ -84,6 +87,7 @@ export const EVENTS: TourEvent[] = [
     },
     anchorEvent: {
       name: "International Superflag Invitational",
+      abbr: "the ISI",
       stat: "60+ elite teams in 2025",
     },
     details: {

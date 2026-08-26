@@ -17,7 +17,7 @@ document, deck, graphic, or email read as the same brand as the website.
   technology platform; lifelong athlete and coach), Monty Holloway, and
   Amanda Newman (both founders of 5v5 Sports). 5v5 Sports operates the
   International Superflag Invitational; the first event is held in
-  partnership with the Invitational (invited teams register through it —
+  partnership with the ISI (invited teams register through it —
   see `agents/ISI-DALLAS.md`) — credit 5v5 Sports only in that role.
 - **Logo:** circular badge, pink on black, sits on dark backgrounds. Square
   transparent PNG (1200×1200, `public/logo.png`). Don't recolor it or place
@@ -89,7 +89,9 @@ Light pink (#FF8DC1) never appears on light backgrounds.
   customer-facing copy), **Showcase Combine &
   Camp** (individual flow, open registration), **Showcase Tournament**
   (team flow, INVITE-ONLY — teams "request an invite," never "sign up"),
-  **Girls 12U · 14U · 16U · 18U** (showcase divisions), **2026–27 Season**.
+  **Girls 12U · 14U · 16U · 18U** (showcase divisions), **2026–27 Season**,
+  **the ISI** (the only approved short form of the International Superflag
+  Invitational — never "the Invitational"; full name on first mention).
 - Athlete-first, confident, zero hype-fluff. No exclamation marks. Speak to
   athletes directly ("your measurables," "bring your game") and to parents
   plainly.

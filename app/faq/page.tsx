@@ -90,7 +90,7 @@ const TEAMS: QA[] = [
   },
   {
     q: "What is the International Superflag Invitational?",
-    a: "The Dallas Showcase Tournament is held in partnership with the International Superflag Invitational — an invitation-only international tournament that drew over 60 elite teams from across the world in 2025. Invited teams complete their registration, entry fee, and roster age verification through the Invitational (via Zorts Sports), and college coaches evaluate the showcase divisions all weekend as part of the College Flag Showcase Series.",
+    a: "The Dallas Showcase Tournament is held in partnership with the International Superflag Invitational — an invitation-only international tournament that drew over 60 elite teams from across the world in 2025. Invited teams complete their registration, entry fee, and roster age verification through the ISI (via Zorts Sports), and college coaches evaluate the showcase divisions all weekend as part of the College Flag Showcase Series.",
   },
   {
     q: "What does team entry include?",

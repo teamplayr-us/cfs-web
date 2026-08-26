@@ -294,8 +294,8 @@ export default function EventPage({ params }: Props) {
                 {event.anchorEvent && (
                   <p className="offer-meta">
                     Held in partnership with the {event.anchorEvent.name} —
-                    invited teams complete registration through the
-                    Invitational.
+                    invited teams complete registration through{" "}
+                    {event.anchorEvent.abbr}.
                   </p>
                 )}
               </div>
