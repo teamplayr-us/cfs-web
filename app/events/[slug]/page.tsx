@@ -93,7 +93,7 @@ export default function EventPage({ params }: Props) {
             </p>
             {event.anchorEvent && (
               <p className="anchor-proof">
-                Runs alongside the {event.anchorEvent.name} —{" "}
+                In partnership with the {event.anchorEvent.name} —{" "}
                 {event.anchorEvent.stat}
               </p>
             )}
@@ -291,6 +291,13 @@ export default function EventPage({ params }: Props) {
                 <p className="offer-meta">
                   Registration: <b>Team</b> — Invite Only
                 </p>
+                {event.anchorEvent && (
+                  <p className="offer-meta">
+                    Held in partnership with the {event.anchorEvent.name} —
+                    invited teams complete registration through the
+                    Invitational.
+                  </p>
+                )}
               </div>
             </article>
           </div>

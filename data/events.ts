@@ -88,8 +88,8 @@ export const EVENTS: TourEvent[] = [
     },
     details: {
       dates: "Dec 11–13, 2026",
-      // TODO: set tournamentDates once confirmed (e.g. "Dec 12–13, 2026");
-      // the schedule shows the full stop dates until then.
+      // Confirmed by the ISI travel packet (agents/ISI-DALLAS.md)
+      tournamentDates: "Dec 12–13, 2026",
       divisions: "12U · 14U · 16U · 18U",
       teamEntry: "$550",
       regDeadline: "Nov 22, 2026",

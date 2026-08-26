@@ -40,7 +40,7 @@ const GENERAL: QA[] = [
   },
   {
     q: "Who runs the series?",
-    a: "The series was founded by a team with decades of experience operating premier youth tournaments, delivering elite event weekends, and building sports technology. The first event runs alongside the International Superflag Invitational, which drew over 60 elite teams from across the world in 2025.",
+    a: "The series was founded by a team with decades of experience operating premier youth tournaments, delivering elite event weekends, and building sports technology. The first event is held in partnership with the International Superflag Invitational, which drew over 60 elite teams from across the world in 2025.",
   },
   {
     q: "Can parents and fans attend?",
@@ -86,7 +86,11 @@ const FAMILIES: QA[] = [
 const TEAMS: QA[] = [
   {
     q: "How does my team get into the Showcase Tournament?",
-    a: "The tournament field is invite-only. Request an invite at collegeflagshowcase.com — tell us about your program — and we review every request to keep the field competitive. We reply either way, and selected teams get their invite and private registration link by email.",
+    a: "The tournament field is invite-only. Request an invite at collegeflagshowcase.com — tell us about your program — and we review every request to keep the field competitive. We reply either way, and selected teams get their invite and registration instructions by email.",
+  },
+  {
+    q: "What is the International Superflag Invitational?",
+    a: "The Dallas Showcase Tournament is held in partnership with the International Superflag Invitational — an invitation-only international tournament that drew over 60 elite teams from across the world in 2025. Invited teams complete their registration, entry fee, and roster age verification through the Invitational (via Zorts Sports), and college coaches evaluate the showcase divisions all weekend as part of the College Flag Showcase Series.",
   },
   {
     q: "What does team entry include?",
@@ -102,7 +106,11 @@ const TEAMS: QA[] = [
   },
   {
     q: "When will we get the schedule?",
-    a: "The weekend runs combine first, tournament after. Detailed agendas and game schedules are confirmed closer to the event.",
+    a: "The weekend runs combine first, tournament after. Tournament games may begin as early as 8:00 a.m. Saturday, so traveling teams should plan to arrive Friday. Detailed agendas and game schedules are confirmed closer to the event.",
+  },
+  {
+    q: "Where do traveling teams stay?",
+    a: "Dallas is a Stay & Play event — traveling teams book through the official tournament housing service, which accepted teams receive with their registration details. Partner hotels are in McKinney, Allen, and Plano; please don't call hotels directly.",
   },
 ];
 

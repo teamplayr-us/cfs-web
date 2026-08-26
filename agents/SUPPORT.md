@@ -44,8 +44,11 @@ page, and OPERATIONS.md when facts change.
   Holloway, Amanda Newman. Monty and Amanda co-founded 5v5 Sports. The
   series is INDEPENDENT — never describe it as "a 5v5 Sports production."
   5v5 Sports may be credited only as operator of the Superflag anchor event.
-- Event 01 runs alongside the **International Superflag Invitational**
-  (over 60 elite teams from across the world in 2025).
+- Event 01 is held **in partnership with the International Superflag
+  Invitational** (over 60 elite teams from across the world in 2025).
+  Invited teams complete tournament registration through the Invitational —
+  see `agents/ISI-DALLAS.md` for the full vetted partnership facts (housing,
+  rules, schedule guidance, division distinctions).
 - Why college flag is real: flag football debuts at the **2028 Olympics**
   (LA); it's an **NCAA Emerging Sport for Women** with scholarships live
   today; **Nebraska** becomes the first Power Four school with varsity flag
@@ -108,8 +111,28 @@ closer to the event." Dallas registration deadline: **Nov 22, 2026**.
 - Teams **"request an invite"** (never "sign up" / "register") at
   collegeflagshowcase.com → we review every program to keep the field
   competitive → we reply either way → selected teams receive their invite
-  and a private registration link by email. The private link is never
-  shared publicly — if a team lost theirs, escalate.
+  and registration instructions by email. The private registration link is
+  never shared publicly — if a team lost theirs, escalate.
+- **Dallas registration runs through the International Superflag
+  Invitational** (partnership event): entry fee, roster, and age
+  verification are completed through the Invitational via Zorts Sports.
+  Related vetted facts (full detail in `agents/ISI-DALLAS.md`):
+  - Rules: NFL Flag Hybrid (official document distributed by the ISI).
+    Sanctioning: iFlag. Age cutoff Aug 1, 2026, verified via Zorts.
+  - Games may start as early as **8:00 a.m. Saturday** — traveling teams
+    should arrive Friday, Dec 11, and plan Sunday departures around playoff
+    advancement.
+  - **Stay & Play:** traveling teams must book through the official
+    tournament housing service (condition of acceptance) — never directly
+    with hotels. Partner hotels: AC Hotel McKinney, Fairfield Inn & Suites
+    Dallas McKinney, Hilton Dallas Plano Granite Park, Marriott Dallas
+    Allen Hotel. The housing link goes to accepted teams — support never
+    hands it out; escalate lost-link requests.
+  - The Invitational also fields divisions beyond the showcase (including
+    boys and younger girls divisions). The **showcase** — combine and
+    college evaluation — covers **girls 12U, 14U, 16U, 18U**; if a team
+    asks about other divisions, point them to the Invitational and
+    escalate.
 - The Combine & Camp is NOT included in team entry — each athlete registers
   individually (that's where the $50 tournament-athlete discount applies).
 

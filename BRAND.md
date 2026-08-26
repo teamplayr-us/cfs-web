@@ -16,8 +16,9 @@ document, deck, graphic, or email read as the same brand as the website.
   production." Co-founded by Allen Hamilton (founder of a youth sports
   technology platform; lifelong athlete and coach), Monty Holloway, and
   Amanda Newman (both founders of 5v5 Sports). 5v5 Sports operates the
-  International Superflag Invitational, which the first stop layers on
-  top of — credit 5v5 Sports only in that role.
+  International Superflag Invitational; the first event is held in
+  partnership with the Invitational (invited teams register through it —
+  see `agents/ISI-DALLAS.md`) — credit 5v5 Sports only in that role.
 - **Logo:** circular badge, pink on black, sits on dark backgrounds. Square
   transparent PNG (1200×1200, `public/logo.png`). Don't recolor it or place
   it on busy imagery.
