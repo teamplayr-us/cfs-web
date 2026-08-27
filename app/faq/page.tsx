@@ -106,7 +106,7 @@ const TEAMS: QA[] = [
   },
   {
     q: "When will we get the schedule?",
-    a: "The weekend runs combine first, tournament after. Tournament games may begin as early as 8:00 a.m. Saturday, so traveling teams should plan to arrive Friday. Detailed agendas and game schedules are confirmed closer to the event.",
+    a: "The weekend runs combine first, tournament after. Tournament games may begin as early as 8:00 a.m. Saturday, so traveling teams should plan to arrive Friday. Invited team coaches are also welcome at the Coaches Welcome Event on Friday night — details come with your invite. Detailed agendas and game schedules are confirmed closer to the event.",
   },
   {
     q: "Where do traveling teams stay?",
@@ -121,7 +121,7 @@ const COACHES: QA[] = [
   },
   {
     q: "What do credentials include?",
-    a: "Sideline access all weekend, expected participant counts before each event you attend, and the athlete recruiting package. A free College Row tent space in the Fan Zone is yours if you want it — just check the box when you register.",
+    a: "Sideline access all weekend, expected participant counts before each event you attend, the athlete recruiting package, and an invitation to the Coaches Welcome Event on Friday night. A free College Row tent space in the Fan Zone is yours if you want it — just check the box when you register.",
   },
   {
     q: "What's in the athlete recruiting package?",

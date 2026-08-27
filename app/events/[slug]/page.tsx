@@ -203,6 +203,15 @@ export default function EventPage({ params }: Props) {
               The Showcase Combine &amp; Camp opens the weekend; the Showcase
               Tournament follows
               {mapUrl ? <> — both at {event.venue}.</> : <>. Venue announcing soon.</>}
+              {event.details?.coachWelcome && (
+                <>
+                  {" "}
+                  Friday night, the Coaches Welcome Event brings credentialed
+                  college coaches and invited team coaches together before
+                  tournament play — details shared with credentials and team
+                  invites.
+                </>
+              )}
             </p>
           </div>
 

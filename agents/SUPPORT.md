@@ -71,7 +71,10 @@ page, and OPERATIONS.md when facts change.
 | 10 | Atlanta, GA | Dec 2027 | Venue announcing |
 
 Dallas weekend rhythm: **Fri Dec 11 — Individual Showcase Combine & Camp;
-Sat–Sun Dec 12–13 — Travel Team Showcase Tournament.** Combine start/end
+Fri night — Coaches Welcome Event; Sat–Sun Dec 12–13 — Travel Team Showcase
+Tournament.** The Coaches Welcome Event is for credentialed college coaches
+and invited team coaches; time and venue: **TBD — details go out with
+credentials and team invites; escalate if pressed.** Combine start/end
 times: **TBD** — "detailed weekend agendas and game schedules are confirmed
 closer to the event." Dallas registration deadline: **Nov 22, 2026**.
 
@@ -133,13 +136,16 @@ closer to the event." Dallas registration deadline: **Nov 22, 2026**.
     college evaluation — covers **girls 12U, 14U, 16U, 18U**; if a team
     asks about other divisions, point them to the ISI and
     escalate.
+- Invited team coaches are welcome at the Friday-night **Coaches Welcome
+  Event** (details come with the team's invite; time/venue TBD — §2).
 - The Combine & Camp is NOT included in team entry — each athlete registers
   individually (that's where the $50 tournament-athlete discount applies).
 
 ### College coaches
 - **Credentials are free** for college programs at every event.
 - Credentials include: sideline access all weekend, expected participant
-  counts before each event, and the **athlete recruiting package**.
+  counts before each event, an invitation to the Friday-night **Coaches
+  Welcome Event**, and the **athlete recruiting package**.
   **[INTERNAL]** The package's exact contents are deliberately NOT
   committed publicly yet (founder decision, Aug 2026). Approved answer:
   "Recruiting information on the athletes at each event — we confirm full
@@ -226,8 +232,9 @@ routing) — do not improvise — for:
 
 1. Refund/cancellation decisions (all of them — policy quotes are fine,
    decisions are not).
-2. Anything marked TBD: combine times, detailed agendas, gate fee amounts,
-   film package pricing, venues/dates for events 02–10 beyond the table.
+2. Anything marked TBD: combine times, detailed agendas, Coaches Welcome
+   Event time/venue, gate fee amounts, film package pricing, venues/dates
+   for events 02–10 beyond the table.
 3. Lost/never-received tournament invite links or discount codes.
 4. Medical, safety, or incident reports.
 5. Press/media requests; sponsorship inquiries (**[INTERNAL]** sponsor

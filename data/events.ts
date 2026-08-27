@@ -64,6 +64,9 @@ export interface TourEvent {
     divisions: string;
     teamEntry: string;
     regDeadline: string;
+    /** Set when the Friday-night Coaches Welcome Event is confirmed for
+     * this event; shown on the event page weekend agenda. */
+    coachWelcome?: boolean;
   };
 }
 
@@ -97,6 +100,8 @@ export const EVENTS: TourEvent[] = [
       divisions: "12U · 14U · 16U · 18U",
       teamEntry: "$550",
       regDeadline: "Nov 22, 2026",
+      // Time and venue TBD — announced with credentials/invites
+      coachWelcome: true,
     },
   },
   {
