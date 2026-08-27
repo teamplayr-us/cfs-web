@@ -102,6 +102,14 @@ All templates share the same skeleton — reuse it for new graphics:
    `CHROMIUM_PATH` (see "Rendering" below).
 4. Output lands at `collateral/ig-committed-<school>.png`. Send it to the
    user, iterate, commit.
+5. **Caption:** offer one with every graphic, ending in the series'
+   standard hashtag block (same block the athlete/org skills use):
+
+   > #GirlsFlagFootball #FlagFootball #CollegeFlagFootball
+   > #FlagFootballRecruiting
+
+   Only use the school's mascot/nickname if it's verifiable (e.g. it
+   appears in their logo); otherwise stick to the school name.
 
 ## Workflow 2 — New or adapted graphic
 
