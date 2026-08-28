@@ -124,6 +124,10 @@ const COACHES: QA[] = [
     a: "Sideline access all weekend, expected participant counts before each event you attend, the athlete recruiting package, and an invitation to the Coaches Welcome Event on Friday night. A free College Row tent space in the Fan Zone is yours if you want it — just check the box when you register.",
   },
   {
+    q: "Where should coaches stay in Dallas?",
+    a: "The Denizen Hotel in McKinney is the official college coach hotel for the Dallas event, with a room block for credentialed coaches. Booking details come with your credentials.",
+  },
+  {
     q: "What's in the athlete recruiting package?",
     a: "Recruiting information on the athletes at each event. We confirm full package details with credentialed coaches ahead of each event.",
   },

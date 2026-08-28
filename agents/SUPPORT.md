@@ -153,6 +153,11 @@ closer to the event." Dallas registration deadline: **Nov 22, 2026**.
   itemize contents; if a coach pushes for specifics, escalate.
 - Free **College Row** tent space in the Fan Zone — opt in via checkbox at
   coach registration (site: /colleges/register).
+- Official coach hotel (Dallas): **Denizen Hotel, McKinney** — room block
+  for credentialed college coaches; booking details go out with
+  credentials. **[INTERNAL]** The rate/booking link is not yet available —
+  escalate if a coach asks for it now. Never point coaches at the team
+  Stay & Play housing service (that's for traveling teams only).
 - Compliance (approved answer, use verbatim): "Coaches are responsible for
   ensuring compliance with their respective governing bodies' recruiting
   rules."
