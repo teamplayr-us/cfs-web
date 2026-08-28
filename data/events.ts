@@ -85,8 +85,8 @@ export const EVENTS: TourEvent[] = [
       // on Showcase Tournament teams (validated server-side in /api/checkout)
       priceCents: 17500,
       combineDate: "Dec 11, 2026",
-      // TODO: set combineStartTime / combineEndTime when the Dec 11
-      // schedule is confirmed (shows "TBD" until then).
+      combineStartTime: "3:00 PM",
+      combineEndTime: "5:30 PM",
     },
     anchorEvent: {
       name: "International Superflag Invitational",

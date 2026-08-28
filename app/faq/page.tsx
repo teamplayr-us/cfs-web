@@ -32,7 +32,7 @@ const GENERAL: QA[] = [
   },
   {
     q: "Where and when is the first event?",
-    a: "Dallas — December 11–13, 2026, at Craig Ranch Sports Complex in McKinney. Combine day is Friday, December 11; the tournament runs Saturday–Sunday. Registration closes November 22.",
+    a: "Dallas — December 11–13, 2026, at Craig Ranch Sports Complex in McKinney. Combine day is Friday, December 11, from 3:00 to 5:30 PM; the tournament runs Saturday–Sunday. Registration closes November 22.",
   },
   {
     q: "Is college flag football actually real?",

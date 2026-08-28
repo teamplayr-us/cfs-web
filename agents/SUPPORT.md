@@ -74,8 +74,8 @@ Dallas weekend rhythm: **Fri Dec 11 — Individual Showcase Combine & Camp;
 Fri night — Coaches Welcome Event; Sat–Sun Dec 12–13 — Travel Team Showcase
 Tournament.** The Coaches Welcome Event is for credentialed college coaches
 and invited team coaches; time and venue: **TBD — details go out with
-credentials and team invites; escalate if pressed.** Combine start/end
-times: **TBD** — "detailed weekend agendas and game schedules are confirmed
+credentials and team invites; escalate if pressed.** Combine runs
+**3:00–5:30 PM** on Friday, Dec 11. Detailed game schedules are "confirmed
 closer to the event." Dallas registration deadline: **Nov 22, 2026**.
 
 ## 3. Divisions & eligibility
@@ -232,9 +232,9 @@ routing) — do not improvise — for:
 
 1. Refund/cancellation decisions (all of them — policy quotes are fine,
    decisions are not).
-2. Anything marked TBD: combine times, detailed agendas, Coaches Welcome
-   Event time/venue, gate fee amounts, film package pricing, venues/dates
-   for events 02–10 beyond the table.
+2. Anything marked TBD: detailed agendas, Coaches Welcome Event
+   time/venue, gate fee amounts, film package pricing, venues/dates for
+   events 02–10 beyond the table.
 3. Lost/never-received tournament invite links or discount codes.
 4. Medical, safety, or incident reports.
 5. Press/media requests; sponsorship inquiries (**[INTERNAL]** sponsor
@@ -278,5 +278,5 @@ routing) — do not improvise — for:
   an invite at collegeflagshowcase.com, tell us about your program, and we
   reply either way."
 - **When's the schedule?** "The weekend runs combine first, tournament
-  after. Detailed agendas and game schedules are confirmed closer to the
-  event."
+  after — in Dallas the combine is Friday, December 11, from 3:00 to
+  5:30 PM. Detailed game schedules are confirmed closer to the event."
