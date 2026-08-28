@@ -15,7 +15,7 @@ export interface CollegeSlot {
 
 const PLACEHOLDER: CollegeSlot = { filled: false };
 
-export const BOARD_SIZE = 8;
+export const BOARD_SIZE = 12;
 
 export const COLLEGES_BY_EVENT: Record<string, CollegeSlot[]> = {
   "mckinney-tx": [
@@ -58,6 +58,11 @@ export const COLLEGES_BY_EVENT: Record<string, CollegeSlot[]> = {
       filled: true,
       name: "Olivet Nazarene University",
       logo: "/colleges/olivet-nazarene-mono.png",
+    },
+    {
+      filled: true,
+      name: "Lawrence University",
+      logo: "/colleges/lawrence-mono.png",
     },
   ],
 };
