@@ -102,8 +102,11 @@ All templates share the same skeleton — reuse it for new graphics:
    `CHROMIUM_PATH` (see "Rendering" below).
 4. Output lands at `collateral/ig-committed-<school>.png`. Send it to the
    user, iterate, commit.
-5. **Caption:** offer one with every graphic, ending in the series'
-   standard hashtag block (same block the athlete/org skills use):
+5. **Caption:** offer one with every graphic. Committed-college captions
+   speak to BOTH audiences — coaches evaluate all weekend, so cover the
+   Showcase Combine & Camp (athletes) AND the Showcase Tournament (teams),
+   never just one. End with the series' standard hashtag block (same block
+   the athlete/org skills use):
 
    > #GirlsFlagFootball #FlagFootball #CollegeFlagFootball
    > #FlagFootballRecruiting
