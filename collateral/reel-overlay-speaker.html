@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Reel Overlay — Speaker Variant</title>
+<!--
+  TEMPLATE — transparent 1080x1920 overlay for caption-style Reels
+  (talking-head clips with a title card top-center and live captions in
+  the lower middle). Branding stays out of both zones: pink frame,
+  compact logo chip top-left, and a small site bug bottom-right that
+  clears the IG right icon rail, the caption text, and the spinning
+  audio disc in the corner.
+
+  Adds a broadcast-style speaker ID tag ({{NAME}} / {{ORG}}) between the
+  live-captions zone and the IG username line — for coach interviews and
+  other talking-head reels where the speaker should be identified.
+
+  Render with:
+    node collateral/render-reel-overlay-speaker.mjs "Maddie Melton" "ETBU"
+
+  For reels without on-video captions, use reel-overlay.html (lower-third
+  strap variant) instead.
+-->
+<style>
+  @font-face{font-family:"JetBrains Mono";src:url(fonts/jetbrains-mono.woff2) format("woff2");font-weight:100 900}
+  :root{--navy:#110C0F;--red:#FF2D87;--chalk:#F5F2F0}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:1920px;overflow:hidden;background:transparent}
+  body{position:relative;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body.preview{background:linear-gradient(160deg,#3A3138 0%,#191418 55%,#0B080A 100%)}
+  /* preview-only markers showing the zones this variant keeps clear */
+  body.preview::before{content:"TITLE CARD ZONE";position:absolute;top:290px;left:170px;right:170px;height:170px;background:rgba(245,242,240,.14);border:2px dashed rgba(245,242,240,.4);color:rgba(245,242,240,.6);font:700 22px/170px "JetBrains Mono",monospace;text-align:center;letter-spacing:.2em}
+  body.preview::after{content:"LIVE CAPTIONS ZONE";position:absolute;top:1380px;left:150px;right:150px;height:150px;background:rgba(245,242,240,.14);border:2px dashed rgba(245,242,240,.4);color:rgba(245,242,240,.6);font:700 22px/150px "JetBrains Mono",monospace;text-align:center;letter-spacing:.2em}
+
+  .frame{position:absolute;inset:28px;border:6px solid var(--red);pointer-events:none}
+  .chip{position:absolute;top:60px;left:60px;width:170px;height:170px;background:var(--navy);box-shadow:9px 9px 0 var(--red);display:flex;align-items:center;justify-content:center}
+  .chip img{width:136px;height:136px}
+@font-face{font-family:"Big Shoulders Display";src:url(fonts/big-shoulders.woff2) format("woff2");font-weight:100 900}
+  .idtag{position:absolute;left:64px;bottom:300px;background:var(--navy);box-shadow:8px 8px 0 var(--red);padding:16px 26px 18px}
+  .idtag .id-name{font-family:"Big Shoulders Display",sans-serif;font-size:44px;font-weight:800;text-transform:uppercase;letter-spacing:.02em;color:var(--chalk);line-height:1}
+  .idtag .id-name span{color:var(--red)}
+  .bug{position:absolute;right:64px;bottom:196px;background:var(--navy);box-shadow:8px 8px 0 var(--red);padding:20px 30px}
+  .bug p{font-family:"JetBrains Mono",monospace;font-size:26px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--chalk)}
+  .bug p span{color:var(--red)}
+</style>
+</head>
+<body>
+  <div class="frame"></div>
+  <div class="chip"><img src="../public/logo.png" alt="College Flag Showcase Series" /></div>
+  <div class="idtag"><p class="id-name">{{NAME}} <span>&middot; {{ORG}}</span></p></div>
+  <div class="bug"><p><span>&#9873;</span> collegeflagshowcase.com</p></div>
+</body>
+</html>

@@ -137,6 +137,7 @@ node collateral/render-reel-overlay.mjs                       # default strap (s
 node collateral/render-reel-overlay.mjs "Dallas. December."   # custom strap headline
 node collateral/render-reel-overlay.mjs - - reel-clean.png    # frame + logo chip only, no strap
 node collateral/render-reel-overlay-captions.mjs              # captions variant (see below)
+node collateral/render-reel-overlay-speaker.mjs "Name" "Org"  # captions variant + speaker ID tag
 ```
 
 For talking-head reels with a title card top-center and live captions in
