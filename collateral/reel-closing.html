@@ -31,21 +31,20 @@
 
   .inner{position:absolute;left:0;right:0;top:250px;bottom:430px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 90px}
 
-  .logo{width:200px;height:200px}
-  .kicker{margin-top:32px;font-family:var(--mono);font-size:20px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--red);white-space:nowrap}
+  .logo{width:250px;height:250px}
+  .kicker{margin-top:40px;font-family:var(--mono);font-size:20px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--red);white-space:nowrap}
 
-  .stack{margin-top:44px;font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:1.05;letter-spacing:.02em;font-size:56px}
-  .stack .l1{color:var(--chalk)}
-  .stack .l2{color:var(--chalk)}
-  .stack .l3{color:var(--red)}
+  .stack{margin-top:56px;font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:.9;letter-spacing:.01em}
+  .stack .l1{display:block;font-size:150px;color:var(--chalk)}
+  .stack .l2{display:block;font-size:150px;color:transparent;-webkit-text-stroke:3px var(--chalk)}
+  .stack .l3{display:block;font-size:150px;color:var(--red)}
 
-  .sub{margin-top:28px;font-size:27px;font-weight:600;color:var(--chalk);line-height:1.4}
+  .sub{margin-top:48px;font-size:30px;font-weight:600;color:var(--chalk);line-height:1.4}
   .sub b{color:var(--red)}
 
-  .cta{margin-top:64px;background:var(--red);box-shadow:14px 14px 0 var(--chalk);padding:56px 70px 60px;width:900px}
-  .cta .cta-kicker{font-family:var(--mono);font-size:20px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:#5C0A33}
-  .cta .cta-big{margin-top:18px;font-family:var(--display);font-size:170px;font-weight:800;text-transform:uppercase;letter-spacing:.01em;color:#fff;line-height:.9}
-  .cta .cta-url{margin-top:26px;font-family:var(--display);font-size:60px;font-weight:800;text-transform:uppercase;letter-spacing:.01em;color:var(--navy);line-height:1}
+  .cta{margin-top:60px;background:var(--red);box-shadow:10px 10px 0 var(--chalk);padding:30px 54px}
+  .cta .cta-kicker{font-family:var(--mono);font-size:17px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:#5C0A33}
+  .cta .cta-url{margin-top:10px;font-family:var(--display);font-size:52px;font-weight:800;text-transform:uppercase;letter-spacing:.02em;color:#fff;line-height:1}
 </style>
 </head>
 <body>
@@ -56,11 +55,14 @@
   <div class="inner">
     <img class="logo" src="../public/logo.png" alt="College Flag Showcase Series" />
     <p class="kicker">Girls Flag Football &middot; 2026&ndash;27 Season</p>
-    <h1 class="stack"><span class="l1">Ball Out.</span> <span class="l2">Get Seen.</span> <span class="l3">Get Recruited.</span></h1>
+    <h1 class="stack">
+      <span class="l1">Ball Out.</span>
+      <span class="l2">Get Seen.</span>
+      <span class="l3">Get Recruited.</span>
+    </h1>
     <p class="sub">Ten events, coast to coast &mdash; evaluated in person<br />by <b>college flag football coaches</b>.</p>
     <div class="cta">
-      <p class="cta-kicker">College Flag Showcase Series &middot; 2026&ndash;27</p>
-      <p class="cta-big">Register.</p>
+      <p class="cta-kicker">Register for an event near you</p>
       <p class="cta-url">collegeflagshowcase.com</p>
     </div>
   </div>
