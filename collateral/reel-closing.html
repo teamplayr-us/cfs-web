@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Reel Closing Slide</title>
+<!--
+  Branded closing slide for Reels (1080x1920) — the endcard after coach
+  interviews, recruiting-secrets clips, and other series video content.
+  Content sits in the vertical middle, clear of the Reels UI zones
+  (top ~220px, bottom ~420px caption area, right ~140px icon rail).
+  Render: node collateral/render-reel-closing.mjs
+-->
+<style>
+  @font-face{font-family:"Big Shoulders Display";src:url(fonts/big-shoulders.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"Archivo";src:url(fonts/archivo.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"JetBrains Mono";src:url(fonts/jetbrains-mono.woff2) format("woff2");font-weight:100 900}
+  :root{
+    --navy:#110C0F; --red:#FF2D87; --chalk:#F5F2F0; --steel:#8A848C;
+    --display:"Big Shoulders Display",sans-serif;
+    --body:"Archivo",sans-serif;
+    --mono:"JetBrains Mono",monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:1920px;overflow:hidden}
+  body{font-family:var(--body);background:var(--navy);color:var(--chalk);-webkit-print-color-adjust:exact;print-color-adjust:exact;position:relative}
+
+  .yards{position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0,transparent 190px,rgba(245,242,240,.05) 190px,rgba(245,242,240,.05) 192px)}
+  .hash{position:absolute;top:0;bottom:0;width:2px;background:rgba(245,242,240,.05)}
+  .hash.l{left:96px}.hash.r{right:96px}
+  .frame{position:absolute;inset:36px;border:3px solid rgba(245,242,240,.12);pointer-events:none}
+
+  .inner{position:absolute;left:0;right:0;top:250px;bottom:430px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 90px}
+
+  .logo{width:250px;height:250px}
+  .kicker{margin-top:40px;font-family:var(--mono);font-size:20px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--red);white-space:nowrap}
+
+  .stack{margin-top:56px;font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:.9;letter-spacing:.01em}
+  .stack .l1{display:block;font-size:150px;color:var(--chalk)}
+  .stack .l2{display:block;font-size:150px;color:transparent;-webkit-text-stroke:3px var(--chalk)}
+  .stack .l3{display:block;font-size:150px;color:var(--red)}
+
+  .sub{margin-top:48px;font-size:30px;font-weight:600;color:var(--chalk);line-height:1.4}
+  .sub b{color:var(--red)}
+
+  .cta{margin-top:60px;background:var(--red);box-shadow:10px 10px 0 var(--chalk);padding:30px 54px}
+  .cta .cta-kicker{font-family:var(--mono);font-size:17px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:#5C0A33}
+  .cta .cta-url{margin-top:10px;font-family:var(--display);font-size:52px;font-weight:800;text-transform:uppercase;letter-spacing:.02em;color:#fff;line-height:1}
+</style>
+</head>
+<body>
+  <div class="yards"></div>
+  <div class="hash l"></div>
+  <div class="hash r"></div>
+  <div class="frame"></div>
+  <div class="inner">
+    <img class="logo" src="../public/logo.png" alt="College Flag Showcase Series" />
+    <p class="kicker">Girls Flag Football &middot; 2026&ndash;27 Season</p>
+    <h1 class="stack">
+      <span class="l1">Ball Out.</span>
+      <span class="l2">Get Seen.</span>
+      <span class="l3">Get Recruited.</span>
+    </h1>
+    <p class="sub">Ten events, coast to coast &mdash; evaluated in person<br />by <b>college flag football coaches</b>.</p>
+    <div class="cta">
+      <p class="cta-kicker">Register for an event near you</p>
+      <p class="cta-url">collegeflagshowcase.com</p>
+    </div>
+  </div>
+</body>
+</html>
