@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Reel Overlay — Captions Variant</title>
+<!--
+  TEMPLATE — transparent 1080x1920 overlay for caption-style Reels
+  (talking-head clips with a title card top-center and live captions in
+  the lower middle). Branding stays out of both zones: pink frame,
+  compact logo chip top-left, and a small site bug bottom-right that
+  clears the IG right icon rail, the caption text, and the spinning
+  audio disc in the corner.
+
+  Render with:
+    node collateral/render-reel-overlay-captions.mjs
+
+  For reels without on-video captions, use reel-overlay.html (lower-third
+  strap variant) instead.
+-->
+<style>
+  @font-face{font-family:"JetBrains Mono";src:url(fonts/jetbrains-mono.woff2) format("woff2");font-weight:100 900}
+  :root{--navy:#110C0F;--red:#FF2D87;--chalk:#F5F2F0}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:1920px;overflow:hidden;background:transparent}
+  body{position:relative;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body.preview{background:linear-gradient(160deg,#3A3138 0%,#191418 55%,#0B080A 100%)}
+  /* preview-only markers showing the zones this variant keeps clear */
+  body.preview::before{content:"TITLE CARD ZONE";position:absolute;top:290px;left:170px;right:170px;height:170px;background:rgba(245,242,240,.14);border:2px dashed rgba(245,242,240,.4);color:rgba(245,242,240,.6);font:700 22px/170px "JetBrains Mono",monospace;text-align:center;letter-spacing:.2em}
+  body.preview::after{content:"LIVE CAPTIONS ZONE";position:absolute;top:1380px;left:150px;right:150px;height:150px;background:rgba(245,242,240,.14);border:2px dashed rgba(245,242,240,.4);color:rgba(245,242,240,.6);font:700 22px/150px "JetBrains Mono",monospace;text-align:center;letter-spacing:.2em}
+
+  .frame{position:absolute;inset:28px;border:6px solid var(--red);pointer-events:none}
+  .chip{position:absolute;top:64px;left:64px;width:116px;height:116px;background:var(--navy);box-shadow:7px 7px 0 var(--red);display:flex;align-items:center;justify-content:center}
+  .chip img{width:92px;height:92px}
+  .bug{position:absolute;right:64px;bottom:196px;background:var(--navy);box-shadow:6px 6px 0 var(--red);padding:14px 22px}
+  .bug p{font-family:"JetBrains Mono",monospace;font-size:18px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--chalk)}
+  .bug p span{color:var(--red)}
+</style>
+</head>
+<body>
+  <div class="frame"></div>
+  <div class="chip"><img src="../public/logo.png" alt="College Flag Showcase Series" /></div>
+  <div class="bug"><p><span>&#9873;</span> collegeflagshowcase.com</p></div>
+</body>
+</html>

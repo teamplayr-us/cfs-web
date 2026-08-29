@@ -136,7 +136,14 @@ Canva — add as a full-bleed top layer).
 node collateral/render-reel-overlay.mjs                       # default strap (series wordmark)
 node collateral/render-reel-overlay.mjs "Dallas. December."   # custom strap headline
 node collateral/render-reel-overlay.mjs - - reel-clean.png    # frame + logo chip only, no strap
+node collateral/render-reel-overlay-captions.mjs              # captions variant (see below)
 ```
+
+For talking-head reels with a title card top-center and live captions in
+the lower middle (the founder's caption-style format), use the
+**captions variant** (`reel-overlay-captions.html`): frame + compact
+logo chip top-left + site bug bottom-right, keeping both caption zones
+clear. The strap variant collides with live captions — don't use it there.
 
 - Output is **transparent** (`omitBackground`); `--preview` also writes a
   `*-preview.png` with a simulated dark background — review only, never post.
