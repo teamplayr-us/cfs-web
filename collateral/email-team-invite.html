@@ -1,0 +1,100 @@
+<!-- Official team invitation EMAIL template — College Flag Showcase Series.
+     Send at the ORG level; per-team invitation cards (invite-team-official
+     renders) go as image attachments.
+
+     Email-client-safe: 620px table layout, inline styles, system fonts.
+     Logos load from production — deploy main before sending so
+     /logo.png and /superflag.png resolve.
+
+     Replace before sending:
+       {{ORG_NAME}}     — organization name, e.g. "One of One Girls Flag Football Club"
+       {{TEAM_ROWS}}    — one <tr> per invited team, e.g.
+                          <tr><td style="padding:6px 0;border-bottom:1px solid #242127;font-size:15px;color:#F7F5F6;font-weight:bold;">One of One Girls FFC 14U</td></tr>
+       {{REG_LINK}}     — the private ISI registration link for this org (NEVER share publicly)
+       {{SIGNATURE}}    — sender name/title
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Official Invitation — College Flag Showcase</title>
+</head>
+<body style="margin:0;padding:0;background-color:#EDE9EC;">
+  <div style="display:none;max-height:0;overflow:hidden;">Your teams are invited to compete in the College Flag Showcase — Dallas, December 11–13, 2026.</div>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#EDE9EC;">
+    <tr><td align="center" style="padding:28px 12px;">
+
+      <table role="presentation" width="620" cellpadding="0" cellspacing="0" style="width:620px;max-width:100%;">
+
+        <!-- header: both logos -->
+        <tr><td style="background-color:#0A0A0B;padding:28px 36px 24px;border-bottom:5px solid #FF2D8E;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+              <td align="left" style="vertical-align:middle;"><img src="https://www.collegeflagshowcase.com/logo.png" width="84" height="84" alt="College Flag Showcase Series" style="display:block;" /></td>
+              <td align="center" style="vertical-align:middle;font-family:'Courier New',monospace;font-size:11px;letter-spacing:2px;color:#8A848C;text-transform:uppercase;">in&nbsp;partnership&nbsp;with</td>
+              <td align="right" style="vertical-align:middle;"><img src="https://www.collegeflagshowcase.com/superflag.png" width="130" alt="International Superflag Invitational" style="display:block;" /></td>
+            </tr>
+          </table>
+        </td></tr>
+
+        <!-- invitation headline -->
+        <tr><td style="background-color:#0A0A0B;padding:34px 36px 8px;" align="center">
+          <p style="margin:0;font-family:'Courier New',monospace;font-size:12px;font-weight:bold;letter-spacing:3px;color:#FF2D8E;text-transform:uppercase;">Girls Flag Football &middot; 2026&ndash;27 Season</p>
+          <p style="margin:14px 0 0;font-family:Arial Black,Arial,sans-serif;font-size:38px;line-height:1;color:#F7F5F6;text-transform:uppercase;letter-spacing:1px;">Official Invitation<span style="color:#FF2D8E;">.</span></p>
+        </td></tr>
+
+        <!-- org + teams -->
+        <tr><td style="background-color:#0A0A0B;padding:26px 36px 6px;">
+          <p style="margin:0;font-family:Arial,sans-serif;font-size:16px;line-height:1.6;color:#C9C4C9;">The following <b style="color:#F7F5F6;">{{ORG_NAME}}</b> teams are invited to compete in the <b style="color:#F7F5F6;">College Flag Showcase</b> at Event 01 &mdash; Dallas, TX, December 11&ndash;13, 2026, at Craig Ranch Sports Complex:</p>
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:18px 0 0;font-family:Arial,sans-serif;">
+            {{TEAM_ROWS}}
+          </table>
+        </td></tr>
+
+        <!-- superflag collaboration line -->
+        <tr><td style="background-color:#0A0A0B;padding:24px 36px 0;">
+          <p style="margin:0;font-family:Arial,sans-serif;font-size:16px;line-height:1.6;color:#F7F5F6;font-weight:bold;">The tournament is held in partnership with the International Superflag Invitational &mdash; an invitation-only international championship that drew over 60 elite teams from across the world in 2025.</p>
+          <p style="margin:14px 0 0;font-family:Arial,sans-serif;font-size:15px;line-height:1.6;color:#C9C4C9;">This tournament is invite-only &mdash; curated from top travel teams. College flag football coaches evaluate from the sideline all weekend, and every game is filmed in the full-field view coaches use to evaluate.</p>
+        </td></tr>
+
+        <!-- details -->
+        <tr><td style="background-color:#0A0A0B;padding:26px 36px 0;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border:2px solid #242127;">
+            <tr>
+              <td width="50%" style="padding:14px 18px;border-bottom:1px solid #242127;font-family:'Courier New',monospace;font-size:11px;letter-spacing:1px;color:#8A848C;text-transform:uppercase;">Tournament<br /><span style="font-family:Arial,sans-serif;font-size:15px;color:#F7F5F6;font-weight:bold;letter-spacing:0;">Sat&ndash;Sun, Dec 12&ndash;13, 2026</span></td>
+              <td width="50%" style="padding:14px 18px;border-bottom:1px solid #242127;font-family:'Courier New',monospace;font-size:11px;letter-spacing:1px;color:#8A848C;text-transform:uppercase;">Team Entry<br /><span style="font-family:Arial,sans-serif;font-size:15px;color:#F7F5F6;font-weight:bold;letter-spacing:0;">$550 per team &middot; 3-game minimum</span></td>
+            </tr>
+            <tr>
+              <td style="padding:14px 18px;border-bottom:1px solid #242127;font-family:'Courier New',monospace;font-size:11px;letter-spacing:1px;color:#8A848C;text-transform:uppercase;">Divisions<br /><span style="font-family:Arial,sans-serif;font-size:15px;color:#F7F5F6;font-weight:bold;letter-spacing:0;">Girls 12U &middot; 14U &middot; 16U &middot; 18U</span></td>
+              <td style="padding:14px 18px;border-bottom:1px solid #242127;font-family:'Courier New',monospace;font-size:11px;letter-spacing:1px;color:#8A848C;text-transform:uppercase;">Registration Deadline<br /><span style="font-family:Arial,sans-serif;font-size:15px;color:#FF2D8E;font-weight:bold;letter-spacing:0;">Nov 22, 2026</span></td>
+            </tr>
+            <tr>
+              <td colspan="2" style="padding:14px 18px;font-family:'Courier New',monospace;font-size:11px;letter-spacing:1px;color:#8A848C;text-transform:uppercase;">Coaches Welcome Event<br /><span style="font-family:Arial,sans-serif;font-size:15px;color:#F7F5F6;font-weight:bold;letter-spacing:0;">Friday night, Dec 11 &mdash; your coaches are invited; details to follow</span></td>
+            </tr>
+          </table>
+        </td></tr>
+
+        <!-- next steps + CTA -->
+        <tr><td style="background-color:#0A0A0B;padding:26px 36px 34px;">
+          <p style="margin:0;font-family:Arial,sans-serif;font-size:15px;line-height:1.6;color:#C9C4C9;">To accept, complete your team registration through the ISI using your private link below &mdash; entry fee, rosters, and age verification (Zorts Sports) all run through it. Please don&rsquo;t share the link outside your organization.</p>
+          <table role="presentation" cellpadding="0" cellspacing="0" style="margin:22px auto 0;"><tr>
+            <td style="background-color:#FF2D8E;">
+              <a href="{{REG_LINK}}" style="display:inline-block;padding:16px 38px;font-family:Arial Black,Arial,sans-serif;font-size:16px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;letter-spacing:1px;">Accept &amp; Register</a>
+            </td>
+          </tr></table>
+          <p style="margin:22px 0 0;font-family:Arial,sans-serif;font-size:15px;line-height:1.6;color:#C9C4C9;">Each athlete also registers individually for Friday&rsquo;s Showcase Combine &amp; Camp (3:00&ndash;5:30 PM) &mdash; your tournament athletes get $50 off with the code included with this invitation. Questions? Just reply, or write us at <a href="mailto:info@collegeflagshowcase.com" style="color:#FF2D8E;text-decoration:none;">info@collegeflagshowcase.com</a>.</p>
+          <p style="margin:22px 0 0;font-family:Arial,sans-serif;font-size:15px;line-height:1.6;color:#F7F5F6;">{{SIGNATURE}}<br /><span style="color:#8A848C;">College Flag Showcase Series</span></p>
+        </td></tr>
+
+        <!-- footer -->
+        <tr><td style="background-color:#0A0A0B;border-top:1px solid #242127;padding:18px 36px;" align="center">
+          <p style="margin:0;font-family:'Courier New',monospace;font-size:11px;letter-spacing:2px;color:#8A848C;text-transform:uppercase;">collegeflagshowcase.com &middot; info@collegeflagshowcase.com</p>
+        </td></tr>
+
+      </table>
+
+    </td></tr>
+  </table>
+</body>
+</html>
