@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Showcase Combine &amp; Camp — Coach Briefing</title>
+<style>
+  @font-face{font-family:"Big Shoulders Display";src:url(fonts/big-shoulders.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"Archivo";src:url(fonts/archivo.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"JetBrains Mono";src:url(fonts/jetbrains-mono.woff2) format("woff2");font-weight:100 900}
+  :root{
+    --navy:#110C0F; --red:#FF2D87; --chalk:#F5F2F0;
+    --steel:#6E676D; --line:#E4DEE2;
+    --display:"Big Shoulders Display",sans-serif;
+    --body:"Archivo",sans-serif;
+    --mono:"JetBrains Mono",monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:8.5in;height:11in;overflow:hidden}
+  body{font-family:var(--body);background:var(--chalk);color:var(--navy);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{width:8.5in;height:11in;display:flex;flex-direction:column}
+
+  .head{background:var(--navy);color:var(--chalk);padding:20px 56px 16px;border-bottom:5px solid var(--red)}
+  .head-inner{display:flex;align-items:center;gap:24px}
+  .head img{width:88px;height:88px}
+  .head-kicker{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.22em;color:var(--red);text-transform:uppercase;margin-bottom:7px}
+  .head h1{font-family:var(--display);font-size:42px;line-height:.92;text-transform:uppercase;letter-spacing:.01em}
+  .head h1 em{font-style:normal;color:var(--red)}
+  .head-sub{margin-top:9px;font-size:13px;color:#C9C4C9}
+
+  .body{padding:16px 56px 0;flex:1;display:flex;flex-direction:column}
+  .eyebrow{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+  section{margin-top:14px}
+  section:first-child{margin-top:0}
+  p.txt{font-size:12px;line-height:1.5}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .card{border:2px solid var(--navy);background:#fff;padding:11px 13px}
+  .card h3{font-family:var(--display);font-size:17px;text-transform:uppercase;letter-spacing:.02em;margin-bottom:6px}
+  .card p{font-size:11.5px;line-height:1.45}
+  .card ul{list-style:none;margin-top:2px}
+  .card li{font-size:11.5px;line-height:1.4;padding:2.5px 0 2.5px 13px;position:relative}
+  .card li::before{content:"▸";position:absolute;left:0;color:var(--red);font-size:10px}
+  .card li b{font-weight:700}
+
+  .agenda{border:2px solid var(--navy);background:#fff}
+  .agenda-row{display:flex;border-top:1px solid var(--line)}
+  .agenda-row:first-child{border-top:none}
+  .agenda-when{width:2.6in;flex-shrink:0;padding:9px 13px;font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:#FBFAFB;border-right:1px solid var(--line)}
+  .agenda-what{padding:9px 13px;font-size:11.5px;line-height:1.45}
+  .agenda-what b{font-weight:700}
+  .agenda-what small{display:block;color:var(--steel);font-size:10.5px;margin-top:2px}
+
+  .draftnote{margin-top:8px;font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--steel)}
+
+  .foot{margin-top:auto;background:var(--navy);padding:13px 56px;display:flex;justify-content:space-between;align-items:center}
+  .foot span{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8A848C}
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="head">
+    <div class="head-inner">
+      <img src="../public/logo.png" alt="College Flag Showcase Series logo" />
+      <div>
+        <p class="head-kicker">Event 01 &mdash; Dallas, TX &middot; Dec 11&ndash;13, 2026 &middot; Coach Briefing</p>
+        <h1>Showcase Combine &amp; Camp<br /><em>Coaching Brief.</em></h1>
+        <p class="head-sub">Prepared for Coach Saaid Mortazavi &mdash; what the camp is, who&rsquo;s on the field, and how the weekend runs.</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="body">
+    <section>
+      <p class="eyebrow">What the Camp Is</p>
+      <p class="txt">The Showcase Combine &amp; Camp opens each College Flag Showcase Series event weekend. It&rsquo;s individual and open-registration &mdash; girls flag football athletes compete on their own, not with a team &mdash; and everything happens in front of credentialed college coaches. Every athlete&rsquo;s combine numbers and camp participation feed the athlete recruiting package those coaches receive.</p>
+    </section>
+
+    <section>
+      <div class="grid2">
+        <div class="card">
+          <h3>The Athletes</h3>
+          <ul>
+            <li><b>Girls 12U &middot; 14U &middot; 16U &middot; 18U</b> (age as of Aug 1)</li>
+            <li>Individual, open registration &mdash; no team required</li>
+            <li>Serious travel-program athletes; many rosters attend around the invite-only tournament</li>
+            <li>Every participant is in the recruiting package college coaches receive</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Combine Testing</h3>
+          <p style="margin-bottom:4px">Measured by trained staff, on the record:</p>
+          <ul>
+            <li>Height, weight &amp; wingspan</li>
+            <li>20-yard dash (10-yard split)</li>
+            <li>5-10-5 pro agility</li>
+            <li>Standing broad jump &middot; vertical jump</li>
+            <li>Position-specific skills evaluation</li>
+          </ul>
+        </div>
+      </div>
+      <div class="grid2" style="margin-top:12px">
+        <div class="card">
+          <h3>The Camp Session</h3>
+          <ul>
+            <li>Position-specific skill work run live in front of college coaches</li>
+            <li>1v1s &mdash; each athlete&rsquo;s chance to show her game individually</li>
+            <li>Coaching-led structure &mdash; format and stations shaped with you</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Who&rsquo;s Watching</h3>
+          <ul>
+            <li>Credentialed college coaches on-site all weekend</li>
+            <li>Committed today: <b>NCAA DII, DIII, NAIA, and NJCAA</b> programs &mdash; nine colleges on the board and growing</li>
+            <li>Tournament games filmed by AI cameras in the full-field evaluation view</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <p class="eyebrow">Event Weekend Agenda &mdash; Craig Ranch Sports Complex, McKinney, TX</p>
+      <div class="agenda">
+        <div class="agenda-row">
+          <div class="agenda-when">Fri Dec 11 &middot; 3:00&ndash;5:30 PM</div>
+          <div class="agenda-what"><b>Individual Showcase Combine &amp; Camp</b> &mdash; combine testing plus the coached camp session (skill work and 1v1s), college coaches evaluating live.<small>Internal run-of-show for the 3:00&ndash;5:30 block: draft below, to be finalized with you.</small></div>
+        </div>
+        <div class="agenda-row">
+          <div class="agenda-when">Fri Dec 11 &middot; Evening</div>
+          <div class="agenda-what"><b>Coaches Welcome Event</b> &mdash; credentialed college coaches and invited team coaches. Time and venue announcing with credentials.</div>
+        </div>
+        <div class="agenda-row">
+          <div class="agenda-when">Sat&ndash;Sun Dec 12&ndash;13</div>
+          <div class="agenda-what"><b>Travel Team Showcase Tournament</b> &mdash; invite-only 5v5 between top travel programs, in partnership with the International Superflag Invitational (60+ elite teams from across the world in 2025). Games may begin 8:00 AM Saturday; college coaches evaluate from the sideline.</div>
+        </div>
+      </div>
+      <p class="draftnote">Draft camp flow for discussion &mdash; check-in &amp; warm-up &rarr; combine stations &rarr; position groups &amp; skill work &rarr; 1v1s &mdash; final timings set with the coaching staff.</p>
+    </section>
+  </div>
+
+  <footer class="foot">
+    <span>info@collegeflagshowcase.com &middot; collegeflagshowcase.com</span>
+    <span>College Flag Showcase Series</span>
+  </footer>
+</div>
+</body>
+</html>
