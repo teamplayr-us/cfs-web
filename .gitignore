@@ -30,3 +30,4 @@ next-env.d.ts
 
 # review-only reel overlay previews (regenerable via render-reel-overlay.mjs --preview)
 collateral/*-preview.png
+collateral/.next/
