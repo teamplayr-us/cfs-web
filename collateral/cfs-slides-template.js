@@ -283,7 +283,7 @@ packDivider("Pack · For Investors", "Investor Pages.", "Navy, data-forward layo
   const chips = [
     ["LA28", "Olympic debut"],
     ["NCAA", "Emerging sport, 2026"],
-    ["2028", "First Power Four varsity"],
+    ["2027", "First Power Four varsity"],
   ];
   chips.forEach(([n, l], i) => {
     const y = 2.35 + i * 1.35;

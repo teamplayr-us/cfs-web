@@ -52,8 +52,9 @@ page, and OPERATIONS.md when facts change.
 - Why college flag is real: flag football debuts at the **2028 Olympics**
   (LA); it's an **NCAA Emerging Sport for Women** with scholarships live
   today; **Nebraska** becomes the first Power Four school with varsity flag
-  in 2028; **90+ college programs** are playing (founder-confirmed count,
-  Aug 2026).
+  beginning **spring 2027** (founder-confirmed, Aug 2026 — previously
+  announced as 2028); **90+ college programs** are playing
+  (founder-confirmed count, Aug 2026).
 
 ## 2. Season schedule (2026–27)
 
@@ -268,8 +269,8 @@ routing) — do not improvise — for:
 - **Is this legit / is college flag real?** "Very. Flag football debuts at
   the 2028 Olympics in LA, it's an NCAA Emerging Sport for Women with
   scholarships live today, Nebraska becomes the first Power Four school
-  with varsity flag in 2028, and 90+ college programs are playing with
-  more added every season."
+  with varsity flag beginning spring 2027, and 90+ college programs are
+  playing with more added every season."
 - **Does my daughter need a team?** "No. The Showcase Combine & Camp is
   individual, open registration — her chance to show what she can do on her
   own. The team tournament is separate and invite-only."

@@ -26,12 +26,12 @@ export const PATHWAY_FACTS: PathwayFact[] = [
     detail: "Added to the Emerging Sports for Women program in 2026",
   },
   // Source: huskers.com, Jan 16 2026 — Nebraska first Power Four school to
-  // add varsity women's flag football; debut spring 2028, scholarships
-  // scaling to 25
+  // add varsity women's flag football; scholarships scaling to 25.
+  // Founder update Aug 2026: season moved up to spring 2027.
   {
     stat: "P4",
     label: "Scholarships live",
-    detail: "Nebraska is the first Power Four school with varsity flag — debuting 2028",
+    detail: "Nebraska is the first Power Four school with varsity flag — debuting spring 2027",
   },
   // Source: founder-confirmed count, Aug 2026 — over 90 college flag
   // football programs playing
