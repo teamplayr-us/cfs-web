@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>IG Carousel — Know the Levels</title>
+<style>
+  @font-face{font-family:"Big Shoulders Display";src:url(fonts/big-shoulders.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"Archivo";src:url(fonts/archivo.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"JetBrains Mono";src:url(fonts/jetbrains-mono.woff2) format("woff2");font-weight:100 900}
+  :root{
+    --navy:#110C0F; --red:#FF2D87; --chalk:#F5F2F0; --steel:#8A848C;
+    --display:"Big Shoulders Display",sans-serif;
+    --body:"Archivo",sans-serif;
+    --mono:"JetBrains Mono",monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{width:1080px;font-family:var(--body);background:#000;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+
+  .slide{width:1080px;height:1350px;position:relative;overflow:hidden;background:var(--navy);color:var(--chalk)}
+  .yards{position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0,transparent 133px,rgba(245,242,240,.05) 133px,rgba(245,242,240,.05) 135px)}
+  .hash{position:absolute;top:0;bottom:0;width:2px;background:rgba(245,242,240,.05)}
+  .hash.l{left:96px}.hash.r{right:96px}
+  .frame{position:absolute;inset:36px;border:3px solid rgba(245,242,240,.12);pointer-events:none}
+
+  .inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:110px 110px 90px}
+
+  /* ---- cover ---- */
+  .logo{width:250px;height:250px}
+  .cover-title{margin-top:60px;font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:.95;letter-spacing:.01em;font-size:92px}
+  .cover-title em{font-style:normal;color:var(--red);display:block}
+  .cover-body{margin-top:56px;font-size:34px;line-height:1.45;font-weight:500;color:var(--chalk);max-width:840px}
+  .cover-body b{color:var(--red)}
+
+  /* ---- explainer slides ---- */
+  .kicker{font-family:var(--mono);font-size:20px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--red);white-space:nowrap}
+  .num{margin-top:70px;font-family:var(--mono);font-size:30px;font-weight:700;letter-spacing:.2em;color:var(--steel)}
+  .slide-title{margin-top:18px;font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:.92;letter-spacing:.01em;font-size:130px}
+  .slide-title span{color:var(--red)}
+  .slide-body{margin-top:64px;font-size:36px;line-height:1.5;font-weight:500;color:var(--chalk);max-width:840px}
+  .slide-punch{margin-top:auto;padding-top:40px;font-size:42px;line-height:1.3;font-weight:800;color:var(--red);max-width:860px}
+
+  .swipe{margin-top:auto;font-family:var(--mono);font-size:22px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--red)}
+  .swipe span{display:inline-block;margin-left:10px;letter-spacing:0}
+  .rule{margin-top:auto;width:120px;height:6px;background:var(--red)}
+  .cover-rule{margin-top:28px}
+  .foot{margin-top:26px;font-family:var(--mono);font-size:22px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--steel)}
+  .foot b{color:var(--chalk);font-weight:700}
+  .expl .rule{margin-top:56px}
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1 — COVER -->
+<div class="slide">
+  <div class="yards"></div><div class="hash l"></div><div class="hash r"></div><div class="frame"></div>
+  <div class="inner">
+    <img class="logo" src="../public/logo.png" alt="College Flag Showcase Series" />
+    <h1 class="cover-title">Where can she<br /><em>play in college?</em></h1>
+    <p class="cover-body">Girls flag football is live at <b>90+ college programs</b> &mdash; across more levels than most families realize. Here&rsquo;s the map.</p>
+    <p class="swipe">Swipe<span>&nbsp;&rarr;&nbsp;&rarr;&nbsp;&rarr;</span></p>
+    <div class="rule cover-rule"></div>
+    <p class="foot"><b>collegeflagshowcase.com</b></p>
+  </div>
+</div>
+
+<!-- SLIDE 2 — NCAA -->
+<div class="slide">
+  <div class="yards"></div><div class="hash l"></div><div class="hash r"></div><div class="frame"></div>
+  <div class="inner expl">
+    <p class="kicker">Know the Levels &middot; 1 of 4</p>
+    <p class="num">01</p>
+    <h2 class="slide-title"><span>NCAA.</span></h2>
+    <p class="slide-body">Flag is an official NCAA Emerging Sport for Women &mdash; varsity programs are launching across divisions, with scholarships live today. Nebraska becomes the first Power Four school with varsity flag in 2028.</p>
+    <p class="slide-punch">The biggest stage in college sports is opening its doors.</p>
+    <div class="rule"></div>
+    <p class="foot"><b>collegeflagshowcase.com</b></p>
+  </div>
+</div>
+
+<!-- SLIDE 3 — NAIA -->
+<div class="slide">
+  <div class="yards"></div><div class="hash l"></div><div class="hash r"></div><div class="frame"></div>
+  <div class="inner expl">
+    <p class="kicker">Know the Levels &middot; 2 of 4</p>
+    <p class="num">02</p>
+    <h2 class="slide-title"><span>NAIA.</span></h2>
+    <p class="slide-body">The first governing body to make women&rsquo;s flag a college sport &mdash; official seasons since 2021, with athletic scholarship money at many programs.</p>
+    <p class="slide-punch">The level that&rsquo;s been recruiting flag athletes the longest.</p>
+    <div class="rule"></div>
+    <p class="foot"><b>collegeflagshowcase.com</b></p>
+  </div>
+</div>
+
+<!-- SLIDE 4 — NJCAA -->
+<div class="slide">
+  <div class="yards"></div><div class="hash l"></div><div class="hash r"></div><div class="frame"></div>
+  <div class="inner expl">
+    <p class="kicker">Know the Levels &middot; 3 of 4</p>
+    <p class="num">03</p>
+    <h2 class="slide-title"><span>NJCAA.</span></h2>
+    <p class="slide-body">Two-year colleges with real flag programs &mdash; earn playing time from day one, develop your game, and put yourself in position to transfer up.</p>
+    <p class="slide-punch">The underrated route to a four-year roster.</p>
+    <div class="rule"></div>
+    <p class="foot"><b>collegeflagshowcase.com</b></p>
+  </div>
+</div>
+
+<!-- SLIDE 5 — CLUB -->
+<div class="slide">
+  <div class="yards"></div><div class="hash l"></div><div class="hash r"></div><div class="frame"></div>
+  <div class="inner expl">
+    <p class="kicker">Know the Levels &middot; 4 of 4</p>
+    <p class="num">04</p>
+    <h2 class="slide-title"><span>Club.</span></h2>
+    <p class="slide-body">Many universities field competitive club flag teams &mdash; compete for your school, keep your game sharp, and be ready as varsity programs keep launching.</p>
+    <p class="slide-punch">Wherever college takes her, there&rsquo;s a way to keep playing.</p>
+    <div class="rule"></div>
+    <p class="foot"><b>collegeflagshowcase.com</b></p>
+  </div>
+</div>
+
+<!-- SLIDE 6 — CLOSER -->
+<div class="slide">
+  <div class="yards"></div><div class="hash l"></div><div class="hash r"></div><div class="frame"></div>
+  <div class="inner expl">
+    <p class="kicker">Why It Matters</p>
+    <p class="num">&nbsp;</p>
+    <h2 class="slide-title">Every level.<br /><span>One sideline.</span></h2>
+    <p class="slide-body">NCAA DII and DIII, NAIA, and NJCAA coaches are already committed to evaluate at Event 01 in Dallas &mdash; with more announcing.</p>
+    <p class="slide-punch">Get in front of all of them in one weekend.</p>
+    <div class="rule"></div>
+    <p class="foot"><b>collegeflagshowcase.com</b></p>
+  </div>
+</div>
+
+</body>
+</html>
