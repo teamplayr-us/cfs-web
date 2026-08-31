@@ -64,6 +64,11 @@ export const COLLEGES_BY_EVENT: Record<string, CollegeSlot[]> = {
       name: "Lawrence University",
       logo: "/colleges/lawrence-mono.png",
     },
+    {
+      filled: true,
+      name: "Eastern Connecticut State University",
+      logo: "/colleges/eastern-connecticut-mono.png",
+    },
   ],
 };
 
