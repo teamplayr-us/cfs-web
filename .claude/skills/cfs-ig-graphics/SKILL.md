@@ -105,8 +105,10 @@ All templates share the same skeleton — reuse it for new graphics:
 5. **Caption:** offer one with every graphic. Committed-college captions
    speak to BOTH audiences — coaches evaluate all weekend, so cover the
    Showcase Combine & Camp (athletes) AND the Showcase Tournament (teams),
-   never just one. End with the series' standard hashtag block (same block
-   the athlete/org skills use):
+   never just one. Don't state board counts ("eleven colleges") in
+   captions — founder rule, Sep 2026; say the board is growing or name
+   the levels represented instead. End with the series' standard hashtag
+   block (same block the athlete/org skills use):
 
    > #GirlsFlagFootball #FlagFootball #CollegeFlagFootball
    > #FlagFootballRecruiting
