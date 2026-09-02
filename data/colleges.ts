@@ -15,7 +15,7 @@ export interface CollegeSlot {
 
 const PLACEHOLDER: CollegeSlot = { filled: false };
 
-export const BOARD_SIZE = 12;
+export const BOARD_SIZE = 16;
 
 export const COLLEGES_BY_EVENT: Record<string, CollegeSlot[]> = {
   "mckinney-tx": [
@@ -73,6 +73,11 @@ export const COLLEGES_BY_EVENT: Record<string, CollegeSlot[]> = {
       filled: true,
       name: "Binghamton University",
       logo: "/colleges/binghamton-mono.png",
+    },
+    {
+      filled: true,
+      name: "Hendrix College",
+      logo: "/colleges/hendrix-mono.png",
     },
   ],
 };
