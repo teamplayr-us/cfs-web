@@ -82,6 +82,7 @@ closer to the event." Dallas registration deadline: **Nov 22, 2026**.
 ## 3. Divisions & eligibility
 
 - Showcase divisions: **12U, 14U, 16U, 18U**.
+- **Each division is capped at 24 teams** (founder, Sep 2026).
 - Age groups are based on the athlete's **age as of August 1**.
 - Recruiting focus: grad year matters most — coaches recruit current and
   upcoming classes.
