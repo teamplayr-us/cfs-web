@@ -79,6 +79,11 @@ export const COLLEGES_BY_EVENT: Record<string, CollegeSlot[]> = {
       name: "Hendrix College",
       logo: "/colleges/hendrix-mono.png",
     },
+    {
+      filled: true,
+      name: "McMurry University",
+      logo: "/colleges/mcmurry-mono.png",
+    },
   ],
 };
 
