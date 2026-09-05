@@ -2,17 +2,18 @@
 // every invited team — the social companion to the invite email.
 //
 // Usage (from the repo root):
-//   node collateral/render-org-invite.mjs "Org Name" public/programs/logo.png "Team 14U|Team 16U"
+//   node collateral/render-org-invite.mjs "Org Name" public/programs/logo.png "City, ST" "Team 14U|Team 16U"
 //
 // Args:
 //   1. Organization name, e.g. "One of One Girls Flag Football Club"
 //   2. Logo path relative to the REPO ROOT — e.g. public/programs/foo.png
 //      for orgs already on the site board, or collateral/invites/foo.png
 //      for a new invitee (stage their logo there first; transparent PNG)
-//   3. Invited teams, pipe-separated, e.g. "One of One 14U|One of One 16U"
-//   4. (optional) Event line — defaults to "Event 01 · Dallas, TX · Dec 11–13, 2026"
-//   5. (optional) Venue line — defaults to "Craig Ranch Sports Complex"
-//   6. (optional) Output filename — defaults to invite-org-<logo-name>.png
+//   3. Home location, e.g. "Oklahoma City, OK" (match data/organizations.ts)
+//   4. Invited teams, pipe-separated, e.g. "One of One 14U|One of One 16U"
+//   5. (optional) Event line — defaults to "Event 01 · Dallas, TX · Dec 11–13, 2026"
+//   6. (optional) Venue line — defaults to "Craig Ranch Sports Complex"
+//   7. (optional) Output filename — defaults to invite-org-<logo-name>.png
 //
 // The private registration link goes in the EMAIL BODY, never on the graphic.
 
@@ -37,11 +38,11 @@ const { chromium } = await (async () => {
 })();
 
 const here = dirname(fileURLToPath(import.meta.url));
-const [orgName, logoPath, teams, eventLine, venueLine, outFile] =
+const [orgName, logoPath, location, teams, eventLine, venueLine, outFile] =
   process.argv.slice(2);
-if (!orgName || !logoPath || !teams) {
+if (!orgName || !logoPath || !location || !teams) {
   console.error(
-    'Usage: node render-org-invite.mjs "Org Name" public/programs/logo.png "Team 14U|Team 16U" ["Event line"] ["Venue line"] [out.png]',
+    'Usage: node render-org-invite.mjs "Org Name" public/programs/logo.png "City, ST" "Team 14U|Team 16U" ["Event line"] ["Venue line"] [out.png]',
   );
   process.exit(1);
 }
@@ -54,6 +55,7 @@ const teamRows = teams
 
 const html = readFileSync(join(here, "invite-org-official.html"), "utf8")
   .replaceAll("{{ORG_NAME}}", orgName)
+  .replaceAll("{{LOCATION}}", location)
   .replaceAll("{{LOGO}}", logoRel)
   .replaceAll("{{TEAM_ROWS}}", teamRows)
   .replaceAll(

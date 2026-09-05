@@ -10,9 +10,10 @@
   nothing private on it; the registration link lives only in the email.
 
   Render with:
-    node collateral/render-org-invite.mjs "Org Name" ../public/programs/logo.png "Team 14U|Team 16U" out.png
+    node collateral/render-org-invite.mjs "Org Name" ../public/programs/logo.png "City, ST" "Team 14U|Team 16U" out.png
 
   {{ORG_NAME}}   — organization name, e.g. "One of One Girls Flag Football Club"
+  {{LOCATION}}   — home city/state, e.g. "Oklahoma City, OK" (match data/organizations.ts)
   {{LOGO}}       — logo path relative to collateral/
   {{TEAM_ROWS}}  — one <p class="team-row">…</p> per invited team
   {{EVENT_LINE}} — e.g. Event 01 · Dallas, TX · Dec 11–13, 2026
@@ -45,7 +46,8 @@
   .org-logo{margin-top:34px;height:230px;max-width:640px;object-fit:contain;flex-shrink:0}
   .org-name{margin-top:36px;font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:1;letter-spacing:.01em;font-size:52px;max-width:900px}
 
-  .invited-line{margin-top:22px;font-size:27px;font-weight:500;color:var(--steel)}
+  .org-loc{margin-top:14px;font-family:var(--mono);font-size:21px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red)}
+  .invited-line{margin-top:20px;font-size:27px;font-weight:500;color:var(--steel)}
   .teams{margin-top:14px;width:640px}
   .team-row{font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:.03em;font-size:40px;color:var(--chalk);padding:10px 0;border-bottom:1px solid rgba(245,242,240,.18)}
   .team-row:last-child{border-bottom:0}
@@ -70,6 +72,7 @@
     <h1 class="invite-title">Official Invitation.</h1>
     <img class="org-logo" src="{{LOGO}}" alt="{{ORG_NAME}}" />
     <h2 class="org-name">{{ORG_NAME}}</h2>
+    <p class="org-loc">{{LOCATION}}</p>
     <p class="invited-line">The following teams are invited to compete<br />in the <span style="white-space:nowrap">College Flag Showcase:</span></p>
     <div class="teams">
       {{TEAM_ROWS}}
