@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Template — Official Org Invitation (team list)</title>
+<!--
+  TEMPLATE — org-level Showcase Tournament invitation graphic: one card
+  per ORGANIZATION listing every invited team, the social companion to
+  the invite email (collateral/email-team-invite.html). Share-ready —
+  nothing private on it; the registration link lives only in the email.
+
+  Render with:
+    node collateral/render-org-invite.mjs "Org Name" ../public/programs/logo.png "Team 14U|Team 16U" out.png
+
+  {{ORG_NAME}}   — organization name, e.g. "One of One Girls Flag Football Club"
+  {{LOGO}}       — logo path relative to collateral/
+  {{TEAM_ROWS}}  — one <p class="team-row">…</p> per invited team
+  {{EVENT_LINE}} — e.g. Event 01 · Dallas, TX · Dec 11–13, 2026
+  {{VENUE_LINE}} — e.g. Craig Ranch Sports Complex (venue name only)
+-->
+<style>
+  @font-face{font-family:"Big Shoulders Display";src:url(fonts/big-shoulders.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"Archivo";src:url(fonts/archivo.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"JetBrains Mono";src:url(fonts/jetbrains-mono.woff2) format("woff2");font-weight:100 900}
+  :root{
+    --navy:#110C0F; --red:#FF2D87; --chalk:#F5F2F0; --steel:#8A848C;
+    --display:"Big Shoulders Display",sans-serif;
+    --body:"Archivo",sans-serif;
+    --mono:"JetBrains Mono",monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:1350px;overflow:hidden}
+  body{font-family:var(--body);background:var(--navy);color:var(--chalk);-webkit-print-color-adjust:exact;print-color-adjust:exact;position:relative}
+
+  .yards{position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0,transparent 133px,rgba(245,242,240,.05) 133px,rgba(245,242,240,.05) 135px)}
+  .frame{position:absolute;inset:36px;border:3px solid rgba(245,242,240,.18);pointer-events:none}
+  .frame2{position:absolute;inset:52px;border:1px solid rgba(255,45,135,.45);pointer-events:none}
+
+  .inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:82px 120px 88px}
+
+  .cfs-logo{width:130px;height:130px;margin-bottom:24px}
+  .kicker{font-family:var(--mono);font-size:20px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--red);white-space:nowrap}
+
+  .invite-title{margin-top:24px;font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:.95;letter-spacing:.01em;font-size:84px;color:var(--red);white-space:nowrap}
+  .org-logo{margin-top:34px;height:230px;max-width:640px;object-fit:contain;flex-shrink:0}
+  .org-name{margin-top:36px;font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:1;letter-spacing:.01em;font-size:52px;max-width:900px}
+
+  .invited-line{margin-top:22px;font-size:27px;font-weight:500;color:var(--steel)}
+  .teams{margin-top:14px;width:640px}
+  .team-row{font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:.03em;font-size:40px;color:var(--chalk);padding:10px 0;border-bottom:1px solid rgba(245,242,240,.18)}
+  .team-row:last-child{border-bottom:0}
+  .team-row b{color:var(--red);font-weight:800}
+
+  .tourney{margin-top:10px;font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:.98;letter-spacing:.02em;font-size:40px;color:var(--chalk)}
+  .event-line{margin-top:22px;font-family:var(--mono);font-size:23px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--chalk)}
+  .venue-line{margin-top:10px;font-family:var(--mono);font-size:19px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--steel)}
+
+  .rule{margin-top:auto;width:120px;height:6px;background:var(--red);flex-shrink:0}
+  .foot{margin-top:20px;flex-shrink:0;font-family:var(--mono);font-size:21px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--steel)}
+  .foot b{color:var(--chalk);font-weight:700}
+</style>
+</head>
+<body>
+  <div class="yards"></div>
+  <div class="frame"></div>
+  <div class="frame2"></div>
+  <div class="inner">
+    <img class="cfs-logo" src="../public/logo.png" alt="College Flag Showcase Series" />
+    <p class="kicker">Girls Flag Football &middot; 2026&ndash;27 Season</p>
+    <h1 class="invite-title">Official Invitation.</h1>
+    <img class="org-logo" src="{{LOGO}}" alt="{{ORG_NAME}}" />
+    <h2 class="org-name">{{ORG_NAME}}</h2>
+    <p class="invited-line">The following teams are invited to compete<br />in the <span style="white-space:nowrap">College Flag Showcase:</span></p>
+    <div class="teams">
+      {{TEAM_ROWS}}
+    </div>
+    <p class="event-line">{{EVENT_LINE}}</p>
+    <p class="venue-line">{{VENUE_LINE}}</p>
+    <div class="rule"></div>
+    <p class="foot"><b>collegeflagshowcase.com</b></p>
+  </div>
+</body>
+</html>
