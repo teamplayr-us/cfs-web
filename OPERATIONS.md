@@ -190,8 +190,33 @@ too — make sure they ignore events that aren't theirs.
 | `AIRTABLE_TABLE` | `tblmp5EHSrHHaxjpD` | Athlete Registrations table |
 | `AIRTABLE_TEAM_TABLE` | (optional; defaults in code to `tblqtHoZgqgkNTgle`) | Team Invite Requests table |
 | `TOURNAMENT_DISCOUNT_CODE` | the code shared with invited tournament teams (case-insensitive) | $50 off athlete registration; until set, every entered code is rejected |
+| `INVITE_SEND_KEY` | must match the key baked into the Opportunities "Send Invitation Link" formula | Authorizes /api/send-invite; until set, the send flow returns Not Configured |
+| `MAILERSEND_API_TOKEN` | MailerSend API token (domain verified for the from address) | All transactional email, including invitation sends |
 
 Changes take effect only after a **Redeploy**.
+
+### 8b. Sending a team invitation (Airtable → /api/send-invite)
+
+One email per ORGANIZATION, driven from the **Opportunities** table:
+
+1. Stage the org's teams in **Team Invitations** with Status **Approved**
+   (via Teams to Invite / Create Invitations as usual).
+2. Attach the org-level flyer (`collateral/render-org-invite.mjs`) to the
+   Opportunity's **Invite Flyer** field.
+3. Make sure the linked Event's **Registration URL** holds the private
+   Zorts/ISI link and the Opportunity has a contact email
+   (**Email Override**, else the synced FFF org email).
+4. Check **Send Invitation** on the Opportunity — the **Send Invitation
+   Link** formula field lights up. Tap it, review the confirmation page
+   (recipient, team list, flyer), hit **SEND**.
+5. The endpoint sends the branded invitation via MailerSend (template
+   fetched from `/email-templates/team-invite.html`, flyer attached, BCC
+   to info@), then stamps each included Team Invitation **Invited** +
+   Invitation Sent At, stamps the Opportunity's **Invitations Sent At**,
+   and clears the checkbox. It refuses to double-send; clear Invitations
+   Sent At to deliberately re-send.
+6. **Manual follow-up:** the $50 athlete discount code goes out in a
+   separate email (the invitation says so).
 
 ## 9. Diagnostics
 
