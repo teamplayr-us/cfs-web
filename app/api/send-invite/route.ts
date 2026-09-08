@@ -83,8 +83,16 @@ async function getRecord(
   return res.json();
 }
 
+// REST returns linked-record fields as arrays of "rec..." strings; some
+// surfaces return {id} objects. Accept both.
 const linkIds = (v: unknown): string[] =>
-  Array.isArray(v) ? (v as { id: string }[]).map((r) => r.id) : [];
+  Array.isArray(v)
+    ? v
+        .map((r) =>
+          typeof r === "string" ? r : (r as { id?: string })?.id ?? "",
+        )
+        .filter((id) => id.startsWith("rec"))
+    : [];
 const selectName = (v: unknown): string | undefined =>
   v && typeof v === "object" ? (v as { name?: string }).name : undefined;
 
@@ -149,14 +157,23 @@ async function loadSend(oppId: string) {
       "No unsent Approved Team Invitations are linked to this Opportunity.",
     );
 
-  const teamLine = (r: AirtableRecord) => {
-    const team =
-      (r.fields[INV.fffTeam] as { name?: string }[] | undefined)?.[0]?.name ||
-      (r.fields[INV.label] as string) ||
-      "";
-    const div = selectName(r.fields[INV.division]);
-    return div && !team.includes(div) ? `${team} ${div}` : team;
-  };
+  // Team display names: resolve the linked FFF team record's name when one
+  // is linked (REST link fields carry only IDs); fall back to the row label.
+  const FFF_TEAMS_TABLE = "tblR4d2NJkUTK5IX4";
+  const FFF_NAME = "fld35n5q9cOhgvzFD";
+  const teamLines = await Promise.all(
+    batch.map(async (r) => {
+      let team = (r.fields[INV.label] as string) || "";
+      const fffId = linkIds(r.fields[INV.fffTeam])[0];
+      if (fffId) {
+        const fff = await getRecord(baseId, key, FFF_TEAMS_TABLE, fffId);
+        const fffName = fff?.fields[FFF_NAME] as string | undefined;
+        if (fffName) team = fffName;
+      }
+      const div = selectName(r.fields[INV.division]);
+      return div && !team.includes(div) ? `${team} ${div}` : team;
+    }),
+  );
 
   return {
     opp,
@@ -167,7 +184,7 @@ async function loadSend(oppId: string) {
     regLink,
     eventName,
     batch,
-    teamLines: batch.map(teamLine),
+    teamLines,
   };
 }
 
