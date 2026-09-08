@@ -138,6 +138,11 @@ closer to the event." Dallas registration deadline: **Nov 22, 2026**.
     college evaluation — covers **girls 12U, 14U, 16U, 18U**; if a team
     asks about other divisions, point them to the ISI and
     escalate.
+  - **Every invited girls 12U–18U team participates in the showcase**
+    (founder, Sep 8, 2026) — there is no girls 12U–18U team that is in
+    the tournament but outside the showcase. ISI-only invitations are
+    only for boys teams and girls below 12U, are ISI-branded, and come
+    from the ISI, not the series.
 - Invited team coaches are welcome at the Friday-night **Coaches Welcome
   Event** (details come with the team's invite; time/venue TBD — §2).
 - The Combine & Camp is NOT included in team entry — each athlete registers

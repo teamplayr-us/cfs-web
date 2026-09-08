@@ -69,6 +69,16 @@ arrangement and never part of the team housing service.
    Series surfaces keep stating 12U–18U girls and never enumerate the ISI's
    full field; support answers may explain the distinction if a team asks
    about other divisions.
+   **RESOLVED (founder, Sep 8, 2026): every invited girls 12U–18U team
+   participates in the showcase** — there is no "ISI-only" girls team in
+   those divisions. The showcase field and the ISI girls 12U–18U field are
+   the same field. Consequences for invitations:
+   - Girls 12U–18U teams get the College Flag Showcase invitation (email +
+     card, private registration link, $50 athlete code follow-up).
+   - ISI-only invitations exist only for **boys teams and girls below
+     12U** — those are ISI-branded, come from the ISI, and carry no
+     showcase promises (no college-evaluation language, no recruiting
+     package, no combine code).
 5. **Combine test list.** The packet itemizes combine tests (height/weight/
    wingspan, 20-yard dash with 10-yard split, 5-10-5 pro agility, broad
    jump, vertical, position-specific evaluation). Series surfaces have
