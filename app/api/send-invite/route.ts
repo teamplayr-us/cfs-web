@@ -257,7 +257,7 @@ export async function POST(req: Request) {
     const teamRows = s.teamLines
       .map(
         (t) =>
-          `<tr><td style="padding:6px 0;border-bottom:1px solid #242127;font-size:15px;color:#F7F5F6;font-weight:bold;">${escapeHtml(t)}</td></tr>`,
+          `<tr><td style="padding:7px 0;border-bottom:1px solid #E6E2E5;font-size:15px;color:#0A0A0B;font-weight:bold;">${escapeHtml(t)}</td></tr>`,
       )
       .join("");
     const html = (await tplRes.text())
