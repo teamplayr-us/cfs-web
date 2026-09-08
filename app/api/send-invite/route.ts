@@ -93,8 +93,14 @@ const linkIds = (v: unknown): string[] =>
         )
         .filter((id) => id.startsWith("rec"))
     : [];
+// REST returns single-select values as plain strings; some surfaces return
+// {name} objects. Accept both.
 const selectName = (v: unknown): string | undefined =>
-  v && typeof v === "object" ? (v as { name?: string }).name : undefined;
+  typeof v === "string"
+    ? v
+    : v && typeof v === "object"
+      ? (v as { name?: string }).name
+      : undefined;
 
 /** Everything the send needs, gathered and fully guarded. */
 async function loadSend(oppId: string) {
