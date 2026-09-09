@@ -202,7 +202,9 @@ One email per ORGANIZATION, driven from the **Opportunities** table:
 1. Stage the org's teams in **Team Invitations** with Status **Approved**
    (via Teams to Invite / Create Invitations as usual).
 2. Attach the org-level flyer (`collateral/render-org-invite.mjs`) to the
-   Opportunity's **Invite Flyer** field.
+   Opportunity's **Invite Flyer** field. The flyer's center logo is the
+   ORGANIZATION's mark — pull it from the Opportunity's **Org - Logo
+   (from Organization)** lookup (FFF sync), not the CFS logo.
 3. Make sure the linked Event's **Registration URL** holds the private
    Zorts/ISI link and the Opportunity has a contact email
    (**Email Override**, else the synced FFF org email).
