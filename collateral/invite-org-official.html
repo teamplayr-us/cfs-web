@@ -39,7 +39,10 @@
 
   .inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:82px 120px 88px}
 
-  .cfs-logo{width:130px;height:130px;margin-bottom:24px}
+  .partner-row{display:flex;align-items:center;justify-content:center;gap:34px;margin-bottom:24px}
+  .cfs-logo{width:130px;height:130px}
+  .partner-mid{font-family:var(--mono);font-size:15px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--steel);white-space:nowrap}
+  .superflag-logo{width:190px;height:auto}
   .kicker{font-family:var(--mono);font-size:20px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--red);white-space:nowrap}
 
   .invite-title{margin-top:24px;font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:.95;letter-spacing:.01em;font-size:84px;color:var(--red);white-space:nowrap}
@@ -67,7 +70,11 @@
   <div class="frame"></div>
   <div class="frame2"></div>
   <div class="inner">
-    <img class="cfs-logo" src="../public/logo.png" alt="College Flag Showcase Series" />
+    <div class="partner-row">
+      <img class="cfs-logo" src="../public/logo.png" alt="College Flag Showcase Series" />
+      <span class="partner-mid">In Partnership With</span>
+      <img class="superflag-logo" src="../public/superflag.png" alt="International Superflag Invitational" />
+    </div>
     <p class="kicker">Girls Flag Football &middot; 2026&ndash;27 Season</p>
     <h1 class="invite-title">Official Invitation.</h1>
     <img class="org-logo" src="{{LOGO}}" alt="{{ORG_NAME}}" />
