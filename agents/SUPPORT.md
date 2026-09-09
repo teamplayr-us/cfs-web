@@ -78,6 +78,9 @@ and invited team coaches; time and venue: **TBD — details go out with
 credentials and team invites; escalate if pressed.** Combine runs
 **3:00–5:30 PM** on Friday, Dec 11. Detailed game schedules are "confirmed
 closer to the event." Dallas registration deadline: **Nov 22, 2026**.
+Invited teams must **accept (complete registration) within 10 days of
+their invitation** (founder, Sep 2026) — the invitation email states
+this instead of the Nov 22 date; Nov 22 remains the overall close.
 
 ## 3. Divisions & eligibility
 
