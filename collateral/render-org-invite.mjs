@@ -53,7 +53,9 @@ const teamRows = teams
   .map((t) => `<p class="team-row">${t.trim()}</p>`)
   .join("\n      ");
 
+const teamCount = teams.split("|").length;
 const html = readFileSync(join(here, "invite-org-official.html"), "utf8")
+  .replace("<body>", teamCount >= 4 ? '<body class="compact">' : "<body>")
   .replaceAll("{{ORG_NAME}}", orgName)
   .replaceAll("{{LOCATION}}", location)
   .replaceAll("{{LOGO}}", logoRel)
