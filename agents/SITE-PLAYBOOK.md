@@ -1,96 +1,106 @@
-# The CFS Website Playbook — for bootstrapping sibling-brand sites
+# Site Playbook — brand-site build framework
 
-Written from the College Flag Showcase Series build (cfs-web) so another
-Claude Code session can replicate the framework for a new brand site
-(first use: the iFlag youth website). Give this file to the new session
-as its first input and have it follow the bootstrap order at the bottom.
+A proven framework for building a brand's website, operations, and
+design collateral in one repo with Claude Code. It is written for a
+session starting from zero: follow it as instructions, not as a
+description of some other project. (Maintainers: this distills the
+College Flag Showcase Series build; the copy handed to sibling-brand
+sessions should be exactly this file — it is deliberately
+self-contained.)
 
-## Why this repo works — the load-bearing ideas
+## Core principles
 
-1. **Facts live in exactly one place, and it's code.** Every date, price,
-   city, division, and name lives in typed `data/*.ts` files. Pages,
-   FAQs, one-pagers, emails, and graphics all read from there or restate
-   it verbatim. When a fact changes, every surface changes in ONE pass —
-   nothing public can drift.
-2. **The brand is documented, not remembered.** Four docs make any
-   session productive from message one:
+1. **Facts live in exactly one place, and it's code.** Every date,
+   price, city, division, and name lives in typed `data/*.ts` files.
+   Pages, FAQs, PDFs, emails, and graphics all read from there or
+   restate it verbatim. When a fact changes, update every surface in
+   ONE pass — nothing public may drift.
+2. **The brand is documented, not remembered.** Maintain four docs so
+   any fresh session is productive from message one:
    - `CLAUDE.md` — repo guide: where things live, the non-negotiable
-     rules, working conventions. This is what a fresh session reads first.
-   - `BRAND.md` — identity: colors (exact hex), type, logo usage, voice,
-     and a VOCABULARY table (what things are called, what's banned).
+     rules, working conventions.
+   - `BRAND.md` — identity: colors (exact hex), type, logo usage,
+     voice, and a VOCABULARY table (what things are called, what's
+     banned, hype level, punctuation policy).
    - `agents/SUPPORT.md` — every approved fact and answer, policies,
-     open TBDs marked "escalate." The single source for what may be said.
+     and open TBDs marked "escalate." The single source for what may
+     be said publicly.
    - `OPERATIONS.md` — how registrations, payments, email, and the
-     CRM actually flow, including env vars and manual steps.
-3. **The founder vets all public copy.** The session drafts, the founder
-   approves, then it ships. Facts never get invented — if something is
-   missing, the session asks instead of guessing, then RECORDS the answer
-   in SUPPORT.md so it's never asked twice.
-4. **Deploys are verified, not assumed.** Work ships by pushing to the
-   deploy branch, then curling production until the change is actually
-   live (frameworks inject comment nodes into text — strip `<!-- -->`
-   before grepping).
+     CRM actually flow, including env vars and every manual step.
+3. **The founder vets all public copy.** Draft, get approval, then
+   ship. Never invent a fact — if something is missing, ask, then
+   RECORD the answer (with date) in SUPPORT.md so it's never asked
+   twice.
+4. **Deploys are verified, not assumed.** Ship by pushing to the
+   deploy branch, then curl production until the change is actually
+   live. (Frameworks inject `<!-- -->` comment nodes into rendered
+   text — strip them before grepping.)
 5. **Design collateral is code too.** Social graphics, one-pagers, and
-   email templates are self-contained HTML in `collateral/` rendered to
-   PNG/PDF with headless Chromium. Templates share one visual skeleton
-   (tokens, fonts embedded as woff2, shared furniture), so every artifact
-   is on-brand automatically and diffs like source code.
-6. **Repeatable workflows become skills.** Anything done twice
-   (announcement graphics, invitations) gets a `.claude/skills/` entry
-   with the exact commands, data sources, brand rules, and captions
-   pattern — so any future session executes it identically.
+   email templates are self-contained HTML files in `collateral/`,
+   rendered to PNG/PDF with headless Chromium via small render scripts
+   kept alongside each template. All templates share one visual
+   skeleton (CSS tokens for the palette, fonts embedded as local
+   woff2, shared background furniture) so every artifact is on-brand
+   automatically and diffs like source code.
+6. **Repeatable workflows become skills.** Anything done twice gets a
+   `.claude/skills/` entry recording the exact commands, data sources,
+   brand rules, and output patterns — so it's executed identically
+   every time, by any session.
 
-## The technical skeleton to replicate
+## Technical skeleton
 
 - Next.js App Router; static-first; deploys from `main` (Vercel).
-- `data/*.ts` for events/programs/facts; components read only from data.
-- API routes for form intake → Airtable, written by FIELD ID (rename-proof),
-  with graceful degradation when env vars are missing.
-- Transactional email through MailerSend (`lib/email.ts` pattern:
-  best-effort helper for notifications; strict dedicated calls for sends
-  that must be confirmed). Email templates: 620px tables, inline styles,
-  system fonts, LIGHT body (dark-mode clients force-invert dark designs),
-  brand header as a pre-composed IMAGE (clients never recolor images).
-- Sensitive triggered actions (like invitation sends) as key-gated API
-  routes with a human confirmation page: GET shows what will happen,
-  POST does it, records stamp themselves so nothing double-fires.
-- Collateral pipeline: 1080×1350 social canvas; 8.5×11in one-pagers with
-  a hard `scrollHeight ≤ 1056px` check; render scripts alongside each
-  template; Playwright + system Chromium; fonts embedded locally.
+- `data/*.ts` for all facts; components read only from data files.
+- API routes for form intake → Airtable, written by FIELD ID (so field
+  renames in the Airtable UI can't break writes), degrading gracefully
+  when env vars aren't configured yet.
+- Transactional email through an API provider (e.g. MailerSend): a
+  best-effort helper for internal notifications (a lost email must
+  never fail a form submission), and strict, checked calls for sends
+  that must be confirmed before dependent records update.
+- Email template rules learned the hard way: 620px table layout,
+  inline styles, system fonts, and a LIGHT body — mobile dark-mode
+  clients force-invert custom dark backgrounds and wreck dark designs.
+  Put the dark brand header in the email as a pre-composed IMAGE;
+  clients never recolor images.
+- Sensitive one-tap actions (e.g. sending an official email to a
+  customer from a CRM record) as key-gated API routes with a human
+  confirmation step: GET renders a page showing exactly what will
+  happen, a button POSTs to execute, and records stamp themselves with
+  sent-at timestamps so nothing can double-fire.
+- Collateral canvas standards: 1080×1350 for social feed graphics;
+  8.5×11in one-pagers with a hard render-time check that page height
+  stays ≤ 1056px at 96dpi (content must never spill to page two).
 
-## Working conventions (put these in the new repo's CLAUDE.md)
+## Working conventions (copy into the new repo's CLAUDE.md)
 
-- Never invent a fact — data files, the CRM, or the founder; ask if missing.
+- Never invent a fact — data files, the CRM, or the founder; ask if
+  missing.
 - Vet public copy with the founder before it ships.
 - Keep facts in sync across every surface in one pass.
-- Send image/PDF deliverables as downloadable attachments (founder is
-  usually on a phone).
-- Commit and push when a task completes; verify production after deploys.
-- Record every founder decision (with date) in the SUPPORT doc the moment
+- Send image/PDF deliverables as downloadable attachments (the founder
+  is usually on a phone).
+- Commit and push when a task completes; verify production after
+  deploys.
+- Record every founder decision, with date, in SUPPORT.md the moment
   it's made.
 
-## What NOT to copy
+## Bootstrap order
 
-- CFS's voice, vocabulary rules, and positioning are CFS's. The new brand
-  needs its own BRAND.md built from founder interviews — especially the
-  vocabulary table (what the events/products are called, what's banned,
-  hype level, exclamation policy) and audience definitions. Do not
-  inherit "series not tour," "request an invite," etc. — elicit the
-  equivalents.
-- Facts. Nothing from CFS data files applies. Start SUPPORT.md empty and
-  fill it only with founder-confirmed iFlag facts.
-
-## Bootstrap order for the new session
-
-1. Read this file, then interview the founder for: brand name usage,
-   colors/logo files, voice + vocabulary rules, audiences, the fact base
-   (events, programs, prices, dates), and integrations (Airtable base,
-   payment, email domain).
-2. Scaffold the four docs (CLAUDE.md, BRAND.md, agents/SUPPORT.md,
-   OPERATIONS.md) — thin is fine; they grow with every decision.
+1. Interview the founder BEFORE building or writing anything:
+   - Brand: exact name and allowed short forms, logo files, colors,
+     voice (hype level, punctuation policy), banned words/phrasings,
+     and what every product/event is officially called.
+   - Audiences: who the site speaks to, and in what priority.
+   - Facts: events, programs, prices, dates, locations — only what the
+     founder confirms goes in.
+   - Integrations: Airtable base (if any), payment processor, email
+     provider and sending domain, hosting.
+2. Scaffold the four docs. Thin is fine — they grow with every
+   decision.
 3. Define `data/*.ts` from the confirmed facts before building pages.
 4. Build the site skeleton; wire forms → Airtable by field ID.
-5. Stand up the collateral skeleton: one shared `<style>` skeleton with
-   the new brand tokens, one render script, one proof-of-concept graphic
+5. Stand up the collateral skeleton: one shared style skeleton carrying
+   the brand tokens, one render script, one proof-of-concept graphic
    for founder approval — then templatize.
 6. Encode the first repeated workflow as a skill.
