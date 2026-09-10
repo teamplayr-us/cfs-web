@@ -85,6 +85,28 @@ self-contained.)
 - Record every founder decision, with date, in SUPPORT.md the moment
   it's made.
 
+## Applying this to an EXISTING repo (already building? start here)
+
+If a site or landing page already exists, do not restart — retrofit:
+
+1. **Inventory first.** List every page, component, form, and piece of
+   public copy that exists, and every brand decision already made
+   (colors, fonts, names, voice) whether it came from the founder or
+   was improvised. Present the list to the founder, flagging anything
+   improvised for confirmation or correction.
+2. **Formalize what's confirmed.** Write the four docs from that
+   inventory: confirmed decisions go into BRAND.md and SUPPORT.md with
+   dates; unknowns go in as marked TBDs. From then on the docs — not
+   chat memory — are the source of truth.
+3. **Extract hardcoded facts** out of pages/components into
+   `data/*.ts`, then make the pages read from data. This is the single
+   highest-value refactor: it's what makes every future fact change a
+   one-pass update.
+4. Continue with the interview step below for whatever the inventory
+   showed as missing, then follow the rest of the bootstrap order for
+   pieces that don't exist yet (collateral skeleton, skills, CRM
+   wiring).
+
 ## Bootstrap order
 
 1. Interview the founder BEFORE building or writing anything:
