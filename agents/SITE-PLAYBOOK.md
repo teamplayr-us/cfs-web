@@ -98,11 +98,18 @@ If a site or landing page already exists, do not restart — retrofit:
    inventory: confirmed decisions go into BRAND.md and SUPPORT.md with
    dates; unknowns go in as marked TBDs. From then on the docs — not
    chat memory — are the source of truth.
-3. **Extract hardcoded facts** out of pages/components into
-   `data/*.ts`, then make the pages read from data. This is the single
-   highest-value refactor: it's what makes every future fact change a
-   one-pass update.
-4. Continue with the interview step below for whatever the inventory
+3. **Adopt the technical skeleton at the full-site moment.** If the
+   existing repo isn't on the stack below (e.g. it's a standalone
+   landing page), don't force-fit it — stand up the Next.js skeleton
+   when the full site build begins and PORT the existing page into it
+   as the first page, preserving its approved copy and look verbatim.
+   Keep the waitlist live throughout; cut over only when the new
+   deployment serves it identically.
+4. **Extract hardcoded facts** out of pages/components into typed data
+   files (`data/*.ts`), then make pages read from data. This is the
+   single highest-value refactor: it's what makes every future fact
+   change a one-pass update.
+5. Continue with the interview step below for whatever the inventory
    showed as missing, then follow the rest of the bootstrap order for
    pieces that don't exist yet (collateral skeleton, skills, CRM
    wiring).
