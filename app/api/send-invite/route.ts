@@ -52,7 +52,9 @@ const EVT = {
 
 const TEMPLATE_URL =
   "https://www.collegeflagshowcase.com/email-templates/team-invite.html";
-const FROM_EMAIL = process.env.EMAIL_FROM ?? "no-reply@collegeflagshowcase.com";
+// Invitations are personal mail, not notifications: send FROM the real
+// inbox (the body says "just reply"), never the site's no-reply default.
+const FROM_EMAIL = "info@collegeflagshowcase.com";
 const REPLY_TO = "info@collegeflagshowcase.com";
 
 interface AirtableRecord {
