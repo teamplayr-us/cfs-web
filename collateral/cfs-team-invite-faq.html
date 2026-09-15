@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Team Invitation FAQ — College Flag Showcase Series</title>
+<!--
+  Team Invitation FAQ — attached to every invitation email alongside the
+  org's invitation graphic (/api/send-invite fetches the published PDF).
+  Render with scratchpad render-faq.mjs (page.pdf, letter). Facts come
+  from agents/SUPPORT.md and agents/ISI-DALLAS.md — update this document
+  whenever those facts change, then redeploy.
+-->
+<style>
+  @font-face{font-family:"Big Shoulders Display";src:url(fonts/big-shoulders.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"Archivo";src:url(fonts/archivo.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"JetBrains Mono";src:url(fonts/jetbrains-mono.woff2) format("woff2");font-weight:100 900}
+  :root{
+    --navy:#0A0A0B; --red:#FF2D87; --chalk:#F7F5F6; --steel:#5C5A5E;
+    --ink:#0A0A0B; --line:#E6E2E5;
+    --display:"Big Shoulders Display",sans-serif;
+    --body:"Archivo",sans-serif;
+    --mono:"JetBrains Mono",monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  @page{size:letter;margin:0}
+  body{font-family:var(--body);background:#fff;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+
+  .head{background:var(--navy);padding:26px 48px 22px;border-bottom:5px solid var(--red);display:flex;align-items:center;justify-content:space-between}
+  .head img.cfs{width:74px;height:74px}
+  .head .mid{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#8A848C}
+  .head img.sf{width:120px;height:auto}
+
+  .title-block{padding:26px 48px 6px}
+  .kicker{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--red)}
+  h1{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:34px;line-height:1;margin-top:8px}
+  .intro{margin-top:10px;font-size:12.5px;line-height:1.55;color:var(--steel);max-width:640px}
+
+  .section{padding:14px 48px 0}
+  .section h2{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);border-bottom:2px solid var(--line);padding-bottom:6px}
+  .qa{padding:10px 0 2px;break-inside:avoid}
+  .qa h3{font-size:13px;font-weight:700;color:var(--ink)}
+  .qa p{margin-top:3px;font-size:12px;line-height:1.55;color:#3A363B}
+
+  .foot{margin-top:18px;padding:14px 48px;border-top:1px solid var(--line)}
+  .foot p{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--steel)}
+  .foot b{color:var(--ink)}
+</style>
+</head>
+<body>
+
+  <div class="head">
+    <img class="cfs" src="../public/logo.png" alt="College Flag Showcase Series" />
+    <span class="mid">In&nbsp;Partnership&nbsp;With</span>
+    <img class="sf" src="../public/superflag.png" alt="International Superflag Invitational" />
+  </div>
+
+  <div class="title-block">
+    <p class="kicker">Event 01 &middot; Dallas, TX &middot; December 11&ndash;13, 2026</p>
+    <h1>Team Invitation FAQ<span style="color:var(--red)">.</span></h1>
+    <p class="intro">Answers for invited team coaches and club directors. Anything not covered here &mdash; just reply to your invitation email or write us at info@collegeflagshowcase.com.</p>
+  </div>
+
+  <div class="section">
+    <h2>Accepting &amp; Registering</h2>
+    <div class="qa">
+      <h3>How do we accept our invitation?</h3>
+      <p>Complete your team registration through Zorts using the private link in your invitation email. Entry fee, rosters, and age verification all run through the International Superflag Invitational. Please don&rsquo;t share the link outside your organization.</p>
+    </div>
+    <div class="qa">
+      <h3>How do we secure our spot?</h3>
+      <p>A $50 per-team deposit within 10 days of your invitation confirms your acceptance and secures your spot. The deposit applies toward your $550 team entry, and the balance is due by November 22, 2026.</p>
+    </div>
+    <div class="qa">
+      <h3>What does the $550 team entry cover?</h3>
+      <p>Your team&rsquo;s entry in the Travel Team Showcase Tournament on Saturday and Sunday, December 12&ndash;13.</p>
+    </div>
+    <div class="qa">
+      <h3>How is age eligibility determined?</h3>
+      <p>By each athlete&rsquo;s age as of August 1, verified through Zorts during registration.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>The Tournament</h2>
+    <div class="qa">
+      <h3>What are the divisions?</h3>
+      <p>Girls 12U, 14U, 16U, and 18U. Each division is capped at 24 teams.</p>
+    </div>
+    <div class="qa">
+      <h3>What rules does the tournament use?</h3>
+      <p>NFL Flag Hybrid rules, sanctioned by iFlag. Games are 5v5.</p>
+    </div>
+    <div class="qa">
+      <h3>What is the schedule?</h3>
+      <p>The Showcase Combine &amp; Camp runs Friday, December 11, from 3:00 to 5:30 PM. Tournament games begin at 8:00 AM on Saturday. Detailed game schedules are confirmed closer to the event.</p>
+    </div>
+    <div class="qa">
+      <h3>What is the International Superflag Invitational?</h3>
+      <p>The tournament is held in partnership with the International Superflag Invitational &mdash; an invitation-only international championship that drew over 60 elite teams from across the world in 2025. Your registration runs through the ISI.</p>
+    </div>
+    <div class="qa">
+      <h3>Are games filmed?</h3>
+      <p>Every game is filmed in the full-field view college coaches use to evaluate.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>The Recruiting Weekend</h2>
+    <div class="qa">
+      <h3>Who is evaluating?</h3>
+      <p>College flag football coaches from NCAA DI, DII, DIII, NAIA, and NJCAA programs evaluate from the sideline all weekend &mdash; and the board is growing at collegeflagshowcase.com/colleges.</p>
+    </div>
+    <div class="qa">
+      <h3>Is the Showcase Combine &amp; Camp included in team entry?</h3>
+      <p>No &mdash; each athlete registers individually at collegeflagshowcase.com ($175 standard). Athletes on your tournament roster receive a $50 discount code by separate email, bringing it to $125.</p>
+    </div>
+    <div class="qa">
+      <h3>What do our athletes get out of the weekend?</h3>
+      <p>Verified combine testing and live skill work in front of college coaches on Friday, real competition with those coaches on the sideline all weekend, and inclusion in the recruiting package college coaches receive.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Logistics</h2>
+    <div class="qa">
+      <h3>Where is the venue?</h3>
+      <p>Craig Ranch Sports Complex, 6375 Collin McKinney Parkway, McKinney, TX.</p>
+    </div>
+    <div class="qa">
+      <h3>Where do we stay?</h3>
+      <p>Dallas is a Stay &amp; Play event &mdash; booking through the tournament housing service is a condition of acceptance. Partner hotels include AC Hotel McKinney, Fairfield Inn &amp; Suites Dallas McKinney, Hilton Dallas Plano Granite Park, and Marriott Dallas Allen. Housing details come with your acceptance.</p>
+    </div>
+    <div class="qa">
+      <h3>Which airports should traveling teams use?</h3>
+      <p>Dallas/Fort Worth International (DFW) and Dallas Love Field (DAL).</p>
+    </div>
+    <div class="qa">
+      <h3>Is there anything for coaches on Friday night?</h3>
+      <p>Invited team coaches are welcome at the Coaches Welcome Event on Friday night. Details come with your credentials.</p>
+    </div>
+  </div>
+
+  <div class="foot">
+    <p><b>collegeflagshowcase.com</b> &nbsp;&middot;&nbsp; info@collegeflagshowcase.com &nbsp;&middot;&nbsp; College Flag Showcase Series</p>
+  </div>
+
+</body>
+</html>

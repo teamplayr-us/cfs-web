@@ -53,6 +53,7 @@ const EVT = {
 
 const TEMPLATE_URL =
   "https://www.collegeflagshowcase.com/email-templates/team-invite.html";
+const FAQ_URL = "https://www.collegeflagshowcase.com/invites/team-faq.pdf";
 // Invitations are personal mail, not notifications: send FROM the real
 // inbox (the body says "just reply"), never the site's no-reply default.
 const FROM_EMAIL = "info@collegeflagshowcase.com";
@@ -280,6 +281,10 @@ export async function POST(req: Request) {
     if (!flyerRes.ok) throw new Error(`Flyer download failed: ${flyerRes.status}`);
     const flyerB64 = Buffer.from(await flyerRes.arrayBuffer()).toString("base64");
 
+    const faqRes = await fetch(FAQ_URL, { cache: "no-store" });
+    if (!faqRes.ok) throw new Error(`FAQ download failed: ${faqRes.status}`);
+    const faqB64 = Buffer.from(await faqRes.arrayBuffer()).toString("base64");
+
     const send = await fetch("https://api.mailersend.com/v1/email", {
       method: "POST",
       headers: {
@@ -300,6 +305,11 @@ export async function POST(req: Request) {
           {
             content: flyerB64,
             filename: s.flyer.filename ?? "official-invitation.png",
+            disposition: "attachment",
+          },
+          {
+            content: faqB64,
+            filename: "team-invitation-faq.pdf",
             disposition: "attachment",
           },
         ],
