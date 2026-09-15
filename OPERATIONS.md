@@ -207,7 +207,9 @@ One email per ORGANIZATION, driven from the **Opportunities** table:
    (from Organization)** lookup (FFF sync), not the CFS logo.
 3. Make sure the linked Event's **Registration URL** holds the private
    Zorts/ISI link and the Opportunity has a contact email
-   (**Email Override**, else the synced FFF org email).
+   (**Email Override**, else the synced FFF org email). To copy extra
+   recipients (a second coach, a director), put comma-separated
+   addresses in **Invite CC** — the confirmation page shows them.
 4. Check **Send Invitation** on the Opportunity — the **Send Invitation
    Link** formula field lights up. Tap it, review the confirmation page
    (recipient, team list, flyer), hit **SEND**.
