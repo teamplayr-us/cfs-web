@@ -86,6 +86,27 @@ carries this policy and attaches the Team Invitation FAQ
 (collateral/cfs-team-invite-faq.html, published at
 /invites/team-faq.pdf).
 
+**Approved reusable copy — "what showcase-division teams get"**
+(founder-approved Sep 15, 2026; for personal notes to org directors
+whose girls 12U–18U teams land in the showcase divisions):
+
+> 1. **Discounted access to the Showcase Combine & Camp** — Friday,
+>    Dec 11, 3:00–5:30 PM. Athletes register for this individually, and
+>    athletes on your tournament rosters get $50 off ($125 instead of
+>    $175). The discount code comes in a separate email with your
+>    invitations.
+> 2. **College coaches on the sideline all weekend.** College flag
+>    football coaches from NCAA DI, DII, DIII, NAIA, and NJCAA programs
+>    evaluate the tournament live, and every game is filmed in the
+>    full-field view college coaches use to evaluate.
+> 3. **Athlete film packages** — available individually at
+>    collegeflagshowcase.com/film.
+>
+> And one for your coaches: Friday night we're hosting the **Coaches
+> Welcome Event** — club and college coaches networking together before
+> the weekend kicks off. Your team coaches are invited, and details
+> come with your credentials.
+
 ## 3. Divisions & eligibility
 
 - Showcase divisions: **12U, 14U, 16U, 18U**.
