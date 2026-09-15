@@ -33,6 +33,7 @@ const OPP = {
   sendInvitation: "fld4VFtFcvT5MlafM", // checkbox
   inviteFlyer: "fldCOprLx7LGtVl1F", // attachments
   invitationsSentAt: "fldoBVdxmUjPyN4hN",
+  inviteCc: "fldEqwOUtHaKJkrNm", // comma-separated CC addresses
 } as const;
 
 const INVITES_TABLE = "tblnlaU4slRvXi7eH";
@@ -183,10 +184,16 @@ async function loadSend(oppId: string) {
     }),
   );
 
+  const ccEmails = ((f[OPP.inviteCc] as string | undefined) ?? "")
+    .split(",")
+    .map((e) => e.trim())
+    .filter((e) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e));
+
   return {
     opp,
     orgName,
     toEmail,
+    ccEmails,
     primaryContact: f[OPP.primaryContact] as string | undefined,
     flyer,
     regLink,
@@ -233,6 +240,7 @@ export async function GET(req: Request) {
       "Confirm Invitation",
       `<p style="color:#C9C4C9;line-height:1.6;">Ready to send the official invitation for <b style="color:#F7F5F6;">${escapeHtml(s.orgName)}</b> to <b style="color:#F7F5F6;">${escapeHtml(s.toEmail)}</b>${s.eventName ? ` — ${escapeHtml(s.eventName)}` : ""}.</p>
        <ul style="color:#F7F5F6;line-height:1.8;">${s.teamLines.map((t) => `<li>${escapeHtml(t)}</li>`).join("")}</ul>
+       ${s.ccEmails.length > 0 ? `<p style="color:#C9C4C9;">CC: ${escapeHtml(s.ccEmails.join(", "))}</p>` : ""}
        <p style="color:#C9C4C9;">Flyer attached: ${escapeHtml(s.flyer.filename ?? "invitation.png")}</p>
        <form method="post" action="${escapeHtml(url.pathname + url.search)}">
          <button type="submit" style="background:#FF2D8E;color:#fff;border:0;padding:14px 34px;font-size:16px;font-weight:bold;letter-spacing:1px;text-transform:uppercase;cursor:pointer;">Send Invitation</button>
@@ -281,6 +289,9 @@ export async function POST(req: Request) {
       body: JSON.stringify({
         from: { email: FROM_EMAIL, name: "College Flag Showcase Series" },
         to: [{ email: s.toEmail, name: s.primaryContact || s.orgName }],
+        ...(s.ccEmails.length > 0
+          ? { cc: s.ccEmails.map((email) => ({ email })) }
+          : {}),
         reply_to: { email: REPLY_TO, name: "College Flag Showcase Series" },
         bcc: [{ email: REPLY_TO }],
         subject: `Official Invitation — College Flag Showcase${s.eventName ? `, ${s.eventName}` : ""}`,
