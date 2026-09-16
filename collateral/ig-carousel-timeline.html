@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>IG Carousel — The Flag Football Recruiting Timeline</title>
+<style>
+  @font-face{font-family:"Big Shoulders Display";src:url(fonts/big-shoulders.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"Archivo";src:url(fonts/archivo.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"JetBrains Mono";src:url(fonts/jetbrains-mono.woff2) format("woff2");font-weight:100 900}
+  :root{
+    --navy:#110C0F; --red:#FF2D87; --chalk:#F5F2F0; --steel:#8A848C;
+    --display:"Big Shoulders Display",sans-serif;
+    --body:"Archivo",sans-serif;
+    --mono:"JetBrains Mono",monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{width:1080px;font-family:var(--body);background:#000;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+
+  .slide{width:1080px;height:1350px;position:relative;overflow:hidden;background:var(--navy);color:var(--chalk)}
+  .yards{position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0,transparent 133px,rgba(245,242,240,.05) 133px,rgba(245,242,240,.05) 135px)}
+  .hash{position:absolute;top:0;bottom:0;width:2px;background:rgba(245,242,240,.05)}
+  .hash.l{left:96px}.hash.r{right:96px}
+  .frame{position:absolute;inset:36px;border:3px solid rgba(245,242,240,.12);pointer-events:none}
+
+  .inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:110px 110px 90px}
+
+  .logo{width:250px;height:250px}
+  .cover-title{margin-top:60px;font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:.95;letter-spacing:.01em;font-size:92px}
+  .cover-title em{font-style:normal;color:var(--red);display:block}
+  .cover-body{margin-top:52px;font-size:46px;line-height:1.45;font-weight:500;color:var(--chalk);max-width:880px}
+
+  .kicker{font-family:var(--mono);font-size:20px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--red);white-space:nowrap}
+  .num{margin-top:70px;font-family:var(--display);font-size:150px;font-weight:800;line-height:1;color:var(--red)}
+  .grade{margin-top:8px;font-family:var(--mono);font-size:22px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--steel)}
+  .slide-title{margin-top:20px;font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:.95;letter-spacing:.01em;font-size:88px}
+  .slide-body{margin-top:56px;font-size:37px;line-height:1.5;font-weight:500;color:var(--chalk);max-width:850px}
+  .slide-punch{margin-top:auto;padding-top:40px;font-size:40px;line-height:1.3;font-weight:800;color:var(--red);max-width:860px}
+
+  .swipe{margin-top:auto;font-family:var(--mono);font-size:22px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--red)}
+  .swipe span{display:inline-block;margin-left:10px;letter-spacing:0}
+  .rule{margin-top:auto;width:120px;height:6px;background:var(--red)}
+  .cover-rule{margin-top:28px}
+  .foot{margin-top:26px;font-family:var(--mono);font-size:22px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--steel)}
+  .foot b{color:var(--chalk);font-weight:700}
+  .expl .rule{margin-top:56px}
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1 — COVER -->
+<div class="slide">
+  <div class="yards"></div><div class="hash l"></div><div class="hash r"></div><div class="frame"></div>
+  <div class="inner">
+    <img class="logo" src="../public/logo.png" alt="College Flag Showcase Series" />
+    <h1 class="cover-title">The flag football<em>recruiting<br />timeline.</em></h1>
+    <p class="cover-body">What to be doing, grade by grade &mdash; from middle school through senior year.</p>
+    <p class="swipe">Swipe<span>&nbsp;&rarr;&nbsp;&rarr;&nbsp;&rarr;</span></p>
+    <div class="rule cover-rule"></div>
+    <p class="foot"><b>collegeflagshowcase.com</b></p>
+  </div>
+</div>
+
+<!-- SLIDE 2 — MIDDLE SCHOOL -->
+<div class="slide">
+  <div class="yards"></div><div class="hash l"></div><div class="hash r"></div><div class="frame"></div>
+  <div class="inner expl">
+    <p class="kicker">Middle School</p>
+    <p class="num">7&ndash;8</p>
+    <p class="grade">Grade</p>
+    <h2 class="slide-title">Fall in love<br />with the work.</h2>
+    <p class="slide-body">Fundamentals, flag IQ, and playing everything you can. College coaches aren&rsquo;t watching yet &mdash; this is where the athlete they&rsquo;ll eventually want gets built.</p>
+    <p class="slide-punch">No pressure yet. Just reps.</p>
+    <div class="rule"></div>
+    <p class="foot"><b>collegeflagshowcase.com</b></p>
+  </div>
+</div>
+
+<!-- SLIDE 3 — FRESHMAN -->
+<div class="slide">
+  <div class="yards"></div><div class="hash l"></div><div class="hash r"></div><div class="frame"></div>
+  <div class="inner expl">
+    <p class="kicker">Freshman Year</p>
+    <p class="num">09</p>
+    <p class="grade">Grade</p>
+    <h2 class="slide-title">Your clock<br />starts.</h2>
+    <p class="slide-body">Your GPA counts from your first semester, and it follows you all the way to admissions. Start saving game film now, even if it&rsquo;s just clips on your phone.</p>
+    <p class="slide-punch">Freshman grades are recruiting decisions.</p>
+    <div class="rule"></div>
+    <p class="foot"><b>collegeflagshowcase.com</b></p>
+  </div>
+</div>
+
+<!-- SLIDE 4 — SOPHOMORE -->
+<div class="slide">
+  <div class="yards"></div><div class="hash l"></div><div class="hash r"></div><div class="frame"></div>
+  <div class="inner expl">
+    <p class="kicker">Sophomore Year</p>
+    <p class="num">10</p>
+    <p class="grade">Grade</p>
+    <h2 class="slide-title">Get on<br />the record.</h2>
+    <p class="slide-body">Real game film, verified combine numbers, and a recruiting profile that holds them. This is the year you go from playing the game to being findable in it.</p>
+    <p class="slide-punch">Coaches can&rsquo;t recruit what they can&rsquo;t find.</p>
+    <div class="rule"></div>
+    <p class="foot"><b>collegeflagshowcase.com</b></p>
+  </div>
+</div>
+
+<!-- SLIDE 5 — JUNIOR -->
+<div class="slide">
+  <div class="yards"></div><div class="hash l"></div><div class="hash r"></div><div class="frame"></div>
+  <div class="inner expl">
+    <p class="kicker">Junior Year</p>
+    <p class="num">11</p>
+    <p class="grade">Grade</p>
+    <h2 class="slide-title">Get in<br />the room.</h2>
+    <p class="slide-body">Build a target list across every level, refresh your film, and put yourself in front of coaches &mdash; camps, showcases, real competition. Reach out to programs; don&rsquo;t wait to be discovered.</p>
+    <p class="slide-punch">This is the year coaches build their boards.</p>
+    <div class="rule"></div>
+    <p class="foot"><b>collegeflagshowcase.com</b></p>
+  </div>
+</div>
+
+<!-- SLIDE 6 — SENIOR -->
+<div class="slide">
+  <div class="yards"></div><div class="hash l"></div><div class="hash r"></div><div class="frame"></div>
+  <div class="inner expl">
+    <p class="kicker">Senior Year</p>
+    <p class="num">12</p>
+    <p class="grade">Grade</p>
+    <h2 class="slide-title">Finish<br />the drive.</h2>
+    <p class="slide-body">Keep your film current and your grades up, answer every coach who&rsquo;s recruiting you, and stay on top of applications and admissions. Opportunities stay open later than you think &mdash; DI is new, and programs at every level are still adding athletes.</p>
+    <p class="slide-punch">Recruiting isn&rsquo;t over until you commit.</p>
+    <div class="rule"></div>
+    <p class="foot"><b>collegeflagshowcase.com</b></p>
+  </div>
+</div>
+
+<!-- SLIDE 7 — CLOSER -->
+<div class="slide">
+  <div class="yards"></div><div class="hash l"></div><div class="hash r"></div><div class="frame"></div>
+  <div class="inner expl">
+    <p class="kicker">Wherever You Are</p>
+    <h2 class="slide-title" style="margin-top:70px">Every grade<br /><span style="color:var(--red)">has a next step.</span></h2>
+    <p class="slide-body">Verified numbers, live evaluation, and real competition in front of college coaches &mdash; one weekend that moves any point on the timeline.</p>
+    <p class="slide-punch">Event 01 &mdash; Dallas, December 11&ndash;13.</p>
+    <div class="rule"></div>
+    <p class="foot"><b>collegeflagshowcase.com</b></p>
+  </div>
+</div>
+
+</body>
+</html>
