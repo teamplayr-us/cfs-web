@@ -247,7 +247,8 @@ coaches register.
 
 Competing programs (public board, as of Sep 16, 2026): Texas Fury (TX),
 Mexico Prime (Mexico), Panama Wardogs (Panama), Kansas City Heat (KC),
-FamLife Flex (TX), One of One Girls Flag Football Club (Oklahoma City).
+FamLife Flex (TX), One of One Girls Flag Football Club (Oklahoma City),
+Tri-City Stormz (TX).
 (Conquer Chargers and NorCal Elite removed from the board Sep 16, 2026 —
 founder direction.)
 
