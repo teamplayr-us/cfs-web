@@ -173,7 +173,12 @@ async function loadSend(oppId: string) {
   const FFF_NAME = "fld35n5q9cOhgvzFD";
   const teamLines = await Promise.all(
     batch.map(async (r) => {
-      let team = (r.fields[INV.label] as string) || "";
+      // Labels follow the "Team — Event 01 — …" CRM convention; only the
+      // team half belongs in the email.
+      let team = ((r.fields[INV.label] as string) || "").replace(
+        /\s+—\s+Event.*$/u,
+        "",
+      );
       const fffId = linkIds(r.fields[INV.fffTeam])[0];
       if (fffId) {
         const fff = await getRecord(baseId, key, FFF_TEAMS_TABLE, fffId);
