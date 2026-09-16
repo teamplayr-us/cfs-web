@@ -27,21 +27,9 @@ export const ORGS_BY_EVENT: Record<string, OrgSlot[]> = {
   "mckinney-tx": [
     {
       filled: true,
-      name: "Conquer Chargers",
-      logo: "/programs/conquer-chargers.png",
-      location: "Southern California",
-    },
-    {
-      filled: true,
       name: "Texas Fury",
       logo: "/programs/fury.png",
       location: "Texas",
-    },
-    {
-      filled: true,
-      name: "NorCal Elite",
-      logo: "/programs/norcal-elite.png",
-      location: "Northern California",
     },
     {
       filled: true,

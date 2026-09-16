@@ -245,10 +245,11 @@ University (the board's first NCAA DI program), Hendrix College, McMurry
 University. The board at collegeflagshowcase.com/colleges updates as
 coaches register.
 
-Competing programs (public board, as of Aug 15, 2026): Conquer Chargers
-(SoCal), Texas Fury (TX), NorCal Elite (NorCal), Mexico Prime (Mexico),
-Panama Wardogs (Panama), Kansas City Heat (KC), FamLife Flex (TX), One of
-One Girls Flag Football Club (Oklahoma City).
+Competing programs (public board, as of Sep 16, 2026): Texas Fury (TX),
+Mexico Prime (Mexico), Panama Wardogs (Panama), Kansas City Heat (KC),
+FamLife Flex (TX), One of One Girls Flag Football Club (Oklahoma City).
+(Conquer Chargers and NorCal Elite removed from the board Sep 16, 2026 —
+founder direction.)
 
 **[INTERNAL]** Never share individual coaches' names/emails/phones with
 customers; college interest inquiries from athletes should be pointed at
