@@ -176,7 +176,7 @@ async function loadSend(oppId: string) {
       // Labels follow the "Team — Event 01 — …" CRM convention; only the
       // team half belongs in the email.
       let team = ((r.fields[INV.label] as string) || "").replace(
-        /\s+—\s+Event.*$/u,
+        /\s+—\s+Event.*$/,
         "",
       );
       const fffId = linkIds(r.fields[INV.fffTeam])[0];
