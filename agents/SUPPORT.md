@@ -242,7 +242,8 @@ the Lake University, Dallas College Richland, Missouri Valley College,
 Texas Wesleyan University, Cairn University, Olivet Nazarene University,
 Lawrence University, Eastern Connecticut State University, Binghamton
 University (the board's first NCAA DI program), Hendrix College, McMurry
-University, Randolph College (Head Coach Andy Sinclair, NCAA DIII). The
+University, Randolph College (Head Coach Andy Sinclair, NCAA DIII),
+Hardin-Simmons University (Head Coach Darin Koenig, NCAA DIII). The
 board at collegeflagshowcase.com/colleges updates as coaches register.
 
 Competing programs (public board, as of Sep 16, 2026): Texas Fury (TX),

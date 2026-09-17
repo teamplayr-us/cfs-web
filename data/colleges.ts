@@ -89,6 +89,11 @@ export const COLLEGES_BY_EVENT: Record<string, CollegeSlot[]> = {
       name: "Randolph College",
       logo: "/colleges/randolph-mono.png",
     },
+    {
+      filled: true,
+      name: "Hardin-Simmons University",
+      logo: "/colleges/hardin-simmons-mono.png",
+    },
   ],
 };
 
