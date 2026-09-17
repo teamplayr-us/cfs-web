@@ -3,7 +3,7 @@ name: cfs-org-announcements
 description: >-
   Create College Flag Showcase Series team/org graphics: the official
   per-team tournament INVITATION card (attached to invite emails, shareable
-  on Instagram) and the "They're In." ACCEPTANCE announcement (logo, home
+  on Instagram) and the "Accepted." ACCEPTANCE announcement (logo, home
   location, divisions competing). Use this whenever the user wants to
   invite, announce, welcome, or spotlight a team, club, program, or
   organization ("send [team] an invite", "invitation for [team] 14U",
@@ -18,7 +18,7 @@ Two graphics cover the team lifecycle, in order:
 
 1. **Official Invitation** (`collateral/invite-team-official.html`) — sent
    WITH the invite email, one per TEAM (org + division).
-2. **"They're In." acceptance announcement**
+2. **"Accepted." acceptance announcement**
    (`collateral/ig-org-committed.html`) — posted after the team accepts
    and is on the site board.
 
@@ -44,11 +44,11 @@ Two graphics cover the team lifecycle, in order:
 - Verify the PNG (name on one line, logo legible), send as a downloadable
   attachment, commit.
 
-## Workflow B — "They're In." acceptance announcement
+## Workflow B — "Accepted." acceptance announcement
 
 One graphic per accepted travel program: their logo on the navy brand
 system with the program name, **home location · divisions competing**, a
-pink "THEY'RE IN." stamp, and the event line. Template:
+pink "ACCEPTED." stamp, and the event line. Template:
 `collateral/ig-org-committed.html` (1080×1350). General brand rules and
 render environment live in the `cfs-ig-graphics` skill.
 
@@ -91,7 +91,7 @@ deployed). If it isn't, do that first — the graphic's implicit claim is
 Complete sentences, blank line between thoughts, no exclamation marks,
 never "CFS", never "bracketed". Model:
 
-> THEY'RE IN.
+> ACCEPTED.
 >
 > [Program name] has accepted their invite to the Travel Team Showcase
 > Tournament at Event 01 in Dallas — December 11–13, 2026.
