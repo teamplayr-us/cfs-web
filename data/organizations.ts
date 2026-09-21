@@ -73,6 +73,12 @@ export const ORGS_BY_EVENT: Record<string, OrgSlot[]> = {
       logo: "/programs/okc-lightning.png",
       location: "Oklahoma City",
     },
+    {
+      filled: true,
+      name: "RGV Seahawks",
+      logo: "/programs/rgv-seahawks.png",
+      location: "Texas",
+    },
   ],
 };
 
