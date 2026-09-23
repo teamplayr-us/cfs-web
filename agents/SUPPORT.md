@@ -105,7 +105,9 @@ whose girls 12U–18U teams land in the showcase divisions):
 > And one for your coaches: Friday night we're hosting the **Coaches
 > Welcome Event** — club and college coaches networking together before
 > the weekend kicks off. Your team coaches are invited, and details
-> come with your credentials.
+> come with your registration. (Club-facing wording is "registration",
+> per founder Sep 23; college coaches still get theirs with
+> credentials.)
 
 ## 3. Divisions & eligibility
 
