@@ -50,8 +50,13 @@
   .org-loc{margin-top:12px;font-family:var(--mono);font-size:21px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red)}
   .invited-line{margin-top:18px;font-size:27px;font-weight:500;color:var(--steel)}
   .teams{margin-top:12px;width:680px}
-  .team-row{font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:.03em;font-size:40px;color:var(--white);padding:10px 0;border-bottom:1px solid rgba(247,245,244,.18)}
+  .teams.two-col{width:860px;display:flex;gap:56px;justify-content:center}
+  .team-col{flex:1;min-width:0}
+  .team-row{font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:.03em;font-size:40px;color:var(--white);padding:10px 0;border-bottom:1px solid rgba(247,245,244,.18);white-space:nowrap}
   .team-row:last-child{border-bottom:0}
+  .team-row .cfs-mark{color:var(--red)}
+  .team-legend{margin-top:14px;font-family:var(--mono);font-size:17px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--steel)}
+  .team-legend b{color:var(--red);font-weight:700}
   /* compact mode (render script adds .compact for 4+ teams) */
   .compact .isi-logo{width:290px}
   .compact .org-logo{margin-top:22px;height:190px}
@@ -65,7 +70,7 @@
   .dense .org-logo{margin-top:18px;height:160px}
   .dense .org-name{margin-top:22px;font-size:44px}
   .dense .invited-line{margin-top:12px;font-size:23px}
-  .dense .team-row{font-size:28px;padding:5px 0}
+  .dense .team-row{font-size:29px;padding:6px 0}
   .dense .event-line{margin-top:14px;font-size:26px}
   .dense .venue-line{margin-top:8px}
 
@@ -89,9 +94,10 @@
     <h2 class="org-name">{{ORG_NAME}}</h2>
     <p class="org-loc">{{LOCATION}}</p>
     <p class="invited-line">The following teams are invited to compete<br />in the <span style="white-space:nowrap">International Superflag Invitational:</span></p>
-    <div class="teams">
+    <div class="teams{{TEAMS_CLASS}}">
       {{TEAM_ROWS}}
     </div>
+    {{TEAM_LEGEND}}
     <p class="event-line">{{EVENT_LINE}}</p>
     <p class="venue-line">{{VENUE_LINE}}</p>
     <div class="rule"></div>

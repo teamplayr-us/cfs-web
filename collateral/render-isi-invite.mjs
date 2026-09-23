@@ -48,18 +48,37 @@ if (!orgName || !logoPath || !location || !teams) {
 }
 
 const logoRel = relative(here, resolve(process.cwd(), logoPath));
-const teamRows = teams
-  .split("|")
-  .map((t) => `<p class="team-row">${t.trim()}</p>`)
-  .join("\n      ");
-
-const teamCount = teams.split("|").length;
+// Prefix a team with * to mark it as also competing in the College Flag
+// Showcase (adds a red star + legend). 7+ teams flow into two columns.
+const names = teams.split("|").map((t) => t.trim());
+const row = (t) => {
+  const cfs = t.startsWith("*");
+  const name = cfs ? t.slice(1).trim() : t;
+  return `<p class="team-row">${name}${cfs ? ' <span class="cfs-mark">&#9733;</span>' : ""}</p>`;
+};
+const teamCount = names.length;
+let teamsClass = "";
+let teamRows;
+if (teamCount >= 7) {
+  teamsClass = " two-col";
+  const half = Math.ceil(teamCount / 2);
+  const col = (arr) =>
+    `<div class="team-col">\n      ${arr.map(row).join("\n      ")}\n      </div>`;
+  teamRows = `${col(names.slice(0, half))}\n      ${col(names.slice(half))}`;
+} else {
+  teamRows = names.map(row).join("\n      ");
+}
+const teamLegend = names.some((t) => t.startsWith("*"))
+  ? '<p class="team-legend"><b>&#9733;</b>&nbsp; Also competing in the College Flag Showcase</p>'
+  : "";
 const html = readFileSync(join(here, "invite-org-isi.html"), "utf8")
   .replace("<body>", teamCount >= 7 ? '<body class="compact dense">' : teamCount >= 4 ? '<body class="compact">' : "<body>")
   .replaceAll("{{ORG_NAME}}", orgName)
   .replaceAll("{{LOCATION}}", location)
   .replaceAll("{{LOGO}}", logoRel)
   .replaceAll("{{TEAM_ROWS}}", teamRows)
+  .replaceAll("{{TEAMS_CLASS}}", teamsClass)
+  .replaceAll("{{TEAM_LEGEND}}", teamLegend)
   .replaceAll(
     "{{EVENT_LINE}}",
     eventLine || "Dallas, TX &middot; Dec 12&ndash;13, 2026",
