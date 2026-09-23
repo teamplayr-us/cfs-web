@@ -43,6 +43,7 @@ const INV = {
   status: "fldHIZ6IeWwEpHvSJ", // single select
   division: "fldez45PmMByMjo5D", // single select
   sentAt: "fldindQa5G5p6y8hY",
+  track: "fldicz1cnd9QkXKln", // single select: Showcase (default) | ISI Only
 } as const;
 
 const EVENTS_TABLE = "tblT1j5boFCv6xMaj";
@@ -53,11 +54,21 @@ const EVT = {
 
 const TEMPLATE_URL =
   "https://www.collegeflagshowcase.com/email-templates/team-invite.html";
+// Mixed orgs (any Team Invitation with Track = ISI Only) lead with the
+// International Superflag Invitational and send from 5v5 Sports.
+const MIXED_TEMPLATE_URL =
+  "https://www.collegeflagshowcase.com/email-templates/team-invite-mixed.html";
 const FAQ_URL = "https://www.collegeflagshowcase.com/invites/team-faq.pdf";
+const ISI_FAQ_URL =
+  "https://www.collegeflagshowcase.com/invites/isi-team-faq.pdf";
 // Invitations are personal mail, not notifications: send FROM the real
 // inbox (the body says "just reply"), never the site's no-reply default.
 const FROM_EMAIL = "info@collegeflagshowcase.com";
-const REPLY_TO = "info@collegeflagshowcase.com";
+const FROM_NAME = "College Flag Showcase Series";
+// 5v5sports.com must be a verified sending domain in MailerSend before
+// mixed sends will be accepted.
+const ISI_FROM_EMAIL = "allen@5v5sports.com";
+const ISI_FROM_NAME = "5v5 Sports";
 
 interface AirtableRecord {
   id: string;
@@ -122,10 +133,11 @@ async function loadSend(oppId: string) {
   if (!f[OPP.sendInvitation])
     throw new Error("Send Invitation isn't checked on this Opportunity.");
 
-  const flyer = (f[OPP.inviteFlyer] as
-    | { url: string; filename?: string }[]
-    | undefined)?.[0];
-  if (!flyer) throw new Error("No Invite Flyer attached to the Opportunity.");
+  const flyers =
+    (f[OPP.inviteFlyer] as { url: string; filename?: string }[] | undefined) ??
+    [];
+  if (flyers.length === 0)
+    throw new Error("No Invite Flyer attached to the Opportunity.");
 
   let toEmail = f[OPP.emailOverride] as string | undefined;
   if (!toEmail) {
@@ -171,7 +183,7 @@ async function loadSend(oppId: string) {
   // is linked (REST link fields carry only IDs); fall back to the row label.
   const FFF_TEAMS_TABLE = "tblR4d2NJkUTK5IX4";
   const FFF_NAME = "fld35n5q9cOhgvzFD";
-  const teamLines = await Promise.all(
+  const lines = await Promise.all(
     batch.map(async (r) => {
       // Labels follow the "Team — Event 01 — …" CRM convention; only the
       // team half belongs in the email.
@@ -186,9 +198,17 @@ async function loadSend(oppId: string) {
         if (fffName) team = fffName;
       }
       const div = selectName(r.fields[INV.division]);
-      return div && !team.includes(div) ? `${team} ${div}` : team;
+      const name = div && !team.includes(div) ? `${team} ${div}` : team;
+      // Empty Track means Showcase (the field predates ISI-only rows).
+      const isiOnly = selectName(r.fields[INV.track]) === "ISI Only";
+      return { name, isiOnly };
     }),
   );
+  const teamLines = lines.map((l) => l.name);
+  const cfsTeamLines = lines.filter((l) => !l.isiOnly).map((l) => l.name);
+  // Any ISI-only team makes this a mixed send: ISI-led template, sent
+  // from 5v5 Sports, with both FAQs attached.
+  const mixed = cfsTeamLines.length < lines.length;
 
   const ccEmails = ((f[OPP.inviteCc] as string | undefined) ?? "")
     .split(",")
@@ -201,11 +221,13 @@ async function loadSend(oppId: string) {
     toEmail,
     ccEmails,
     primaryContact: f[OPP.primaryContact] as string | undefined,
-    flyer,
+    flyers,
     regLink,
     eventName,
     batch,
     teamLines,
+    cfsTeamLines,
+    mixed,
   };
 }
 
@@ -245,9 +267,10 @@ export async function GET(req: Request) {
     return page(
       "Confirm Invitation",
       `<p style="color:#C9C4C9;line-height:1.6;">Ready to send the official invitation for <b style="color:#F7F5F6;">${escapeHtml(s.orgName)}</b> to <b style="color:#F7F5F6;">${escapeHtml(s.toEmail)}</b>${s.eventName ? ` — ${escapeHtml(s.eventName)}` : ""}.</p>
+       ${s.mixed ? `<p style="color:#C9C4C9;">Mixed invitation — International Superflag Invitational leads, sent from <b style="color:#F7F5F6;">${escapeHtml(ISI_FROM_EMAIL)}</b>. Showcase teams: ${escapeHtml(s.cfsTeamLines.join(", ") || "none")}.</p>` : ""}
        <ul style="color:#F7F5F6;line-height:1.8;">${s.teamLines.map((t) => `<li>${escapeHtml(t)}</li>`).join("")}</ul>
        ${s.ccEmails.length > 0 ? `<p style="color:#C9C4C9;">CC: ${escapeHtml(s.ccEmails.join(", "))}</p>` : ""}
-       <p style="color:#C9C4C9;">Flyer attached: ${escapeHtml(s.flyer.filename ?? "invitation.png")}</p>
+       <p style="color:#C9C4C9;">Attached: ${escapeHtml(s.flyers.map((fl) => fl.filename ?? "invitation.png").join(", "))}${s.mixed ? " + both FAQs" : " + FAQ"}</p>
        <form method="post" action="${escapeHtml(url.pathname + url.search)}">
          <button type="submit" style="background:#FF2D8E;color:#fff;border:0;padding:14px 34px;font-size:16px;font-weight:bold;letter-spacing:1px;text-transform:uppercase;cursor:pointer;">Send Invitation</button>
        </form>`,
@@ -268,27 +291,46 @@ export async function POST(req: Request) {
   try {
     const s = await loadSend(checked.oppId);
 
-    const tplRes = await fetch(TEMPLATE_URL, { cache: "no-store" });
+    const tplRes = await fetch(s.mixed ? MIXED_TEMPLATE_URL : TEMPLATE_URL, {
+      cache: "no-store",
+    });
     if (!tplRes.ok) throw new Error(`Template fetch failed: ${tplRes.status}`);
-    const teamRows = s.teamLines
-      .map(
-        (t) =>
-          `<tr><td style="padding:7px 0;border-bottom:1px solid #E6E2E5;font-size:15px;color:#0A0A0B;font-weight:bold;">${escapeHtml(t)}</td></tr>`,
-      )
-      .join("");
+    const row = (t: string) =>
+      `<tr><td style="padding:7px 0;border-bottom:1px solid #E6E2E5;font-size:15px;color:#0A0A0B;font-weight:bold;">${escapeHtml(t)}</td></tr>`;
     const html = (await tplRes.text())
       .split("{{ORG_NAME}}").join(escapeHtml(s.orgName))
-      .split("{{TEAM_ROWS}}").join(teamRows)
+      .split("{{TEAM_ROWS}}").join(s.teamLines.map(row).join(""))
+      .split("{{CFS_TEAM_ROWS}}").join(s.cfsTeamLines.map(row).join(""))
       .split("{{REG_LINK}}").join(s.regLink)
       .split("{{SIGNATURE}}").join("Allen Hamilton");
 
-    const flyerRes = await fetch(s.flyer.url);
-    if (!flyerRes.ok) throw new Error(`Flyer download failed: ${flyerRes.status}`);
-    const flyerB64 = Buffer.from(await flyerRes.arrayBuffer()).toString("base64");
+    const attachments: { content: string; filename: string; disposition: string }[] = [];
+    for (const flyer of s.flyers) {
+      const flyerRes = await fetch(flyer.url);
+      if (!flyerRes.ok)
+        throw new Error(`Flyer download failed: ${flyerRes.status}`);
+      attachments.push({
+        content: Buffer.from(await flyerRes.arrayBuffer()).toString("base64"),
+        filename: flyer.filename ?? "official-invitation.png",
+        disposition: "attachment",
+      });
+    }
 
-    const faqRes = await fetch(FAQ_URL, { cache: "no-store" });
-    if (!faqRes.ok) throw new Error(`FAQ download failed: ${faqRes.status}`);
-    const faqB64 = Buffer.from(await faqRes.arrayBuffer()).toString("base64");
+    const faqUrls = s.mixed ? [FAQ_URL, ISI_FAQ_URL] : [FAQ_URL];
+    for (const faqUrl of faqUrls) {
+      const faqRes = await fetch(faqUrl, { cache: "no-store" });
+      if (!faqRes.ok) throw new Error(`FAQ download failed: ${faqRes.status}`);
+      attachments.push({
+        content: Buffer.from(await faqRes.arrayBuffer()).toString("base64"),
+        filename: faqUrl.includes("isi-")
+          ? "isi-team-invitation-faq.pdf"
+          : "team-invitation-faq.pdf",
+        disposition: "attachment",
+      });
+    }
+
+    const fromEmail = s.mixed ? ISI_FROM_EMAIL : FROM_EMAIL;
+    const fromName = s.mixed ? ISI_FROM_NAME : FROM_NAME;
 
     const send = await fetch("https://api.mailersend.com/v1/email", {
       method: "POST",
@@ -297,27 +339,18 @@ export async function POST(req: Request) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: { email: FROM_EMAIL, name: "College Flag Showcase Series" },
+        from: { email: fromEmail, name: fromName },
         to: [{ email: s.toEmail, name: s.primaryContact || s.orgName }],
         ...(s.ccEmails.length > 0
           ? { cc: s.ccEmails.map((email) => ({ email })) }
           : {}),
-        reply_to: { email: REPLY_TO, name: "College Flag Showcase Series" },
-        bcc: [{ email: REPLY_TO }],
-        subject: `Official Invitation — College Flag Showcase${s.eventName ? `, ${s.eventName}` : ""}`,
+        reply_to: { email: fromEmail, name: fromName },
+        bcc: [{ email: fromEmail }],
+        subject: s.mixed
+          ? `Official Invitation — International Superflag Invitational & College Flag Showcase — Dallas, TX`
+          : `Official Invitation — College Flag Showcase${s.eventName ? `, ${s.eventName}` : ""}`,
         html,
-        attachments: [
-          {
-            content: flyerB64,
-            filename: s.flyer.filename ?? "official-invitation.png",
-            disposition: "attachment",
-          },
-          {
-            content: faqB64,
-            filename: "team-invitation-faq.pdf",
-            disposition: "attachment",
-          },
-        ],
+        attachments,
       }),
     });
     if (!send.ok)
@@ -366,8 +399,8 @@ export async function POST(req: Request) {
 
     return page(
       "Invitation Sent",
-      `<p style="color:#C9C4C9;line-height:1.6;">Sent to <b style="color:#F7F5F6;">${escapeHtml(s.toEmail)}</b> for <b style="color:#F7F5F6;">${escapeHtml(s.orgName)}</b> — ${s.batch.length} team${s.batch.length === 1 ? "" : "s"}, flyer attached. The teams are stamped Invited in Airtable.</p>
-       <p style="color:#8A848C;">A copy was BCC'd to ${escapeHtml(REPLY_TO)}.</p>`,
+      `<p style="color:#C9C4C9;line-height:1.6;">Sent to <b style="color:#F7F5F6;">${escapeHtml(s.toEmail)}</b> for <b style="color:#F7F5F6;">${escapeHtml(s.orgName)}</b> from <b style="color:#F7F5F6;">${escapeHtml(fromEmail)}</b> — ${s.batch.length} team${s.batch.length === 1 ? "" : "s"}, ${attachments.length} attachment${attachments.length === 1 ? "" : "s"}. The teams are stamped Invited in Airtable.</p>
+       <p style="color:#8A848C;">A copy was BCC'd to ${escapeHtml(fromEmail)}.</p>`,
     );
   } catch (err) {
     return page("Send Failed", `<p style="color:#C9C4C9;">${escapeHtml((err as Error).message)}</p>`, 400);

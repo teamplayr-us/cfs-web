@@ -222,6 +222,21 @@ One email per ORGANIZATION, driven from the **Opportunities** table:
 6. **Manual follow-up:** the $50 athlete discount code goes out in a
    separate email (the invitation says so).
 
+**Mixed orgs (ISI + Showcase).** A Team Invitation's **Track** field
+says which invitation it rides under: **Showcase** (girls 12U–18U;
+empty counts as Showcase) or **ISI Only** (boys divisions and girls
+under 12U — leave Division empty on these rows). If an Opportunity has
+any ISI Only team, the send automatically switches to the mixed
+template (`/email-templates/team-invite-mixed.html`): the International
+Superflag Invitational leads with the org's full team list, the
+College Flag Showcase section lists the Showcase-track teams, and the
+email sends **from allen@5v5sports.com ("5v5 Sports")** with BOTH FAQs
+attached (team-faq.pdf + isi-team-faq.pdf) and every file in Invite
+Flyer (attach the showcase card AND the ISI card for mixed orgs).
+⚠️ Prerequisite: **5v5sports.com must be a verified sending domain in
+MailerSend** (SPF/DKIM records) or mixed sends will be rejected.
+Showcase-only orgs are completely unchanged.
+
 ## 9. Diagnostics
 
 - **https://www.collegeflagshowcase.com/api/health** — shows which env vars
