@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Template — Official ISI Org Invitation (team list)</title>
+<!--
+  TEMPLATE — org-level INTERNATIONAL SUPERFLAG INVITATIONAL invitation
+  graphic: one card per ORGANIZATION listing the ISI-invited teams (boys
+  divisions and girls under 12U — see agents/ISI-DALLAS.md). ISI-branded:
+  Superflag logo, black/red/white. Share-ready — nothing private on it;
+  the registration link lives only in the email.
+
+  Render with:
+    node collateral/render-isi-invite.mjs "Org Name" path/to/logo.png "City, ST" "Team 8U Boys|Team 10U Girls" [event] [venue] [out.png]
+
+  {{ORG_NAME}}   — organization name
+  {{LOCATION}}   — home city/state or country, e.g. "Mexico City, MX"
+  {{LOGO}}       — org logo path relative to collateral/
+  {{TEAM_ROWS}}  — one <p class="team-row">…</p> per invited team
+  {{EVENT_LINE}} — defaults to Dallas, TX · Dec 12–13, 2026 (ISI runs Sat–Sun)
+  {{VENUE_LINE}} — defaults to Craig Ranch Sports Complex
+-->
+<style>
+  @font-face{font-family:"Big Shoulders Display";src:url(fonts/big-shoulders.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"Archivo";src:url(fonts/archivo.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"JetBrains Mono";src:url(fonts/jetbrains-mono.woff2) format("woff2");font-weight:100 900}
+  :root{
+    --black:#0A0A0A; --red:#E00010; --white:#F7F5F4; --steel:#8F8B8B;
+    --display:"Big Shoulders Display",sans-serif;
+    --body:"Archivo",sans-serif;
+    --mono:"JetBrains Mono",monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:1350px;overflow:hidden}
+  body{font-family:var(--body);background:var(--black);color:var(--white);-webkit-print-color-adjust:exact;print-color-adjust:exact;position:relative}
+
+  .yards{position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0,transparent 133px,rgba(247,245,244,.05) 133px,rgba(247,245,244,.05) 135px)}
+  .frame{position:absolute;inset:36px;border:3px solid rgba(247,245,244,.18);pointer-events:none}
+  .frame2{position:absolute;inset:52px;border:1px solid rgba(224,0,16,.5);pointer-events:none}
+
+  .inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:78px 120px 88px}
+
+  .isi-logo{width:330px;height:auto;flex-shrink:0}
+  .kicker{margin-top:22px;font-family:var(--mono);font-size:20px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--red);white-space:nowrap}
+
+  .invite-title{margin-top:22px;font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:.95;letter-spacing:.01em;font-size:84px;color:var(--red);white-space:nowrap}
+  .org-logo{margin-top:30px;height:220px;max-width:640px;object-fit:contain;flex-shrink:0}
+  .org-name{margin-top:32px;font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:1;letter-spacing:.01em;font-size:52px;max-width:900px}
+
+  .org-loc{margin-top:12px;font-family:var(--mono);font-size:21px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red)}
+  .invited-line{margin-top:18px;font-size:27px;font-weight:500;color:var(--steel)}
+  .teams{margin-top:12px;width:680px}
+  .team-row{font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:.03em;font-size:40px;color:var(--white);padding:10px 0;border-bottom:1px solid rgba(247,245,244,.18)}
+  .team-row:last-child{border-bottom:0}
+  /* compact mode (render script adds .compact for 4+ teams) */
+  .compact .isi-logo{width:290px}
+  .compact .org-logo{margin-top:22px;height:190px}
+  .compact .org-name{margin-top:26px;font-size:48px}
+  .compact .invited-line{margin-top:14px;font-size:25px}
+  .compact .team-row{font-size:34px;padding:7px 0}
+  .compact .event-line{margin-top:16px;font-size:28px}
+  /* dense mode (7+ teams) */
+  .dense .isi-logo{width:250px}
+  .dense .invite-title{margin-top:18px;font-size:76px}
+  .dense .org-logo{margin-top:18px;height:160px}
+  .dense .org-name{margin-top:22px;font-size:44px}
+  .dense .invited-line{margin-top:12px;font-size:23px}
+  .dense .team-row{font-size:28px;padding:5px 0}
+  .dense .event-line{margin-top:14px;font-size:26px}
+  .dense .venue-line{margin-top:8px}
+
+  .event-line{margin-top:22px;font-family:var(--mono);font-size:30px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--white)}
+  .venue-line{margin-top:12px;font-family:var(--mono);font-size:22px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--steel)}
+
+  .rule{margin-top:auto;width:120px;height:6px;background:var(--red);flex-shrink:0}
+  .foot{margin-top:20px;flex-shrink:0;font-family:var(--mono);font-size:19px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--steel)}
+  .foot b{color:var(--white);font-weight:700}
+</style>
+</head>
+<body>
+  <div class="yards"></div>
+  <div class="frame"></div>
+  <div class="frame2"></div>
+  <div class="inner">
+    <img class="isi-logo" src="../public/superflag.png" alt="International Superflag Invitational" />
+    <p class="kicker">Flag Football &middot; 2026&ndash;27 Season</p>
+    <h1 class="invite-title">Official Invitation.</h1>
+    <img class="org-logo" src="{{LOGO}}" alt="{{ORG_NAME}}" />
+    <h2 class="org-name">{{ORG_NAME}}</h2>
+    <p class="org-loc">{{LOCATION}}</p>
+    <p class="invited-line">The following teams are invited to compete<br />in the <span style="white-space:nowrap">International Superflag Invitational:</span></p>
+    <div class="teams">
+      {{TEAM_ROWS}}
+    </div>
+    <p class="event-line">{{EVENT_LINE}}</p>
+    <p class="venue-line">{{VENUE_LINE}}</p>
+    <div class="rule"></div>
+    <p class="foot"><b>International Superflag Invitational</b></p>
+  </div>
+</body>
+</html>
