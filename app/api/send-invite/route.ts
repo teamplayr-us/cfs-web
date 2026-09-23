@@ -204,6 +204,12 @@ async function loadSend(oppId: string) {
       return { name, isiOnly };
     }),
   );
+  // CRM rows arrive in creation order; list girls then boys, youngest first.
+  const ageOf = (n: string) => Number(n.match(/(\d+)U\b/)?.[1] ?? 99);
+  const isBoys = (n: string) => (/\bboys\b/i.test(n) ? 1 : 0);
+  lines.sort(
+    (a, b) => isBoys(a.name) - isBoys(b.name) || ageOf(a.name) - ageOf(b.name),
+  );
   const teamLines = lines.map((l) => l.name);
   const cfsTeamLines = lines.filter((l) => !l.isiOnly).map((l) => l.name);
   // Any ISI-only team makes this a mixed send: ISI-led template, sent
