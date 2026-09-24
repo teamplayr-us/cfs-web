@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>IG Template — Team Accepted (ISI)</title>
+<!--
+  TEMPLATE — ISI-branded "Accepted." announcement for a program accepted
+  into the International Superflag Invitational. Sibling of
+  ig-org-committed.html (College Flag Showcase version) in the ISI's
+  black/red/white, Superflag logo only, matching invite-org-isi.html.
+  Render with:
+    node collateral/render-isi-announce.mjs "Program Name" logo.png "City, ST" "10U &middot; 12U"
+
+  {{NAME}}      — program name
+  {{LOGO}}      — logo path relative to collateral/
+  {{LOCATION}}  — home city, state (or country)
+  {{DIVISIONS}} — every division competing in the ISI
+  {{EVENT_LINE}}— defaults to Dallas, TX · Dec 12–13, 2026 (ISI runs Sat–Sun)
+-->
+<style>
+  @font-face{font-family:"Big Shoulders Display";src:url(fonts/big-shoulders.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"Archivo";src:url(fonts/archivo.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"JetBrains Mono";src:url(fonts/jetbrains-mono.woff2) format("woff2");font-weight:100 900}
+  :root{
+    --black:#0A0A0A; --red:#E00010; --white:#F7F5F4; --steel:#8F8B8B;
+    --display:"Big Shoulders Display",sans-serif;
+    --body:"Archivo",sans-serif;
+    --mono:"JetBrains Mono",monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:1350px;overflow:hidden}
+  body{font-family:var(--body);background:var(--black);color:var(--white);-webkit-print-color-adjust:exact;print-color-adjust:exact;position:relative}
+
+  .yards{position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0,transparent 133px,rgba(247,245,244,.05) 133px,rgba(247,245,244,.05) 135px)}
+  .hash{position:absolute;top:0;bottom:0;width:2px;background:rgba(247,245,244,.05)}
+  .hash.l{left:96px}.hash.r{right:96px}
+  .frame{position:absolute;inset:36px;border:3px solid rgba(247,245,244,.16);pointer-events:none}
+  .frame2{position:absolute;inset:52px;border:1px solid rgba(224,0,16,.5);pointer-events:none}
+
+  .inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:72px 110px 84px}
+
+  .isi-logo{width:290px;height:auto;flex-shrink:0}
+  .kicker{margin-top:18px;font-family:var(--mono);font-size:20px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--red);white-space:nowrap}
+
+  .org-logo{margin-top:30px;height:380px;max-width:700px;object-fit:contain;flex-shrink:0}
+  .org-name{margin-top:30px;font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:1;letter-spacing:.01em;font-size:76px;max-width:900px}
+  .detail-line{margin-top:18px;font-family:var(--mono);font-size:29px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);white-space:nowrap}
+  .detail-line b{color:var(--red);font-weight:700}
+
+  .punch{margin-top:24px;flex-shrink:0;font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:.92;letter-spacing:.01em;font-size:150px;color:var(--red)}
+
+  .sub{margin-top:26px;font-size:31px;line-height:1.45;font-weight:500;color:var(--white);max-width:800px}
+
+  .rule{margin-top:auto;width:120px;height:6px;background:var(--red);flex-shrink:0}
+  .foot{margin-top:22px;flex-shrink:0;font-family:var(--mono);font-size:20px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--steel)}
+  .foot b{color:var(--white);font-weight:700}
+</style>
+</head>
+<body>
+  <div class="yards"></div>
+  <div class="hash l"></div>
+  <div class="hash r"></div>
+  <div class="frame"></div>
+  <div class="frame2"></div>
+  <div class="inner">
+    <img class="isi-logo" src="../public/superflag.png" alt="International Superflag Invitational" />
+    <p class="kicker">{{EVENT_LINE}}</p>
+    <img class="org-logo" src="{{LOGO}}" alt="{{NAME}}" />
+    <h2 class="org-name">{{NAME}}</h2>
+    <p class="detail-line">{{LOCATION}} &middot; <b>{{DIVISIONS}}</b></p>
+    <h1 class="punch">Accepted.</h1>
+    <p class="sub">They&rsquo;ll be competing in the International Superflag Invitational in Dallas.</p>
+    <div class="rule"></div>
+    <p class="foot"><b>International Superflag Invitational</b></p>
+  </div>
+</body>
+</html>

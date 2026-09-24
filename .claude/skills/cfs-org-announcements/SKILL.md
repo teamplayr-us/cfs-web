@@ -44,6 +44,22 @@ Two graphics cover the team lifecycle, in order:
 - Verify the PNG (name on one line, logo legible), send as a downloadable
   attachment, commit.
 
+## ISI-branded "Accepted." (mixed and ISI-only orgs)
+
+`collateral/ig-org-accepted-isi.html` is the ISI sibling of the
+announcement: black/red/white, Superflag logo only, event line
+"Dallas, TX · Dec 12–13, 2026", listing EVERY division the org brings
+to the ISI. Mixed orgs get both posts — this one (all divisions) and
+the College Flag Showcase version below (girls 12U–18U only).
+
+```bash
+node collateral/render-isi-announce.mjs \
+  "Program Name" collateral/invites/logo.png "City, ST" "10U · 12U · 14U"
+```
+
+Output: `collateral/ig-isi-<logo-name>.png`. Boys and sub-12U teams never
+go on the College Flag Showcase board or its announcement.
+
 ## Workflow B — "Accepted." acceptance announcement
 
 One graphic per accepted travel program: their logo on the navy brand
