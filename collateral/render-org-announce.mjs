@@ -77,6 +77,15 @@ const browser = await chromium.launch(
 const page = await browser.newPage({ viewport: { width: 1080, height: 1350 } });
 await page.goto(`file://${tmp}`, { waitUntil: "networkidle" });
 await page.evaluate(() => document.fonts.ready);
+// Long location + division lines stay on one line: shrink until they fit.
+await page.evaluate(() => {
+  const el = document.querySelector(".detail-line");
+  if (!el) return;
+  const cs = getComputedStyle(el.parentElement);
+  const max = el.parentElement.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+  let size = parseFloat(getComputedStyle(el).fontSize);
+  while (el.scrollWidth > max && size > 18) el.style.fontSize = `${--size}px`;
+});
 await page.waitForTimeout(400);
 await page.screenshot({ path: out });
 await browser.close();
