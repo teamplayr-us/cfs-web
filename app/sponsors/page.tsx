@@ -149,6 +149,7 @@ export default function SponsorsPage() {
             <li>Presence in event film &amp; recap content</li>
             <li>Direct access to athletes, families &amp; college programs</li>
             <li>Targeted digital promotions</li>
+            <li>Invitation to the Coaches Welcome Event</li>
           </ul>
 
           <div className="offer-grid three">
