@@ -85,6 +85,12 @@ export const ORGS_BY_EVENT: Record<string, OrgSlot[]> = {
       logo: "/programs/team-mx.png",
       location: "Mexico",
     },
+    {
+      filled: true,
+      name: "Jr. Stockmen Girls Flag",
+      logo: "/programs/jr-stockmen.png",
+      location: "Omaha, NE",
+    },
   ],
 };
 
