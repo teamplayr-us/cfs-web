@@ -59,7 +59,7 @@ export const ORGS_BY_EVENT: Record<string, OrgSlot[]> = {
       filled: true,
       name: "One of One Girls Flag Football Club",
       logo: "/programs/one-of-one.png",
-      location: "Oklahoma City",
+      location: "Oklahoma",
     },
     {
       filled: true,
@@ -71,7 +71,7 @@ export const ORGS_BY_EVENT: Record<string, OrgSlot[]> = {
       filled: true,
       name: "OKC Lightning",
       logo: "/programs/okc-lightning.png",
-      location: "Oklahoma City",
+      location: "Oklahoma",
     },
     {
       filled: true,
@@ -89,7 +89,7 @@ export const ORGS_BY_EVENT: Record<string, OrgSlot[]> = {
       filled: true,
       name: "Jr. Stockmen Girls Flag",
       logo: "/programs/jr-stockmen.png",
-      location: "Omaha, NE",
+      location: "Nebraska",
     },
   ],
 };
