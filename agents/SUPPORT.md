@@ -248,11 +248,11 @@ University, Randolph College (Head Coach Andy Sinclair, NCAA DIII),
 Hardin-Simmons University (Head Coach Darin Koenig, NCAA DIII). The
 board at collegeflagshowcase.com/colleges updates as coaches register.
 
-Competing programs (public board, as of Sep 26, 2026): Texas Fury (TX),
+Competing programs (public board, as of Sep 28, 2026): Texas Fury (TX),
 Mexico Prime (Mexico), Panama Wardogs (Panama), Kansas City Heat (KC),
 FamLife Flex (TX), One of One Girls Flag Football Club (Oklahoma),
 Tri-City Stormz (TX), OKC Lightning (Oklahoma), RGV Seahawks
-(McAllen, TX), Team MX (Mexico), Jr. Stockmen Girls Flag (Nebraska).
+(McAllen, TX), Team MX (Mexico), Jr. Stockmen Girls Flag (Nebraska), 5P Girls Football (Missouri).
 (Conquer Chargers and NorCal Elite removed from the board Sep 16, 2026 —
 founder direction.)
 
