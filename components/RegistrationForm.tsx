@@ -9,8 +9,10 @@ import {
   POSITIONS,
   RegistrationData,
   validateRegistration,
-  WAIVER_SUMMARY,
 } from "@/lib/registration";
+import { WAIVER_SUMMARY } from "@/lib/waiver";
+import { REFUND_POLICY } from "@/lib/policy";
+import WaiverText from "@/components/WaiverText";
 
 interface Props {
   eventSlug: string;
@@ -21,6 +23,8 @@ interface Props {
   /** Combine start–end time range, or "TBD" */
   time: string;
   priceCents: number;
+  /** Team-code discount, in cents */
+  discountCents: number;
 }
 
 const STEP_TITLES = ["About the Athlete", "Parent / Guardian", "Review & Pay"];
@@ -91,7 +95,9 @@ export default function RegistrationForm(props: Props) {
       }
       window.location.href = body.url;
     } catch {
-      setSubmitError("Couldn't reach the server. Please try again.");
+      setSubmitError(
+        "Couldn't reach the server. Check your connection and try again.",
+      );
       setSubmitting(false);
     }
   }
@@ -155,6 +161,25 @@ export default function RegistrationForm(props: Props) {
                 ))}
               </select>
             </label>
+            <label>
+              Hometown (city, state){err("hometown")}
+              <input
+                type="text"
+                autoComplete="address-level2"
+                placeholder="Frisco, TX"
+                value={data.hometown}
+                onChange={(e) => set("hometown", e.target.value)}
+              />
+            </label>
+            <label>
+              Club / travel team (optional){err("clubTeam")}
+              <input
+                type="text"
+                placeholder="Leave blank if none"
+                value={data.clubTeam}
+                onChange={(e) => set("clubTeam", e.target.value)}
+              />
+            </label>
           </div>
           <div className="reg-positions">
             <span className="reg-sublabel">
@@ -199,6 +224,34 @@ export default function RegistrationForm(props: Props) {
               onChange={(e) => set("medical", e.target.value)}
             />
           </label>
+          <div className="reg-waiver">
+            <label className="reg-check">
+              <input
+                type="checkbox"
+                checked={data.guestPool}
+                onChange={(e) => set("guestPool", e.target.checked)}
+              />
+              Add her to the guest player pool (optional)
+            </label>
+            <p>
+              No tournament team? Club coaches of registered Showcase Tournament
+              teams can request to add guest players to their rosters. Every
+              request comes through us first, and we share her details only
+              after we review it. There&apos;s no fee to be listed; a team that
+              selects her may ask her to contribute toward its tournament
+              registration fee.
+            </p>
+            <label className="reg-check">
+              <input
+                type="checkbox"
+                checked={data.eligibilityConfirmed}
+                onChange={(e) => set("eligibilityConfirmed", e.target.checked)}
+              />
+              The athlete is eligible for the girls&apos; Showcase Combine &amp;
+              Camp (12U–18U, age as of August 1, 2026)
+              {err("eligibilityConfirmed")}
+            </label>
+          </div>
           <button type="button" className="btn btn-red" onClick={next}>
             Continue
           </button>
@@ -274,6 +327,17 @@ export default function RegistrationForm(props: Props) {
             </label>
           </div>
           <div className="reg-waiver">
+            <span className="reg-sublabel">Participant waiver</span>
+            <div className="waiver-scroll" tabIndex={0}>
+              <WaiverText />
+            </div>
+            <p className="reg-fineprint">
+              Also available at{" "}
+              <a href="/waiver" target="_blank" rel="noopener">
+                collegeflagshowcase.com/waiver
+              </a>
+              .
+            </p>
             <p>{WAIVER_SUMMARY}</p>
             <label className="reg-check">
               <input
@@ -337,7 +401,11 @@ export default function RegistrationForm(props: Props) {
                 </div>
                 <div className="stop-cell">
                   <dt>Total</dt>
-                  <dd>{formatPrice(props.priceCents)}</dd>
+                  <dd>
+                    {data.discountCode.trim()
+                      ? `${formatPrice(props.priceCents - props.discountCents)} with team code`
+                      : formatPrice(props.priceCents)}
+                  </dd>
                 </div>
               </dl>
             </div>
@@ -354,10 +422,15 @@ export default function RegistrationForm(props: Props) {
           </label>
           <p className="reg-fineprint">
             Athletes on Showcase Tournament teams get $50 off — your
-            coach&apos;s invite email includes the code. The discount is
-            applied at checkout.
+            coach&apos;s invite email includes the code. We verify the code and
+            apply the discount at checkout.
           </p>
-          {submitError && <p className="reg-err reg-err-block">{submitError}</p>}
+          <p className="reg-fineprint">
+            <b>Cancellations:</b> {REFUND_POLICY}
+          </p>
+          {submitError && (
+            <p className="reg-err reg-err-block">{submitError}</p>
+          )}
           <p className="reg-fineprint">
             You&apos;ll be taken to Stripe&apos;s secure checkout to complete
             payment. A receipt goes to {data.guardianEmail || "your email"}.

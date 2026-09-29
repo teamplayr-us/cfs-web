@@ -46,7 +46,11 @@ export async function POST(req: Request) {
   }
 
   if (event.athleteReg.capacity) {
-    const count = await countRegistrations(event.slug);
+    // If Airtable can't be reached, don't block the sale on a count.
+    const count = await countRegistrations(event.slug).catch((err) => {
+      console.error("Capacity check failed", err);
+      return null;
+    });
     if (count !== null && count >= event.athleteReg.capacity) {
       return NextResponse.json(
         { error: "This event is sold out." },
@@ -80,26 +84,38 @@ export async function POST(req: Request) {
   const stripe = new Stripe(stripeKey);
   const origin = new URL(req.url).origin;
 
-  const session = await stripe.checkout.sessions.create({
-    mode: "payment",
-    line_items: [
-      {
-        quantity: 1,
-        price_data: {
-          currency: "usd",
-          unit_amount: unitAmount,
-          product_data: {
-            name: `Athlete Registration — ${event.city} (${stopLabel(event)})`,
-            description: productDescription,
+  let session: Stripe.Checkout.Session;
+  try {
+    session = await stripe.checkout.sessions.create({
+      mode: "payment",
+      line_items: [
+        {
+          quantity: 1,
+          price_data: {
+            currency: "usd",
+            unit_amount: unitAmount,
+            product_data: {
+              name: `Athlete Registration — ${event.city} (${stopLabel(event)})`,
+              description: productDescription,
+            },
           },
         },
+      ],
+      customer_email: body.data.guardianEmail.trim(),
+      metadata: toStripeMetadata(body.data, event.slug),
+      success_url: `${origin}/events/${event.slug}/register/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${origin}/events/${event.slug}/register?canceled=1`,
+    });
+  } catch (err) {
+    console.error("Stripe checkout session failed", err);
+    return NextResponse.json(
+      {
+        error:
+          "We couldn't start checkout. Please try again in a minute, or email info@collegeflagshowcase.com.",
       },
-    ],
-    customer_email: body.data.guardianEmail.trim(),
-    metadata: toStripeMetadata(body.data, event.slug),
-    success_url: `${origin}/events/${event.slug}/register/success`,
-    cancel_url: `${origin}/events/${event.slug}/register?canceled=1`,
-  });
+      { status: 502 },
+    );
+  }
 
   return NextResponse.json({ url: session.url });
 }

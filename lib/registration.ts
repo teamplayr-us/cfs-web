@@ -2,6 +2,8 @@
 // Used by the client form (inline validation) and the API routes
 // (authoritative re-validation) so the two can never drift.
 
+import { WAIVER_VERSION } from "@/lib/waiver";
+
 export const POSITIONS = [
   "QB",
   "WR",
@@ -23,6 +25,14 @@ export interface RegistrationData {
   fffUrl: string;
   /** Optional free-text allergies / medical notes */
   medical: string;
+  /** Hometown, "City, ST" */
+  hometown: string;
+  /** Optional club / travel team (blank = none) */
+  clubTeam: string;
+  /** Guardian confirms girls 12U–18U eligibility */
+  eligibilityConfirmed: boolean;
+  /** Opt-in to the guest player pool */
+  guestPool: boolean;
   guardianFirst: string;
   guardianLast: string;
   guardianEmail: string;
@@ -45,6 +55,10 @@ export const EMPTY_REGISTRATION: RegistrationData = {
   positions: [],
   fffUrl: "",
   medical: "",
+  hometown: "",
+  clubTeam: "",
+  eligibilityConfirmed: false,
+  guestPool: false,
   guardianFirst: "",
   guardianLast: "",
   guardianEmail: "",
@@ -57,14 +71,28 @@ export const EMPTY_REGISTRATION: RegistrationData = {
   discountCode: "",
 };
 
-export const GRAD_YEARS = Array.from({ length: 10 }, (_, i) => 2026 + i);
+// Current classes only — the class of 2026 has graduated.
+export const GRAD_YEARS = Array.from({ length: 10 }, (_, i) => 2027 + i);
 
-// TODO: replace with the real liability waiver text before launch.
-export const WAIVER_SUMMARY =
-  "I certify that I am the athlete's parent or legal guardian, I authorize " +
-  "the athlete's participation in this College Flag Showcase Series event, " +
-  "and I agree to the event liability waiver, assumption of risk, and photo " +
-  "release on the athlete's behalf.";
+/** Showcase age groups run on age as of Aug 1 (iFlag / Zorts); the combine
+ * is 12U–18U, so an athlete must be 18 or younger on this date. */
+export const AGE_CUTOFF = "2026-08-01";
+export const MAX_AGE = 18;
+/** Plausibility floor only — 12U includes younger athletes. */
+export const MIN_AGE = 7;
+
+/** Age in whole years on the cutoff date. */
+export function ageOnCutoff(dob: string, cutoff = AGE_CUTOFF): number {
+  const b = new Date(`${dob}T00:00:00Z`);
+  const c = new Date(`${cutoff}T00:00:00Z`);
+  let age = c.getUTCFullYear() - b.getUTCFullYear();
+  if (
+    c.getUTCMonth() < b.getUTCMonth() ||
+    (c.getUTCMonth() === b.getUTCMonth() && c.getUTCDate() < b.getUTCDate())
+  )
+    age -= 1;
+  return age;
+}
 
 export type FieldErrors = Partial<Record<keyof RegistrationData, string>>;
 
@@ -97,9 +125,12 @@ export function validateRegistration(
       errors.dob = "Required";
     } else {
       const d = new Date(`${data.dob}T00:00:00Z`);
-      if (Number.isNaN(d.getTime())) errors.dob = "Enter a valid date";
-      else if (d.getUTCFullYear() < 1990 || d >= new Date())
-        errors.dob = "Enter the athlete's real date of birth";
+      if (Number.isNaN(d.getTime()) || d >= new Date())
+        errors.dob = "Enter a valid date";
+      else if (ageOnCutoff(data.dob) > MAX_AGE)
+        errors.dob = "The combine is 12U–18U (age as of Aug 1, 2026)";
+      else if (ageOnCutoff(data.dob) < MIN_AGE)
+        errors.dob = "Check the date of birth";
     }
     const year = Number(data.gradYear);
     if (!data.gradYear) errors.gradYear = "Required";
@@ -109,6 +140,11 @@ export function validateRegistration(
     if (data.fffUrl.trim() && !/^https?:\/\/\S+$/.test(data.fffUrl.trim()))
       errors.fffUrl = "Enter a full link (starting with http)";
     if (data.medical.length > 1000) errors.medical = "Too long";
+    if (!data.hometown.trim()) errors.hometown = "Required";
+    else if (data.hometown.trim().length > 80) errors.hometown = "Too long";
+    if (data.clubTeam.trim().length > 80) errors.clubTeam = "Too long";
+    if (!data.eligibilityConfirmed)
+      errors.eligibilityConfirmed = "Required to register";
   }
 
   if (step === undefined || step === 2) {
@@ -147,6 +183,9 @@ export function toStripeMetadata(
     positions: clip(data.positions.join(", ")),
     fffUrl: clip(data.fffUrl),
     medical: clip(data.medical),
+    hometown: clip(data.hometown ?? ""),
+    clubTeam: clip(data.clubTeam ?? ""),
+    guestPool: data.guestPool ? "yes" : "no",
     guardianFirst: clip(data.guardianFirst),
     guardianLast: clip(data.guardianLast),
     guardianEmail: clip(data.guardianEmail),
@@ -155,6 +194,7 @@ export function toStripeMetadata(
     emergencyLast: clip(data.emergencyLast),
     emergencyPhone: clip(data.emergencyPhone),
     waiverSignature: clip(data.waiverSignature),
+    waiverVersion: WAIVER_VERSION,
     discountCode: clip(data.discountCode ?? ""),
     waiverSignedAt: new Date().toISOString(),
   };

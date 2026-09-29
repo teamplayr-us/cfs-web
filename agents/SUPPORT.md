@@ -130,7 +130,15 @@ whose girls 12U–18U teams land in the showcase divisions):
 - Registration is a 3-step form at `/events/<event>/register` (athlete →
   parent/guardian + waiver → review), then Stripe secure checkout. Receipt
   goes to the guardian email. Parent/guardian must complete it (waiver
-  signature).
+  signature). The full participant waiver is public at
+  collegeflagshowcase.com/waiver.
+- The form also asks for hometown, club/travel team (optional), a
+  girls 12U–18U eligibility confirmation (age as of Aug 1, 2026), and an
+  optional **guest player pool** opt-in: team-less athletes can be
+  requested by club coaches of registered tournament teams; every request
+  is reviewed before details are shared. **No fee to be listed**; a team
+  that selects a guest player may ask her to contribute toward its
+  tournament registration fee.
 - **Current state [INTERNAL]:** the site is public but athlete registration
   is in **"Coming Soon" mode** — buttons are disabled while traffic ramps
   up. If someone asks "how do I register": registration opens soon; offer
@@ -267,10 +275,9 @@ the public /colleges board.
 - Transactional email comes from no-reply@collegeflagshowcase.com; the
   correct guidance is "email us at info@collegeflagshowcase.com" (never
   tell someone to reply to the no-reply address).
-- **[INTERNAL]** The phone number appearing on some collateral
-  (888.555.0199) is a **placeholder** — never give it out as a working
-  number. If someone asks for a phone contact: email is the channel right
-  now.
+- There is no public phone number — email (info@collegeflagshowcase.com)
+  is the contact channel. If someone asks for a phone contact, point them
+  to email.
 - Website: collegeflagshowcase.com (FAQ at /faq covers most of this doc in
   public form — safe to link customers there).
 
@@ -289,7 +296,7 @@ routing) — do not improvise — for:
 5. Press/media requests; sponsorship inquiries (**[INTERNAL]** sponsor
    pricing exists — $850/event tiers, presenting tier by contact — but
    support should hand sponsors to the founders, not quote numbers).
-6. Legal/waiver questions ([INTERNAL] waiver text is still placeholder).
+6. Legal/waiver questions (quote /waiver; never interpret it).
 7. Data-privacy or opt-out requests.
 8. Anything about 5v5 Sports/Superflag attribution beyond §1's language.
 9. Any question whose answer is not in this document.

@@ -33,6 +33,11 @@ export const REG_FIELD = {
   amountPaid: "fldoNmg8VveKzklOa",
   stripeSession: "fld53TALilRE89tuM",
   status: "fld8yD9hKqpillzM3",
+  clubTeam: "fldWXr4Hurkyyf6Ie",
+  hometown: "fld26HihlnwAFJbK9",
+  guestPool: "fldzazO74xKG7kOLA",
+  discountCode: "fldmXg1NAoksg8rWG",
+  waiverVersion: "fld13uKFBAADHnr9Q",
 } as const;
 
 /** Build the Airtable record for a paid registration from Stripe Checkout
@@ -67,6 +72,11 @@ export function buildRegistrationFields(
     [REG_FIELD.amountPaid]: amountPaid,
     [REG_FIELD.stripeSession]: sessionId,
     [REG_FIELD.status]: "Paid",
+    [REG_FIELD.clubTeam]: m.clubTeam || undefined,
+    [REG_FIELD.hometown]: m.hometown || undefined,
+    [REG_FIELD.guestPool]: m.guestPool === "yes",
+    [REG_FIELD.discountCode]: m.discountCode || undefined,
+    [REG_FIELD.waiverVersion]: m.waiverVersion || undefined,
   };
 }
 
@@ -91,8 +101,9 @@ async function listRecords(
   return res.json();
 }
 
-/** Count paid registrations for an event. Returns null when Airtable isn't
- * configured (callers treat that as "can't check, don't block"). */
+/** Count active registrations for an event (refunded/canceled rows don't
+ * hold a spot). Returns null when Airtable isn't configured (callers treat
+ * that as "can't check, don't block"). {Status} is referenced by NAME here. */
 export async function countRegistrations(
   eventSlug: string,
 ): Promise<number | null> {
@@ -101,7 +112,7 @@ export async function countRegistrations(
   let offset: string | undefined;
   do {
     const params = new URLSearchParams({
-      filterByFormula: `{Event Slug} = '${eventSlug.replace(/'/g, "\\'")}'`,
+      filterByFormula: `AND({Event Slug} = '${eventSlug.replace(/'/g, "\\'")}', NOT(OR({Status} = 'Refunded', {Status} = 'Canceled')))`,
       pageSize: "100",
       "fields[]": REG_FIELD.eventSlug,
     });

@@ -150,7 +150,7 @@ too — make sure they ignore events that aren't theirs.
 - **Webhook failing:** Stripe → Developers → Webhooks → endpoint → look at
   delivery attempts. 400 = signing secret mismatch; 500 = Airtable write
   failed (check Vercel Logs for the `Airtable write failed` line and
-  https://www.collegeflagshowcase.com/api/health for config state). After
+  https://www.collegeflagshowcase.com/api/health?key=<INVITE_SEND_KEY> for config state). After
   fixing, click **Resend** on the failed event — no data is lost.
 - **Never** use Stripe's "Send test event" button — synthetic events lack
   registration metadata.
@@ -175,9 +175,11 @@ too — make sure they ignore events that aren't theirs.
 | Committed colleges per event | `data/colleges.ts` (+ logo in `public/colleges/`) |
 | Competing programs per event (accepted tournament teams) | `data/organizations.ts` (+ logo in `public/programs/`) |
 | Sponsors board | `data/sponsors.ts` |
-| Contact email/phone, registration links | `data/links.ts` |
+| Contact email, registration links | `data/links.ts` (no public phone number) |
 | Athlete price | `athleteReg.priceCents` in `data/events.ts` — $175 standard; tournament-team athletes enter the code from their coach's invite for $50 off ($125), validated against the `TOURNAMENT_DISCOUNT_CODE` env var |
-| Waiver text | `WAIVER_SUMMARY` in `lib/registration.ts` — **still placeholder; replace with real legal text before live payments** |
+| Waiver text | `lib/waiver.ts` — full waiver, published at `/waiver` and shown in the form; bump `WAIVER_VERSION` on any edit (stored per registration). Attorney review recommended |
+| Refund policy copy | `lib/policy.ts` (form, success page, confirmation email) |
+| Age eligibility | `AGE_CUTOFF` / `MAX_AGE` in `lib/registration.ts` (18 or younger on Aug 1, 2026) |
 
 ## 8. Environment variables (Vercel → Settings → Environment Variables)
 
@@ -253,9 +255,9 @@ stamp the teams Invited by hand after sending.
 
 ## 9. Diagnostics
 
-- **https://www.collegeflagshowcase.com/api/health** — shows which env vars
+- **https://www.collegeflagshowcase.com/api/health?key=<INVITE_SEND_KEY>** (404 without the key) — shows which env vars
   are set (never their values) and live-probes Airtable read access.
-- **`/api/health?write=1`** — additionally replays the webhook's exact
+- **`/api/health?key=…&write=1`** — additionally replays the webhook's exact
   Airtable sequence with a throwaway record (created, then deleted).
 - **Vercel → Logs** — runtime errors from all `/api/*` routes.
 - **Stripe → Webhooks → endpoint** — delivery history with per-attempt

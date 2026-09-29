@@ -152,8 +152,6 @@ nav{background:var(--navy);color:var(--chalk);position:sticky;top:0;z-index:50;b
 /* ============ CORE OFFERING ============ */
 .offer-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,32px)}
 .offer-grid.three{grid-template-columns:1fr 1fr 1fr}
-.about-phone{margin-top:18px;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--steel)}
-.about-phone a{color:var(--navy)}
 .reach-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:0 0 44px}
 .reach-cell{border:2px solid var(--navy);background:var(--white);padding:18px 16px}
 .reach-num{display:block;font-family:var(--display);font-weight:800;font-size:34px;color:var(--navy);line-height:1}
@@ -268,6 +266,14 @@ nav{background:var(--navy);color:var(--chalk);position:sticky;top:0;z-index:50;b
 .reg-actions{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
 .reg-fineprint{font-size:14px;color:var(--steel)}
 .reg-fineprint a{font-weight:600}
+.waiver-text{display:grid;gap:18px;margin-bottom:18px}
+.waiver-text h3{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);margin-bottom:6px}
+.waiver-text p{font-size:14.5px;line-height:1.6;color:var(--steel)}
+.waiver-text p+p{margin-top:8px}
+.waiver-text strong{color:var(--navy)}
+.waiver-version{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.waiver-scroll{max-height:320px;overflow-y:auto;border:1px solid var(--line);padding:16px 18px;background:#FBFAFA}
+.reg-waiver details summary{cursor:pointer;font-weight:600;color:var(--navy)}
 .reg-review{box-shadow:8px 8px 0 var(--red)}
 .reg-discount{border-top:1px solid var(--line);padding-top:18px;max-width:420px}
 .reg-next{list-style:none;display:grid;gap:10px;margin-bottom:18px;font-weight:600;font-size:15.5px}

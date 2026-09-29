@@ -3,7 +3,12 @@ import { notFound } from "next/navigation";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import RegistrationForm from "@/components/RegistrationForm";
-import { EVENTS, getEvent, stopLabel } from "@/data/events";
+import {
+  EVENTS,
+  getEvent,
+  stopLabel,
+  TOURNAMENT_DISCOUNT_CENTS,
+} from "@/data/events";
 
 interface Props {
   params: { slug: string };
@@ -69,6 +74,7 @@ export default function RegisterPage({ params }: Props) {
                   : "TBD"
               }
               priceCents={event.athleteReg.priceCents}
+              discountCents={TOURNAMENT_DISCOUNT_CENTS}
             />
           ) : (
             <div className="reg-card">

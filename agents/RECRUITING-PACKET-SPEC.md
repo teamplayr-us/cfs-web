@@ -106,8 +106,11 @@ opt into every conversation, every match is visible in the CRM, and
 misuse can be monitored and throttled. Roster mechanics then run
 through Zorts like any other player.
 
-OPEN: founder ruling that guest players owe nothing beyond camp
-registration (team entry is the team's $550; assumed yes).
+RULED (founder, Sep 29, 2026): there is no fee to be listed as a guest
+player. A team that selects a guest player may ask her to contribute
+toward its tournament registration fee — that's between the team and the
+family. The opt-in ships on the registration form (Athlete Registrations
+→ Guest Player Pool checkbox).
 
 ## 6. Build order
 
