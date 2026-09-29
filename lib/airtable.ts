@@ -38,6 +38,7 @@ export const REG_FIELD = {
   guestPool: "fldzazO74xKG7kOLA",
   discountCode: "fldmXg1NAoksg8rWG",
   waiverVersion: "fld13uKFBAADHnr9Q",
+  jerseySize: "fldXumKxBiWOsg33j",
 } as const;
 
 /** Build the Airtable record for a paid registration from Stripe Checkout
@@ -77,6 +78,7 @@ export function buildRegistrationFields(
     [REG_FIELD.guestPool]: m.guestPool === "yes",
     [REG_FIELD.discountCode]: m.discountCode || undefined,
     [REG_FIELD.waiverVersion]: m.waiverVersion || undefined,
+    [REG_FIELD.jerseySize]: m.jerseySize || undefined,
   };
 }
 

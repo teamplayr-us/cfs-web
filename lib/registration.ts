@@ -14,6 +14,19 @@ export const POSITIONS = [
   "Safety",
 ] as const;
 
+export const JERSEY_SIZES = [
+  "Youth S",
+  "Youth M",
+  "Youth L",
+  "Youth XL",
+  "Adult XS",
+  "Adult S",
+  "Adult M",
+  "Adult L",
+  "Adult XL",
+  "Adult 2XL",
+] as const;
+
 export interface RegistrationData {
   athleteFirst: string;
   athleteLast: string;
@@ -21,6 +34,8 @@ export interface RegistrationData {
   dob: string;
   gradYear: string;
   positions: string[];
+  /** One of JERSEY_SIZES */
+  jerseySize: string;
   /** Optional Flag Football Finder profile URL */
   fffUrl: string;
   /** Optional free-text allergies / medical notes */
@@ -53,6 +68,7 @@ export const EMPTY_REGISTRATION: RegistrationData = {
   dob: "",
   gradYear: "",
   positions: [],
+  jerseySize: "",
   fffUrl: "",
   medical: "",
   hometown: "",
@@ -137,6 +153,9 @@ export function validateRegistration(
     else if (!GRAD_YEARS.includes(year)) errors.gradYear = "Select a year";
     if (data.positions.length === 0)
       errors.positions = "Pick at least one position";
+    if (!data.jerseySize) errors.jerseySize = "Required";
+    else if (!(JERSEY_SIZES as readonly string[]).includes(data.jerseySize))
+      errors.jerseySize = "Select a size";
     if (data.fffUrl.trim() && !/^https?:\/\/\S+$/.test(data.fffUrl.trim()))
       errors.fffUrl = "Enter a full link (starting with http)";
     if (data.medical.length > 1000) errors.medical = "Too long";
@@ -181,6 +200,7 @@ export function toStripeMetadata(
     dob: clip(data.dob),
     gradYear: clip(data.gradYear),
     positions: clip(data.positions.join(", ")),
+    jerseySize: clip(data.jerseySize ?? ""),
     fffUrl: clip(data.fffUrl),
     medical: clip(data.medical),
     hometown: clip(data.hometown ?? ""),

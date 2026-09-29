@@ -6,6 +6,7 @@ import {
   EMPTY_REGISTRATION,
   FieldErrors,
   GRAD_YEARS,
+  JERSEY_SIZES,
   POSITIONS,
   RegistrationData,
   validateRegistration,
@@ -157,6 +158,20 @@ export default function RegistrationForm(props: Props) {
                 {GRAD_YEARS.map((y) => (
                   <option key={y} value={y}>
                     {y}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label>
+              Jersey size{err("jerseySize")}
+              <select
+                value={data.jerseySize}
+                onChange={(e) => set("jerseySize", e.target.value)}
+              >
+                <option value="">Select…</option>
+                {JERSEY_SIZES.map((size) => (
+                  <option key={size} value={size}>
+                    {size}
                   </option>
                 ))}
               </select>

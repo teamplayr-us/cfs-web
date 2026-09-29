@@ -107,6 +107,7 @@ export async function POST(req: Request) {
         ["Event", eventLabel],
         ["Grad year", m.gradYear],
         ["Positions", m.positions],
+        ["Jersey size", m.jerseySize],
         ["Hometown", m.hometown],
         ["Club team", m.clubTeam || "None"],
         ["Guest pool", guestPool ? "Yes — opted in" : "No"],

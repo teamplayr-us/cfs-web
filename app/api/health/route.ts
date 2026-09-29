@@ -90,6 +90,7 @@ export async function GET(req: Request) {
                   dob: "2011-01-01",
                   gradYear: "2029",
                   positions: "WR",
+                  jerseySize: "Adult M",
                   medical: "healthcheck probe",
                   guardianFirst: "Health",
                   guardianLast: "Check",
