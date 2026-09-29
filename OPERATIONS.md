@@ -237,6 +237,20 @@ Flyer (attach the showcase card AND the ISI card for mixed orgs).
 MailerSend** (SPF/DKIM records) or mixed sends will be rejected.
 Showcase-only orgs are completely unchanged.
 
+**ISI-only orgs.** If EVERY team on the Opportunity is ISI Only, the
+send uses `/email-templates/team-invite-isi.html` instead: ISI header
+(`/email-headers/invite-isi.png`), no College Flag Showcase section, no
+combine, ISI FAQ only, subject "Official Invitation — International
+Superflag Invitational — Dallas, TX", from allen@5v5sports.com. Attach
+the ISI card only. Same MailerSend prerequisite as mixed sends.
+
+**Manual sends while 5v5sports.com isn't verified.** Build a
+ready-to-send Outlook draft with `collateral/build-invite-eml.py` (same
+templates, header embedded inline so Outlook renders it). `--cfs-teams`
+omitted = showcase-only, a subset = mixed, `""` = ISI-only. Don't check
+Send Invitation on those Opportunities (it would double-send later);
+stamp the teams Invited by hand after sending.
+
 ## 9. Diagnostics
 
 - **https://www.collegeflagshowcase.com/api/health** — shows which env vars

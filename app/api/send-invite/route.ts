@@ -58,6 +58,10 @@ const TEMPLATE_URL =
 // International Superflag Invitational and send from 5v5 Sports.
 const MIXED_TEMPLATE_URL =
   "https://www.collegeflagshowcase.com/email-templates/team-invite-mixed.html";
+// ISI-only orgs (every team Track = ISI Only): ISI-branded, no showcase
+// section, ISI FAQ only. Also sent from 5v5 Sports.
+const ISI_TEMPLATE_URL =
+  "https://www.collegeflagshowcase.com/email-templates/team-invite-isi.html";
 const FAQ_URL = "https://www.collegeflagshowcase.com/invites/team-faq.pdf";
 const ISI_FAQ_URL =
   "https://www.collegeflagshowcase.com/invites/isi-team-faq.pdf";
@@ -215,6 +219,7 @@ async function loadSend(oppId: string) {
   // Any ISI-only team makes this a mixed send: ISI-led template, sent
   // from 5v5 Sports, with both FAQs attached.
   const mixed = cfsTeamLines.length < lines.length;
+  const isiOnly = lines.length > 0 && cfsTeamLines.length === 0;
 
   const ccEmails = ((f[OPP.inviteCc] as string | undefined) ?? "")
     .split(",")
@@ -234,6 +239,7 @@ async function loadSend(oppId: string) {
     teamLines,
     cfsTeamLines,
     mixed,
+    isiOnly,
   };
 }
 
@@ -273,10 +279,10 @@ export async function GET(req: Request) {
     return page(
       "Confirm Invitation",
       `<p style="color:#C9C4C9;line-height:1.6;">Ready to send the official invitation for <b style="color:#F7F5F6;">${escapeHtml(s.orgName)}</b> to <b style="color:#F7F5F6;">${escapeHtml(s.toEmail)}</b>${s.eventName ? ` — ${escapeHtml(s.eventName)}` : ""}.</p>
-       ${s.mixed ? `<p style="color:#C9C4C9;">Mixed invitation — International Superflag Invitational leads, sent from <b style="color:#F7F5F6;">${escapeHtml(ISI_FROM_EMAIL)}</b>. Showcase teams: ${escapeHtml(s.cfsTeamLines.join(", ") || "none")}.</p>` : ""}
+       ${s.isiOnly ? `<p style="color:#C9C4C9;">ISI-only invitation — International Superflag Invitational, sent from <b style="color:#F7F5F6;">${escapeHtml(ISI_FROM_EMAIL)}</b>.</p>` : s.mixed ? `<p style="color:#C9C4C9;">Mixed invitation — International Superflag Invitational leads, sent from <b style="color:#F7F5F6;">${escapeHtml(ISI_FROM_EMAIL)}</b>. Showcase teams: ${escapeHtml(s.cfsTeamLines.join(", ") || "none")}.</p>` : ""}
        <ul style="color:#F7F5F6;line-height:1.8;">${s.teamLines.map((t) => `<li>${escapeHtml(t)}</li>`).join("")}</ul>
        ${s.ccEmails.length > 0 ? `<p style="color:#C9C4C9;">CC: ${escapeHtml(s.ccEmails.join(", "))}</p>` : ""}
-       <p style="color:#C9C4C9;">Attached: ${escapeHtml(s.flyers.map((fl) => fl.filename ?? "invitation.png").join(", "))}${s.mixed ? " + both FAQs" : " + FAQ"}</p>
+       <p style="color:#C9C4C9;">Attached: ${escapeHtml(s.flyers.map((fl) => fl.filename ?? "invitation.png").join(", "))}${s.isiOnly ? " + ISI FAQ" : s.mixed ? " + both FAQs" : " + FAQ"}</p>
        <form method="post" action="${escapeHtml(url.pathname + url.search)}">
          <button type="submit" style="background:#FF2D8E;color:#fff;border:0;padding:14px 34px;font-size:16px;font-weight:bold;letter-spacing:1px;text-transform:uppercase;cursor:pointer;">Send Invitation</button>
        </form>`,
@@ -297,9 +303,10 @@ export async function POST(req: Request) {
   try {
     const s = await loadSend(checked.oppId);
 
-    const tplRes = await fetch(s.mixed ? MIXED_TEMPLATE_URL : TEMPLATE_URL, {
-      cache: "no-store",
-    });
+    const tplRes = await fetch(
+      s.isiOnly ? ISI_TEMPLATE_URL : s.mixed ? MIXED_TEMPLATE_URL : TEMPLATE_URL,
+      { cache: "no-store" },
+    );
     if (!tplRes.ok) throw new Error(`Template fetch failed: ${tplRes.status}`);
     const row = (t: string) =>
       `<tr><td style="padding:7px 0;border-bottom:1px solid #E6E2E5;font-size:15px;color:#0A0A0B;font-weight:bold;">${escapeHtml(t)}</td></tr>`;
@@ -322,7 +329,11 @@ export async function POST(req: Request) {
       });
     }
 
-    const faqUrls = s.mixed ? [FAQ_URL, ISI_FAQ_URL] : [FAQ_URL];
+    const faqUrls = s.isiOnly
+      ? [ISI_FAQ_URL]
+      : s.mixed
+        ? [FAQ_URL, ISI_FAQ_URL]
+        : [FAQ_URL];
     for (const faqUrl of faqUrls) {
       const faqRes = await fetch(faqUrl, { cache: "no-store" });
       if (!faqRes.ok) throw new Error(`FAQ download failed: ${faqRes.status}`);
@@ -352,7 +363,9 @@ export async function POST(req: Request) {
           : {}),
         reply_to: { email: fromEmail, name: fromName },
         bcc: [{ email: fromEmail }],
-        subject: s.mixed
+        subject: s.isiOnly
+          ? `Official Invitation — International Superflag Invitational — Dallas, TX`
+          : s.mixed
           ? `Official Invitation — International Superflag Invitational & College Flag Showcase — Dallas, TX`
           : `Official Invitation — College Flag Showcase${s.eventName ? `, ${s.eventName}` : ""}`,
         html,
