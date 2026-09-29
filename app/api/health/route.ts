@@ -8,18 +8,24 @@ export const dynamic = "force-dynamic";
 // Airtable with the deployed credentials. Booleans and status codes only —
 // never secret values. With ?write=1 it additionally replays the webhook's
 // exact Airtable sequence (dup-check query, create, then delete the test row).
+// Requires ?key=<INVITE_SEND_KEY>; without it the route 404s.
 export async function GET(req: Request) {
+  const params = new URL(req.url).searchParams;
+  const opsKey = process.env.INVITE_SEND_KEY;
+  if (!opsKey || params.get("key") !== opsKey) {
+    return NextResponse.json({ error: "Not found" }, { status: 404 });
+  }
+
   const stripeKey = process.env.STRIPE_SECRET_KEY;
   const result: Record<string, unknown> = {
     stripeSecretKey: stripeKey
-      ? `set (${stripeKey.slice(0, 8)}…, ${stripeKey.length} chars)`
+      ? `set (${stripeKey.startsWith("sk_live_") ? "LIVE" : stripeKey.startsWith("sk_test_") ? "TEST" : "unknown"} mode)`
       : "MISSING",
-    stripeWebhookSecret: process.env.STRIPE_WEBHOOK_SECRET
-      ? `set (${process.env.STRIPE_WEBHOOK_SECRET.slice(0, 6)}…)`
-      : "MISSING",
-    airtableApiKey: process.env.AIRTABLE_API_KEY
-      ? `set (${process.env.AIRTABLE_API_KEY.slice(0, 3)}…, ${process.env.AIRTABLE_API_KEY.length} chars)`
-      : "MISSING",
+    stripeWebhookSecret: process.env.STRIPE_WEBHOOK_SECRET ? "set" : "MISSING",
+    tournamentDiscountCode: process.env.TOURNAMENT_DISCOUNT_CODE
+      ? "set"
+      : "MISSING — every discount code will be rejected",
+    airtableApiKey: process.env.AIRTABLE_API_KEY ? "set" : "MISSING",
     airtableBaseId: process.env.AIRTABLE_BASE_ID ?? "MISSING",
     airtableTable: process.env.AIRTABLE_TABLE ?? "MISSING (defaults to 'Registrations')",
     mailersendToken: process.env.MAILERSEND_API_TOKEN
@@ -47,7 +53,7 @@ export async function GET(req: Request) {
     result.airtableProbe = "SKIPPED — Airtable env vars missing";
   }
 
-  if (new URL(req.url).searchParams.get("write") === "1" && key && baseId) {
+  if (params.get("write") === "1" && key && baseId) {
     const base = `https://api.airtable.com/v0/${baseId}/${encodeURIComponent(table)}`;
     const headers = {
       Authorization: `Bearer ${key}`,

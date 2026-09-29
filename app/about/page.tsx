@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import PathwayProof from "@/components/PathwayProof";
 import Footer from "@/components/Footer";
-import { CONTACT_EMAIL, CONTACT_PHONE } from "@/data/links";
+import { CONTACT_EMAIL } from "@/data/links";
 
 export const metadata: Metadata = {
   title: "About | College Flag Showcase Series",
@@ -169,9 +169,6 @@ export default function AboutPage() {
               {CONTACT_EMAIL}
             </a>
           </div>
-          <p className="about-phone">
-            Or call <a href={`tel:${CONTACT_PHONE}`}>{CONTACT_PHONE}</a>
-          </p>
         </div>
       </section>
 

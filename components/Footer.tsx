@@ -1,4 +1,4 @@
-import { CONTACT_EMAIL, CONTACT_PHONE } from "@/data/links";
+import { CONTACT_EMAIL } from "@/data/links";
 
 export default function Footer() {
   return (
@@ -9,7 +9,7 @@ export default function Footer() {
           Series
         </a>
         <div>
-          Questions? {CONTACT_PHONE} &nbsp;|&nbsp;{" "}
+          Questions?{" "}
           <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
         </div>
         <div>© 2026 College Flag Showcase Series</div>
