@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getEvent, stopLabel } from "@/data/events";
 import {
   createGuestPlayer,
+  divisionFor,
   EMPTY_GUEST_PLAYER,
   GUEST_CONSENT_VERSION,
   GuestPlayerData,
@@ -98,6 +99,8 @@ export async function POST(req: Request) {
   }
 
   const athlete = `${d.athleteFirst} ${d.athleteLast}`.trim();
+  const division = divisionFor(d.dob);
+  const campEligible = ["12U", "14U", "16U", "18U"].includes(division);
   await sendEmail({
     to: NOTIFY_EMAIL,
     cc: NOTIFY_CC,
@@ -107,6 +110,7 @@ export async function POST(req: Request) {
       detailRows([
         ["Athlete", athlete],
         ["Event", eventLabel],
+        ["Division", division],
         ["Grad year", d.gradYear],
         ["Positions", m.positions],
         ["Hometown", [m.hometown, d.zip].filter(Boolean).join(" ")],
@@ -125,9 +129,9 @@ export async function POST(req: Request) {
     html: emailLayout(
       "You're in the Pool",
       `<p>Hi ${escapeHtml(d.guardianFirst)},</p>
-       <p><b>${escapeHtml(athlete)}</b> is now in the guest player pool for the Showcase Tournament at <b>${escapeHtml(eventLabel)}</b>. Club coaches of registered teams can see the profile and may contact you directly about a roster spot.</p>
+       <p><b>${escapeHtml(athlete)}</b> is now in the guest player pool for the tournament at <b>${escapeHtml(eventLabel)}</b>. Club coaches of registered teams can see the profile and may contact you directly about a roster spot.</p>
        <p>Joining is free. A team that selects a guest player may ask the family to contribute toward its tournament registration fee.</p>
-       <p>Want college coaches to evaluate your athlete in skill work and testing too? The Showcase Combine &amp; Camp is open for registration at <a href="https://www.collegeflagshowcase.com/events/${event!.slug}/register">collegeflagshowcase.com</a>.</p>
+       ${campEligible ? `<p>Want college coaches to evaluate your athlete in skill work and testing too? The Showcase Combine &amp; Camp (girls 12U&ndash;18U) is open for registration at <a href="https://www.collegeflagshowcase.com/events/${event!.slug}/register">collegeflagshowcase.com</a>.</p>` : ""}
        <p>To leave the pool or update anything, email <a href="mailto:${NOTIFY_EMAIL}">${NOTIFY_EMAIL}</a>.</p>`,
     ),
   });

@@ -25,7 +25,7 @@ interface Props {
 }
 
 function contactHref(p: GuestPlayer, orgs: string[], city: string) {
-  const subject = `Guest player spot for ${p.name} — ${city} Showcase Tournament`;
+  const subject = `Guest player spot for ${p.name} — ${city} tournament`;
   const body = `Hi ${p.guardianName.split(" ")[0] || "there"},\n\nI coach ${orgs.join(" / ")} and found ${p.name} in the College Flag Showcase guest player pool for ${city}. We'd like to talk about adding ${p.name.split(" ")[0]} to our roster as a guest player.\n\n`;
   return `mailto:${p.guardianEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
@@ -45,7 +45,7 @@ export default async function GuestPoolPage({ searchParams }: Props) {
               <h1 className="reg-title">Guest Player Pool</h1>
               <p>
                 Athletes without a tournament team join the guest player pool
-                for free. Club coaches of registered Showcase Tournament teams
+                for free. Club coaches of registered tournament teams
                 can browse the pool here and contact families directly.
                 Families: <a href="/guest-players">join the pool here</a>.
               </p>

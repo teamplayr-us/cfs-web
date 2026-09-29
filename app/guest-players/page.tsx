@@ -8,17 +8,17 @@ import { CONTACT_EMAIL } from "@/data/links";
 export const metadata: Metadata = {
   title: "Guest Player Pool | College Flag Showcase Series",
   description:
-    "No tournament team? Join the free guest player pool and get found by club coaches of registered Showcase Tournament teams.",
+    "No tournament team? Join the free guest player pool and get found by club coaches of registered tournament teams.",
   openGraph: {
     title: "Guest Player Pool | College Flag Showcase Series",
     description:
-      "No tournament team? Join the free guest player pool and get found by club coaches of registered Showcase Tournament teams.",
+      "No tournament team? Join the free guest player pool and get found by club coaches of registered tournament teams.",
     url: "/guest-players",
     images: [{ url: "/og.png", width: 1200, height: 630 }],
   },
 };
 
-// Events whose Showcase Tournament is taking guest players.
+// Events whose tournament is taking guest players.
 const POOL_EVENTS = EVENTS.filter((e) => e.airtableEventId);
 
 export default function GuestPlayersPage() {
@@ -34,7 +34,7 @@ export default function GuestPlayersPage() {
       <header className="hero" id="top">
         <div className="wrap hero-inner">
           <div>
-            <span className="hero-badge">Showcase Tournament</span>
+            <span className="hero-badge">Guest Player Pool</span>
             <h1 className="event-title">
               No Team?
               <br />
@@ -80,7 +80,7 @@ export default function GuestPlayersPage() {
               <span className="why-num">02</span>
               <h3>Coaches Browse</h3>
               <p>
-                Club coaches of registered Showcase Tournament teams browse the
+                Club coaches of registered tournament teams browse the
                 pool by division and position when they need to fill a roster.
               </p>
             </div>
@@ -105,11 +105,11 @@ export default function GuestPlayersPage() {
             <h2>Good to Know.</h2>
           </div>
           <ul className="pkg-includes">
-            <li>Girls 12U–18U (age as of August 1, 2026)</li>
+            <li>All age groups, 8U–18U (age as of August 1, 2026)</li>
             <li>
               {first
                 ? `${stopLabel(first)} — ${first.city}${first.details?.dates ? `, ${first.details.dates}` : ""}`
-                : "Showcase Tournament events"}
+                : "Tournament events"}
             </li>
             <li>Free to join — no fee to be listed</li>
             <li>
@@ -121,8 +121,8 @@ export default function GuestPlayersPage() {
           </ul>
           {first && (
             <p className="reg-fineprint">
-              Want college coaches to evaluate your athlete in skill work and
-              testing too? The{" "}
+              Girls 12U–18U: want college coaches to evaluate your athlete in
+              skill work and testing too? The{" "}
               <a href={`/events/${first.slug}/register`}>
                 Showcase Combine &amp; Camp
               </a>{" "}
