@@ -16,6 +16,7 @@ import {
   TRAIL_BCC,
 } from "@/lib/email";
 import { REFUND_POLICY } from "@/lib/policy";
+import { createGuestPlayer, guestPlayerFields } from "@/lib/guestPlayer";
 
 export const runtime = "nodejs";
 
@@ -81,6 +82,28 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Storage failed" }, { status: 500 });
   }
 
+  // Camp registrants who opted in also join the guest player pool. Best
+  // effort: the paid registration is already stored, so a failure here is
+  // logged and flagged to the inbox rather than failing the webhook.
+  let guestPoolError = false;
+  if (m.guestPool === "yes") {
+    try {
+      await createGuestPlayer(
+        guestPlayerFields(m, {
+          source: "Camp Registration",
+          eventLabel: tourEvent
+            ? `${stopLabel(tourEvent)} — ${tourEvent.city}`
+            : (m.eventSlug ?? ""),
+          consentSignature: m.waiverSignature ?? "",
+          consentVersion: `waiver ${m.waiverVersion ?? ""}`.trim(),
+        }),
+      );
+    } catch (err) {
+      guestPoolError = true;
+      console.error("Guest pool write failed for session", session.id, err);
+    }
+  }
+
   // Best-effort emails after the registration is stored. sendEmail never
   // throws, so the webhook always returns 200 once the write succeeded.
   const eventLabel = tourEvent
@@ -116,6 +139,12 @@ export async function POST(req: Request) {
         ["Guardian phone", m.guardianPhone],
         ["Paid", `$${amount}`],
         ["Discount code", m.discountCode],
+        [
+          "Guest pool error",
+          guestPoolError
+            ? "⚠️ Opted in, but adding to the Guest Players table FAILED — add manually"
+            : undefined,
+        ],
       ]),
     ),
     replyTo: m.guardianEmail,

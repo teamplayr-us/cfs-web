@@ -256,22 +256,25 @@ stamp the teams Invited by hand after sending.
 
 ## Guest player pool (self-serve)
 
-- Athletes opt in at registration → Athlete Registrations → **Guest
-  Player Pool** checkbox (only Status = Paid rows are listed).
-- Coaches sign in at **collegeflagshowcase.com/guest-pool**: enter email →
-  emailed sign-in link (24 h) → 30-day session on that device. An email
-  qualifies if it's the Email Override, synced FFF email, or an Invite CC
-  address on an Opportunity with **Stage = Registered** or **Guest Pool
-  Access** checked. Access is re-checked on every page view, so
-  unchecking/changing the Opportunity revokes it.
-- Each coach sees the pool for their Opportunity's Event (Airtable Events
-  record ↔ `airtableEventId` in `data/events.ts`).
-- Every link request from a qualifying coach emails info@ ("Guest pool
-  sign-in — …") so use can be monitored.
+- **Airtable "Guest Players" table** is the pool. Rows come from:
+  - the free sign-up at **collegeflagshowcase.com/guest-players**
+    (Source = Guest Pool Form; guardian consent + typed signature,
+    Consent Version stored), and
+  - camp registrants who tick "Join the guest player pool" (Source = Camp
+    Registration, Camp Registered ✓; written by the Stripe webhook after
+    payment).
+- Coaches browse at **/guest-pool**: enter email → emailed sign-in link
+  (24 h) → 30-day session. An email qualifies if it's the Email Override,
+  synced FFF email, or an Invite CC address on an Opportunity with
+  **Stage = Registered** or **Guest Pool Access** checked. Re-checked on
+  every page view (unchecking revokes access).
+- Coaches see **Status = Active** rows for their Opportunity's Event
+  (Airtable Events record ↔ `airtableEventId` in `data/events.ts`),
+  including guardian name/email/phone and a "Contact Family" email.
+- Every sign-up and every coach sign-in request emails info@ (monitoring).
+- To remove someone: set their Guest Players row to Status = Removed.
 - ⚠️ Formulas reference these field NAMES — don't rename: Opportunities
-  {Stage}, {Guest Pool Access}; Athlete Registrations {Event Slug},
-  {Guest Player Pool}, {Status}.
-- To remove a family: uncheck Guest Player Pool on their row.
+  {Stage}, {Guest Pool Access}; Guest Players {Event Slug}, {Status}.
 
 ## 9. Diagnostics
 

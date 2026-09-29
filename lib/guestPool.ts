@@ -1,6 +1,7 @@
 // Guest player pool: a self-serve directory where club coaches of
-// registered Showcase Tournament teams browse team-less athletes who opted
-// in at registration and contact their families directly.
+// registered Showcase Tournament teams browse team-less athletes (free
+// sign-ups at /guest-players and camp registrants who opted in — the
+// "Guest Players" Airtable table) and contact their families directly.
 //
 // Access is by emailed sign-in link. A coach qualifies when their email is
 // on an Opportunity (Email Override, synced FFF email, or Invite CC) whose
@@ -9,8 +10,7 @@
 
 import { createHmac, timingSafeEqual } from "node:crypto";
 import { EVENTS, TourEvent } from "@/data/events";
-import { REG_FIELD } from "@/lib/airtable";
-import { ageOnCutoff } from "@/lib/registration";
+import { divisionFor, GUEST_FIELD, GUEST_TABLE } from "@/lib/guestPlayer";
 
 const API = "https://api.airtable.com/v0";
 
@@ -24,8 +24,6 @@ const OPP = {
   event: "fldkbOR7PhxjgPIdb",
   guestPoolAccess: "fldkGLYdIWDenr6lJ",
 } as const;
-
-const REG_TABLE = "tblmp5EHSrHHaxjpD";
 
 export const SESSION_COOKIE = "cfs_guest_pool";
 const LINK_TTL_MS = 1000 * 60 * 60 * 24; // sign-in link: 24 hours
@@ -149,22 +147,14 @@ export interface GuestPlayer {
   hometown?: string;
   club?: string;
   fffProfile?: string;
+  campRegistered: boolean;
   guardianName: string;
   guardianEmail?: string;
   guardianPhone?: string;
 }
 
-/** Showcase division from DOB: 12U/14U/16U/18U by age on the cutoff. */
-export function divisionFor(dob: string | undefined): string {
-  if (!dob) return "—";
-  const age = ageOnCutoff(dob);
-  if (age <= 12) return "12U";
-  if (age <= 14) return "14U";
-  if (age <= 16) return "16U";
-  return "18U";
-}
-
-/** Paid, opted-in athletes for an event, youngest division first. */
+/** Active guest players for an event (free sign-ups and camp opt-ins),
+ * youngest division first. */
 export async function guestPool(eventSlug: string): Promise<GuestPlayer[]> {
   const cfg = airtable();
   if (!cfg) return [];
@@ -172,12 +162,12 @@ export async function guestPool(eventSlug: string): Promise<GuestPlayer[]> {
   let offset: string | undefined;
   do {
     const params = new URLSearchParams({
-      filterByFormula: `AND({Event Slug} = '${eventSlug.replace(/'/g, "\\'")}', {Guest Player Pool}, {Status} = 'Paid')`,
+      filterByFormula: `AND({Event Slug} = '${eventSlug.replace(/'/g, "\\'")}', {Status} = 'Active')`,
       returnFieldsByFieldId: "true",
       pageSize: "100",
     });
     if (offset) params.set("offset", offset);
-    const res = await fetch(`${API}/${cfg.baseId}/${REG_TABLE}?${params}`, {
+    const res = await fetch(`${API}/${cfg.baseId}/${GUEST_TABLE}?${params}`, {
       headers: { Authorization: `Bearer ${cfg.key}` },
       cache: "no-store",
     });
@@ -187,22 +177,23 @@ export async function guestPool(eventSlug: string): Promise<GuestPlayer[]> {
       offset?: string;
     };
     for (const { id, fields: f } of page.records) {
-      const s = (k: keyof typeof REG_FIELD) =>
-        typeof f[REG_FIELD[k]] === "string"
-          ? (f[REG_FIELD[k]] as string)
+      const s = (k: keyof typeof GUEST_FIELD) =>
+        typeof f[GUEST_FIELD[k]] === "string"
+          ? (f[GUEST_FIELD[k]] as string)
           : undefined;
       out.push({
         id,
         name: s("athlete") ?? "",
-        division: divisionFor(s("dob")),
+        division: s("division") || divisionFor(s("dob")) || "—",
         gradYear:
-          typeof f[REG_FIELD.gradYear] === "number"
-            ? (f[REG_FIELD.gradYear] as number)
+          typeof f[GUEST_FIELD.gradYear] === "number"
+            ? (f[GUEST_FIELD.gradYear] as number)
             : undefined,
         positions: s("positions"),
         hometown: s("hometown"),
         club: s("clubTeam"),
         fffProfile: s("fffProfile"),
+        campRegistered: f[GUEST_FIELD.campRegistered] === true,
         guardianName: [s("guardianFirst"), s("guardianLast")]
           .filter(Boolean)
           .join(" "),

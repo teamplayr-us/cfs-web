@@ -122,15 +122,15 @@ export function ageOnCutoff(dob: string, cutoff = AGE_CUTOFF): number {
 
 export type FieldErrors = Partial<Record<keyof RegistrationData, string>>;
 
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+export const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-function requiredName(value: string): string | undefined {
+export function requiredName(value: string): string | undefined {
   if (!value.trim()) return "Required";
   if (value.trim().length > 80) return "Too long";
   return undefined;
 }
 
-function requiredPhone(value: string): string | undefined {
+export function requiredPhone(value: string): string | undefined {
   if (!value.trim()) return "Required";
   if (value.replace(/\D/g, "").length < 7) return "Enter a valid phone number";
   return undefined;

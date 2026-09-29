@@ -136,13 +136,16 @@ whose girls 12U–18U teams land in the showcase divisions):
   for the U.S.; free text elsewhere), ZIP (U.S.) or postal code, club/travel
   team (optional), a
   girls 12U–18U eligibility confirmation (age as of Aug 1, 2026), and an
-  optional **guest player pool** opt-in ("Join the guest player pool"):
-  club coaches of registered tournament teams can browse the pool at
+  optional **guest player pool** opt-in ("Join the guest player pool").
+- **Guest player pool** (free, separate from the camp): athletes without a
+  tournament team join at **collegeflagshowcase.com/guest-players** — no
+  camp registration needed (girls 12U–18U, age as of Aug 1, 2026). Club
+  coaches of registered tournament teams browse it at
   collegeflagshowcase.com/guest-pool and contact the family directly.
   **No fee to be listed**; a team that selects a guest player may ask the
   family to contribute toward its tournament registration fee. To leave
-  the pool, the family emails info@ — [INTERNAL] uncheck "Guest Player
-  Pool" on their Athlete Registrations row.
+  the pool, the family emails info@ — [INTERNAL] set their row in the
+  Guest Players table to Status = Removed.
 - **Coaches asking for guest-pool access:** they request a sign-in link
   at /guest-pool with their team's registered email. [INTERNAL] If it
   doesn't arrive, their email isn't on a Registered Opportunity — add it

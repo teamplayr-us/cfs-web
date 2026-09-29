@@ -44,10 +44,10 @@ export default async function GuestPoolPage({ searchParams }: Props) {
               <span className="eyebrow">For Registered Team Coaches</span>
               <h1 className="reg-title">Guest Player Pool</h1>
               <p>
-                Athletes registered for the Showcase Combine &amp; Camp who
-                don&apos;t have a tournament team can join the guest player
-                pool. Club coaches of registered Showcase Tournament teams can
-                browse the pool here and contact families directly.
+                Athletes without a tournament team join the guest player pool
+                for free. Club coaches of registered Showcase Tournament teams
+                can browse the pool here and contact families directly.
+                Families: <a href="/guest-players">join the pool here</a>.
               </p>
             </div>
             <GuestPoolSignIn expired={searchParams.expired === "1"} />
@@ -74,7 +74,7 @@ export default async function GuestPoolPage({ searchParams }: Props) {
             <span className="eyebrow">{access.orgs.join(" · ")}</span>
             <h1 className="reg-title">Guest Player Pool</h1>
             <p>
-              Athletes without a tournament team who opted in at registration.
+              Athletes without a tournament team who joined the pool.
               Reach out to the family directly to talk about a roster spot.
               Listing is free; if you select a guest player, you may ask the
               family to contribute toward your tournament registration fee.
@@ -112,6 +112,11 @@ export default async function GuestPoolPage({ searchParams }: Props) {
                         <span>{p.division}</span>
                         {p.gradYear && <span>Class of {p.gradYear}</span>}
                       </div>
+                      {p.campRegistered && (
+                        <span className="pool-badge">
+                          Registered for the Combine &amp; Camp
+                        </span>
+                      )}
                       <h2 className="pool-name">{p.name}</h2>
                       <dl className="pool-facts">
                         {p.positions && (

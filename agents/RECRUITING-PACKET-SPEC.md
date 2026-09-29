@@ -98,7 +98,11 @@ invited team; she never "signs up" for the tournament.
 ### Self-serve contact (DECIDED — founder, Sep 29, 2026; replaces the
 ### earlier request-based design)
 
-The pool is self-serve: club coaches of registered teams browse it at
+The pool is open and free: any eligible athlete can join at
+collegeflagshowcase.com/guest-players (no camp registration required),
+and camp registrants can opt in from the camp form. It lives in the
+Airtable "Guest Players" table. The pool is self-serve: club coaches of
+registered teams browse it at
 collegeflagshowcase.com/guest-pool and contact families directly
 ("Contact Family" opens a prefilled email to the guardian). Families
 consent to this at opt-in (form copy + waiver §9, version 2026-09-29.2)

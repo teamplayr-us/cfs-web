@@ -21,6 +21,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
+      url: `${BASE}/guest-players`,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    },
+    {
       url: `${BASE}/about`,
       changeFrequency: "monthly" as const,
       priority: 0.5,
