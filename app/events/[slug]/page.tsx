@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Nav from "@/components/Nav";
 import CommittedColleges from "@/components/CommittedColleges";
+import GuestPoolSection from "@/components/GuestPoolSection";
 import CompetingPrograms from "@/components/CompetingPrograms";
 import TourStops from "@/components/TourStops";
 import InterestCTA from "@/components/InterestCTA";
@@ -314,6 +315,7 @@ export default function EventPage({ params }: Props) {
         </div>
       </section>
 
+      {event.airtableEventId && <GuestPoolSection city={event.city} />}
       <CompetingPrograms
         slots={orgsForEvent(event.slug)}
         inviteHref={inviteUrl}
