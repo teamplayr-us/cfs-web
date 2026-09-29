@@ -3,6 +3,7 @@
 // (authoritative re-validation) so the two can never drift.
 
 import { WAIVER_VERSION } from "@/lib/waiver";
+import { COUNTRY_CODE_SET, countryName, STATE_CODES, US } from "@/lib/states";
 
 export const POSITIONS = [
   "QB",
@@ -40,8 +41,14 @@ export interface RegistrationData {
   fffUrl: string;
   /** Optional free-text allergies / medical notes */
   medical: string;
-  /** Hometown, "City, ST" */
-  hometown: string;
+  /** ISO country code; "US" by default */
+  country: string;
+  /** Home city */
+  city: string;
+  /** U.S.: 2-letter state code. Elsewhere: free-text state/province */
+  state: string;
+  /** U.S.: 5-digit ZIP (required). Elsewhere: postal code (optional) */
+  zip: string;
   /** Optional club / travel team (blank = none) */
   clubTeam: string;
   /** Guardian confirms girls 12U–18U eligibility */
@@ -71,7 +78,10 @@ export const EMPTY_REGISTRATION: RegistrationData = {
   jerseySize: "",
   fffUrl: "",
   medical: "",
-  hometown: "",
+  country: "US",
+  city: "",
+  state: "",
+  zip: "",
   clubTeam: "",
   eligibilityConfirmed: false,
   guestPool: false,
@@ -159,8 +169,17 @@ export function validateRegistration(
     if (data.fffUrl.trim() && !/^https?:\/\/\S+$/.test(data.fffUrl.trim()))
       errors.fffUrl = "Enter a full link (starting with http)";
     if (data.medical.length > 1000) errors.medical = "Too long";
-    if (!data.hometown.trim()) errors.hometown = "Required";
-    else if (data.hometown.trim().length > 80) errors.hometown = "Too long";
+    const inUS = data.country === US;
+    if (!COUNTRY_CODE_SET.has(data.country)) errors.country = "Select a country";
+    errors.city = requiredName(data.city);
+    if (inUS) {
+      if (!STATE_CODES.has(data.state)) errors.state = "Select a state";
+      if (!/^\d{5}(-\d{4})?$/.test(data.zip.trim()))
+        errors.zip = "Enter a 5-digit ZIP";
+    } else {
+      if (data.state.trim().length > 80) errors.state = "Too long";
+      if (data.zip.trim().length > 12) errors.zip = "Too long";
+    }
     if (data.clubTeam.trim().length > 80) errors.clubTeam = "Too long";
     if (!data.eligibilityConfirmed)
       errors.eligibilityConfirmed = "Required to register";
@@ -203,7 +222,20 @@ export function toStripeMetadata(
     jerseySize: clip(data.jerseySize ?? ""),
     fffUrl: clip(data.fffUrl),
     medical: clip(data.medical),
-    hometown: clip(data.hometown ?? ""),
+    country: clip(countryName(data.country || US)),
+    city: clip(data.city ?? ""),
+    state: clip(data.state ?? ""),
+    zip: clip(data.zip ?? ""),
+    // "Frisco, TX" in the U.S.; "Monterrey, Nuevo León, Mexico" elsewhere
+    hometown: clip(
+      (data.country === US
+        ? [data.city, data.state]
+        : [data.city, data.state, countryName(data.country)]
+      )
+        .map((x) => x?.trim())
+        .filter(Boolean)
+        .join(", "),
+    ),
     clubTeam: clip(data.clubTeam ?? ""),
     guestPool: data.guestPool ? "yes" : "no",
     guardianFirst: clip(data.guardianFirst),

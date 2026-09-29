@@ -108,7 +108,7 @@ export async function POST(req: Request) {
         ["Grad year", m.gradYear],
         ["Positions", m.positions],
         ["Jersey size", m.jerseySize],
-        ["Hometown", m.hometown],
+        ["Hometown", [m.hometown, m.zip].filter(Boolean).join(" ")],
         ["Club team", m.clubTeam || "None"],
         ["Guest pool", guestPool ? "Yes — opted in" : "No"],
         ["Guardian", `${m.guardianFirst ?? ""} ${m.guardianLast ?? ""}`.trim()],

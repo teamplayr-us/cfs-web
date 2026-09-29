@@ -132,7 +132,9 @@ whose girls 12U–18U teams land in the showcase divisions):
   goes to the guardian email. Parent/guardian must complete it (waiver
   signature). The full participant waiver is public at
   collegeflagshowcase.com/waiver.
-- The form also asks for hometown, club/travel team (optional), a
+- The form also asks for jersey size, country, home city, state (dropdown
+  for the U.S.; free text elsewhere), ZIP (U.S.) or postal code, club/travel
+  team (optional), a
   girls 12U–18U eligibility confirmation (age as of Aug 1, 2026), and an
   optional **guest player pool** opt-in: team-less athletes can be
   requested by club coaches of registered tournament teams; every request

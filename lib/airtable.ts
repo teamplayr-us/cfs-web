@@ -39,6 +39,10 @@ export const REG_FIELD = {
   discountCode: "fldmXg1NAoksg8rWG",
   waiverVersion: "fld13uKFBAADHnr9Q",
   jerseySize: "fldXumKxBiWOsg33j",
+  city: "fldnMP6Vf7XMLE7uM",
+  state: "fldclOeeV7GOzIWvb",
+  zip: "fldnSzR1Jy1nNu1Zp",
+  country: "fldODJu0vBOSDHSxr",
 } as const;
 
 /** Build the Airtable record for a paid registration from Stripe Checkout
@@ -79,6 +83,10 @@ export function buildRegistrationFields(
     [REG_FIELD.discountCode]: m.discountCode || undefined,
     [REG_FIELD.waiverVersion]: m.waiverVersion || undefined,
     [REG_FIELD.jerseySize]: m.jerseySize || undefined,
+    [REG_FIELD.city]: m.city || undefined,
+    [REG_FIELD.state]: m.state || undefined,
+    [REG_FIELD.zip]: m.zip || undefined,
+    [REG_FIELD.country]: m.country || undefined,
   };
 }
 

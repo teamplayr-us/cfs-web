@@ -12,6 +12,7 @@ import {
   validateRegistration,
 } from "@/lib/registration";
 import { WAIVER_SUMMARY } from "@/lib/waiver";
+import { COUNTRIES, US, US_STATES } from "@/lib/states";
 import { REFUND_POLICY } from "@/lib/policy";
 import WaiverText from "@/components/WaiverText";
 
@@ -177,13 +178,67 @@ export default function RegistrationForm(props: Props) {
               </select>
             </label>
             <label>
-              Hometown (city, state){err("hometown")}
+              Country{err("country")}
+              <select
+                autoComplete="country"
+                value={data.country}
+                onChange={(e) => {
+                  set("country", e.target.value);
+                  set("state", "");
+                }}
+              >
+                {COUNTRIES.map(([code, name]) => (
+                  <option key={code} value={code}>
+                    {name}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label>
+              Home city{err("city")}
               <input
                 type="text"
                 autoComplete="address-level2"
-                placeholder="Frisco, TX"
-                value={data.hometown}
-                onChange={(e) => set("hometown", e.target.value)}
+                value={data.city}
+                onChange={(e) => set("city", e.target.value)}
+              />
+            </label>
+            {data.country === US ? (
+              <label>
+                State{err("state")}
+                <select
+                  autoComplete="address-level1"
+                  value={data.state}
+                  onChange={(e) => set("state", e.target.value)}
+                >
+                  <option value="">Select…</option>
+                  {US_STATES.map(([code, name]) => (
+                    <option key={code} value={code}>
+                      {name}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            ) : (
+              <label>
+                State / province (optional){err("state")}
+                <input
+                  type="text"
+                  autoComplete="address-level1"
+                  value={data.state}
+                  onChange={(e) => set("state", e.target.value)}
+                />
+              </label>
+            )}
+            <label>
+              {data.country === US ? "ZIP code" : "Postal code (optional)"}
+              {err("zip")}
+              <input
+                type="text"
+                autoComplete="postal-code"
+                inputMode={data.country === US ? "numeric" : "text"}
+                value={data.zip}
+                onChange={(e) => set("zip", e.target.value)}
               />
             </label>
             <label>
