@@ -97,6 +97,18 @@ export const ORGS_BY_EVENT: Record<string, OrgSlot[]> = {
       logo: "/programs/5p-girls-football.png",
       location: "Missouri",
     },
+    {
+      filled: true,
+      name: "Dominion Flag Football Club",
+      logo: "/programs/dominion.png",
+      location: "Texas",
+    },
+    {
+      filled: true,
+      name: "Arlington Elite Wolves",
+      logo: "/programs/arlington-elite-wolves.png",
+      location: "Texas",
+    },
   ],
 };
 
