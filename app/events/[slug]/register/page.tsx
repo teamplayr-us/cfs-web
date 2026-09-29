@@ -49,10 +49,19 @@ export default function RegisterPage({ params }: Props) {
             <span className="eyebrow">
               {stopLabel(event)} — {event.city}
             </span>
-            <h1 className="reg-title">Athlete Registration</h1>
+            <h1 className="reg-title">
+              Athlete Registration — {event.city.split(",")[0]}
+            </h1>
             <p>
-              Showcase Combine &amp; Camp — individual registration, no team
-              required. Takes about two minutes.
+              Showcase Combine &amp; Camp at {event.venue},{" "}
+              {event.athleteReg?.combineDate ?? event.details?.dates}
+              {event.athleteReg?.combineStartTime &&
+              event.athleteReg?.combineEndTime
+                ? `, ${event.athleteReg.combineStartTime} – ${event.athleteReg.combineEndTime}`
+                : ""}
+              . This registration is for {stopLabel(event)} in {event.city}{" "}
+              only. Individual registration, no team required. Takes about two
+              minutes.
             </p>
           </div>
 

@@ -8,6 +8,7 @@ import InterestCTA from "@/components/InterestCTA";
 import Footer from "@/components/Footer";
 import {
   ATHLETE_REG_LIVE,
+  cityShort,
   EVENTS,
   getEvent,
   stopLabel,
@@ -102,7 +103,7 @@ export default function EventPage({ params }: Props) {
                 <span className="cta-kicker">Showcase Combine &amp; Camp</span>
                 {regOpen && ATHLETE_REG_LIVE ? (
                   <a className="btn btn-red" href={registerUrl}>
-                    Register as an Athlete
+                    Register for {cityShort(event)}
                   </a>
                 ) : regOpen ? (
                   <span className="btn btn-soon">
@@ -249,7 +250,7 @@ export default function EventPage({ params }: Props) {
                 </dl>
                 {regOpen && ATHLETE_REG_LIVE ? (
                   <a className="btn btn-red schedule-cta" href={registerUrl}>
-                    Register as an Athlete
+                    Register for {cityShort(event)}
                   </a>
                 ) : regOpen ? (
                   <span className="btn btn-soon schedule-cta">

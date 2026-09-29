@@ -208,6 +208,16 @@ export function stopLabel(event: TourEvent): string {
   return `Event ${event.number}`;
 }
 
+/** Short city for buttons: "Dallas, TX" → "Dallas". */
+export function cityShort(event: TourEvent): string {
+  return event.city.split(",")[0];
+}
+
+/** Combine day without the year for buttons: "Dec 11, 2026" → "Dec 11". */
+export function combineDay(event: TourEvent): string | undefined {
+  return event.athleteReg?.combineDate?.replace(/,\s*\d{4}$/, "");
+}
+
 /** Status tag as displayed: an event whose registration is configured open
  * still shows "Coming Soon" until ATHLETE_REG_LIVE flips on. */
 export function displayTag(event: TourEvent): string {
