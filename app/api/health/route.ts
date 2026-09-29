@@ -24,7 +24,7 @@ export async function GET(req: Request) {
     stripeWebhookSecret: process.env.STRIPE_WEBHOOK_SECRET ? "set" : "MISSING",
     tournamentDiscountCode: process.env.TOURNAMENT_DISCOUNT_CODE
       ? "set"
-      : "MISSING — every discount code will be rejected",
+      : "MISSING (only used as a fallback if the Airtable Discount Codes table can't be reached)",
     airtableApiKey: process.env.AIRTABLE_API_KEY ? "set" : "MISSING",
     airtableBaseId: process.env.AIRTABLE_BASE_ID ?? "MISSING",
     airtableTable: process.env.AIRTABLE_TABLE ?? "MISSING (defaults to 'Registrations')",

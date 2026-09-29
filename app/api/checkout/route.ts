@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
-import { getEvent, stopLabel, TOURNAMENT_DISCOUNT_CENTS } from "@/data/events";
+import { getEvent, stopLabel } from "@/data/events";
+import { findDiscount } from "@/lib/discounts";
 import {
   RegistrationData,
   toStripeMetadata,
@@ -59,30 +60,50 @@ export async function POST(req: Request) {
     }
   }
 
-  // Tournament-team discount: $50 off with the code shared alongside each
-  // Showcase Tournament invite. Validated here only — the code lives in the
-  // TOURNAMENT_DISCOUNT_CODE env var, never in the client bundle.
-  let unitAmount = event.athleteReg.priceCents;
-  let productDescription =
-    "College Flag Showcase Series — Showcase Combine & Camp";
+  // Discount codes live in the Airtable "Discount Codes" table (lib/
+  // discounts.ts) and are validated here only — never in the client bundle.
+  const price = event.athleteReg.priceCents;
   const enteredCode = (body.data.discountCode ?? "").trim();
-  if (enteredCode) {
-    const validCode = process.env.TOURNAMENT_DISCOUNT_CODE;
-    if (!validCode || enteredCode.toLowerCase() !== validCode.toLowerCase()) {
-      return NextResponse.json(
-        {
-          error: "That discount code isn't valid.",
-          fields: { discountCode: "Invalid code" },
-        },
-        { status: 400 },
-      );
-    }
-    unitAmount -= TOURNAMENT_DISCOUNT_CENTS;
-    productDescription += " — tournament athlete discount applied";
+  const discount = enteredCode
+    ? await findDiscount(enteredCode, event.slug, price)
+    : null;
+  if (discount && !discount.ok) {
+    return NextResponse.json(
+      { error: discount.error, fields: { discountCode: discount.error } },
+      { status: 400 },
+    );
   }
 
   const stripe = new Stripe(stripeKey);
   const origin = new URL(req.url).origin;
+  const metadata = toStripeMetadata(body.data, event.slug);
+  let discounts: Stripe.Checkout.SessionCreateParams.Discount[] | undefined;
+
+  try {
+    if (discount?.ok && discount.offCents > 0) {
+      // A single-use Stripe coupon shows the code as a line on the Stripe
+      // page and receipt, and lets a 100%-off code complete at $0.
+      const coupon = await stripe.coupons.create({
+        amount_off: discount.offCents,
+        currency: "usd",
+        duration: "once",
+        max_redemptions: 1,
+        name: discount.code.toUpperCase().slice(0, 40),
+      });
+      discounts = [{ coupon: coupon.id }];
+      metadata.discountCode = discount.code;
+      if (discount.id) metadata.discountCodeId = discount.id;
+    }
+  } catch (err) {
+    console.error("Stripe coupon failed", err);
+    return NextResponse.json(
+      {
+        error:
+          "We couldn't apply that discount. Please try again in a minute, or email info@collegeflagshowcase.com.",
+      },
+      { status: 502 },
+    );
+  }
 
   let session: Stripe.Checkout.Session;
   try {
@@ -93,16 +114,18 @@ export async function POST(req: Request) {
           quantity: 1,
           price_data: {
             currency: "usd",
-            unit_amount: unitAmount,
+            unit_amount: price,
             product_data: {
               name: `Athlete Registration — ${event.city} (${stopLabel(event)})`,
-              description: productDescription,
+              description:
+                "College Flag Showcase Series — Showcase Combine & Camp",
             },
           },
         },
       ],
+      ...(discounts ? { discounts } : {}),
       customer_email: body.data.guardianEmail.trim(),
-      metadata: toStripeMetadata(body.data, event.slug),
+      metadata,
       success_url: `${origin}/events/${event.slug}/register/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/events/${event.slug}/register?canceled=1`,
     });

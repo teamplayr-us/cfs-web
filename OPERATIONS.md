@@ -177,7 +177,8 @@ too — make sure they ignore events that aren't theirs.
 | Competing programs per event (accepted tournament teams) | `data/organizations.ts` (+ logo in `public/programs/`) |
 | Sponsors board | `data/sponsors.ts` |
 | Contact email, registration links | `data/links.ts` (no public phone number) |
-| Athlete price | `athleteReg.priceCents` in `data/events.ts` — $175 standard; tournament-team athletes enter the code from their coach's invite for $50 off ($125), validated against the `TOURNAMENT_DISCOUNT_CODE` env var |
+| Athlete price | `athleteReg.priceCents` in `data/events.ts` — $175 standard |
+| Discount codes | **Airtable → Discount Codes** table, one row per code: Active, Amount Off ($) or Percent Off, optional Max Uses / Expires / Event Slug, Notes. Checked live at checkout (and by the Review step's Apply button); Uses counts linked registrations. Applied as a single-use Stripe coupon, so the code shows on the Stripe page and receipt; 100% off completes at $0. `TOURNAMENT_DISCOUNT_CODE` env var = $50 fallback only if Airtable can't be reached. Don't rename the {Code} field. |
 | Waiver text | `lib/waiver.ts` — full waiver, published at `/waiver` and shown in the form; bump `WAIVER_VERSION` on any edit (stored per registration). Attorney review recommended |
 | Refund policy copy | `lib/policy.ts` (form, success page, confirmation email) |
 | Age eligibility | `AGE_CUTOFF` / `MAX_AGE` in `lib/registration.ts` (18 or younger on Aug 1, 2026) |

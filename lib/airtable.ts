@@ -39,6 +39,7 @@ export const REG_FIELD = {
   discountCode: "fldmXg1NAoksg8rWG",
   waiverVersion: "fld13uKFBAADHnr9Q",
   jerseySize: "fldXumKxBiWOsg33j",
+  discountCodeLink: "fldvNxXTTTdQ9FPNH",
   city: "fldnMP6Vf7XMLE7uM",
   state: "fldclOeeV7GOzIWvb",
   zip: "fldnSzR1Jy1nNu1Zp",
@@ -81,6 +82,9 @@ export function buildRegistrationFields(
     [REG_FIELD.hometown]: m.hometown || undefined,
     [REG_FIELD.guestPool]: m.guestPool === "yes",
     [REG_FIELD.discountCode]: m.discountCode || undefined,
+    [REG_FIELD.discountCodeLink]: m.discountCodeId
+      ? [m.discountCodeId]
+      : undefined,
     [REG_FIELD.waiverVersion]: m.waiverVersion || undefined,
     [REG_FIELD.jerseySize]: m.jerseySize || undefined,
     [REG_FIELD.city]: m.city || undefined,

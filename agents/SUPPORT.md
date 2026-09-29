@@ -125,8 +125,13 @@ whose girls 12U–18U teams land in the showcase divisions):
 - **$175 standard.** Athletes on a team competing in the Showcase
   Tournament get **$50 off ($125)** — the discount code is included in
   their coach's tournament invite email and entered at checkout (the
-  "Team discount code" field on the Review & Pay step). Code is
-  case-insensitive. Marketing shows "Starting at $125."
+  "Discount code" field on the Review & Pay step — tap Apply to see the
+  new total). Codes are case-insensitive. Marketing shows "Starting at
+  $125."
+- **[INTERNAL]** Other discount codes may exist (Airtable → Discount
+  Codes). If a family says a code "doesn't work", the site shows why
+  (inactive, expired, limit reached, wrong event) — check that row; never
+  invent or promise a code.
 - Registration is a 3-step form at `/events/<event>/register` (athlete →
   parent/guardian + waiver → review), then Stripe secure checkout. Receipt
   goes to the guardian email. Parent/guardian must complete it (waiver

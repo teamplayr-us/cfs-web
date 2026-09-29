@@ -25,8 +25,6 @@ interface Props {
   /** Combine start–end time range, or "TBD" */
   time: string;
   priceCents: number;
-  /** Team-code discount, in cents */
-  discountCents: number;
 }
 
 const STEP_TITLES = ["About the Athlete", "Parent / Guardian", "Review & Pay"];
@@ -39,6 +37,41 @@ export default function RegistrationForm(props: Props) {
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [canceled, setCanceled] = useState(false);
+  // Discount preview (checkout re-validates the code for real).
+  const [applied, setApplied] = useState<{
+    code: string;
+    finalCents: number;
+  } | null>(null);
+  const [codeStatus, setCodeStatus] = useState<string | null>(null);
+  const [checkingCode, setCheckingCode] = useState(false);
+
+  async function applyCode() {
+    const code = data.discountCode.trim();
+    if (!code) return;
+    setCheckingCode(true);
+    setCodeStatus(null);
+    try {
+      const res = await fetch("/api/discount", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ eventSlug: props.eventSlug, code }),
+      });
+      const body = await res.json();
+      if (body.ok) {
+        setApplied({ code: body.code, finalCents: body.finalCents });
+        setErrors((e) => ({ ...e, discountCode: undefined }));
+      } else {
+        setApplied(null);
+        setErrors((e) => ({
+          ...e,
+          discountCode: body.error ?? "That discount code isn't valid.",
+        }));
+      }
+    } catch {
+      setCodeStatus("Couldn't check the code — it will be checked at payment.");
+    }
+    setCheckingCode(false);
+  }
 
   // Restore a half-finished form (e.g. after a Stripe cancel/back).
   useEffect(() => {
@@ -471,8 +504,8 @@ export default function RegistrationForm(props: Props) {
                 <div className="stop-cell">
                   <dt>Total</dt>
                   <dd>
-                    {data.discountCode.trim()
-                      ? `${formatPrice(props.priceCents - props.discountCents)} with team code`
+                    {applied
+                      ? `${formatPrice(applied.finalCents)} with ${applied.code.toUpperCase()}`
                       : formatPrice(props.priceCents)}
                   </dd>
                 </div>
@@ -480,15 +513,37 @@ export default function RegistrationForm(props: Props) {
             </div>
           </div>
           <label className="reg-discount">
-            Team discount code (optional){err("discountCode")}
-            <input
-              type="text"
-              autoComplete="off"
-              placeholder="From your team's tournament invite"
-              value={data.discountCode}
-              onChange={(e) => set("discountCode", e.target.value)}
-            />
+            Discount code (optional){err("discountCode")}
+            <span className="reg-code-row">
+              <input
+                type="text"
+                autoComplete="off"
+                autoCapitalize="characters"
+                placeholder="e.g. from your team's tournament invite"
+                value={data.discountCode}
+                onChange={(e) => {
+                  set("discountCode", e.target.value);
+                  setApplied(null);
+                  setCodeStatus(null);
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    e.preventDefault();
+                    applyCode();
+                  }
+                }}
+              />
+              <button
+                type="button"
+                className="btn btn-ghost"
+                onClick={applyCode}
+                disabled={checkingCode || !data.discountCode.trim()}
+              >
+                {checkingCode ? "…" : applied ? "Applied" : "Apply"}
+              </button>
+            </span>
           </label>
+          {codeStatus && <p className="reg-fineprint">{codeStatus}</p>}
           <p className="reg-fineprint">
             Athletes on Showcase Tournament teams get $50 off — your
             coach&apos;s invite email includes the code. We verify the code and

@@ -7,7 +7,6 @@ import {
   EVENTS,
   getEvent,
   stopLabel,
-  TOURNAMENT_DISCOUNT_CENTS,
 } from "@/data/events";
 
 interface Props {
@@ -83,7 +82,6 @@ export default function RegisterPage({ params }: Props) {
                   : "TBD"
               }
               priceCents={event.athleteReg.priceCents}
-              discountCents={TOURNAMENT_DISCOUNT_CENTS}
             />
           ) : (
             <div className="reg-card">

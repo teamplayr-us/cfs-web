@@ -30,7 +30,11 @@ async function isPaid(sessionId: string | undefined, slug: string) {
   if (!key || !sessionId?.startsWith("cs_")) return false;
   try {
     const s = await new Stripe(key).checkout.sessions.retrieve(sessionId);
-    return s.payment_status === "paid" && s.metadata?.eventSlug === slug;
+    return (
+      (s.payment_status === "paid" ||
+        s.payment_status === "no_payment_required") &&
+      s.metadata?.eventSlug === slug
+    );
   } catch {
     return false;
   }
