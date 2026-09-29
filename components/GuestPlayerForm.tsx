@@ -1,11 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { POSITIONS } from "@/lib/registration";
+import { GRAD_YEARS, POSITIONS } from "@/lib/registration";
 import {
   EMPTY_GUEST_PLAYER,
   GUEST_CONSENT,
-  GUEST_GRAD_YEARS,
   GuestErrors,
   GuestPlayerData,
   validateGuestPlayer,
@@ -140,7 +139,7 @@ export default function GuestPlayerForm({ events }: { events: EventOption[] }) {
             onChange={(e) => set("gradYear", e.target.value)}
           >
             <option value="">Select…</option>
-            {GUEST_GRAD_YEARS.map((y) => (
+            {GRAD_YEARS.map((y) => (
               <option key={y} value={y}>
                 {y}
               </option>
@@ -315,8 +314,8 @@ export default function GuestPlayerForm({ events }: { events: EventOption[] }) {
             checked={data.eligibilityConfirmed}
             onChange={(e) => set("eligibilityConfirmed", e.target.checked)}
           />
-          The athlete is eligible for a tournament age group (8U–18U, age
-          as of August 1, 2026)
+          The athlete is eligible for the girls&apos; Showcase divisions
+          (12U–18U, age as of August 1, 2026)
           {err("eligibilityConfirmed")}
         </label>
         <p>{GUEST_CONSENT}</p>

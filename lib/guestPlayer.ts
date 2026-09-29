@@ -1,5 +1,5 @@
 // Guest player pool sign-up: free, open to any eligible athlete without a
-// tournament team, in any age group 8U–18U (no camp registration required). Shared by the
+// Showcase Tournament team (no camp registration required). Shared by the
 // /guest-players form (client validation), /api/guest-players (server
 // re-validation + write), and the Stripe webhook (camp registrants who opt
 // in). The pool itself lives in the Airtable "Guest Players" table.
@@ -8,7 +8,9 @@ import {
   AGE_CUTOFF,
   ageOnCutoff,
   EMAIL_RE,
+  GRAD_YEARS,
   MAX_AGE,
+  MIN_AGE,
   requiredName,
   requiredPhone,
 } from "@/lib/registration";
@@ -51,8 +53,8 @@ export const GUEST_CONSENT =
   "I am the athlete's parent or legal guardian. I consent to the College " +
   "Flag Showcase Series making the athlete's name, division, grad year, " +
   "positions, hometown, club, and profile link, together with my name, " +
-  "email, and phone, available to club coaches of registered tournament " +
-  "teams, who may contact me directly about a roster spot. " +
+  "email, and phone, available to club coaches of registered Showcase " +
+  "Tournament teams, who may contact me directly about a roster spot. " +
   "Joining is free, and I can leave the pool at any time by emailing " +
   "info@collegeflagshowcase.com. Playing in the tournament is subject to " +
   "the team's registration and the event's participant waiver.";
@@ -104,12 +106,6 @@ export const EMPTY_GUEST_PLAYER: GuestPlayerData = {
   website: "",
 };
 
-/** The pool covers every tournament age group, 8U–18U (8U includes
- * younger athletes; this floor is a plausibility check only). */
-export const GUEST_MIN_AGE = 5;
-/** 8U athletes reach into the late-2030s classes. */
-export const GUEST_GRAD_YEARS = Array.from({ length: 13 }, (_, i) => 2027 + i);
-
 export type GuestErrors = Partial<Record<keyof GuestPlayerData, string>>;
 
 export function validateGuestPlayer(d: GuestPlayerData): GuestErrors {
@@ -122,10 +118,10 @@ export function validateGuestPlayer(d: GuestPlayerData): GuestErrors {
     const dt = new Date(`${d.dob}T00:00:00Z`);
     if (Number.isNaN(dt.getTime()) || dt >= new Date()) e.dob = "Enter a valid date";
     else if (ageOnCutoff(d.dob) > MAX_AGE)
-      e.dob = "The tournament divisions are 8U–18U (age as of Aug 1, 2026)";
-    else if (ageOnCutoff(d.dob) < GUEST_MIN_AGE) e.dob = "Check the date of birth";
+      e.dob = "The Showcase divisions are 12U–18U (age as of Aug 1, 2026)";
+    else if (ageOnCutoff(d.dob) < MIN_AGE) e.dob = "Check the date of birth";
   }
-  if (!GUEST_GRAD_YEARS.includes(Number(d.gradYear))) e.gradYear = "Select a year";
+  if (!GRAD_YEARS.includes(Number(d.gradYear))) e.gradYear = "Select a year";
   if (d.positions.length === 0) e.positions = "Pick at least one position";
   if (!COUNTRY_CODE_SET.has(d.country)) e.country = "Select a country";
   e.city = requiredName(d.city);
@@ -151,12 +147,10 @@ export function validateGuestPlayer(d: GuestPlayerData): GuestErrors {
   return e;
 }
 
-/** Tournament division (8U/10U/…/18U) from DOB, by age on the Aug 1 cutoff. */
+/** 12U/14U/16U/18U from DOB, by age on the Aug 1 cutoff. */
 export function divisionFor(dob: string | undefined): string {
   if (!dob) return "";
   const age = ageOnCutoff(dob, AGE_CUTOFF);
-  if (age <= 8) return "8U";
-  if (age <= 10) return "10U";
   if (age <= 12) return "12U";
   if (age <= 14) return "14U";
   if (age <= 16) return "16U";
