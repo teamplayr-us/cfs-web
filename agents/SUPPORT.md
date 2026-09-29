@@ -60,7 +60,7 @@ page, and OPERATIONS.md when facts change.
 
 | # | City | Date | Status |
 |---|------|------|--------|
-| 01 | Dallas, TX — Craig Ranch Sports Complex, McKinney | **Dec 11–13, 2026** | First event; registration currently in "Coming Soon" mode (§4) |
+| 01 | Dallas, TX — Craig Ranch Sports Complex, McKinney | **Dec 11–13, 2026** | First event; athlete registration **open** (§4) |
 | 02 | Charlotte, NC | Jan 2027 | Venue announcing |
 | 03 | Phoenix, AZ | Feb 2027 | Venue announcing |
 | 04 | Seattle, WA | Apr 2027 | Venue announcing |
@@ -139,12 +139,11 @@ whose girls 12U–18U teams land in the showcase divisions):
   is reviewed before details are shared. **No fee to be listed**; a team
   that selects a guest player may ask her to contribute toward its
   tournament registration fee.
-- **Current state [INTERNAL]:** the site is public but athlete registration
-  is in **"Coming Soon" mode** — buttons are disabled while traffic ramps
-  up. If someone asks "how do I register": registration opens soon; offer
-  to take their email (site "Get Notified" interest form) so they're
-  notified. Do NOT hand out the direct /register URL — it's live only for
-  internal testing.
+- **Current state:** athlete registration is **open** (since Sep 29, 2026)
+  for **Event 01 — Dallas only** (Showcase Combine & Camp, Fri Dec 11,
+  2026, 3:00–5:30 PM, Craig Ranch Sports Complex). Link:
+  collegeflagshowcase.com/events/mckinney-tx/register. Later events
+  aren't taking registrations yet.
 - **[INTERNAL]** An invalid discount code shows "That discount code isn't
   valid." Until the TOURNAMENT_DISCOUNT_CODE environment variable is set in
   Vercel, ALL codes are rejected — full-price checkout still works.

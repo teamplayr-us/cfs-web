@@ -184,7 +184,7 @@ export const EVENTS: TourEvent[] = [
  * /events/[slug]/register pages themselves stay live (they're noindex and
  * not in the sitemap) so checkout can still be tested by direct URL.
  * Flip to true to open registration publicly. */
-export const ATHLETE_REG_LIVE = false;
+export const ATHLETE_REG_LIVE = true;
 
 /** Tournament-team athlete discount, in cents — $50 off the Combine & Camp
  * price with the code from a team's tournament invite (validated against

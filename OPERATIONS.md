@@ -31,8 +31,9 @@ Visitor
 
 - **Website**: Next.js on Vercel. Deploys automatically on every push to
   `main` (github.com/teamplayr-us/cfs-web). Live in ~1–2 minutes.
-- **Payments**: Stripe — the system of record for all money. Currently in
-  TEST mode (see §6).
+- **Payments**: Stripe — the system of record for all money. **LIVE mode**
+  since Sep 29, 2026 (live webhook: "college flag showcase - athlete
+  registration" → /api/stripe/webhook).
 - **Ops database**: Airtable base **College Flag Showcase**
   (`app0mk0cTZLDeVahe`), two tables (§3).
 - **Athlete profiles**: Flag Football Finder (separate product; the reg form
