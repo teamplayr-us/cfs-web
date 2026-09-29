@@ -135,7 +135,7 @@ export async function POST(req: Request) {
            ["Venue", tourEvent?.venue],
          ])}
          <p>What&rsquo;s next: we&rsquo;ll email the full event-weekend schedule and check-in details before the event. Before then, get her Flag Football Finder profile current at <a href="https://www.flagfootballfinder.com">flagfootballfinder.com</a>.</p>
-         ${guestPool ? `<p>She&rsquo;s in the guest player pool. If a registered team&rsquo;s club coach requests her, we&rsquo;ll review the request and contact you before sharing her details.</p>` : ""}
+         ${guestPool ? `<p>${escapeHtml(athleteName)} is in the guest player pool. Club coaches of registered Showcase Tournament teams can see the profile and may contact you directly about a roster spot. To leave the pool, email <a href="mailto:${NOTIFY_EMAIL}">${NOTIFY_EMAIL}</a>.</p>` : ""}
          <p>The participant waiver you signed is at <a href="https://www.collegeflagshowcase.com/waiver">collegeflagshowcase.com/waiver</a>.</p>
          <p style="font-size:13px;color:#5C5A5E;"><b>Cancellations:</b> ${escapeHtml(REFUND_POLICY)}</p>
          <p>Questions in the meantime? Email us at <a href="mailto:${NOTIFY_EMAIL}">${NOTIFY_EMAIL}</a>.</p>`,

@@ -93,18 +93,19 @@ invited team; she never "signs up" for the tournament.
   (one more reason to complete registration).
 - **Shows:** pool grouped by division — name, position, age division,
   hometown, FFF profile link if present. Filterable to the org's own
-  divisions. NO direct guardian contact.
+  divisions, plus the guardian's name, email, and phone.
 
-### Request-based contact (DECIDED — founder, Sep 2026)
+### Self-serve contact (DECIDED — founder, Sep 29, 2026; replaces the
+### earlier request-based design)
 
-Club coaches never get direct contact info. The coach taps "request
-this player" → row lands in a Guest Player Requests table → guardian
-gets a MailerSend note ("Coach X from [org] would like to add your
-daughter as a guest player for [division]") including the coach's
-contact, and the family decides who they talk to. Rationale: families
-opt into every conversation, every match is visible in the CRM, and
-misuse can be monitored and throttled. Roster mechanics then run
-through Zorts like any other player.
+The pool is self-serve: club coaches of registered teams browse it at
+collegeflagshowcase.com/guest-pool and contact families directly
+("Contact Family" opens a prefilled email to the guardian). Families
+consent to this at opt-in (form copy + waiver §9, version 2026-09-29.2)
+and can leave by emailing info@. Monitoring: coaches sign in with an
+emailed link (only emails on an Opportunity with Stage = Registered or
+"Guest Pool Access" checked qualify), and every sign-in is emailed to
+info@. Roster mechanics then run through Zorts like any other player.
 
 RULED (founder, Sep 29, 2026): there is no fee to be listed as a guest
 player. A team that selects a guest player may ask her to contribute
@@ -128,9 +129,8 @@ family. The opt-in ships on the registration form (Athlete Registrations
 
 - Athlete Registrations: guest-pool opt-in (checkbox) + division.
 - Coach Watchlist: coach ↔ athlete saves.
-- Guest Player Requests: org/coach ↔ athlete requests + status
-  (Requested / Guardian Notified / Connected / Declined) — the
-  monitor/throttle surface.
+- Opportunities → "Guest Pool Access" checkbox: grants coach sign-in
+  when Stage isn't Registered (e.g. programs registered pre-CRM).
 
 ## 8. Public-copy rule
 

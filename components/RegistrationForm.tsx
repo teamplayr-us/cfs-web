@@ -301,15 +301,14 @@ export default function RegistrationForm(props: Props) {
                 checked={data.guestPool}
                 onChange={(e) => set("guestPool", e.target.checked)}
               />
-              Add her to the guest player pool (optional)
+              Join the guest player pool (optional)
             </label>
             <p>
               No tournament team? Club coaches of registered Showcase Tournament
-              teams can request to add guest players to their rosters. Every
-              request comes through us first, and we share her details only
-              after we review it. There&apos;s no fee to be listed; a team that
-              selects her may ask her to contribute toward its tournament
-              registration fee.
+              teams can browse the guest player pool and contact you directly
+              about a roster spot. There&apos;s no fee to be listed; a team
+              that selects a guest player may ask the family to contribute
+              toward its tournament registration fee.
             </p>
             <label className="reg-check">
               <input

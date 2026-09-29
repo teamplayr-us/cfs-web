@@ -20,6 +20,9 @@ export interface TourEvent {
    * The tournament is invite-only: this link is sent directly to approved
    * teams and is never rendered on the public site. */
   zortsUrl?: string;
+  /** Record ID of this event in the Airtable Events table — ties CRM
+   * Opportunities (coach access) to this site event (guest pool). */
+  airtableEventId?: string;
   /** Native athlete (Combine & Camp) registration for this stop.
    * Omit until the stop takes athlete registrations. `open: false` shows a
    * "registration opens soon" page at /events/[slug]/register. */
@@ -76,6 +79,7 @@ export const EVENTS: TourEvent[] = [
     number: "01",
     city: "Dallas, TX",
     venue: "Craig Ranch Sports Complex",
+    airtableEventId: "recYOOvpLUVQqCLWj",
     date: "DEC 2026",
     tag: "Registration Open",
     live: true,

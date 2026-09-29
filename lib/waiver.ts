@@ -13,7 +13,7 @@
 // Bump WAIVER_VERSION on any substantive edit — it's stored with every
 // registration so we know which text each guardian signed.
 
-export const WAIVER_VERSION = "2026-09-29";
+export const WAIVER_VERSION = "2026-09-29.2";
 
 export interface WaiverSection {
   heading: string;
@@ -81,7 +81,7 @@ export const WAIVER_SECTIONS: WaiverSection[] = [
     heading: "9. Photo, video, and recruiting information",
     body: [
       "The Activities are filmed and photographed. Guardian grants the Series and its partners the irrevocable right, without payment, to record and use the Athlete's name, likeness, image, voice, biographical information, and athletic performance (including combine results and game film) in any media, for event coverage, recruiting, and promotion of the Series and its events.",
-      "Guardian consents to the Series sharing the Athlete's registration information and event performance with college coaches credentialed for the event, for recruiting purposes. If Guardian opts the Athlete into the guest player pool, Guardian also consents to the Series sharing the Athlete's name and recruiting information with club coaches of registered tournament teams, as described at registration.",
+      "Guardian consents to the Series sharing the Athlete's registration information and event performance with college coaches credentialed for the event, for recruiting purposes. If Guardian opts the Athlete into the guest player pool, Guardian also consents to the Series making the Athlete's name, division, grad year, positions, hometown, club, and profile link, together with Guardian's name, email, and phone, available to club coaches of registered tournament teams, who may contact Guardian directly about a roster spot. Guardian may leave the pool at any time by emailing the Series.",
     ],
   },
   {

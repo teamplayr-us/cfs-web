@@ -254,6 +254,25 @@ omitted = showcase-only, a subset = mixed, `""` = ISI-only. Don't check
 Send Invitation on those Opportunities (it would double-send later);
 stamp the teams Invited by hand after sending.
 
+## Guest player pool (self-serve)
+
+- Athletes opt in at registration → Athlete Registrations → **Guest
+  Player Pool** checkbox (only Status = Paid rows are listed).
+- Coaches sign in at **collegeflagshowcase.com/guest-pool**: enter email →
+  emailed sign-in link (24 h) → 30-day session on that device. An email
+  qualifies if it's the Email Override, synced FFF email, or an Invite CC
+  address on an Opportunity with **Stage = Registered** or **Guest Pool
+  Access** checked. Access is re-checked on every page view, so
+  unchecking/changing the Opportunity revokes it.
+- Each coach sees the pool for their Opportunity's Event (Airtable Events
+  record ↔ `airtableEventId` in `data/events.ts`).
+- Every link request from a qualifying coach emails info@ ("Guest pool
+  sign-in — …") so use can be monitored.
+- ⚠️ Formulas reference these field NAMES — don't rename: Opportunities
+  {Stage}, {Guest Pool Access}; Athlete Registrations {Event Slug},
+  {Guest Player Pool}, {Status}.
+- To remove a family: uncheck Guest Player Pool on their row.
+
 ## 9. Diagnostics
 
 - **https://www.collegeflagshowcase.com/api/health?key=<INVITE_SEND_KEY>** (404 without the key) — shows which env vars
