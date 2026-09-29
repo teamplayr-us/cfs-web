@@ -40,6 +40,9 @@ export default function Nav() {
             </ul>
           </li>
           <li>
+            <a href="/guest-players">Guest Players</a>
+          </li>
+          <li>
             <a href="/film">Film</a>
           </li>
           <li>
