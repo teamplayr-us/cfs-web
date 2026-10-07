@@ -115,6 +115,12 @@ export const ORGS_BY_EVENT: Record<string, OrgSlot[]> = {
       logo: "/programs/wtx-lady-havoc.png",
       location: "Texas",
     },
+    {
+      filled: true,
+      name: "TFL Lady Colts",
+      logo: "/programs/tfl-lady-colts.png",
+      location: "Texas",
+    },
   ],
 };
 
