@@ -63,6 +63,9 @@ const MIXED_TEMPLATE_URL =
 const ISI_TEMPLATE_URL =
   "https://www.collegeflagshowcase.com/email-templates/team-invite-isi.html";
 const FAQ_URL = "https://www.collegeflagshowcase.com/invites/team-faq.pdf";
+// Date in the attached FAQ's filename — bump whenever team-faq.pdf changes
+// (also in collateral/build-invite-eml.py).
+const TEAM_FAQ_DATE = "2026-10-15";
 const ISI_FAQ_URL =
   "https://www.collegeflagshowcase.com/invites/isi-team-faq.pdf";
 // Invitations are personal mail, not notifications: send FROM the real
@@ -341,7 +344,7 @@ export async function POST(req: Request) {
         content: Buffer.from(await faqRes.arrayBuffer()).toString("base64"),
         filename: faqUrl.includes("isi-")
           ? "isi-team-invitation-faq.pdf"
-          : "team-invitation-faq.pdf",
+          : `team-invitation-faq-${TEAM_FAQ_DATE}.pdf`,
         disposition: "attachment",
       });
     }

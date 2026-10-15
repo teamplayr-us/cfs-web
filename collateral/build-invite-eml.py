@@ -27,6 +27,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 REG_LINK = "https://www.zortssports.com/join/tournament/26812"
 HEADERS = "https://www.collegeflagshowcase.com/email-headers/"
+# Date in the attached team FAQ filename — keep in sync with
+# TEAM_FAQ_DATE in app/api/send-invite/route.ts.
+TEAM_FAQ_DATE = "2026-10-15"
 
 p = argparse.ArgumentParser()
 p.add_argument("out")
@@ -72,12 +75,12 @@ if isi_only:
 elif mixed:
     sender = formataddr(("5v5 Sports", "allen@5v5sports.com"))
     subject = "Official Invitation — International Superflag Invitational & College Flag Showcase — Dallas, TX"
-    faqs = [("public/invites/team-faq.pdf", "team-invitation-faq.pdf"),
+    faqs = [("public/invites/team-faq.pdf", f"team-invitation-faq-{TEAM_FAQ_DATE}.pdf"),
             ("public/invites/isi-team-faq.pdf", "isi-team-invitation-faq.pdf")]
 else:
     sender = formataddr(("College Flag Showcase Series", "info@collegeflagshowcase.com"))
     subject = "Official Invitation — College Flag Showcase, Event 01 — Dallas, TX"
-    faqs = [("public/invites/team-faq.pdf", "team-invitation-faq.pdf")]
+    faqs = [("public/invites/team-faq.pdf", f"team-invitation-faq-{TEAM_FAQ_DATE}.pdf")]
 
 m = EmailMessage()
 m["From"] = sender
