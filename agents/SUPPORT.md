@@ -23,9 +23,14 @@ page, and OPERATIONS.md when facts change.
   football coaches. Ten events across the 2026–27 season, coast to coast.
 - Three parts to every event weekend:
   1. **Showcase Combine & Camp** (a.k.a. Individual Showcase Combine &
-     Camp) — individual, open registration. Position-specific skill work
-     and 1v1s in front of college coaches, plus verified combine testing
-     measured by trained staff and on the record.
+     Camp) — individual, open registration. Two parts: **performance
+     testing** (professional-grade performance measurements, taken by
+     trained staff and on the record) and a **skills assessment**
+     (position-specific individual work — running, throwing, pulling
+     flags — including 1v1s), live in front of college coaches. Every
+     athlete receives a **high-quality camp shirt plus gear giveaways from
+     our partners** (founder, Oct 15 2026 — don't name partners or itemize
+     gear until confirmed).
   2. **Showcase Tournament** (a.k.a. Travel Team Showcase Tournament) —
      team competition, INVITE-ONLY. 5v5 against a curated field of travel
      programs; college coaches evaluate live from the sideline; every game

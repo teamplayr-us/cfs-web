@@ -32,7 +32,7 @@ const GENERAL: QA[] = [
   },
   {
     q: "Where and when is the first event?",
-    a: "Dallas — December 11–13, 2026, at Craig Ranch Sports Complex in McKinney. Combine day is Friday, December 11, from 3:00 to 5:30 PM; the tournament runs Saturday–Sunday. Registration closes November 22.",
+    a: "Dallas — December 11–13, 2026, at Craig Ranch Sports Complex in McKinney. The Showcase Combine & Camp is Friday, December 11, from 3:00 to 5:30 PM at Craig Ranch, with college coaches live on site; the tournament runs Saturday–Sunday. Registration closes November 22.",
   },
   {
     q: "Is college flag football actually real?",
@@ -59,7 +59,15 @@ const GENERAL: QA[] = [
 const FAMILIES: QA[] = [
   {
     q: "Does my daughter need a team to participate?",
-    a: "No. The Showcase Combine & Camp is individual, open registration — it's her chance to show what she can do on her own: position drills, skill work, and 1v1s in front of college coaches, with verified combine numbers to back it up. The team tournament is separate and invite-only.",
+    a: "No. The Showcase Combine & Camp is individual, open registration — it's her chance to show what she can do on her own: performance testing, a skills assessment, and 1v1s in front of college coaches, with verified numbers to back it up. The team tournament is separate and invite-only.",
+  },
+  {
+    q: "What happens at the Combine & Camp?",
+    a: "Two parts. Performance testing gives every athlete professional-grade performance measurements, taken by trained staff. The skills assessment lets athletes show off their position-specific individual abilities — running, throwing, pulling flags, and more — including 1v1s.",
+  },
+  {
+    q: "What do athletes receive?",
+    a: "Every athlete receives a high-quality camp shirt, plus gear giveaways from our partners.",
   },
   {
     q: "What does registration cost?",
