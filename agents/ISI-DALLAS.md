@@ -42,7 +42,7 @@ Last updated: Aug 26, 2026.
 | Sanctioning | iFlag |
 | Rules | NFL Flag Hybrid rules (official rules doc distributed by ISI) |
 | Tournament format | 5v5; round-robin pool play, then single-elimination playoffs (public copy still avoids "bracketed") |
-| Schedule guidance | Tournament games may begin as early as 8:00 a.m. Saturday; traveling teams should arrive Friday, Dec 11; plan Sunday departures around playoff advancement |
+| Schedule guidance | Showcase tournament games run 8:00 AM–4:00 PM Saturday and 8:00 AM–2:00 PM Sunday (founder, Oct 16 2026); traveling teams should arrive Friday, Dec 11 |
 | Airports | DFW and Dallas Love Field (DAL), each ~35 miles from the venue |
 | Housing | **Stay & Play event** — traveling teams must book through the official tournament housing service (a condition of acceptance); never book partner hotels directly |
 | Team hotels | AC Hotel McKinney · Fairfield Inn & Suites Dallas McKinney · Hilton Dallas Plano Granite Park · Marriott Dallas Allen Hotel |

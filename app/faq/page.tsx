@@ -114,7 +114,7 @@ const TEAMS: QA[] = [
   },
   {
     q: "When will we get the schedule?",
-    a: "The weekend runs combine first, tournament after. Tournament games may begin as early as 8:00 a.m. Saturday, so traveling teams should plan to arrive Friday. Invited team coaches are also welcome at the Coaches Welcome Event on Friday night, 7:00–8:30 PM at the Sheraton McKinney Hotel. Detailed agendas and game schedules are confirmed closer to the event.",
+    a: "The weekend runs combine first, tournament after. Tournament games run 8:00 AM–4:00 PM Saturday and 8:00 AM–2:00 PM Sunday, so traveling teams should plan to arrive Friday. Invited team coaches are also welcome at the Coaches Welcome Event on Friday night, 7:00–8:30 PM at the Sheraton McKinney Hotel. Individual game times are confirmed closer to the event.",
   },
   {
     q: "Where do traveling teams stay?",

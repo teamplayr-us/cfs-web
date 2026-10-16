@@ -82,8 +82,9 @@ Tournament.** The Coaches Welcome Event is for credentialed college coaches
 and invited team coaches: **Fri Dec 11, 7:00–8:30 PM, Sheraton McKinney
 Hotel** (founder, Oct 16 2026) — college and club coaches networking
 together before the weekend kicks off. Combine runs
-**3:00–5:30 PM** on Friday, Dec 11. Detailed game schedules are "confirmed
-closer to the event." Dallas registration deadline: **Nov 22, 2026**.
+**3:00–5:30 PM** on Friday, Dec 11. Tournament games run **8:00 AM–4:00 PM
+Sat, 8:00 AM–2:00 PM Sun**; individual game times are "confirmed closer to
+the event." Dallas registration deadline: **Nov 22, 2026**.
 Invited teams secure their spot with a **$50 per-team deposit within
 10 days of their invitation** (founder, Sep 15 2026). The deposit
 applies toward the $550 team entry; the balance is due by Nov 22,
@@ -183,9 +184,10 @@ whose girls 12U–18U teams land in the showcase divisions):
   Related vetted facts (full detail in `agents/ISI-DALLAS.md`):
   - Rules: NFL Flag Hybrid (official document distributed by the ISI).
     Sanctioning: iFlag. Age cutoff Aug 1, 2026, verified via Zorts.
-  - Games may start as early as **8:00 a.m. Saturday** — traveling teams
-    should arrive Friday, Dec 11, and plan Sunday departures around playoff
-    advancement.
+  - Tournament games run **8:00 AM–4:00 PM Saturday and 8:00 AM–2:00 PM
+    Sunday** (founder, Oct 16 2026) — traveling teams should arrive
+    Friday, Dec 11. Individual game times are confirmed closer to the
+    event.
   - **Stay & Play:** traveling teams must book through the official
     tournament housing service (condition of acceptance) — never directly
     with hotels. Partner hotels: AC Hotel McKinney, Fairfield Inn & Suites
@@ -360,4 +362,6 @@ routing) — do not improvise — for:
   reply either way."
 - **When's the schedule?** "The weekend runs combine first, tournament
   after — in Dallas the combine is Friday, December 11, from 3:00 to
-  5:30 PM. Detailed game schedules are confirmed closer to the event."
+  5:30 PM, and tournament games run 8:00 AM–4:00 PM Saturday and
+  8:00 AM–2:00 PM Sunday. Individual game times are confirmed closer to
+  the event."

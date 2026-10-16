@@ -283,6 +283,12 @@ export default function EventPage({ params }: Props) {
                         event.date}
                     </dd>
                   </div>
+                  {event.details?.gameHours && (
+                    <div className="stop-cell">
+                      <dt>Game Times</dt>
+                      <dd>{event.details.gameHours}</dd>
+                    </div>
+                  )}
                   <div className="stop-cell">
                     <dt>Team Entry</dt>
                     <dd>{event.details?.teamEntry ?? "Announcing"}</dd>
