@@ -37,6 +37,8 @@ const FROM = { email: CONTACT_EMAIL, name: "College Flag Showcase Series" };
 interface Coach {
   email: string;
   name: string;
+  /** "Coach Hastings," — the email's greeting */
+  greeting: string;
   program: string;
   recordIds: string[];
 }
@@ -107,9 +109,11 @@ async function pendingCoaches(): Promise<Coach[]> {
       c.recordIds.push(r.id);
       continue;
     }
+    const last = str(r.fields[F.last]);
     byEmail.set(lc, {
       email,
-      name: `${str(r.fields[F.first])} ${str(r.fields[F.last])}`.trim(),
+      name: `${str(r.fields[F.first])} ${last}`.trim(),
+      greeting: last ? `Coach ${last},` : "Dear College Coach,",
       program: str(r.fields[F.program]),
       recordIds: [r.id],
     });
@@ -137,10 +141,10 @@ export async function GET(req: Request) {
        <ul style="color:#F7F5F6;line-height:1.7;padding-left:18px;">${coaches
          .map(
            (c) =>
-             `<li>${escapeHtml(c.name || c.email)} <span style="color:#8A848C;">— ${escapeHtml(c.program)} · ${escapeHtml(c.email)}</span></li>`,
+             `<li>${escapeHtml(c.name || c.email)} <span style="color:#8A848C;">— ${escapeHtml(c.program)} · ${escapeHtml(c.email)} · greeting “${escapeHtml(c.greeting)}”</span></li>`,
          )
          .join("")}</ul>
-       <p style="color:#C9C4C9;"><a href="${TEMPLATE_URL}" style="color:#FF2D8E;">Preview the email</a> · a copy goes to ${escapeHtml(CONTACT_EMAIL)}.</p>
+       <p style="color:#C9C4C9;"><a href="${TEMPLATE_URL}" style="color:#FF2D8E;">Preview the email</a> ({{GREETING}} becomes each coach's greeting) · a copy goes to ${escapeHtml(CONTACT_EMAIL)}.</p>
        <form method="post" action="${escapeHtml(url.pathname + url.search)}">
          <button type="submit" style="background:#FF2D8E;color:#fff;border:0;padding:14px 34px;font-size:16px;font-weight:bold;letter-spacing:1px;text-transform:uppercase;cursor:pointer;">Send to ${coaches.length} Coach${coaches.length === 1 ? "" : "es"}</button>
        </form>`,
@@ -167,6 +171,8 @@ export async function POST(req: Request) {
     const tpl = await fetch(TEMPLATE_URL, { cache: "no-store" });
     if (!tpl.ok) throw new Error(`Template fetch failed: ${tpl.status}`);
     const html = await tpl.text();
+    if (!html.includes("{{GREETING}}"))
+      throw new Error("Template is missing its {{GREETING}} placeholder.");
 
     const sentTo: Coach[] = [];
     const failed: { coach: Coach; why: string }[] = [];
@@ -182,7 +188,7 @@ export async function POST(req: Request) {
           // One delivery-trail copy to the inbox, not one per coach.
           ...(i === 0 ? { bcc: [{ email: CONTACT_EMAIL }] } : {}),
           subject: SUBJECT,
-          html,
+          html: html.split("{{GREETING}}").join(escapeHtml(c.greeting)),
         }),
       });
       if (!res.ok) {
