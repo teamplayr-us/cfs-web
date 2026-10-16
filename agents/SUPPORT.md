@@ -79,8 +79,9 @@ page, and OPERATIONS.md when facts change.
 Dallas weekend rhythm: **Fri Dec 11 — Individual Showcase Combine & Camp;
 Fri night — Coaches Welcome Event; Sat–Sun Dec 12–13 — Travel Team Showcase
 Tournament.** The Coaches Welcome Event is for credentialed college coaches
-and invited team coaches; time and venue: **TBD — details go out with
-credentials and team invites; escalate if pressed.** Combine runs
+and invited team coaches: **Fri Dec 11, 7:00–8:30 PM, Sheraton McKinney
+Hotel** (founder, Oct 16 2026) — college and club coaches networking
+together before the weekend kicks off. Combine runs
 **3:00–5:30 PM** on Friday, Dec 11. Detailed game schedules are "confirmed
 closer to the event." Dallas registration deadline: **Nov 22, 2026**.
 Invited teams secure their spot with a **$50 per-team deposit within
