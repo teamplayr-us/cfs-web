@@ -36,8 +36,9 @@ Visitor
   registration" → /api/stripe/webhook).
 - **Ops database**: Airtable base **College Flag Showcase**
   (`app0mk0cTZLDeVahe`), two tables (§3).
-- **Athlete profiles**: Flag Football Finder (separate product; the reg form
-  captures an optional FFF profile link).
+- **Athlete profiles**: Flag Football Finder (separate product). The reg and
+  guest-pool forms no longer ask for an FFF profile link (founder, Oct 16
+  2026 — typed URLs were error-prone); the field stays in Airtable, blank.
 
 ## 2. Automated flows
 

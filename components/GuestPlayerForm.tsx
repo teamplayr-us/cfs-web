@@ -219,16 +219,6 @@ export default function GuestPlayerForm({ events }: { events: EventOption[] }) {
             onChange={(e) => set("clubTeam", e.target.value)}
           />
         </label>
-        <label>
-          Flag Football Finder profile (optional){err("fffUrl")}
-          <input
-            type="url"
-            inputMode="url"
-            placeholder="https://…"
-            value={data.fffUrl}
-            onChange={(e) => set("fffUrl", e.target.value)}
-          />
-        </label>
       </div>
       <div className="reg-positions">
         <span className="reg-sublabel">

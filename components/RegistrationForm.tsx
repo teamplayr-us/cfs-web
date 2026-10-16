@@ -309,16 +309,6 @@ export default function RegistrationForm(props: Props) {
             </div>
           </div>
           <label>
-            Flag Football Finder profile link (optional){err("fffUrl")}
-            <input
-              type="url"
-              inputMode="url"
-              placeholder="https://…"
-              value={data.fffUrl}
-              onChange={(e) => set("fffUrl", e.target.value)}
-            />
-          </label>
-          <label>
             Allergies / medical notes (optional){err("medical")}
             <textarea
               rows={3}
