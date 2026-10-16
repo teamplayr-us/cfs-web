@@ -296,3 +296,14 @@ stamp the teams Invited by hand after sending.
 - Interest list as an Airtable table + form instead of mailto
 - Combine results pipeline: Athlete Registrations → verified metrics →
   Flag Football Finder profiles
+
+## College coach hotel email (Dallas)
+
+`/api/send-coach-hotel?key=<INVITE_SEND_KEY>` sends the college-coach hotel
++ weekend email (`public/email-templates/coach-hotel-dallas.html`) via
+MailerSend from info@collegeflagshowcase.com — one email per coach, To:
+the coach. GET is a confirmation page listing every Dallas coach
+registration not yet sent (deduped by email, Declined skipped); SEND
+stamps **Dallas Hotel Email Sent At** on the Coach Registrations rows.
+Re-open the link any time to catch up new registrants; clear the field to
+re-send to someone.
