@@ -83,7 +83,9 @@ Light pink (#FF8DC1) never appears on light backgrounds.
   display and live tournament competition in one weekend** — evaluated in
   person by college flag football coaches…"
 - Key vocabulary: **verified** (the brand's core promise), **events** (series
-  language: "Events," "Event 01," "Next Event" — plain, never "stops," and
+  language: "Events," "Next Event" — plain, never "stops"; name an event
+  by city — **"College Flag Showcase – Dallas"**, never "Event 01" in
+  outbound copy (founder, Oct 16 2026) — and
   the brand is a **series**, never "a tour" (generic references say "the
   series") in
   customer-facing copy), **Showcase Combine &

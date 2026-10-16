@@ -24,7 +24,8 @@ copy or creating any document.
   abbreviate to "CFS" publicly; teams "request an invite", never
   "sign up"; don't call the tournament "bracketed"; the International
   Superflag Invitational abbreviates to "the ISI", never "the
-  Invitational".
+  Invitational"; name an event by city ("College Flag Showcase –
+  Dallas"), never "Event 01".
 - No exclamation marks, no hype-fluff. Athlete-first voice.
 - The series is independent — never "a 5v5 Sports production".
 - The athlete recruiting package's contents are deliberately not
