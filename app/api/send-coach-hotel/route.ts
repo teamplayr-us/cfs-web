@@ -113,7 +113,10 @@ async function pendingCoaches(): Promise<Coach[]> {
     byEmail.set(lc, {
       email,
       name: `${str(r.fields[F.first])} ${last}`.trim(),
-      greeting: last ? `Coach ${last},` : "Dear College Coach,",
+      // "Brownfield IV" → "Coach Brownfield"
+      greeting: last
+        ? `Coach ${last.replace(/[\s,]+(jr\.?|sr\.?|ii|iii|iv|v)$/i, "")},`
+        : "Dear College Coach,",
       program: str(r.fields[F.program]),
       recordIds: [r.id],
     });
