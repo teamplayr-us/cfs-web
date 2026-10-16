@@ -10,6 +10,8 @@ export interface TourEvent {
   number: string;
   city: string;
   venue: string;
+  /** Full street address — shown in confirmation emails and pages */
+  venueAddress?: string;
   /** Display date for the tour list, e.g. "DEC 2026" */
   date: string;
   /** Status tag label, e.g. "Registration Open" / "Announcing" */
@@ -81,6 +83,8 @@ export const EVENTS: TourEvent[] = [
     number: "01",
     city: "Dallas, TX",
     venue: "Craig Ranch Sports Complex",
+    // ISI travel packet (agents/ISI-DALLAS.md)
+    venueAddress: "6375 Collin McKinney Parkway, McKinney, TX 75070",
     airtableEventId: "recYOOvpLUVQqCLWj",
     date: "DEC 2026",
     tag: "Registration Open",

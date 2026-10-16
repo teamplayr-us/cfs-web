@@ -166,7 +166,9 @@ export async function POST(req: Request) {
            ["Date", combineDate],
            ["Time", combineTime],
            ["Venue", tourEvent?.venue],
+           ["Address", tourEvent?.venueAddress],
          ])}
+         ${tourEvent?.venueAddress ? `<p><a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${tourEvent.venue}, ${tourEvent.venueAddress}`)}">Get directions</a></p>` : ""}
          <p>What&rsquo;s next: we&rsquo;ll email the full event-weekend schedule and check-in details before the event. Before then, get her Flag Football Finder profile current at <a href="https://www.flagfootballfinder.com">flagfootballfinder.com</a>.</p>
          ${guestPool ? `<p>${escapeHtml(athleteName)} is in the guest player pool. Club coaches of registered Showcase Tournament teams can see the profile and may contact you directly about a roster spot. To leave the pool, email <a href="mailto:${NOTIFY_EMAIL}">${NOTIFY_EMAIL}</a>.</p>` : ""}
          <p>The participant waiver you signed is at <a href="https://www.collegeflagshowcase.com/waiver">collegeflagshowcase.com/waiver</a>.</p>

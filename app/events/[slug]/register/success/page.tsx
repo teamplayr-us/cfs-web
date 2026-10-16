@@ -100,7 +100,8 @@ export default async function RegisterSuccessPage({
             <h1 className="reg-title">You&apos;re In.</h1>
             <p>
               Registration confirmed for the Showcase Combine &amp; Camp at{" "}
-              {event.venue}, {when}
+              {event.venue}
+              {event.venueAddress ? ` (${event.venueAddress})` : ""}, {when}
               {time}.
             </p>
           </div>
