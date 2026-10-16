@@ -114,7 +114,7 @@ const TEAMS: QA[] = [
   },
   {
     q: "When will we get the schedule?",
-    a: "The weekend runs combine first, tournament after. Tournament games may begin as early as 8:00 a.m. Saturday, so traveling teams should plan to arrive Friday. Invited team coaches are also welcome at the Coaches Welcome Event on Friday night — details come with your invite. Detailed agendas and game schedules are confirmed closer to the event.",
+    a: "The weekend runs combine first, tournament after. Tournament games may begin as early as 8:00 a.m. Saturday, so traveling teams should plan to arrive Friday. Invited team coaches are also welcome at the Coaches Welcome Event on Friday night, 7:00–8:30 PM at the Sheraton McKinney Hotel. Detailed agendas and game schedules are confirmed closer to the event.",
   },
   {
     q: "Where do traveling teams stay?",
@@ -129,11 +129,11 @@ const COACHES: QA[] = [
   },
   {
     q: "What do credentials include?",
-    a: "Sideline access all weekend, expected participant counts before each event you attend, the athlete recruiting package, and an invitation to the Coaches Welcome Event on Friday night. A free College Row tent space in the Fan Zone is yours if you want it — just check the box when you register.",
+    a: "Sideline access all weekend, expected participant counts before each event you attend, the athlete recruiting package, and an invitation to the Coaches Welcome Event on Friday night (7:00–8:30 PM at the Sheraton McKinney Hotel in Dallas). A free College Row tent space in the Fan Zone is yours if you want it — just check the box when you register.",
   },
   {
     q: "Where should coaches stay in Dallas?",
-    a: "The Denizen Hotel in McKinney is the official college coach hotel for the Dallas event, with a room block for credentialed coaches. Booking details come with your credentials.",
+    a: "The Sheraton McKinney Hotel is the official college coach hotel for the Dallas event, with a group rate for credentialed coaches (buffet breakfast included) — book by November 20. It's also home to the Friday-night Coaches Welcome Event. The booking link comes with your credentials.",
   },
   {
     q: "What's in the athlete recruiting package?",

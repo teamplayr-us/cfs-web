@@ -219,11 +219,16 @@ whose girls 12U–18U teams land in the showcase divisions):
   itemize contents; if a coach pushes for specifics, escalate.
 - Free **College Row** tent space in the Fan Zone — opt in via checkbox at
   coach registration (site: /colleges/register).
-- Official coach hotel (Dallas): **Denizen Hotel, McKinney** — room block
-  for credentialed college coaches; booking details go out with
-  credentials. **[INTERNAL]** The rate/booking link is not yet available —
-  escalate if a coach asks for it now. Never point coaches at the team
-  Stay & Play housing service (that's for traveling teams only).
+- Official coach hotel (Dallas): **Sheraton McKinney Hotel** (replaced the
+  Denizen, founder Oct 16 2026) — group rate for credentialed college
+  coaches, **$129/night with buffet breakfast, last day to book Fri Nov 20,
+  2026**; also the venue for the Coaches Welcome Event. The block opens
+  Thu Dec 10 but coaches can change their dates; the Marriott booking page
+  lists the group as "International Superflag Invitational 5v5" (correct
+  block). **[INTERNAL]** The booking link went to registered coaches by
+  email (Oct 16) — send it to newly credentialed coaches on request; don't
+  post it publicly. Never point coaches at the team Stay & Play housing
+  service (that's for traveling teams only).
 - Compliance (approved answer, use verbatim): "Coaches are responsible for
   ensuring compliance with their respective governing bodies' recruiting
   rules."
@@ -309,8 +314,7 @@ routing) — do not improvise — for:
 
 1. Refund/cancellation decisions (all of them — policy quotes are fine,
    decisions are not).
-2. Anything marked TBD: detailed agendas, Coaches Welcome Event
-   time/venue, gate fee amounts, film package pricing, venues/dates for
+2. Anything marked TBD: detailed agendas, gate fee amounts, film package pricing, venues/dates for
    events 02–10 beyond the table.
 3. Lost/never-received tournament invite links or discount codes.
 4. Medical, safety, or incident reports.

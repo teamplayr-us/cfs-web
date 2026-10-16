@@ -208,10 +208,10 @@ export default function EventPage({ params }: Props) {
               {event.details?.coachWelcome && (
                 <>
                   {" "}
-                  Friday night, the Coaches Welcome Event brings credentialed
-                  college coaches and invited team coaches together before
-                  tournament play — details shared with credentials and team
-                  invites.
+                  Friday night, {event.details.coachWelcome.time} at the{" "}
+                  {event.details.coachWelcome.venue}, the Coaches Welcome
+                  Event brings credentialed college coaches and invited team
+                  coaches together before tournament play.
                 </>
               )}
             </p>

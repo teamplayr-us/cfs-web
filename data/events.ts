@@ -69,7 +69,7 @@ export interface TourEvent {
     regDeadline: string;
     /** Set when the Friday-night Coaches Welcome Event is confirmed for
      * this event; shown on the event page weekend agenda. */
-    coachWelcome?: boolean;
+    coachWelcome?: { time: string; venue: string };
   };
 }
 
@@ -104,8 +104,8 @@ export const EVENTS: TourEvent[] = [
       divisions: "12U · 14U · 16U · 18U",
       teamEntry: "$550",
       regDeadline: "Nov 22, 2026",
-      // Time and venue TBD — announced with credentials/invites
-      coachWelcome: true,
+      // Founder, Oct 16 2026
+      coachWelcome: { time: "7:00–8:30 PM", venue: "Sheraton McKinney Hotel" },
     },
   },
   {

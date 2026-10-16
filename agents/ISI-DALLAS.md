@@ -51,8 +51,8 @@ Last updated: Aug 26, 2026.
 | Combine (Friday, girls only) | Individuals, 12U–18U, college coaches/scouts present |
 
 Note: the team hotels are for **traveling teams**. The official **college
-coach** hotel (Denizen Hotel, McKinney — room block for credentialed
-coaches, published Aug 2026; rate/booking link still pending) is a separate
+coach** hotel (Sheraton McKinney Hotel — group rate for credentialed
+coaches, replaced the Denizen Oct 16 2026; see SUPPORT.md) is a separate
 arrangement and never part of the team housing service.
 
 ## Conflicts found and resolutions

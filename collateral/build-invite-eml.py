@@ -29,7 +29,7 @@ REG_LINK = "https://www.zortssports.com/join/tournament/26812"
 HEADERS = "https://www.collegeflagshowcase.com/email-headers/"
 # Date in the attached team FAQ filename — keep in sync with
 # TEAM_FAQ_DATE in app/api/send-invite/route.ts.
-TEAM_FAQ_DATE = "2026-10-15"
+TEAM_FAQ_DATE = "2026-10-16"
 
 p = argparse.ArgumentParser()
 p.add_argument("out")
