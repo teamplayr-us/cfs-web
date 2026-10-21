@@ -9,7 +9,7 @@
 //   3. Coach title + name, e.g. "Head Coach Mike Landis" (from the Coach
 //      Registrations Airtable — use the coach's registered title)
 //   4. Division, e.g. "NCAA DIII" / "NCAA DII" / "NJCAA" / "NAIA"
-//   5. (optional) Event line — defaults to "Event 01 · Dallas, TX · Dec 11–13, 2026"
+//   5. (optional) Event line — defaults to "College Flag Showcase · Dallas · Dec 11–13, 2026"
 //   6. (optional) City for the body line — defaults to "Dallas"
 //   7. (optional) Output filename — defaults to ig-committed-<logo-name>.png
 //
@@ -51,7 +51,7 @@ const html = readFileSync(join(here, "ig-college-committed.html"), "utf8")
   .replaceAll("{{LOGO}}", `../public/colleges/${logoFile}`)
   .replaceAll(
     "{{EVENT_LINE}}",
-    eventLine || "Event 01 &middot; Dallas, TX &middot; Dec 11&ndash;13, 2026",
+    eventLine || "College Flag Showcase &middot; Dallas &middot; Dec 11&ndash;13, 2026",
   )
   .replaceAll("{{CITY}}", city || "Dallas")
   .replaceAll("{{COACH}}", coach)
