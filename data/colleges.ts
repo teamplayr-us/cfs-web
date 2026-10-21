@@ -94,6 +94,11 @@ export const COLLEGES_BY_EVENT: Record<string, CollegeSlot[]> = {
       name: "Hardin-Simmons University",
       logo: "/colleges/hardin-simmons-mono.png",
     },
+    {
+      filled: true,
+      name: "University of Sioux Falls",
+      logo: "/colleges/sioux-falls-mono.png",
+    },
   ],
 };
 

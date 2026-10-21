@@ -274,14 +274,15 @@ whose girls 12U–18U teams land in the showcase divisions):
 
 ## 8. Committed colleges & competing programs (Dallas)
 
-Colleges committed to attend and evaluate (public, as of Sep 17, 2026):
+Colleges committed to attend and evaluate (public, as of Oct 21, 2026):
 East Texas Baptist University, Illinois Wesleyan University, Our Lady of
 the Lake University, Dallas College Richland, Missouri Valley College,
 Texas Wesleyan University, Cairn University, Olivet Nazarene University,
 Lawrence University, Eastern Connecticut State University, Binghamton
 University (the board's first NCAA DI program), Hendrix College, McMurry
 University, Randolph College (Head Coach Andy Sinclair, NCAA DIII),
-Hardin-Simmons University (Head Coach Darin Koenig, NCAA DIII). The
+Hardin-Simmons University (Head Coach Darin Koenig, NCAA DIII), University
+of Sioux Falls (Recruiting Coordinator Tommy Downs, NCAA DII). The
 board at collegeflagshowcase.com/colleges updates as coaches register.
 
 Competing programs (public board, as of Sep 28, 2026): Texas Fury (TX),
