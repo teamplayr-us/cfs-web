@@ -11,7 +11,7 @@
 //   3. Home city/region — match the site board's location caption
 //   4. Divisions they're competing in, e.g. "12U · 14U" (from the accepted
 //      invite or the founder — never guessed)
-//   5. (optional) Event line — defaults to "Event 01 · Dallas, TX · Dec 11–13, 2026"
+//   5. (optional) Event line — defaults to "College Flag Showcase · Dallas · Dec 11–13, 2026"
 //   6. (optional) City for the body line — defaults to "Dallas"
 //   7. (optional) Output filename — defaults to ig-org-<logo-name>.png
 
@@ -53,7 +53,7 @@ const html = readFileSync(join(here, "ig-org-committed.html"), "utf8")
   .replaceAll("{{DIVISIONS}}", divisions)
   .replaceAll(
     "{{EVENT_LINE}}",
-    eventLine || "Event 01 &middot; Dallas, TX &middot; Dec 11&ndash;13, 2026",
+    eventLine || "College Flag Showcase &middot; Dallas &middot; Dec 11&ndash;13, 2026",
   )
   .replaceAll("{{CITY}}", city || "Dallas");
 

@@ -370,7 +370,7 @@ export async function POST(req: Request) {
           ? `Official Invitation — International Superflag Invitational — Dallas, TX`
           : s.mixed
           ? `Official Invitation — International Superflag Invitational & College Flag Showcase — Dallas, TX`
-          : `Official Invitation — College Flag Showcase${s.eventName ? `, ${s.eventName}` : ""}`,
+          : `Official Invitation — College Flag Showcase – Dallas`,
         html,
         attachments,
       }),

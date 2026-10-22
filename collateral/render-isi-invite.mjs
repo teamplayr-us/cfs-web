@@ -11,7 +11,7 @@
 //      for a new invitee (stage their logo there first; transparent PNG)
 //   3. Home location, e.g. "Oklahoma City, OK" (match data/organizations.ts)
 //   4. Invited teams, pipe-separated, e.g. "One of One 14U|One of One 16U"
-//   5. (optional) Event line — defaults to "Event 01 · Dallas, TX · Dec 11–13, 2026"
+//   5. (optional) Event line — defaults to "College Flag Showcase · Dallas · Dec 11–13, 2026"
 //   6. (optional) Venue line — defaults to "Craig Ranch Sports Complex"
 //   7. (optional) Output filename — defaults to invite-org-<logo-name>.png
 //

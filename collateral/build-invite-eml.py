@@ -79,7 +79,7 @@ elif mixed:
             ("public/invites/isi-team-faq.pdf", "isi-team-invitation-faq.pdf")]
 else:
     sender = formataddr(("College Flag Showcase Series", "info@collegeflagshowcase.com"))
-    subject = "Official Invitation — College Flag Showcase, Event 01 — Dallas, TX"
+    subject = "Official Invitation — College Flag Showcase – Dallas"
     faqs = [("public/invites/team-faq.pdf", f"team-invitation-faq-{TEAM_FAQ_DATE}.pdf")]
 
 m = EmailMessage()

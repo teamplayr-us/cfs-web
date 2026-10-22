@@ -9,7 +9,7 @@
 //   2. Logo path relative to the REPO ROOT — e.g. public/programs/foo.png
 //      for teams already on the site board, or collateral/invites/foo.png
 //      for a new invitee (stage their logo there first; transparent PNG)
-//   3. (optional) Event line — defaults to "Event 01 · Dallas, TX · Dec 11–13, 2026"
+//   3. (optional) Event line — defaults to "Dallas, TX · Dec 11–13, 2026"
 //   4. (optional) Venue line — defaults to "Craig Ranch Sports Complex"
 //   5. (optional) Output filename — defaults to invite-<logo-name>.png
 //
@@ -53,7 +53,7 @@ const html = readFileSync(join(here, "invite-team-official.html"), "utf8")
   .replaceAll("{{LOGO}}", logoRel)
   .replaceAll(
     "{{EVENT_LINE}}",
-    eventLine || "Event 01 &middot; Dallas, TX &middot; Dec 11&ndash;13, 2026",
+    eventLine || "Dallas, TX &middot; Dec 11&ndash;13, 2026",
   )
   .replaceAll(
     "{{VENUE_LINE}}",
