@@ -65,7 +65,7 @@ const ISI_TEMPLATE_URL =
 const FAQ_URL = "https://www.collegeflagshowcase.com/invites/team-faq.pdf";
 // Date in the attached FAQ's filename — bump whenever team-faq.pdf changes
 // (also in collateral/build-invite-eml.py).
-const TEAM_FAQ_DATE = "2026-10-16";
+const TEAM_FAQ_DATE = "2026-10-27";
 const ISI_FAQ_URL =
   "https://www.collegeflagshowcase.com/invites/isi-team-faq.pdf";
 // Invitations are personal mail, not notifications: send FROM the real

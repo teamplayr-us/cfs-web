@@ -137,6 +137,13 @@ identifies the flow:
 | "Sponsorship" | /sponsors CTAs + one-pager | Send `collateral/cfs-sponsorship-one-pager.pdf`, negotiate; add signed sponsors to `data/sponsors.ts` |
 | "Interest" | homepage interest section | Add to your interest list (consider a table later) |
 
+**Team athlete one-pager (per team code):** for a Showcase Tournament team
+with its own discount code, render a co-branded athlete one-pager to attach
+to the code email:
+`node collateral/render-team-athlete-one-pager.mjs "Kansas City Heat" public/programs/kansas-city-heat.png KCHEAT 115`
+→ `collateral/team-one-pagers/<team>-athlete-one-pager.pdf/.png`
+(`LOGO_H` env sizes the team logo; the college strip reads `data/colleges.ts`).
+
 ⚠️ **Prerequisite:** the info@collegeflagshowcase.com mailbox must exist /
 forward somewhere monitored. Everything in this section depends on it.
 

@@ -66,7 +66,7 @@ export interface TourEvent {
      * dates (e.g. tournament Dec 12–13 within a Dec 11–13 stop). Falls
      * back to `dates` on the event page schedule. */
     tournamentDates?: string;
-    /** Tournament game hours, e.g. "Sat 8 AM–4 PM · Sun 8 AM–2 PM" */
+    /** Tournament game hours, e.g. "Sat 8 AM–4 PM · Sun 8 AM–4 PM" */
     gameHours?: string;
     divisions: string;
     teamEntry: string;
@@ -108,7 +108,7 @@ export const EVENTS: TourEvent[] = [
       // Confirmed by the ISI travel packet (agents/ISI-DALLAS.md)
       tournamentDates: "Dec 12–13, 2026",
       // Founder, Oct 16 2026
-      gameHours: "Sat 8 AM–4 PM · Sun 8 AM–2 PM",
+      gameHours: "Sat 8 AM–4 PM · Sun 8 AM–4 PM",
       divisions: "12U · 14U · 16U · 18U",
       teamEntry: "$550",
       regDeadline: "Nov 22, 2026",
