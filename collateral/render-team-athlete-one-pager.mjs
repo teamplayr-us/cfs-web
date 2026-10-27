@@ -3,7 +3,8 @@
 // Usage (from the repo root):
 //   node collateral/render-team-athlete-one-pager.mjs "Team Name" <logo> <CODE> <price> ["Dec 11"]
 //   node collateral/render-team-athlete-one-pager.mjs "Kansas City Heat" public/programs/kansas-city-heat.png KCHEAT 115
-// <logo> is a repo-relative path. LOGO_H env overrides the team logo height (px).
+// <logo> is a repo-relative path. LOGO_H env overrides the team logo height (px);
+// LOGO_TILE=1 sets the logo on a white tile (for dark-ink logos).
 // College names come from data/colleges.ts.
 
 import { fileURLToPath } from "node:url";
@@ -34,6 +35,7 @@ const fill = {
   TEAM: team,
   LOGO: relative(here, resolve(root, logo)),
   LOGO_H: process.env.LOGO_H || "90",
+  LOGO_WRAP: process.env.LOGO_TILE ? "tile" : "",
   CODE: code.toUpperCase(),
   PRICE: price,
   EXPIRES: expires,

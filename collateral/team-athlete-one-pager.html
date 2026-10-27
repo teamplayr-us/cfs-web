@@ -29,6 +29,7 @@
   .brands{display:flex;align-items:center;gap:16px;margin-bottom:10px}
   .brands .cfs{width:74px;height:74px}
   .brands .team{height:{{LOGO_H}}px;width:auto;max-width:130px;object-fit:contain}
+  .brands .tile{background:#fff;border:3px solid #fff;padding:6px 10px;display:flex;align-items:center}
   .brands .x{font-family:var(--mono);font-size:20px;font-weight:700;color:var(--muted)}
   .brands-label{margin-left:auto;text-align:right;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);line-height:1.7}
   .brands-label b{color:var(--gold)}
@@ -59,28 +60,28 @@
   .camp-row .k{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);width:62px;flex-shrink:0;padding-top:2px}
   .camp-row b{color:var(--chalk)}
 
-  .access{margin-top:14px;border:2px solid var(--navy);background:#fff;padding:7px 16px;display:flex;gap:16px;align-items:center}
+  .access{margin-top:12px;border:2px solid var(--navy);background:#fff;padding:7px 16px;display:flex;gap:16px;align-items:center}
   .access-num{font-family:var(--display);font-size:36px;font-weight:800;color:var(--red);line-height:.9}
   .access-num small{display:block;font-family:var(--mono);font-size:8px;font-weight:700;letter-spacing:.16em;color:var(--steel);text-transform:uppercase;margin-top:2px}
   .access p{font-size:12px;line-height:1.45}
 
-  .gets{margin-top:10px}
+  .gets{margin-top:9px}
   .gets ul{list-style:none}
-  .gets li{font-size:11.5px;line-height:1.35;padding:3px 0 3px 28px;position:relative;border-bottom:1px solid var(--line)}
+  .gets li{font-size:11.5px;line-height:1.35;padding:2px 0 2px 28px;position:relative;border-bottom:1px solid var(--line)}
   .gets li:last-child{border-bottom:0}
-  .gets li::before{content:"✓";position:absolute;left:0;top:3px;width:16px;height:16px;background:var(--red);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+  .gets li::before{content:"✓";position:absolute;left:0;top:2px;width:16px;height:16px;background:var(--red);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
   .gets li b{font-weight:700}
 
-  .weekend{margin-top:11px}
+  .weekend{margin-top:9px}
   .sched{border:2px solid var(--navy);background:#fff}
-  .sched-row{display:grid;grid-template-columns:118px 112px 1fr;gap:12px;padding:5px 14px;border-top:1px solid var(--line);font-size:11px;align-items:baseline}
+  .sched-row{display:grid;grid-template-columns:118px 112px 1fr;gap:12px;padding:4px 14px;border-top:1px solid var(--line);font-size:11px;align-items:baseline}
   .sched-row:first-child{border-top:0}
   .sched-row .d{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
   .sched-row .t{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.06em;color:var(--red)}
   .sched-row .w b{font-weight:700}
   .sched-row .w span{color:var(--steel)}
 
-  .colleges-strip{margin-top:11px;background:var(--navy);padding:9px 18px 10px;text-align:center}
+  .colleges-strip{margin-top:9px;background:var(--navy);padding:9px 18px 10px;text-align:center}
   .colleges-strip .eyebrow{margin-bottom:5px}
   .college-names{font-family:var(--mono);font-size:7.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--chalk);line-height:1.7}
   .college-names span{white-space:nowrap}
@@ -102,7 +103,7 @@
     <div class="brands">
       <img class="cfs" src="../public/logo.png" alt="College Flag Showcase Series logo" />
       <span class="x">&times;</span>
-      <img class="team" src="{{LOGO}}" alt="{{TEAM}} logo" />
+      <span class="{{LOGO_WRAP}}"><img class="team" src="{{LOGO}}" alt="{{TEAM}} logo" /></span>
       <p class="brands-label">College Flag Showcase &ndash; Dallas<br /><b>Showcase Tournament Team</b></p>
     </div>
     <p class="head-kicker">{{TEAM}} &middot; Athlete Priority Access</p>
