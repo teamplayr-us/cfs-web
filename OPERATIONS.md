@@ -308,3 +308,9 @@ registration not yet sent (deduped by email, Declined skipped); SEND
 stamps **Dallas Hotel Email Sent At** on the Coach Registrations rows.
 Re-open the link any time to catch up new registrants; clear the field to
 re-send to someone.
+
+**WhatsApp group invite (Dallas college coaches):** same mechanism at
+`/api/send-coach-whatsapp?key=<INVITE_SEND_KEY>` (template
+`public/email-templates/coach-whatsapp-dallas.html`, stamps **WhatsApp
+Invite Sent At**). Campaigns live in `lib/coachCampaigns.ts` — add a new
+coach email by adding a template + Sent At field + entry there.
