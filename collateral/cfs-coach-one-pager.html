@@ -19,52 +19,57 @@
   body{font-family:var(--body);background:var(--chalk);color:var(--navy);-webkit-print-color-adjust:exact;print-color-adjust:exact}
   .page{width:8.5in;height:11in;display:flex;flex-direction:column}
 
-  .head{background:var(--navy);color:var(--chalk);padding:24px 56px 20px;position:relative;border-bottom:5px solid var(--red)}
+  .head{background:var(--navy);color:var(--chalk);padding:16px 56px 14px;position:relative;border-bottom:5px solid var(--red)}
   .head-inner{display:flex;align-items:center;gap:26px}
-  .head img{width:96px;height:96px}
+  .head img{width:84px;height:84px}
   .head-kicker{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.22em;color:var(--red);text-transform:uppercase;margin-bottom:8px}
-  .head h1{font-family:var(--display);font-size:48px;line-height:.92;text-transform:uppercase;letter-spacing:.01em}
+  .head h1{font-family:var(--display);font-size:42px;line-height:.92;text-transform:uppercase;letter-spacing:.01em}
   .head h1 em{font-style:normal;color:var(--red)}
-  .head-sub{margin-top:12px;font-size:14px;color:#C9C4C9}
+  .head-sub{margin-top:8px;font-size:13px;color:#C9C4C9}
 
-  .body{padding:22px 56px 0;flex:1;display:flex;flex-direction:column}
-  .eyebrow{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
+  .body{padding:14px 56px 0;flex:1;display:flex;flex-direction:column}
+  .eyebrow{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red);margin-bottom:7px}
 
   .fmt-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  .fmt{border:2px solid var(--navy);background:#fff;padding:12px 14px}
+  .fmt{border:2px solid var(--navy);background:#fff;padding:9px 14px}
   .fmt-head{display:flex;align-items:baseline;gap:10px;margin-bottom:2px}
   .fmt-num{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--red);letter-spacing:.1em}
   .fmt h3{font-family:var(--display);font-size:19px;text-transform:uppercase;letter-spacing:.02em}
-  .fmt-tag{font-family:var(--mono);font-size:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);margin-bottom:8px}
-  .fmt p{font-size:11.5px;line-height:1.45}
-  .tour-line{margin:10px 0 0;font-family:var(--mono);font-size:7px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;color:var(--navy);text-align:center;white-space:nowrap}
+  .fmt-tag{font-family:var(--mono);font-size:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);margin-bottom:5px}
+  .fmt p{font-size:11px;line-height:1.4}
+  .tour-line{margin:7px 0 0;font-family:var(--mono);font-size:7px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;color:var(--navy);text-align:center;white-space:nowrap}
   .tour-sub{margin-top:4px;font-family:var(--mono);font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--steel);text-align:center}
 
-  .includes{margin-top:14px}
-  .includes ul{list-style:none;columns:2;column-gap:40px}
-  .includes li{font-size:12px;font-weight:600;padding:3px 0 3px 28px;position:relative;break-inside:avoid}
-  .includes li::before{content:"✓";position:absolute;left:0;top:4px;width:18px;height:18px;background:var(--red);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+  .includes{margin-top:10px}
+  .includes ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;column-gap:30px}
+  .includes li{font-size:11.5px;font-weight:600;padding:2px 0 2px 28px;position:relative;break-inside:avoid}
+  .includes li::before{content:"✓";position:absolute;left:0;top:2px;width:17px;height:17px;background:var(--red);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
 
-  .pkgs{margin-top:12px}
+  .colleges-strip{margin-top:10px;background:var(--navy);padding:8px 18px 9px;text-align:center}
+  .colleges-strip .eyebrow{margin-bottom:5px}
+  .college-names{font-family:var(--mono);font-size:7.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--chalk);line-height:1.65}
+  .college-names span{white-space:nowrap}
+  .college-sub{margin-top:3px;font-family:var(--mono);font-size:8px;letter-spacing:.08em;text-transform:uppercase;color:#8A848C}
+  .pkgs{margin-top:10px}
   .pkg-note{font-size:12.5px;color:var(--steel);margin:-4px 0 8px}
   .pkg-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
   .pkg{border:2px solid var(--navy);background:#fff;display:flex;flex-direction:column}
-  .pkg-head{background:var(--navy);color:var(--chalk);padding:10px 12px;display:flex;justify-content:space-between;align-items:center;gap:6px}
+  .pkg-head{background:var(--navy);color:var(--chalk);padding:8px 12px;display:flex;justify-content:space-between;align-items:center;gap:6px}
   .pkg-featured .pkg-head{background:var(--red)}
   .pkg-head h3{font-family:var(--display);font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:.02em;white-space:nowrap}
   .pkg-tag{font-family:var(--mono);font-size:6.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-align:right;flex-shrink:0}
-  .pkg-body{padding:12px 14px 13px}
-  .pkg-price{font-family:var(--mono);font-size:16px;font-weight:700;letter-spacing:.04em;color:var(--red);padding-bottom:8px;border-bottom:1px solid var(--line);margin-bottom:9px}
+  .pkg-body{padding:9px 14px 10px}
+  .pkg-price{font-family:var(--mono);font-size:15px;font-weight:700;letter-spacing:.04em;color:var(--red);padding-bottom:6px;border-bottom:1px solid var(--line);margin-bottom:7px}
   .pkg-price span{font-size:11px;color:var(--steel)}
   .pkg ul{list-style:none}
-  .pkg li{font-size:11px;font-weight:500;line-height:1.35;padding:2px 0 2px 13px;position:relative}
+  .pkg li{font-size:10.5px;font-weight:500;line-height:1.3;padding:2px 0 2px 13px;position:relative}
   .pkg li::before{content:"▸";position:absolute;left:0;color:var(--red);font-size:10px}
   .pkg li b{font-weight:700}
 
   .fineprint{margin-top:8px;font-size:10px;color:var(--steel);text-align:center}
 
   .cta{margin-top:auto;padding-top:10px}
-  .cta-band{background:var(--navy);color:var(--chalk);padding:16px 26px;display:flex;justify-content:space-between;align-items:center;gap:18px;box-shadow:6px 6px 0 var(--red)}
+  .cta-band{background:var(--navy);color:var(--chalk);padding:12px 26px;display:flex;justify-content:space-between;align-items:center;gap:18px;box-shadow:6px 6px 0 var(--red)}
   .cta-band h2{font-family:var(--display);font-size:27px;text-transform:uppercase;letter-spacing:.02em}
   .cta-band .cta-note{text-align:right}
   .cta-band a{font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--red);text-decoration:none;text-transform:uppercase;display:block}
@@ -110,11 +115,18 @@
       <ul>
         <li>Sideline access all weekend</li>
         <li>Expected participant counts before each event you attend</li>
+        <li>The college coach WhatsApp group for event-week updates</li>
         <li>The athlete recruiting package on participating athletes</li>
         <li>Invitation to the Coaches Welcome Event on Friday night</li>
         <li>A free College Row tent space in the Fan Zone &mdash; check the box when you register</li>
         <li>Divisions: Girls 12U &middot; 14U &middot; 16U &middot; 18U</li>
       </ul>
+    </section>
+
+    <section class="colleges-strip">
+      <p class="eyebrow">College Programs Registered &mdash; Dallas</p>
+      <p class="college-names"><span>East Texas Baptist University</span> &middot; <span>Illinois Wesleyan University</span> &middot; <span>Our Lady of the Lake University</span> &middot; <span>Dallas College Richland</span> &middot; <span>Missouri Valley College</span> &middot; <span>Texas Wesleyan University</span> &middot; <span>Cairn University</span> &middot; <span>Olivet Nazarene University</span> &middot; <span>Lawrence University</span> &middot; <span>Eastern Connecticut State University</span> &middot; <span>Binghamton University</span> &middot; <span>Hendrix College</span> &middot; <span>McMurry University</span> &middot; <span>Randolph College</span> &middot; <span>Hardin-Simmons University</span> &middot; <span>University of Sioux Falls</span></p>
+      <p class="college-sub">16 programs as of Nov 3, 2026 &middot; NCAA DI, DII, DIII, NAIA, and NJCAA &mdash; full list at collegeflagshowcase.com/colleges</p>
     </section>
 
     <section class="pkgs">
@@ -128,7 +140,7 @@
             <ul>
               <li><b>Craig Ranch Sports Complex</b> &mdash; McKinney, TX</li>
               <li><b>Dec 11&ndash;13, 2026</b></li>
-              <li><b>Coach hotel:</b> Sheraton McKinney Hotel &mdash; group rate, book by Nov 20; link with credentials</li>
+              <li><b>Coach hotel:</b> Sheraton McKinney Hotel &mdash; $129/night with breakfast, book by Nov 20; link with credentials</li>
               <li><b>Free for college programs</b> at every event in the series</li>
             </ul>
           </div>
@@ -149,9 +161,9 @@
           <div class="pkg-body">
             <p class="pkg-price">DEC 11&ndash;13</p>
             <ul>
-              <li><b>Fri Dec 11, 3:00&ndash;5:30 PM</b> &mdash; Individual Showcase Combine &amp; Camp</li>
+              <li><b>Fri Dec 11, 3:00&ndash;5:30 PM</b> &mdash; Showcase Combine &amp; Camp, Craig Ranch</li>
               <li><b>Fri Dec 11, 7:00&ndash;8:30 PM</b> &mdash; Coaches Welcome Event, Sheraton McKinney</li>
-              <li><b>Sat Dec 12, 8 AM&ndash;4 PM &middot; Sun Dec 13, 8 AM&ndash;4 PM</b> &mdash; Travel Team Showcase Tournament</li>
+              <li><b>Sat&ndash;Sun Dec 12&ndash;13, 8 AM&ndash;4 PM</b> &mdash; Travel Team Showcase Tournament</li>
               <li><b>Individual game times</b> confirmed closer to the event</li>
             </ul>
           </div>
