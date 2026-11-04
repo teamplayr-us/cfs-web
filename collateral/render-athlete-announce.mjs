@@ -10,7 +10,7 @@
 //      landscape both work — the template crops to cover)
 //   3. Position(s), e.g. "QB" or "WR · ATH"
 //   4. Class year, e.g. 2029
-//   5. Club/travel team name
+//   5. Club/travel team name (pass "" to leave it off — the line shows hometown only)
 //   6. Hometown, e.g. "Dallas, TX"
 //   7. (optional) Event line — defaults to the Dallas Event 01 line
 //   8. (optional) Output filename — defaults to ig-athlete-<photo-name>.png
@@ -41,7 +41,7 @@ const { chromium } = await (async () => {
 const here = dirname(fileURLToPath(import.meta.url));
 const [name, photoFile, position, classYear, club, hometown, eventLine, outFile] =
   process.argv.slice(2);
-if (!name || !photoFile || !position || !classYear || !club || !hometown) {
+if (!name || !photoFile || !position || !classYear || club === undefined || !hometown) {
   console.error(
     'Usage: node render-athlete-announce.mjs "Name" photo.jpg "QB" 2029 "Club" "Hometown, ST" ["Event line"] [out.png]',
   );
@@ -53,6 +53,7 @@ const html = readFileSync(join(here, "ig-athlete-committed.html"), "utf8")
   .replaceAll("{{PHOTO}}", `athletes/${photoFile}`)
   .replaceAll("{{POSITION}}", position)
   .replaceAll("{{CLASS}}", classYear)
+  .replaceAll("{{CLUB}} &middot; ", club ? `${club} &middot; ` : "")
   .replaceAll("{{CLUB}}", club)
   .replaceAll("{{HOMETOWN}}", hometown)
   .replaceAll(
