@@ -30,6 +30,8 @@ const colleges = [
 const asOf = new Date().toLocaleDateString("en-US", {
   month: "short", day: "numeric", year: "numeric",
 });
+const deadline = new Date(`${expires}, 2026 UTC`);
+if (isNaN(deadline)) throw new Error(`Bad expires date: ${expires}`);
 const slug = team.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 const fill = {
   TEAM: team,
@@ -39,6 +41,10 @@ const fill = {
   CODE: code.toUpperCase(),
   PRICE: price,
   EXPIRES: expires,
+  // "November 13" → weekday + short form for the deadline band.
+  EXPIRES_DAY: deadline.toLocaleDateString("en-US", { weekday: "short", timeZone: "UTC" }),
+  EXPIRES_DAY_LONG: deadline.toLocaleDateString("en-US", { weekday: "long", timeZone: "UTC" }),
+  EXPIRES_SHORT: deadline.toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "UTC" }),
   COLLEGES: colleges.join(" &middot; "),
   AS_OF: asOf,
 };
