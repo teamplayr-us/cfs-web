@@ -33,7 +33,10 @@
   td{padding:11px 18px;font-size:19px;border-top:1px solid var(--line);vertical-align:top}
   td.prog{font-weight:700}
   td.role{color:var(--steel)}
-  tr.lvl td{background:#FBEAF2;font-family:var(--mono);font-size:14px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);padding:9px 18px;border-top:2px solid var(--navy)}
+  td{font-size:18px;padding:13px 16px}
+  th{padding:13px 16px}
+  td.lvlc{font-family:var(--mono);font-size:14px;font-weight:700;letter-spacing:.08em;color:var(--red);white-space:nowrap;padding-top:15px}
+  tbody tr:nth-child(even) td{background:#FAF7F8}
   .foot{display:flex;justify-content:space-between;align-items:center;margin-top:22px;font-family:var(--mono);font-size:15px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
   .foot .asof{color:var(--steel)}
 </style>
@@ -49,31 +52,26 @@
   </div>
   <div class="body">
     <table>
-      <thead><tr><th>Program</th><th>Coach</th><th>Role</th></tr></thead>
+      <thead><tr><th>Program</th><th>Level</th><th>Coach</th><th>Role</th></tr></thead>
       <tbody>
-        <tr class="lvl"><td colspan="3">NCAA DI</td></tr>
-        <tr><td class="prog">Binghamton University</td><td>Jeff Melesky</td><td class="role">Head Coach</td></tr>
-        <tr class="lvl"><td colspan="3">NCAA DII</td></tr>
-        <tr><td class="prog">Texas Wesleyan University</td><td>Shambrisha Orange</td><td class="role">Assistant Coach</td></tr>
-        <tr><td class="prog">University of Sioux Falls</td><td>Tommy Downs</td><td class="role">Recruiting Coordinator</td></tr>
-        <tr class="lvl"><td colspan="3">NCAA DIII</td></tr>
-        <tr><td class="prog">Cairn University</td><td>Mike Landis</td><td class="role">Head Coach</td></tr>
-        <tr><td class="prog">East Texas Baptist University</td><td>Maddie Melton-Hensley</td><td class="role">Head Coach</td></tr>
-        <tr><td class="prog">Eastern Connecticut State University</td><td>Andy Crane</td><td class="role">Head Coach</td></tr>
-        <tr><td class="prog">Hardin-Simmons University</td><td>Darin Koenig</td><td class="role">Head Coach</td></tr>
-        <tr><td class="prog">Hendrix College</td><td>Douglas Petersen</td><td class="role">Head Coach</td></tr>
-        <tr><td class="prog">Illinois Wesleyan University</td><td>Melissa Valenzuela</td><td class="role">Head Coach</td></tr>
-        <tr><td class="prog">Lawrence University</td><td>Chelsea Alt</td><td class="role">Head Coach</td></tr>
-        <tr><td class="prog">McMurry University</td><td>Leo Brownfield IV</td><td class="role">Head Coach</td></tr>
-        <tr><td class="prog">Randolph College</td><td>Andy Sinclair</td><td class="role">Head Coach</td></tr>
-        <tr class="lvl"><td colspan="3">NAIA</td></tr>
-        <tr><td class="prog">Olivet Nazarene University</td><td>Kyle Hastings</td><td class="role">Head Coach</td></tr>
-        <tr><td class="prog">Our Lady of the Lake University</td><td>Christopher Seay</td><td class="role">Head Coach</td></tr>
-        <tr><td class="prog">Our Lady of the Lake University</td><td>Elda Ruiz</td><td class="role">Assistant Coach</td></tr>
-        <tr><td class="prog">Our Lady of the Lake University</td><td>Marlon Graham</td><td class="role">&mdash;</td></tr>
-        <tr class="lvl"><td colspan="3">NJCAA</td></tr>
-        <tr><td class="prog">Dallas College &ndash; Richland</td><td>Dynastee Cain</td><td class="role">Head Coach</td></tr>
-        <tr><td class="prog">Dallas College &ndash; Richland</td><td>Asta Walker</td><td class="role">Assistant Coach</td></tr>
+        <tr><td class="prog">Binghamton University</td><td class="lvlc">NCAA DI</td><td>Jeff Melesky</td><td class="role">Head Coach</td></tr>
+        <tr><td class="prog">Texas Wesleyan University</td><td class="lvlc">NCAA DII</td><td>Shambrisha Orange</td><td class="role">Assistant Coach</td></tr>
+        <tr><td class="prog">University of Sioux Falls</td><td class="lvlc">NCAA DII</td><td>Tommy Downs</td><td class="role">Recruiting Coordinator</td></tr>
+        <tr><td class="prog">Cairn University</td><td class="lvlc">NCAA DIII</td><td>Mike Landis</td><td class="role">Head Coach</td></tr>
+        <tr><td class="prog">East Texas Baptist University</td><td class="lvlc">NCAA DIII</td><td>Maddie Melton-Hensley</td><td class="role">Head Coach</td></tr>
+        <tr><td class="prog">Eastern Connecticut State University</td><td class="lvlc">NCAA DIII</td><td>Andy Crane</td><td class="role">Head Coach</td></tr>
+        <tr><td class="prog">Hardin-Simmons University</td><td class="lvlc">NCAA DIII</td><td>Darin Koenig</td><td class="role">Head Coach</td></tr>
+        <tr><td class="prog">Hendrix College</td><td class="lvlc">NCAA DIII</td><td>Douglas Petersen</td><td class="role">Head Coach</td></tr>
+        <tr><td class="prog">Illinois Wesleyan University</td><td class="lvlc">NCAA DIII</td><td>Melissa Valenzuela</td><td class="role">Head Coach</td></tr>
+        <tr><td class="prog">Lawrence University</td><td class="lvlc">NCAA DIII</td><td>Chelsea Alt</td><td class="role">Head Coach</td></tr>
+        <tr><td class="prog">McMurry University</td><td class="lvlc">NCAA DIII</td><td>Leo Brownfield IV</td><td class="role">Head Coach</td></tr>
+        <tr><td class="prog">Randolph College</td><td class="lvlc">NCAA DIII</td><td>Andy Sinclair</td><td class="role">Head Coach</td></tr>
+        <tr><td class="prog">Olivet Nazarene University</td><td class="lvlc">NAIA</td><td>Kyle Hastings</td><td class="role">Head Coach</td></tr>
+        <tr><td class="prog">Our Lady of the Lake University</td><td class="lvlc">NAIA</td><td>Christopher Seay</td><td class="role">Head Coach</td></tr>
+        <tr><td class="prog">Our Lady of the Lake University</td><td class="lvlc">NAIA</td><td>Elda Ruiz</td><td class="role">Assistant Coach</td></tr>
+        <tr><td class="prog">Our Lady of the Lake University</td><td class="lvlc">NAIA</td><td>Marlon Graham</td><td class="role">&mdash;</td></tr>
+        <tr><td class="prog">Dallas College &ndash; Richland</td><td class="lvlc">NJCAA</td><td>Dynastee Cain</td><td class="role">Head Coach</td></tr>
+        <tr><td class="prog">Dallas College &ndash; Richland</td><td class="lvlc">NJCAA</td><td>Asta Walker</td><td class="role">Assistant Coach</td></tr>
       </tbody>
     </table>
     <div class="foot"><span>collegeflagshowcase.com</span><span class="asof">As of Nov 5, 2026</span></div>
