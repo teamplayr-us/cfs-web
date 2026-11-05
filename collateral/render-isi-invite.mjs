@@ -73,6 +73,9 @@ const teamLegend = names.some((t) => t.startsWith("*"))
   : "";
 const html = readFileSync(join(here, "invite-org-isi.html"), "utf8")
   // LOGO_H=<px> overrides the logo height for tall/narrow logos.
+  // NO_LOGO=1 drops the org logo (pass any path as the logo arg) and
+  // gives the org name the space instead.
+  .replace("</head>", process.env.NO_LOGO ? `<style>.org-logo{display:none !important}.org-name{margin-top:150px !important;font-size:120px !important}.location{margin-top:20px !important}.invited-line{margin-top:56px !important}.team-row{font-size:52px !important;padding-top:14px !important;padding-bottom:14px !important}.event-line{margin-top:96px !important}</style></head>` : "</head>")
   .replace("</head>", process.env.LOGO_H ? `<style>.org-logo{height:${Number(process.env.LOGO_H)}px !important;margin-top:18px !important}.org-name{margin-top:22px !important}.invited-line{margin-top:12px !important}.team-row{padding-top:6px !important;padding-bottom:6px !important}.event-line{margin-top:16px !important}</style></head>` : "</head>")
   .replace("<body>", teamCount >= 7 ? '<body class="compact dense">' : teamCount >= 4 ? '<body class="compact">' : "<body>")
   .replaceAll("{{ORG_NAME}}", orgName)
