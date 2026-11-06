@@ -11,7 +11,7 @@ const { chromium } = await import(
 
 const browser = await chromium.launch();
 const page = await browser.newPage({
-  viewport: { width: 1080, height: 1000 },
+  viewport: { width: 1180, height: 1000 },
   deviceScaleFactor: 2,
 });
 await page.goto(`file://${join(here, "coaches-registered-dallas.html")}`);
