@@ -7,9 +7,6 @@ export const ATHLETE_REG_URL = "/events/mckinney-tx/register";
 
 export const CONTACT_EMAIL = "info@collegeflagshowcase.com";
 
-export const INTEREST_MAILTO =
-  "mailto:info@collegeflagshowcase.com?subject=College%20Flag%20Showcase%20Series%20—%20Interest";
-
 export const SPONSOR_MAILTO =
   "mailto:info@collegeflagshowcase.com?subject=College%20Flag%20Showcase%20Series%20—%20Sponsorship";
 

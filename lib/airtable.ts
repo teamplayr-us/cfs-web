@@ -227,6 +227,35 @@ export async function createSponsorInterest(
   await createRecord(SPONSOR_TABLE, fields);
 }
 
+// "Athlete Interest" table (same base) — the /interest "Get on the List"
+// form. Field IDs so Airtable UI renames can't break the write.
+const ATHLETE_INTEREST_TABLE =
+  process.env.AIRTABLE_ATHLETE_INTEREST_TABLE ?? "tblryGWWha3ri0Bsw";
+
+export const ATHLETE_INTEREST_FIELD = {
+  athlete: "fldHkLN0Tl5byzuxa",
+  athleteFirst: "fldE3Rvd1djoH97Ew",
+  athleteLast: "fldsbzh3uhECuHiC4",
+  gradYear: "fldY8gGnXrEMkP4no",
+  positions: "fldDM0bHaXHfBSdwT",
+  club: "fld2LYj6Cmb93bt05",
+  hometown: "fldQvPDAeYnpxI5iB",
+  contactName: "fldZ5hld2ofYcZukp",
+  contactRole: "fldZrr3lSYTmGU2Qw",
+  email: "fldfwiLRKGYJbNWZZ",
+  phone: "fldcHobGFLtzYcj5m",
+  events: "fldzFgFlBnf26bg7L",
+  message: "fldyNy99lHwUNcM5r",
+  status: "fldZSDPRNIn3tlcjz",
+  submittedAt: "fldpMeUxPVZikl40j",
+} as const;
+
+export async function createAthleteInterest(
+  fields: Record<string, unknown>,
+): Promise<void> {
+  await createRecord(ATHLETE_INTEREST_TABLE, fields);
+}
+
 // "Coach Registrations" table (same base). Field IDs so Airtable UI renames
 // can't break the write.
 const COACH_TABLE = process.env.AIRTABLE_COACH_TABLE ?? "tblCZuBfVMjkEo5c5";

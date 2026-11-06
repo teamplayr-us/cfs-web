@@ -89,7 +89,7 @@ export default function RegisterPage({ params }: Props) {
               <p className="reg-fineprint">
                 Athlete registration for this stop isn&apos;t open yet. Want a
                 heads-up when it is?{" "}
-                <a href="/#interest">Get on the list</a>.
+                <a href="/interest">Get on the list</a>.
               </p>
             </div>
           )}

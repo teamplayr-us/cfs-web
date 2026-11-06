@@ -111,7 +111,7 @@ export default function EventPage({ params }: Props) {
                     Registration Coming Soon
                   </span>
                 ) : (
-                  <a className="btn btn-red" href="/#interest">
+                  <a className="btn btn-red" href="/interest">
                     Get Notified
                   </a>
                 )}
@@ -258,7 +258,7 @@ export default function EventPage({ params }: Props) {
                     Registration Coming Soon
                   </span>
                 ) : (
-                  <a className="btn btn-red schedule-cta" href="/#interest">
+                  <a className="btn btn-red schedule-cta" href="/interest">
                     Get Notified
                   </a>
                 )}
