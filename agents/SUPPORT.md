@@ -146,7 +146,8 @@ whose girls 12U–18U teams land in the showcase divisions):
   collegeflagshowcase.com/waiver.
 - The form also asks for jersey size, country, home city, state (dropdown
   for the U.S.; free text elsewhere), ZIP (U.S.) or postal code, club/travel
-  team (optional), a
+  team (optional), the athlete's Instagram handle (optional — used to tag
+  her in "She's In." posts), a
   girls 12U–18U eligibility confirmation (age as of Aug 1, 2026), and an
   optional **guest player pool** opt-in ("Join the guest player pool").
 - **Guest player pool** (free, separate from the camp): athletes without a

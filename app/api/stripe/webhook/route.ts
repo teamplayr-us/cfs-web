@@ -137,6 +137,7 @@ export async function POST(req: Request) {
         ["Jersey size", m.jerseySize],
         ["Hometown", [m.hometown, m.zip].filter(Boolean).join(" ")],
         ["Club team", m.clubTeam || "None"],
+        ["Instagram", m.instagram ? `@${m.instagram}` : undefined],
         ["Guest pool", guestPool ? "Yes — opted in" : "No"],
         ["Guardian", `${m.guardianFirst ?? ""} ${m.guardianLast ?? ""}`.trim()],
         ["Guardian email", m.guardianEmail],

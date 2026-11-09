@@ -283,6 +283,18 @@ export default function RegistrationForm(props: Props) {
                 onChange={(e) => set("clubTeam", e.target.value)}
               />
             </label>
+            <label>
+              Athlete Instagram (optional){err("instagram")}
+              <input
+                type="text"
+                autoCapitalize="none"
+                autoCorrect="off"
+                spellCheck={false}
+                placeholder="@handle"
+                value={data.instagram}
+                onChange={(e) => set("instagram", e.target.value)}
+              />
+            </label>
           </div>
           <div className="reg-positions">
             <span className="reg-sublabel">

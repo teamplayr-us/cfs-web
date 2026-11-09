@@ -51,6 +51,8 @@ export interface RegistrationData {
   zip: string;
   /** Optional club / travel team (blank = none) */
   clubTeam: string;
+  /** Optional athlete Instagram handle (any of @handle, handle, or a profile URL) */
+  instagram: string;
   /** Guardian confirms girls 12U–18U eligibility */
   eligibilityConfirmed: boolean;
   /** Opt-in to the guest player pool */
@@ -83,6 +85,7 @@ export const EMPTY_REGISTRATION: RegistrationData = {
   state: "",
   zip: "",
   clubTeam: "",
+  instagram: "",
   eligibilityConfirmed: false,
   guestPool: false,
   guardianFirst: "",
@@ -123,6 +126,20 @@ export function ageOnCutoff(dob: string, cutoff = AGE_CUTOFF): number {
 export type FieldErrors = Partial<Record<keyof RegistrationData, string>>;
 
 export const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+const INSTAGRAM_RE = /^[A-Za-z0-9._]{1,30}$/;
+
+/** "@Jane.Doe", "jane.doe", or "instagram.com/jane.doe/" → "jane.doe".
+ * Returns "" for blank input. */
+export function normalizeInstagram(value: string): string {
+  return value
+    .trim()
+    .replace(/^https?:\/\//i, "")
+    .replace(/^(www\.)?instagram\.com\//i, "")
+    .replace(/^@/, "")
+    .replace(/[/?#].*$/, "")
+    .toLowerCase();
+}
 
 export function requiredName(value: string): string | undefined {
   if (!value.trim()) return "Required";
@@ -181,6 +198,9 @@ export function validateRegistration(
       if (data.zip.trim().length > 12) errors.zip = "Too long";
     }
     if (data.clubTeam.trim().length > 80) errors.clubTeam = "Too long";
+    const ig = normalizeInstagram(data.instagram ?? "");
+    if ((data.instagram ?? "").trim() && !INSTAGRAM_RE.test(ig))
+      errors.instagram = "Enter a valid Instagram handle";
     if (!data.eligibilityConfirmed)
       errors.eligibilityConfirmed = "Required to register";
   }
@@ -237,6 +257,7 @@ export function toStripeMetadata(
         .join(", "),
     ),
     clubTeam: clip(data.clubTeam ?? ""),
+    instagram: clip(normalizeInstagram(data.instagram ?? "")),
     guestPool: data.guestPool ? "yes" : "no",
     guardianFirst: clip(data.guardianFirst),
     guardianLast: clip(data.guardianLast),
