@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>College Coaches Registered — Dallas</title>
+<!-- Shareable table image of registered college coaches for
+     College Flag Showcase – Dallas. Rows are from the Airtable
+     Coach Registrations table (deduped). Render:
+     node collateral/render-coaches-table.mjs -->
+<style>
+  @font-face{font-family:"Big Shoulders Display";src:url(fonts/big-shoulders.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"Archivo";src:url(fonts/archivo.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"JetBrains Mono";src:url(fonts/jetbrains-mono.woff2) format("woff2");font-weight:100 900}
+  :root{
+    --navy:#110C0F; --red:#FF2D87; --chalk:#F5F2F0;
+    --steel:#6E676D; --line:#E4DEE2;
+    --display:"Big Shoulders Display",sans-serif;
+    --body:"Archivo",sans-serif;
+    --mono:"JetBrains Mono",monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px}
+  body{font-family:var(--body);background:var(--chalk);color:var(--navy)}
+  .head{background:var(--navy);color:var(--chalk);padding:40px 64px 34px;border-bottom:8px solid var(--red);display:flex;align-items:center;gap:34px}
+  .head img{width:130px;height:130px}
+  .kicker{font-family:var(--mono);font-size:17px;font-weight:700;letter-spacing:.22em;color:var(--red);text-transform:uppercase;margin-bottom:10px}
+  h1{font-family:var(--display);font-size:66px;line-height:.9;text-transform:uppercase;letter-spacing:.01em}
+  h1 em{font-style:normal;color:var(--red)}
+  .sub{margin-top:12px;font-size:20px;color:#C9C4C9}
+  .body{padding:30px 64px 26px}
+  table{width:100%;border-collapse:collapse;background:#fff;border:3px solid var(--navy)}
+  th{background:var(--navy);color:var(--chalk);font-family:var(--mono);font-size:14px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;text-align:left;padding:13px 18px}
+  td{padding:11px 18px;font-size:19px;border-top:1px solid var(--line);vertical-align:top}
+  td.prog{font-weight:700}
+  td.role{color:var(--steel)}
+  td.reg{font-family:var(--mono);font-size:14px;font-weight:700;white-space:nowrap;padding-top:15px}
+  td{font-size:16.5px;padding:12px 12px;white-space:nowrap}
+  th{padding:13px 12px}
+  html,body{width:1080px}
+  td.lvlc{font-family:var(--mono);font-size:14px;font-weight:700;letter-spacing:.08em;color:var(--red);white-space:nowrap;padding-top:15px}
+  tbody tr:nth-child(even) td{background:#FAF7F8}
+  .foot{display:flex;justify-content:space-between;align-items:center;margin-top:22px;font-family:var(--mono);font-size:15px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+  .foot .asof{color:var(--steel)}
+</style>
+</head>
+<body>
+  <div class="head">
+    <img src="../public/logo.png" alt="College Flag Showcase Series logo" />
+    <div>
+      <div class="kicker">College Flag Showcase &ndash; Dallas &middot; Dec 11&ndash;13, 2026</div>
+      <h1>College Coaches <em>Registered.</em></h1>
+      <div class="sub">18 coaches from 15 college programs</div>
+    </div>
+  </div>
+  <div class="body">
+    <table>
+      <thead><tr><th>Program</th><th>Level</th><th>Coach</th><th>Role</th></tr></thead>
+      <tbody>
+        <tr><td class="prog">Binghamton University</td><td class="lvlc">NCAA DI</td><td>Jeff Melesky</td><td class="role">Head Coach</td></tr>
+        <tr><td class="prog">Texas Wesleyan University</td><td class="lvlc">NCAA DII</td><td>Shambrisha Orange</td><td class="role">Assistant Coach</td></tr>
+        <tr><td class="prog">University of Sioux Falls</td><td class="lvlc">NCAA DII</td><td>Tommy Downs</td><td class="role">Recruiting Coordinator</td></tr>
+        <tr><td class="prog">Cairn University</td><td class="lvlc">NCAA DIII</td><td>Mike Landis</td><td class="role">Head Coach</td></tr>
+        <tr><td class="prog">East Texas Baptist University</td><td class="lvlc">NCAA DIII</td><td>Maddie Melton-Hensley</td><td class="role">Head Coach</td></tr>
+        <tr><td class="prog">Eastern Connecticut State University</td><td class="lvlc">NCAA DIII</td><td>Andy Crane</td><td class="role">Head Coach</td></tr>
+        <tr><td class="prog">Hardin-Simmons University</td><td class="lvlc">NCAA DIII</td><td>Darin Koenig</td><td class="role">Head Coach</td></tr>
+        <tr><td class="prog">Hendrix College</td><td class="lvlc">NCAA DIII</td><td>Douglas Petersen</td><td class="role">Head Coach</td></tr>
+        <tr><td class="prog">Illinois Wesleyan University</td><td class="lvlc">NCAA DIII</td><td>Melissa Valenzuela</td><td class="role">Head Coach</td></tr>
+        <tr><td class="prog">Lawrence University</td><td class="lvlc">NCAA DIII</td><td>Chelsea Alt</td><td class="role">Head Coach</td></tr>
+        <tr><td class="prog">McMurry University</td><td class="lvlc">NCAA DIII</td><td>Leo Brownfield IV</td><td class="role">Head Coach</td></tr>
+        <tr><td class="prog">Randolph College</td><td class="lvlc">NCAA DIII</td><td>Andy Sinclair</td><td class="role">Head Coach</td></tr>
+        <tr><td class="prog">Olivet Nazarene University</td><td class="lvlc">NAIA</td><td>Kyle Hastings</td><td class="role">Head Coach</td></tr>
+        <tr><td class="prog">Our Lady of the Lake University</td><td class="lvlc">NAIA</td><td>Christopher Seay</td><td class="role">Head Coach</td></tr>
+        <tr><td class="prog">Our Lady of the Lake University</td><td class="lvlc">NAIA</td><td>Elda Ruiz</td><td class="role">Assistant Coach</td></tr>
+        <tr><td class="prog">Our Lady of the Lake University</td><td class="lvlc">NAIA</td><td>Marlon Graham</td><td class="role">&mdash;</td></tr>
+        <tr><td class="prog">Dallas College &ndash; Richland</td><td class="lvlc">NJCAA</td><td>Dynastee Cain</td><td class="role">Head Coach</td></tr>
+        <tr><td class="prog">Dallas College &ndash; Richland</td><td class="lvlc">NJCAA</td><td>Asta Walker</td><td class="role">Assistant Coach</td></tr>
+      </tbody>
+    </table>
+    <div class="foot"><span>collegeflagshowcase.com</span><span class="asof">As of Nov 10, 2026</span></div>
+  </div>
+</body>
+</html>
