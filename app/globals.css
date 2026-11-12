@@ -325,3 +325,10 @@ footer a:hover{color:var(--chalk)}
 
 /* honeypot field — visually removed, present for bots */
 .reg-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+
+/* Coach RSVP (/colleges/rsvp/[token]) */
+.rsvp-row{flex-direction:row !important;align-items:flex-start;gap:14px !important;padding:16px 16px;border:2px solid var(--navy);background:#fff;cursor:pointer;text-transform:none !important;letter-spacing:0 !important;font-family:var(--body) !important}
+.rsvp-row input{width:24px;height:24px;margin-top:2px;flex-shrink:0;accent-color:var(--red)}
+.rsvp-row b{display:block;font-size:18px;color:var(--navy)}
+.rsvp-row small{display:block;margin-top:4px;font-size:14px;font-weight:500;color:var(--steel)}
+.rsvp-row-alt{border-style:dashed}
