@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>IG — Partner Announcement: Gamebreaker</title>
+<!--
+  Partnership announcement — Gamebreaker, Official Uniform & Headgear Partner
+  of the Showcase Combine & Camp. 1080x1350 feed post.
+  Facts: partner role from the founder (Nov 2026); date/venue from
+  data/events.ts (mckinney-tx). Render: node collateral/render-partner.mjs
+  Partner logo: set PARTNER_LOGO below (white/light version for dark bg).
+-->
+<style>
+  @font-face{font-family:"Big Shoulders Display";src:url(fonts/big-shoulders.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"Archivo";src:url(fonts/archivo.woff2) format("woff2");font-weight:100 900}
+  @font-face{font-family:"JetBrains Mono";src:url(fonts/jetbrains-mono.woff2) format("woff2");font-weight:100 900}
+  :root{
+    --navy:#0A0A0B; --red:#FF2D8E; --chalk:#F7F5F6; --steel:#8A848C;
+    --display:"Big Shoulders Display",sans-serif;
+    --body:"Archivo",sans-serif;
+    --mono:"JetBrains Mono",monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:1350px;overflow:hidden}
+  body{font-family:var(--body);background:var(--navy);color:var(--chalk);position:relative}
+
+  .yards{position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0,transparent 133px,rgba(247,245,246,.045) 133px,rgba(247,245,246,.045) 135px)}
+  .hash{position:absolute;top:0;bottom:0;width:2px;background:rgba(247,245,246,.05)}
+  .hash.l{left:96px}.hash.r{right:96px}
+  /* pink glow behind the lockup */
+  .glow{position:absolute;left:50%;top:470px;width:1100px;height:760px;transform:translate(-50%,-50%);background:radial-gradient(ellipse at center,rgba(255,45,142,.20) 0%,rgba(255,45,142,.07) 38%,transparent 68%)}
+  .frame{position:absolute;inset:36px;border:3px solid rgba(247,245,246,.16)}
+
+  .inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:96px 100px 84px}
+
+  .kicker{font-family:var(--mono);font-size:21px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:22px}
+  .kicker::before,.kicker::after{content:"";width:64px;height:3px;background:var(--red)}
+
+  .lockup{margin-top:70px;display:flex;align-items:center;justify-content:center;gap:52px;height:300px}
+  .cfs-logo{width:270px;height:270px}
+  .x{font-family:var(--display);font-weight:300;font-size:96px;line-height:1;color:var(--red)}
+  .partner{width:330px;height:270px;display:flex;align-items:center;justify-content:center}
+  .partner img{max-width:330px;max-height:230px;object-fit:contain}
+  .partner .ph{width:100%;height:100%;border:3px dashed rgba(247,245,246,.35);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
+  .partner .ph b{font-family:var(--display);font-weight:800;font-size:58px;letter-spacing:.02em;text-transform:uppercase}
+  .partner .ph span{font-family:var(--mono);font-size:15px;letter-spacing:.2em;text-transform:uppercase;color:var(--steel)}
+
+  .label{margin-top:74px;font-family:var(--mono);font-size:24px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--steel)}
+  h1{margin-top:18px;font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:.9;letter-spacing:.005em;font-size:138px}
+  h1 em{font-style:normal;color:var(--red)}
+  .of{margin-top:30px;font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:50px;letter-spacing:.03em;line-height:1}
+  .of b{color:var(--red);font-weight:800}
+
+  .bar{margin-top:auto;display:flex;align-items:stretch;border:3px solid rgba(247,245,246,.22)}
+  .bar span{padding:18px 28px;font-family:var(--mono);font-size:21px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}
+  .bar span + span{border-left:3px solid rgba(247,245,246,.22)}
+  .bar .hot{background:var(--red);color:var(--navy)}
+
+  .foot{margin-top:30px;display:flex;align-items:center;gap:20px;font-family:var(--mono);font-size:19px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--steel)}
+  .foot b{color:var(--chalk)}
+  .foot i{width:8px;height:8px;background:var(--red);display:inline-block}
+</style>
+</head>
+<body>
+  <div class="yards"></div>
+  <div class="hash l"></div>
+  <div class="hash r"></div>
+  <div class="glow"></div>
+  <div class="frame"></div>
+  <div class="inner">
+    <p class="kicker">Official Partner</p>
+
+    <div class="lockup">
+      <img class="cfs-logo" src="../public/logo.png" alt="College Flag Showcase Series" />
+      <span class="x">&times;</span>
+      <div class="partner" id="partner">
+        <div class="ph"><b>Gamebreaker</b><span>Partner logo here</span></div>
+      </div>
+    </div>
+
+    <p class="label">Welcome, Gamebreaker</p>
+    <h1>Official Uniform<br><em>&amp; Headgear</em> Partner</h1>
+    <p class="of">of the <b>Showcase Combine &amp; Camp</b></p>
+
+    <div class="bar">
+      <span class="hot">Dallas</span>
+      <span>Fri &middot; Dec 11, 2026</span>
+      <span>Craig Ranch</span>
+    </div>
+
+    <p class="foot"><b>collegeflagshowcase.com</b><i></i>Girls Flag Football</p>
+  </div>
+<script>
+  // Swap in the partner logo when provided: ?logo=../public/partners/gamebreaker.png
+  const logo = new URLSearchParams(location.search).get("logo");
+  if (logo) document.getElementById("partner").innerHTML =
+    '<img src="' + logo.replace(/"/g, "") + '" alt="Gamebreaker" />';
+</script>
+</body>
+</html>
