@@ -8,8 +8,9 @@
   of the Showcase Combine & Camp. 1080x1350 feed post.
   Facts: partner role from the founder (Nov 2026); date/venue from
   data/events.ts (mckinney-tx). Render: node collateral/render-partner.mjs
-  Partner logo: partners/gamebreaker.png (192px source, dark mark on
-  transparent) sits in a white badge so their colors stay intact on black.
+  Partner logo: partners/gamebreaker-reversed.svg — vector trace of their
+  192px PNG, GB reversed to white for dark backgrounds, crown kept red.
+  partners/gamebreaker-full.svg is the original-color version for light bg.
 -->
 <style>
   @font-face{font-family:"Big Shoulders Display";src:url(fonts/big-shoulders.woff2) format("woff2");font-weight:100 900}
@@ -37,15 +38,10 @@
   .kicker{font-family:var(--mono);font-size:21px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:22px}
   .kicker::before,.kicker::after{content:"";width:64px;height:3px;background:var(--red)}
 
-  .lockup{margin-top:70px;display:flex;align-items:center;justify-content:center;gap:52px;height:300px}
-  .cfs-logo{width:270px;height:270px}
-  .x{font-family:var(--display);font-weight:300;font-size:96px;line-height:1;color:var(--red)}
-  .partner{width:300px;height:270px;display:flex;align-items:center;justify-content:center}
-  .partner .badge{width:270px;height:270px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 8px rgba(255,45,142,.0)}
-  .partner .badge img{width:176px;height:176px;object-fit:contain}
-  .partner .ph{width:100%;height:100%;border:3px dashed rgba(247,245,246,.35);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
-  .partner .ph b{font-family:var(--display);font-weight:800;font-size:58px;letter-spacing:.02em;text-transform:uppercase}
-  .partner .ph span{font-family:var(--mono);font-size:15px;letter-spacing:.2em;text-transform:uppercase;color:var(--steel)}
+  .lockup{margin-top:72px;display:flex;align-items:center;justify-content:center;gap:68px;height:290px}
+  .cfs-logo{width:280px;height:280px}
+  .divider{width:3px;height:210px;background:linear-gradient(to bottom,transparent,rgba(247,245,246,.45) 20%,rgba(247,245,246,.45) 80%,transparent)}
+  .gb-logo{height:262px;width:auto;transform:translateY(-4px)}
 
   .label{margin-top:74px;font-family:var(--mono);font-size:24px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--steel)}
   h1{margin-top:18px;font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:.9;letter-spacing:.005em;font-size:138px}
@@ -74,10 +70,8 @@
 
     <div class="lockup">
       <img class="cfs-logo" src="../public/logo.png" alt="College Flag Showcase Series" />
-      <span class="x">&times;</span>
-      <div class="partner" id="partner">
-        <div class="badge"><img src="partners/gamebreaker.png" alt="Gamebreaker" /></div>
-      </div>
+      <span class="divider"></span>
+      <img class="gb-logo" src="partners/gamebreaker-reversed.svg" alt="Gamebreaker" />
     </div>
 
     <p class="label">Welcome, Gamebreaker</p>
