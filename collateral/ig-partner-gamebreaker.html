@@ -8,7 +8,8 @@
   of the Showcase Combine & Camp. 1080x1350 feed post.
   Facts: partner role from the founder (Nov 2026); date/venue from
   data/events.ts (mckinney-tx). Render: node collateral/render-partner.mjs
-  Partner logo: set PARTNER_LOGO below (white/light version for dark bg).
+  Partner logo: partners/gamebreaker.png (192px source, dark mark on
+  transparent) sits in a white badge so their colors stay intact on black.
 -->
 <style>
   @font-face{font-family:"Big Shoulders Display";src:url(fonts/big-shoulders.woff2) format("woff2");font-weight:100 900}
@@ -39,8 +40,9 @@
   .lockup{margin-top:70px;display:flex;align-items:center;justify-content:center;gap:52px;height:300px}
   .cfs-logo{width:270px;height:270px}
   .x{font-family:var(--display);font-weight:300;font-size:96px;line-height:1;color:var(--red)}
-  .partner{width:330px;height:270px;display:flex;align-items:center;justify-content:center}
-  .partner img{max-width:330px;max-height:230px;object-fit:contain}
+  .partner{width:300px;height:270px;display:flex;align-items:center;justify-content:center}
+  .partner .badge{width:270px;height:270px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 8px rgba(255,45,142,.0)}
+  .partner .badge img{width:176px;height:176px;object-fit:contain}
   .partner .ph{width:100%;height:100%;border:3px dashed rgba(247,245,246,.35);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
   .partner .ph b{font-family:var(--display);font-weight:800;font-size:58px;letter-spacing:.02em;text-transform:uppercase}
   .partner .ph span{font-family:var(--mono);font-size:15px;letter-spacing:.2em;text-transform:uppercase;color:var(--steel)}
@@ -74,7 +76,7 @@
       <img class="cfs-logo" src="../public/logo.png" alt="College Flag Showcase Series" />
       <span class="x">&times;</span>
       <div class="partner" id="partner">
-        <div class="ph"><b>Gamebreaker</b><span>Partner logo here</span></div>
+        <div class="badge"><img src="partners/gamebreaker.png" alt="Gamebreaker" /></div>
       </div>
     </div>
 
@@ -90,11 +92,5 @@
 
     <p class="foot"><b>collegeflagshowcase.com</b><i></i>Girls Flag Football</p>
   </div>
-<script>
-  // Swap in the partner logo when provided: ?logo=../public/partners/gamebreaker.png
-  const logo = new URLSearchParams(location.search).get("logo");
-  if (logo) document.getElementById("partner").innerHTML =
-    '<img src="' + logo.replace(/"/g, "") + '" alt="Gamebreaker" />';
-</script>
 </body>
 </html>
