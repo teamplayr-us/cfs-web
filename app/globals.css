@@ -332,3 +332,7 @@ footer a:hover{color:var(--chalk)}
 .rsvp-row b{display:block;font-size:18px;color:var(--navy)}
 .rsvp-row small{display:block;margin-top:4px;font-size:14px;font-weight:500;color:var(--steel)}
 .rsvp-row-alt{border-style:dashed}
+.rsvp-confirm{border:2px solid var(--red);background:#fff;padding:16px;display:flex;flex-direction:column;gap:14px}
+.rsvp-confirm p{font-size:16px;line-height:1.45;color:var(--navy)}
+.rsvp-confirm-actions{display:flex;flex-wrap:wrap;gap:10px}
+.rsvp-confirm-actions .btn{flex:1 1 180px;justify-content:center}

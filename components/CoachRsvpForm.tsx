@@ -20,11 +20,22 @@ export default function CoachRsvpForm({
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [done, setDone] = useState(false);
+  // An all-unchecked RSVP is usually an accidental tap on Send before
+  // checking anything, so ask the coach to confirm before saving it.
+  const [confirmNone, setConfirmNone] = useState(false);
 
-  const set = (key: keyof RsvpAnswers, value: boolean) =>
+  const set = (key: keyof RsvpAnswers, value: boolean) => {
+    setConfirmNone(false);
     setAnswers((a) => ({ ...a, [key]: value }));
+  };
 
-  async function submit() {
+  const noneChecked = RSVP_EVENTS.every((e) => !answers[e.key]);
+
+  async function submit(confirmed = false) {
+    if (noneChecked && !confirmed) {
+      setConfirmNone(true);
+      return;
+    }
     setSubmitting(true);
     setError(null);
     try {
@@ -109,14 +120,45 @@ export default function CoachRsvpForm({
           </span>
         </label>
         {error && <p className="reg-err reg-err-block">{error}</p>}
-        <button
-          type="button"
-          className="btn btn-red"
-          onClick={submit}
-          disabled={submitting}
-        >
-          {submitting ? "One moment…" : responded ? "Update RSVP" : "Send RSVP"}
-        </button>
+        {confirmNone ? (
+          <div className="rsvp-confirm" role="alert">
+            <p>
+              <b>You haven&apos;t checked any events.</b> Tap each event you
+              plan to attend above, or confirm you can&apos;t make it this time.
+            </p>
+            <div className="rsvp-confirm-actions">
+              <button
+                type="button"
+                className="btn btn-red"
+                onClick={() => setConfirmNone(false)}
+                disabled={submitting}
+              >
+                Pick my events
+              </button>
+              <button
+                type="button"
+                className="btn btn-ghost"
+                onClick={() => submit(true)}
+                disabled={submitting}
+              >
+                {submitting ? "One moment…" : "I can't attend"}
+              </button>
+            </div>
+          </div>
+        ) : (
+          <button
+            type="button"
+            className="btn btn-red"
+            onClick={() => submit()}
+            disabled={submitting}
+          >
+            {submitting
+              ? "One moment…"
+              : responded
+                ? "Update RSVP"
+                : "Send RSVP"}
+          </button>
+        )}
       </fieldset>
     </div>
   );
