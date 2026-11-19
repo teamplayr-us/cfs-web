@@ -224,7 +224,7 @@ whose girls 12U–18U teams land in the showcase divisions):
   coach registration (site: /colleges/register).
 - Official coach hotel (Dallas): **Sheraton McKinney Hotel** (replaced the
   Denizen, founder Oct 16 2026) — group rate for credentialed college
-  coaches, **$129/night with buffet breakfast, last day to book Fri Nov 20,
+  coaches, **$129/night with buffet breakfast, last day to book Mon Nov 23 (extended from Nov 20),
   2026**; also the venue for the Coaches Welcome Event. The block opens
   Thu Dec 10 but coaches can change their dates; the Marriott booking page
   lists the group as "International Superflag Invitational 5v5" (correct

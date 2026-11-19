@@ -133,7 +133,7 @@ const COACHES: QA[] = [
   },
   {
     q: "Where should coaches stay in Dallas?",
-    a: "The Sheraton McKinney Hotel is the official college coach hotel for the Dallas event, with a group rate for credentialed coaches (buffet breakfast included) — book by November 20. It's also home to the Friday-night Coaches Welcome Event. The booking link comes with your credentials.",
+    a: "The Sheraton McKinney Hotel is the official college coach hotel for the Dallas event, with a group rate for credentialed coaches (buffet breakfast included) — book by November 23. It's also home to the Friday-night Coaches Welcome Event. The booking link comes with your credentials.",
   },
   {
     q: "What's in the athlete recruiting package?",
