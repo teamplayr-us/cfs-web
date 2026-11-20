@@ -40,6 +40,11 @@ const fill = {
   LOGO_WRAP: process.env.LOGO_TILE ? "tile" : "",
   CODE: code.toUpperCase(),
   PRICE: price,
+  // A $0 code means the team covers the athlete fee, so say so plainly.
+  OFFER_LINE:
+    Number(price) === 0
+      ? "attends the Showcase Combine &amp; Camp free with the team code"
+      : "gets a team price on the Showcase Combine &amp; Camp",
   EXPIRES: expires,
   // "November 13" → weekday + short form for the deadline band.
   EXPIRES_DAY: deadline.toLocaleDateString("en-US", { weekday: "short", timeZone: "UTC" }),
