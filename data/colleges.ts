@@ -104,6 +104,11 @@ export const COLLEGES_BY_EVENT: Record<string, CollegeSlot[]> = {
       name: "Henderson State University",
       logo: "/colleges/henderson-state-mono.png",
     },
+    {
+      filled: true,
+      name: "Dallas College Cedar Valley",
+      logo: "/colleges/cedar-valley-mono.png",
+    },
   ],
 };
 

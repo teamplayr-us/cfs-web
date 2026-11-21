@@ -284,7 +284,9 @@ University (the board's first NCAA DI program), Hendrix College, McMurry
 University, Randolph College (Head Coach Andy Sinclair, NCAA DIII),
 Hardin-Simmons University (Head Coach Darin Koenig, NCAA DIII), University
 of Sioux Falls (Recruiting Coordinator Tommy Downs, NCAA DII), Henderson
-State University (Head Coach Haley Griffin, NCAA DII; added Nov 21, 2026). The
+State University (Head Coach Haley Griffin, NCAA DII; added Nov 21, 2026),
+Dallas College Cedar Valley (Head Coach Danny Lowery, NJCAA; added Nov 21,
+2026). The
 board at collegeflagshowcase.com/colleges updates as coaches register.
 
 Competing programs (public board, as of Sep 28, 2026): Texas Fury (TX),
