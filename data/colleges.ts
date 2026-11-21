@@ -99,6 +99,11 @@ export const COLLEGES_BY_EVENT: Record<string, CollegeSlot[]> = {
       name: "University of Sioux Falls",
       logo: "/colleges/sioux-falls-mono.png",
     },
+    {
+      filled: true,
+      name: "Henderson State University",
+      logo: "/colleges/henderson-state-mono.png",
+    },
   ],
 };
 
