@@ -28,6 +28,11 @@ export const JERSEY_SIZES = [
   "Adult 2XL",
 ] as const;
 
+/** Sizes that are out of stock: still listed in the dropdown (marked
+ * "sold out" and disabled) so families can see the full run, but rejected
+ * on submit. Remove a size from here when it's restocked. */
+export const SOLD_OUT_SIZES: readonly string[] = ["Youth XL"];
+
 export interface RegistrationData {
   athleteFirst: string;
   athleteLast: string;
@@ -183,6 +188,8 @@ export function validateRegistration(
     if (!data.jerseySize) errors.jerseySize = "Required";
     else if (!(JERSEY_SIZES as readonly string[]).includes(data.jerseySize))
       errors.jerseySize = "Select a size";
+    else if (SOLD_OUT_SIZES.includes(data.jerseySize))
+      errors.jerseySize = `${data.jerseySize} is sold out. Pick another size`;
     if (data.fffUrl.trim() && !/^https?:\/\/\S+$/.test(data.fffUrl.trim()))
       errors.fffUrl = "Enter a full link (starting with http)";
     if (data.medical.length > 1000) errors.medical = "Too long";

@@ -7,6 +7,7 @@ import {
   FieldErrors,
   GRAD_YEARS,
   JERSEY_SIZES,
+  SOLD_OUT_SIZES,
   POSITIONS,
   RegistrationData,
   validateRegistration,
@@ -203,11 +204,14 @@ export default function RegistrationForm(props: Props) {
                 onChange={(e) => set("jerseySize", e.target.value)}
               >
                 <option value="">Select…</option>
-                {JERSEY_SIZES.map((size) => (
-                  <option key={size} value={size}>
-                    {size}
-                  </option>
-                ))}
+                {JERSEY_SIZES.map((size) => {
+                  const soldOut = SOLD_OUT_SIZES.includes(size);
+                  return (
+                    <option key={size} value={size} disabled={soldOut}>
+                      {soldOut ? `${size} (sold out)` : size}
+                    </option>
+                  );
+                })}
               </select>
             </label>
             <label>

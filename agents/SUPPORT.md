@@ -144,7 +144,9 @@ whose girls 12U–18U teams land in the showcase divisions):
   goes to the guardian email. Parent/guardian must complete it (waiver
   signature). The full participant waiver is public at
   collegeflagshowcase.com/waiver.
-- The form also asks for jersey size, country, home city, state (dropdown
+- The form also asks for jersey size (Youth XL is SOLD OUT as of Nov 21,
+  2026: it shows as "sold out" and can't be picked; families choose
+  another size), country, home city, state (dropdown
   for the U.S.; free text elsewhere), ZIP (U.S.) or postal code, club/travel
   team (optional), the athlete's Instagram handle (optional — used to tag
   her in "She's In." posts), a
