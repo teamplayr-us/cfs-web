@@ -40,6 +40,11 @@ p.add_argument("--teams", required=True)
 p.add_argument("--cfs-teams")
 p.add_argument("--flyer", action="append", default=[], help="path[:filename]")
 p.add_argument("--signature", default="Allen Hamilton")
+# Showcase-only sends default to From: info@collegeflagshowcase.com. When the
+# .eml is sent from the allen@5v5sports.com Outlook account (e.g. to Hotmail/
+# Outlook.com recipients), pass --from-5v5 so the From matches the account
+# that actually sends it; a mismatched From fails SPF/DMARC and gets dropped.
+p.add_argument("--from-5v5", action="store_true")
 a = p.parse_args()
 
 teams = [t.strip() for t in a.teams.split("|") if t.strip()]
@@ -78,7 +83,9 @@ elif mixed:
     faqs = [("public/invites/team-faq.pdf", f"team-invitation-faq-{TEAM_FAQ_DATE}.pdf"),
             ("public/invites/isi-team-faq.pdf", "isi-team-invitation-faq.pdf")]
 else:
-    sender = formataddr(("College Flag Showcase Series", "info@collegeflagshowcase.com"))
+    # Personal display name, not "5v5 Sports": the series is independent.
+    sender = (formataddr((a.signature, "allen@5v5sports.com")) if a.from_5v5
+              else formataddr(("College Flag Showcase Series", "info@collegeflagshowcase.com")))
     subject = "Official Invitation — College Flag Showcase – Dallas"
     faqs = [("public/invites/team-faq.pdf", f"team-invitation-faq-{TEAM_FAQ_DATE}.pdf")]
 
