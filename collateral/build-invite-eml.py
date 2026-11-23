@@ -45,6 +45,12 @@ p.add_argument("--signature", default="Allen Hamilton")
 # Outlook.com recipients), pass --from-5v5 so the From matches the account
 # that actually sends it; a mismatched From fails SPF/DMARC and gets dropped.
 p.add_argument("--from-5v5", action="store_true")
+# Team code for the athlete Combine & Camp offer. When set, replaces the
+# "code will be provided in a separate email" sentence with the code, price
+# and register-by date (attach the team's athlete one-pager with --flyer).
+p.add_argument("--code")
+p.add_argument("--price", help="team price in dollars, e.g. 125")
+p.add_argument("--register-by", help='e.g. "Sunday, November 29"')
 a = p.parse_args()
 
 teams = [t.strip() for t in a.teams.split("|") if t.strip()]
@@ -72,6 +78,21 @@ body = (
     .replace("{{SIGNATURE}}", a.signature)
     .replace(HEADERS + header, f"cid:{header_cid[1:-1]}")
 )
+if a.code:
+    reg = "https://www.collegeflagshowcase.com/events/mckinney-tx/register"
+    code_line = (
+        f'Athletes use team code <b style="color:#0A0A0B;">{html.escape(a.code.upper())}</b> '
+        f"at the Review &amp; Pay step"
+        + (f" (${html.escape(a.price)} instead of $175)" if a.price else "")
+        + (f" and should register by <b style=\"color:#0A0A0B;\">{html.escape(a.register_by)}</b>"
+           if a.register_by else "")
+        + f' at <a href="{reg}" style="color:#FF2D8E;text-decoration:none;">collegeflagshowcase.com/events/mckinney-tx/register</a>.'
+        " The attached athlete one-pager is ready to share with your families."
+    )
+    old = "A discount code will be provided in a separate email."
+    if old not in body:
+        raise SystemExit("--code: template sentence to replace not found")
+    body = body.replace(old, code_line)
 
 if isi_only:
     sender = formataddr(("5v5 Sports", "allen@5v5sports.com"))
