@@ -40,7 +40,8 @@ const { chromium } = await (async () => {
 const here = dirname(fileURLToPath(import.meta.url));
 const [orgName, logoPath, location, teams, eventLine, venueLine, outFile] =
   process.argv.slice(2);
-if (!orgName || !logoPath || !location || !teams) {
+// Pass "" as the location to leave the home-location line off the card.
+if (!orgName || !logoPath || location === undefined || !teams) {
   console.error(
     'Usage: node render-isi-invite.mjs "Org Name" public/programs/logo.png "City, ST" "Team 14U|Team 16U" ["Event line"] ["Venue line"] [out.png]',
   );
@@ -77,6 +78,7 @@ const html = readFileSync(join(here, "invite-org-isi.html"), "utf8")
   // gives the org name the space instead.
   .replace("</head>", process.env.NO_LOGO ? `<style>.org-logo{display:none !important}.org-name{margin-top:150px !important;font-size:120px !important}.location{margin-top:20px !important}.invited-line{margin-top:56px !important}.team-row{font-size:52px !important;padding-top:14px !important;padding-bottom:14px !important}.event-line{margin-top:96px !important}</style></head>` : "</head>")
   .replace("</head>", process.env.LOGO_H ? `<style>.org-logo{height:${Number(process.env.LOGO_H)}px !important;margin-top:18px !important}.org-name{margin-top:22px !important}.invited-line{margin-top:12px !important}.team-row{padding-top:6px !important;padding-bottom:6px !important}.event-line{margin-top:16px !important}</style></head>` : "</head>")
+  .replace("</head>", location.trim() ? "</head>" : "<style>.org-loc{display:none !important}</style></head>")
   .replace("<body>", teamCount >= 7 ? '<body class="compact dense">' : teamCount >= 4 ? '<body class="compact">' : "<body>")
   .replaceAll("{{ORG_NAME}}", orgName)
   .replaceAll("{{LOCATION}}", location)
