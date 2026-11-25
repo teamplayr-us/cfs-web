@@ -82,11 +82,12 @@ Tournament.** The Coaches Welcome Event is for credentialed college coaches
 and invited team coaches: **Fri Dec 11, 7:00–8:30 PM, Sheraton McKinney
 Hotel** (founder, Oct 16 2026; Sunday end moved to 4:00 PM Oct 27 2026) — college and club coaches networking
 together before the weekend kicks off. Coaches of ISI-only teams are
-invited too (founder, Nov 25 2026). Team coaches RSVP individually, one
-per coach, through the Coaches Welcome Event RSVP form (Airtable table
-"Coaches Welcome Event RSVPs"); teams request Nations Cup tickets once per
-team through a separate form ("Nations Cup Ticket Requests"). Both are due
-Mon Nov 30. **Nations Cup:** the series and the ISI are providing complimentary
+invited too (founder, Nov 25 2026). One "Action Required" form per team
+(Airtable table "Nations Cup Ticket Requests") takes both the Nations Cup
+ticket request and the Welcome Event RSVP: each club RSVPs for up to 2,
+the admin plus one. Due Mon Nov 30; emailed from allen@5v5sports.com to
+ISI club admins (Zorts) and invited teams not yet in Zorts.
+**Nations Cup:** the series and the ISI are providing complimentary
 tickets (not USA Football directly), in partnership with USA Football —
 Dec 10–12, Frisco (The Star and Dr. Pink Field); one ticket covers every
 game, both venues, all three days. Combine runs
