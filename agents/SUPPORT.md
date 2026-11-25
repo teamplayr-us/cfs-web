@@ -81,7 +81,14 @@ Fri night — Coaches Welcome Event; Sat–Sun Dec 12–13 — Travel Team Showc
 Tournament.** The Coaches Welcome Event is for credentialed college coaches
 and invited team coaches: **Fri Dec 11, 7:00–8:30 PM, Sheraton McKinney
 Hotel** (founder, Oct 16 2026; Sunday end moved to 4:00 PM Oct 27 2026) — college and club coaches networking
-together before the weekend kicks off. Combine runs
+together before the weekend kicks off. Coaches of ISI-only teams are
+invited too (founder, Nov 25 2026). Team coaches RSVP (headcount) through
+the Nov 25 "Action Required" form, which also takes Nations Cup ticket
+requests — Airtable table "Nations Cup Ticket Requests", respond by Mon
+Nov 30. **Nations Cup:** the series and the ISI are providing complimentary
+tickets (not USA Football directly), in partnership with USA Football —
+Dec 10–12, Frisco (The Star and Dr. Pink Field); one ticket covers every
+game, both venues, all three days. Combine runs
 **3:00–5:30 PM** on Friday, Dec 11. Tournament games run **8:00 AM–4:00 PM
 Sat, 8:00 AM–4:00 PM Sun**; individual game times are "confirmed closer to
 the event." Dallas registration deadline: **Nov 22, 2026**.
